@@ -1,0 +1,120 @@
+﻿1.预解释毫无节操-自执行函数
+    f=function(){return true};
+    g=function(){return false};
+    (function(){
+        if(g()&&[]==![]){
+            f=function(){return false;}
+            function g(){return true;}
+        }
+    })();
+    alert(f());
+    alert(g());
+2.自执行函数的预解释
+(function f(){
+    function f(){ return 1; }
+    alert (f());
+    function f(){ return 2; }
+})();
+
+3.作用域链
+var a=12;
+function show(){
+    alert(a);
+    a=15;
+}
+show();
+alert(a);
+
+4.预解释：变量声明早于代码运行
+var a=12;
+function show(){
+    alert(a);
+    var a=15;
+}
+show();
+alert(a);
+5.预解释：变量声明早于代码运行
+var uname = 'jack'
+function change() {
+    alert(uname)
+    var uname = '珠峰'
+    alert(uname)
+}
+change()
+6.在没有形参的情况下：函数声明早于变量声明
+function change() {
+    alert(typeof fn) // function
+    function fn() {
+        alert('hello')
+    }
+    var fn
+}
+change()；
+7.带var和不带var的区别；
+function abc(){
+    a=12;
+    alert(a);
+}
+function b(){
+    alert(a)
+}
+abc();
+b();
+
+面试题
+1.关于内存释放的面试题
+function fn() {
+        var i = 10;
+        return function (n) {
+            console.log(n + (++i));
+        }
+    }
+    var f = fn();
+    f(15);
+    f(20);
+    fn()(15);
+    fn()(20);
+    fn()(30);
+    f(30);
+2.综合面试题
+考察：this指向；
+    var num = 10;
+    var obj = {
+        num: 20,
+        fn: (function (num) {
+            this.num *= 2;
+            num += 10;
+            return function () {
+                this.num *= 3;
+                num += 1;
+                console.log(num);
+            }
+        })(num)
+    };
+    var fn = obj.fn;
+    fn();
+    obj.fn();
+    console.log(window.num, obj.num);
+
+3.关于this和||的运用；
+var name='珠峰';
+var age=500;
+name=(function(name,age){
+    arguments[0]='珠峰培训';
+    age=age||this.age;
+    console.log(name,age);
+})(name);
+console.log(name,age)
+4.
+    var i=3;
+    function fn(){
+        i*=2;
+        return function(n){
+            console.log(n*(++i))
+        }
+    }
+    var f=fn();
+    f(3)
+    fn()(3);
+    f(4);
+    fn()(3);

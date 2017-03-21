@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>圆梦源：勿忘初心，方得始终</title>
+</head>
+<body>
+<script>
+    /*var a=12;
+    function fn(){
+        alert(a);
+        a=15;
+        alert(a);
+    }
+    fn();
+    alert(a);*/
+    /*var a=12;
+    function fn(){
+        alert(a);
+        var a=15;
+        alert(a);
+    }
+    fn();
+    alert(a);*/
+    //已经声明过的变量，不会进行重新声明，只会重新赋值；
+    var a=12;
+    function fn(a){
+        //1.形参赋值 var a=6;
+        //2.预解释
+        //3. alert(a)  a=15 15
+        alert(a);//6
+        var a=15;
+        alert(a);//15
+    }
+    fn(6);
+    alert(a);//12
+
+</script>
+</body>
+</html>
