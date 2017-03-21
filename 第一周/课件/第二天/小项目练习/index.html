@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+        }
+        body{
+            background:#f5f5f5;
+        }
+        .container{
+            width:1128px;
+            height:252px;
+            margin:30px auto;
+        }
+        .container .left{
+            width:751px;
+            height:251px;
+            float: left;
+            border:1px solid #ccc;
+            border-right: none;
+        }
+        .container .right{
+            width:374px;
+            height:100%;
+            float: left;
+        }
+        .container .left .left_img{
+            width:249px;
+            height: 100%;
+            float: left;
+        }
+        .container .left .left_img img{
+            margin:15px;
+        }
+        .container .left .left_detail{
+            width: 502px;
+            height: 100%;
+            float: right;
+        }
+        .container .left .left_detail_t{
+            border-bottom: 1px solid #ccc;
+            padding:15px 0;
+        }
+        .container .left .left_detail_t h3{
+            height:40px;
+            font-size: 26px;
+        }
+        .container .left .left_detail_t p{
+            font-size: 18px;
+            line-height: 22px;
+        }
+        .container .left .left_detail_b{
+            padding-top:10px;
+        }
+        .container .left .left_detail_b li{
+            margin-top:10px;
+            list-style: none;
+        }
+        .container .left .left_detail_b li span{
+            width:10px;
+            height:10px;
+            background: gray;
+            display: inline-block;
+            margin-right:4px;
+        }
+        .container .right{
+            position: relative;
+        }
+        .container .right .img1{
+            position: absolute;
+            left:0;
+            top:0;
+            border-top:1px solid #ccc;
+            border-bottom:1px solid #ccc;
+            height:251px;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <!-- .left+.right+tab-->
+    <div class="left">
+        <div class="left_img">
+            <img src="images/001.jpg" alt=""/>
+        </div>
+        <div class="left_detail">
+            <div class="left_detail_t">
+                <h3>三生三世十里桃花</h3>
+                <p>《三生三世十里桃花》是由杨幂、赵又廷、张智尧 、迪丽热巴领衔主演的古装神话电视剧，讲述了青丘帝姬白浅和九重天太子夜华的三生爱恨，三世纠葛的故事，优酷全网首播。</p>
+            </div>
+            <div class="left_detail_b">
+                <ul>
+                    <li><span></span><a href="#">《三生三世十里桃花》精彩抢先看</a></li>
+                    <li><span></span><a href="#">优酷更多独家幕后花絮</a></li>
+                    <li><span></span><a href="#"> 杨幂赵又廷旷世仙恋</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="right">
+        <img class="img1" src="images/003.png" alt=""/>
+        <img src="images/002.jpg" alt=""/>
+    </div>
+</div>
+</body>
+</html>

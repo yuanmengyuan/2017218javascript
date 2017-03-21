@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        div{
+            width: 200px;
+            height: 200px;
+            background-color: red;
+            margin:0 auto;
+            position: relative;
+        }
+        div::before{
+            display: block;
+            height:30px;
+            line-height: 30px;
+            text-align: center;
+            content:'我是before伪类';
+            background: green;
+        }
+        div::after{
+            width: 100%;
+            display: block;
+            height:30px;
+            line-height: 30px;
+            text-align: center;
+            content:'我是before伪类';
+            background: green;
+            position: absolute;
+            left:0;
+            bottom:0;
+        }
+    </style>
+</head>
+<body>
+<div>我是div标签</div>
+</body>
+</html>

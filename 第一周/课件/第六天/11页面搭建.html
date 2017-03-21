@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        /*重置样式*/
+        *{
+            margin:0;
+            padding:0;
+        }
+        li{
+            list-style:none;
+        }
+        a{
+            text-decoration: none;
+        }
+        input{
+            outline: none;
+        }
+        img{
+            border:none;
+        }
+        /*公共样式*/
+        .w{
+            width: 1000px;
+            margin:0 auto;
+        }
+        .clearfix::after{
+            display: block;
+            height: 0;
+            content: '';
+            clear:both;
+        }
+        /*header*/
+        .header{
+            height:58px;
+            line-height: 58px;
+            background-color: #191d3a;
+        }
+        .header .logo{
+            float: left;
+        }
+        .header .nav{
+            width: 633px;
+            height: 58px;
+            background-color: red;
+            float: left;
+        }
+        .header .btn{
+            height: 58px;
+            background-color: green;
+            float: right;
+        }
+        /*banner*/
+        .banner{
+            position: relative;
+        }
+        .banner a{
+            display: block;
+            height: 460px;
+            background: url("images/banner.jpg") no-repeat center top;
+        }
+        .banner ul{
+            position: absolute;
+            left:50%;
+            bottom:12px;
+            width: 101px;
+            height:14px;
+            background: #333;
+            margin-left:-50px;
+        }
+        /*section*/
+        .section_w{
+            height: 184px;
+            border-bottom:1px solid #dbe1e7;
+            position: relative;
+            background-color: pink;
+        }
+        .section_w ol{
+            position: absolute;
+            width: 101px;
+            height:14px;
+            left:50%;
+            margin-left: -50px;
+            bottom:-7px;
+            background-color: #333;
+        }
+        /*news*/
+        .news{
+            height: 312px;
+            padding:54px 0;
+        }
+        .news .news_l{
+            width: 50%;
+            height:312px;
+            float: left;
+            background:pink;
+        }
+        .news .news_r{
+            width: 50%;
+            height:312px;
+            float: left;
+            background:green;
+        }
+        /*footer*/
+        .footer{
+            height:92px;
+            background-color: #191d3a;
+            color: #ffffff;
+        }
+    </style>
+</head>
+<body>
+<div class="header">
+    <div class="w">
+        <div class="logo">
+            <h1><a href="#"><img src="images/logo.jpg" alt=""/></a></h1>
+        </div>
+        <div class="nav"><导航菜单></导航菜单></div>
+        <div class="btn">加入我们</div>
+    </div>
+</div>
+<div class="banner">
+    <a href="#"></a>
+    <ul><li></li></ul>
+</div>
+<div class="section">
+    <div class="w section_w">
+        <ul>
+            <li></li>
+        </ul>
+        <ol>
+            <li></li>
+        </ol>
+    </div>
+</div>
+<div class="news">
+    <div class="w">
+        <div class="news_l"></div>
+        <div class="news_r"></div>
+    </div>
+</div>
+<div class="footer">
+    <div class="w">1111111</div>
+</div>
+</body>
+</html>

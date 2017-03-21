@@ -1,0 +1,289 @@
+/*重置样式*/
+*{
+    margin:0;
+    padding:0;
+}
+li{
+    list-style:none;
+}
+a{
+    text-decoration: none;
+    color:#444866;
+}
+input{
+    outline: none;
+}
+img{
+    border:none;
+}
+/*公共样式*/
+.w{
+    width: 1000px;
+    margin:0 auto;
+}
+.clearfix::after{
+    display: block;
+    height: 0;
+    content: '';
+    clear:both;
+}
+.more{
+    position: absolute;
+    left:220px;
+    top:40px;
+    padding:8px;
+    padding-right: 20px;
+    border:1px solid #2fbb72;
+    border-radius: 6px;
+    color: #2fbb72;
+}
+.more span{
+    position: absolute;
+    top:6px;
+    right:8px;
+}
+.more:hover{
+    background: #2fbb72;
+    color: #ffffff;
+}
+/*header*/
+.header{
+    height:58px;
+    line-height: 58px;
+    background-color: #191d3a;
+}
+.header .logo{
+    float: left;
+}
+.header .nav{
+    width: 633px;
+    height: 58px;
+    background-color: red;
+    float: left;
+}
+.header .btn{
+    height: 58px;
+    background-color: green;
+    float: right;
+}
+/*banner*/
+.banner{
+    position: relative;
+}
+.banner a{
+    display: block;
+    height: 460px;
+    background: url("../images/banner.jpg") no-repeat center top;
+}
+.banner ul{
+    position: absolute;
+    left:50%;
+    bottom:12px;
+    width: 101px;
+    height:14px;
+    background: #333;
+    margin-left:-50px;
+}
+/*section*/
+.section_w{
+    height: 184px;
+    border-bottom:1px solid #dbe1e7;
+    position: relative;
+    padding:50px 0;
+}
+.section_w ul li{
+    width: 218px;
+    float: left;
+}
+.section_w ul li+li{
+    margin-left: 42px;
+}
+.section_w ul li a{
+    display: block;
+    padding-bottom: 10px;
+}
+.section_w ul li a:hover{
+    background: #30bc73;
+    color: #ffffff;
+}
+.section_w ul li a:hover p{
+    color: #ffffff;
+}
+.section_w ul li a span{
+    display: inline-block;
+    width: 4px;
+    height: 8px;
+    background: url("../images/arrow.png") no-repeat;
+    margin-left:4px;
+}
+.section_w ul li a:hover span{
+    background-image: url('../images/arrow_hover.png');
+}
+/*在img标签中，只需要设置宽度，高度会自适应；但是，背景图片，必须设置高度，否则图片出不来*/
+.section_w ul li img{
+    width: 218px;
+}
+.section_w ul li .xuanchuanpian{
+    text-align: center;
+}
+.section_w ul li .xuanchuanpian h5{
+    padding:12px 0 8px 0;
+    font-size: 14px;
+}
+.section_w ul li .xuanchuanpian p{
+    color:#38b774;
+}
+.section_w ul li .xuanchuanpian p img{
+    width: 4px;
+    margin-left: 4px;
+}
+.section_w ol{
+    position: absolute;
+    width: 101px;
+    height:14px;
+    left:50%;
+    margin-left: -90px;
+    bottom:-7px;
+    background-color: #fff;
+    padding:0 40px;
+}
+.section_w ol li{
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background-color: #b5c0cb;
+    float: left;
+}
+.section_w ol li.active{
+    background-color: #2fbc71;
+}
+.section_w ol li+li{
+    margin-left: 15px;
+}
+/*news*/
+.news{
+    padding:50px 0;
+    background: url("../images/new.jpg") no-repeat center bottom;
+}
+.news .news_l,.news .news_r{
+    float: left;
+    width: 500px;
+    height:310px;
+    position: relative;
+}
+.news .news_l{
+    background: url("../images/new_l1.jpg") no-repeat left top #fff;
+}
+.news .news_l .news_title{
+    height: 120px;
+}
+.news .news_l ul{
+    border-top:1px solid #dfe0e4;
+    padding:0 20px;
+}
+.news .news_l ul li{
+    height: 46px;
+    line-height: 46px;
+    font-size: 14px;
+    border-bottom:1px solid #dfe0e4;
+}
+.news .news_l ul li a{
+    width: 360px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    float: left;
+}
+.news .news_l ul li a:hover{
+    color: #30bc73;
+}
+.news .news_l ul li span{
+    font-size: 12px;
+    color:#afbecf;
+    float: right;
+}
+.news .news_r{
+    background: url("../images/new_r.jpg") no-repeat left top #2fbb72;
+    color: #ffffff;
+}
+.news .news_r .zhaopin{
+    padding:46px 0 0 80px;
+    height: 68px;
+}
+.news .news_r .zhaopin h3{
+    font-size:28px;
+    height: 34px;
+}
+.news .news_r .zhaopin p{
+    font-size:10px;
+    letter-spacing: 1px;/*让字和字之间有缝隙*/
+}
+.news .news_r .zhaopin .more{
+    border-color: #fff;
+    color: #ffffff;
+}
+.news .news_r .zhaopin .more:hover{
+    background: #fff;
+    color: #2fbb72;
+}
+.news .news_r .zhiwei{
+    padding-left:20px;
+    padding-right:172px;
+}
+.news .news_r .zhiwei ul li{
+    height: 36px;
+    line-height: 36px;
+    border-bottom: 1px solid #6fdea3;
+}
+.news .news_r .zhiwei ul li a{
+    color: #ffffff;
+}
+/*footer*/
+.footer{
+    height:92px;
+    line-height: 92px;
+    background-color: #191d3a;
+    color: #6c6e7e;
+}
+.footer .footer_l{
+    float: left;
+}
+.footer .footer_l a{
+    color: #6c6e7e;
+}
+.footer .footer_r{
+    float: right;
+    position: relative;
+    padding-right:46px;
+}
+.footer .footer_r img{
+    width: 36px;
+    position: absolute;
+    top:20px;
+    right:0;
+}
+/*toTop*/
+.toTop{
+    position: fixed;
+    right:14px;
+    bottom:74px;
+    width: 68px;
+    height: 30px;
+    background: url("../images/top.png") 0 -40px no-repeat;
+}
+.toTop:hover{
+    background-position: 0 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+

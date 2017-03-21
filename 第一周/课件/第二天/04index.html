@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        /*现设置大家共有的*/
+        div{
+            width: 100%;
+            height: 500px;
+            font-size: 100px;
+        }
+        a{
+            font-size:40px;
+        }
+        /*在针对个人，分别设置*/
+        .div1{
+            background-color: red;
+        }
+        .div2{
+            background-color: green;
+        }
+        .div3{
+            background-color: yellow;
+        }
+        .div4{
+            background-color:pink;
+        }
+    </style>
+</head>
+<body>
+<!--同一页面，不同模块之间的相互跳转-->
+<!--class名：.div1; id名：#div1-->
+<div class="div1" id="div1">模块1</div>
+<div class="div2" id="div2">模块2</div>
+<div class="div3" id="div3">模块3</div>
+<div class="div4" id="div4">模块4</div>
+<!--a链接，如果href="#"会默认跳往顶部-->
+<a href="#div1">跳往模块1</a>
+<a href="#div2">跳往模块2</a>
+<a href="#div3">跳往模块3</a>
+<a href="#div4">跳往模块4</a>
+<a href="05detail.html#detail2">跳往详情页</a>
+</body>
+</html>

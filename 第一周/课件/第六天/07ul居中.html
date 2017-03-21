@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        *{
+            marign:0;
+            padding:0;
+        }
+        li{
+            list-style: none;
+        }
+        html,body{
+            height:100%;
+        }
+        ul{
+            width: 101px;
+            height:14px;
+            background: #ccc;
+            position: absolute;
+            left:50%;
+            top:50%;
+            margin-left: -50px;
+            margin-top:-7px;
+        }
+        ul li{
+            float: left;
+            width: 14px;
+            height: 14px;
+            border-radius:50%;
+            background:lightgreen;
+        }
+        ul li+li{
+            margin-left:15px;
+        }
+        ul li.current{
+            background: #f00;
+        }
+    </style>
+</head>
+<body>
+<!--ul>li*4-->
+<ul>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+</ul>
+</body>
+</html>

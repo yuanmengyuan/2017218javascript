@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        h3 {
+            font-size: 40px;
+        }
+
+        p {
+            margin-bottom: 10px;
+            font-size: 30px;
+        }
+
+        .xuanxiang input {
+            width: 200px;
+            height: 30px;
+            border: 1px solid grey;
+            padding-left: 10px;
+        }
+
+        .sex input {
+            width: 30px;
+            height: 30px;
+        }
+    </style>
+</head>
+<body>
+<h3>欢迎注册本网站</h3>
+
+<form>
+    <p class="xuanxiang">
+        <label for="name">
+            请输入您的姓名：
+            <input type="text" id="name" placeholder="名字"/>
+        </label>
+    </p>
+
+    <p class="xuanxiang">
+        <label for="pass">
+            请输入您的密码：
+            <input type="password" id="pass" placeholder="密码"/>
+        </label>
+    </p>
+
+    <p class="sex">
+        请输入您的性别：
+        <label for="gril">
+            <input type="radio" name="sex" id="gril"/>女
+        </label>
+        <label for="boy">
+            <input type="radio" name="sex" id="boy" checked/>男
+        </label>
+        <label for="guess">
+            <input type="radio" name="sex" id="guess"/>你猜
+        </label>
+    </p>
+
+    <p class="sex">
+        请选择你的爱好：
+        <label for="sleep">
+            <input type="checkbox" name="hoppy" id="sleep"/>睡觉
+        </label>
+        <label for="play">
+            <input type="checkbox" name="hoppy" id="play"/>玩
+        </label>
+        <label for="movie">
+            <input type="checkbox" name="hoppy" id="movie" checked/>看电影
+        </label>
+    </p>
+    <p>
+        请选择你的籍贯：
+        <select name="city">
+            <option value="bj">北京</option>
+            <option value="sh">上海</option>
+            <option value="gz">广州</option>
+        </select>
+    </p>
+    <p>
+        签名：
+        <textarea cols="40" rows="10"></textarea>
+    </p>
+    <p>
+        普通按钮：
+        <input type="button" value="丑按钮"/>
+    </p>
+    <p>
+        提交按钮：
+        <input type="submit"/>
+    </p>
+    <p>
+        重置按钮：
+        <input type="reset"/>
+    </p>
+
+</form>
+
+</body>
+</html>

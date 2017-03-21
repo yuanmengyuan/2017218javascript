@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+        }
+        li{
+            list-style:none;
+        }
+        a{
+            text-decoration: none;
+            color: #333333;
+        }
+        /*公共样式*/
+        .clearfix::after{
+            display: block;
+            height: 0;
+            content: '';
+            clear:both;
+        }
+        ul{
+
+        }
+        ul li{
+            float: left;
+            margin-left: 21px;
+            line-height: 30px;
+        }
+        ul li a{
+            display: block;
+            padding:0 4px;
+            border-radius: 10px;
+        }
+        ul li a:hover{
+            background-color: red;
+            color:#Fff;
+        }
+    </style>
+</head>
+<body>
+<ul class="clearfix">
+    <li><a href="#">首页</a></li>
+    <li><a href="#">博雅游戏</a></li>
+    <li><a href="#">博雅新闻</a></li>
+    <li><a href="#">关于我们</a></li>
+    <li><a href="#">客服中心</a></li>
+    <li><a href="#">投资者关系</a></li>
+</ul>
+</body>
+</html>

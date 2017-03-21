@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <!-- 内嵌-->
+    <style>
+        h4{
+            font-size:40px;
+        }
+        div{
+            height: 60px;
+            font-size: 30px;
+        }
+        .txt input{
+            width:200px;
+            height:40px;
+            padding-left:10px;
+            font-size: 20px;
+        }
+        .radio input{
+            width:30px;
+            height: 30px;
+        }
+        select{
+            width:100px;
+            height: 40px;
+            font-size: 30px;
+        }
+    </style>
+</head>
+<body>
+<h4>欢迎注册本网站</h4>
+
+<form action="">
+    <div class="txt">
+        <label for="txt">
+            请输入您的姓名：
+            <input type="text" placeholder="姓名" id="txt"/>
+        </label>
+    </div>
+    <div class="txt">
+        <label for="pass">
+            请输入您的密码：
+            <!-- input[type=password]#pass-->
+            <input type="password" id="pass" placeholder="密码"/>
+        </label>
+    </div>
+    <!--在设置单选按钮的时候，必须给这组单选按钮，都设置同一个name名；否则，无法实现单选效果-->
+    <div class="radio">
+        请输入您的性别：
+        <label for="boy">
+            <input type="radio" name="sex" id="boy"/>
+            男
+        </label>
+        <label for="gril">
+            <input type="radio" name="sex" id="gril" checked/>
+            女
+        </label>
+        <label for="guess">
+            <input type="radio" name="sex" id="guess"/>
+            你猜
+        </label>
+    </div>
+    <div class="radio">
+        请选择你的爱好：
+        <label for="eat">
+            <input type="checkbox" id="eat"/>吃饭
+        </label>
+        <label for="sleep">
+            <input type="checkbox" id="sleep" checked/>睡觉
+        </label>
+        <label for="doudou">
+            <input type="checkbox" id="doudou"/>打豆豆
+        </label>
+    </div>
+    <!-- 下拉单-->
+    <div>
+        请选择你的籍贯：
+        <select>
+            <option name="city">北京</option>
+            <option name="city">上海</option>
+            <option name="city">广州</option>
+            <option name="city" selected>深圳</option>
+            <option name="city">杭州</option>
+        </select>
+    </div>
+    <div style="height:260px;">
+        签名：
+        <textarea  cols="40" rows="10"></textarea>
+    </div>
+    <!-- 普通按钮-->
+    <div>
+        普通按钮：<input type="button" value="普通按钮"/>
+    </div>
+    <!-- 提交按钮-->
+    <div>
+        提交按钮：<input type="submit"/>
+    </div>
+    <!-- 重置按钮-->
+    <div>
+        重置按钮：<input type="reset"/>
+    </div>
+</form>
+</body>
+</html>

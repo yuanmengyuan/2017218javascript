@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        div:before{
+            display: block;
+            height: 40px;
+            line-height: 40px;
+            text-align: center;
+            content:'it闯关记';
+            background-color: lightgreen;
+        }
+        div{
+            width: 200px;
+            height: 200px;
+            border:10px solid #000;
+            text-align: center;
+            margin:30px auto;
+        }
+        /*伪元素：用的是::*/
+        div:after{
+            display: block;
+            height: 40px;
+            line-height: 40px;
+            text-align: center;
+            content:'it闯关记';
+            background-color: lightgreen;
+        }
+        /*当鼠标移上的时候，可以给当前元素添加一些特殊的动效*/
+        /*div:hover{
+            background: red;
+            color: #fff;
+        }*/
+        /*a链接点击之前的效果*/
+        a:link{
+            font-size: 40px;
+            color: red;
+        }
+        /*访问过以后*/
+        a:visited{
+            color:yellow;
+        }
+        /*鼠标移上的效果*/
+        a:hover{
+            color: green;
+        }
+        /*鼠标按下时候的效果(不抬起)*/
+        a:active{
+            color: purple;
+        }
+
+    </style>
+</head>
+<body>
+<div>
+    it奇缘
+    <a href="#">it冒险记</a>
+</div>
+
+</body>
+</html>

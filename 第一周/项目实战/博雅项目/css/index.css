@@ -1,0 +1,129 @@
+/*重置样式start*/
+*{
+    margin:0;
+    padding:0;
+}
+li{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+    color: #444866;
+}
+input{
+    /*border:none;*/
+    outline: none;
+}
+img{
+    border: 0;
+}
+/*重置样式end*/
+/*公共样式部分start*/
+body{
+    font:12px/1.5 "宋体";
+}
+.w{
+    width: 1000px;
+    /*让版心居中*/
+    margin:0 auto;
+}
+.clearfix:after{
+    display: block;
+    content: "";
+    height: 0;
+    clear: both;
+}
+/*公共样式部分end*/
+/*顶部通栏start*/
+.top_banner{
+    height: 58px;
+    background-color: #191d3a;
+    color: #ffffff;
+    line-height: 58px;
+    font-size: 14px;
+}
+.top_banner .logo{
+    float: left;
+    width: 222px;
+    height: 58px;
+}
+.top_banner .top_nav{
+    float: left;
+    width: 626px;
+    height: 58px;
+}
+.top_banner .top_nav ul li{
+    float: left;
+    width: 101px;
+    height: 58px;
+    text-align: center;
+    border-left:1px solid #252947;
+}
+.top_banner .top_nav ul li.current{
+    background-color: #252947;
+}
+.top_banner .top_nav ul li:last-child{
+    border-right: 1px solid #252947;
+}
+.top_banner .top_nav ul li a{
+    color:#818496;
+}
+.top_banner .top_nav ul li a:hover{
+    color: #ffffff;
+}
+.top_banner .top_btn{
+    float: right;
+    height: 100%;
+}
+.top_banner .top_btn a{
+    display: block;
+    width: 100px;
+    height: 34px;
+    line-height: 34px;
+    background-color: #38b774;
+    text-align: center;
+    color: #ffffff;
+    border-radius: 4px;
+    margin-top:12px;
+}
+/*顶部通栏end*/
+/*轮播图start*/
+.tab_banner{
+    height: 460px;
+    position: relative;
+}
+.tab_banner a{
+    display: block;
+    height: 460px;
+    background: url("../images/banner.jpg") no-repeat center top;
+}
+.tab_banner ul{
+    height:14px;
+    position: absolute;
+    bottom:30px;
+    left:50%;
+    width:130px;
+    margin-left:-65px;
+}
+.tab_banner ul li{
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.4);/*透明度：背景透明，文字不透明*/
+    float: left;
+}
+.tab_banner ul li.current{
+    background: rgba(255,255,255,1);
+}
+.tab_banner ul li+li{
+    margin-left: 15px;
+}
+/*轮播图end*/
+
+
+
+
+
+
+
+
