@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<script>
+    //现在接触到的对象：1）获取到的元素和元素集合 2）数组 3）普通对象
+    /*var ary=['张三','李四','王五'];
+    //数组这个对象的遍历或循环和元素集合的循环一样的；
+    //需求1：弹出数组的长度；
+    //需求2：打印出数组中的每一项；
+    for(var i=0; i<ary.length; i++){
+        console.log(ary[i])
+    }*/
+    var obj={
+        name:'zhangsan',
+        age:18,
+        sex:'你猜'
+    };
+    //attribute
+    //普通对象的遍历，用for in 循环
+    for(var attr in obj){
+        //console.log(attr) //拿到的是属性名
+        //console.log(obj[attr]) //拿到的是属性值；
+        console.log(attr+':'+obj[attr]) //字符串拼接：用+
+    }
+    //+号的作用有两个:1）字符串拼接 2）数学运算
+    /*'123445677'+193949596979978080808
+    100000000+837982403298409234*/
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

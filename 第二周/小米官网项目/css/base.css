@@ -1,0 +1,138 @@
+@charset "UTF-8";
+/*css 初始化 */
+html, body, ul, li, ol, dl, dd, dt, p, h1, h2, h3, h4, h5, h6, form, fieldset, legend, img { margin:0; padding:0; }
+fieldset, img,input,button { border:none; padding:0;margin:0;outline-style:none; }
+ul, ol { list-style:none; }
+input { padding-top:0; padding-bottom:0; font-family: "SimSun","宋体";}
+select, input { vertical-align:middle;}
+select, input, textarea { font-size:12px; margin:0; }
+textarea { resize:none; } /*防止拖动*/
+img {border:0;	vertical-align:middle; }  /*  去掉图片底侧默认的3像素空白缝隙 display:block也可以去掉*/
+table { border-collapse:collapse; }
+body {
+    font:12px/150% Arial,Verdana,"\5b8b\4f53";
+    color:#666;
+    background:#fff
+}
+.clearfix:before,.clearfix:after {
+    height:0;
+    content:"";
+    display:table;
+}
+.clearfix:after{clear:both;}
+.clearfix{
+    *zoom:1;/*IE/7/6*/
+}
+a {color:#666; text-decoration:none; }
+a:hover{color:#C81623;}
+h1,h2,h3,h4,h5,h6 {text-decoration:none;font-weight:normal;font-size:100%;}
+s,i,em,ins{font-style:normal;text-decoration:none;}
+/*s删除线 i,em倾斜*/
+.col-red{color: #C81623!important;}
+
+/*公共类*/
+.w {  /*版心 提取 */
+    width: 1224px;
+    margin:0 auto;
+}
+.fl {
+    float:left
+}
+.fr {
+    float:right
+}
+/*文本左对齐*/
+.al {
+    text-align:left
+}
+.ac {
+    text-align:center
+}
+.ar {
+    text-align:right
+}
+/*隐藏*/
+.hidden {
+    display:none
+}
+/*header区域a链接菜单*/
+.header-nav-all{
+
+}
+.header-nav-all a{
+    padding:0 6px;
+    font-size: 14px;
+    color: #b0b0b0;
+}
+.header-nav-all a:first-child{
+    padding-left:0;
+}
+.header-nav-all a+a{
+    border-left:1px solid #393e42;
+}
+
+/*公共头部*/
+.title-all{
+    height: 40px;
+    line-height: 40px;
+}
+.title-all h3{
+    color: #333333;
+    font-size: 22px;
+    float: left;
+}
+.title-all .right-wrap{
+    float: right;
+}
+.title-all .right-wrap .btn{
+    height: 22px;
+}
+.title-all .right-wrap .btn a{
+    width: 35px;
+    height: 22px;
+    border: 1px solid #cccccc;
+    float: left;
+    text-align: center;
+    line-height: 22px;
+}
+.title-all .right-wrap .btn a:last-child{
+    margin-left: -1px;
+}
+.title-all .right-wrap .btn a:hover{
+    color: #ff6700;
+}
+/*公共产品区域*/
+.product-list-all li{
+    width: 232px;
+    padding:54px 0 42px 0;
+    text-align: center;
+    background: #fafafa;
+    float: left;
+}
+.product-list-all li img{
+    width: 160px;
+    margin-bottom: 10px;
+}
+.product-list-all li h5{
+    font-size: 14px;
+    height: 20px;
+}
+.product-list-all li .p1{
+    color: #cccccc;
+    height: 28px;
+}
+.product-list-all li .p2{
+    color: #ff6700;
+    font-size: 14px;
+}
+.product-list-all li+li{
+    margin-left: 14px;
+}
+
+
+
+
+
+
+
+

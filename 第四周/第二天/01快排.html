@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>圆梦源：勿忘初心，方得始终</title>
+</head>
+<body>
+<script>
+    var ary=[12,4,2,34,56,8,17];
+    function quickSort(arr){
+        //4.停止拆分的条件
+        if(arr.length<=1){
+            return arr;
+        }
+        //1. 找到中间的位置；通过位置找到中间值
+        var n=parseInt(arr.length/2);
+        var num=arr.splice(n,1)[0];
+        //2.创建两个空数组，让数组中的每一项分别跟中间值进行比较，大了放right[];小了放left[];
+        var left=[];
+        var right=[];
+        for(var i=0; i<arr.length; i++){
+            if(arr[i]<num){
+                left.push(arr[i]);
+            }else{
+                right.push(arr[i]);
+            }
+        }
+        //3.注意，返回的时候,left.concat(num,right); left和right还要进行同样的操作；
+        return quickSort(left).concat(num,quickSort(right));
+    }
+    var res=quickSort(ary);
+    console.log(res)
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+

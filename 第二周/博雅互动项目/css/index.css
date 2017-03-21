@@ -1,0 +1,243 @@
+.header{
+    height: 58px;
+    background: #191d3a;
+}
+.header .logo{
+    float: left;
+}
+.header .nav{
+    float: left;
+}
+.header .nav ul{
+    border-left:1px solid #252947;
+    border-right:1px solid #252947;
+}
+.header .nav ul li{
+    width: 86px;
+    height: 58px;
+    float: left;
+    text-align: center;
+    line-height: 58px;
+    font-size: 16px;
+}
+.header .nav ul li.active{
+    background: #252947;
+}
+.header .nav ul li.active a{
+    color: #fff;
+}
+.header .nav ul li a{
+    color: #818496;
+    display: block;
+    font-size: 14px;
+}
+.header .nav ul li a:hover{
+    color: #ffffff;
+}
+.header .nav ul li+li{
+    border-left:1px solid #252947;
+}
+.header .button{
+    float: right;
+}
+.header .button a{
+    display: block;
+    width: 100px;
+    height: 34px;
+    background: #2ba364;
+    text-align: center;
+    line-height: 34px;
+    margin-top: 12px;
+    border-radius: 4px;
+    color: #fff;
+}
+.header .button a:hover{
+    background-color: #33b972;
+}
+/*banner*/
+.banner{
+    height:460px;
+    background:url("../image/2017banner.jpg") no-repeat center top;
+    position: relative;
+}
+.banner ul{
+    width: 72px;
+    height: 14px;
+    position: absolute;
+    left:50%;
+    margin-left:-36px;
+    bottom:30px;
+}
+.banner ul li{
+    width: 14px;
+    height: 14px;
+    border-radius:7px;
+    float: left;
+    background: rgba(255,255,255,.6);
+}
+.banner ul li.active{
+    background: rgba(255,255,255,1);
+}
+.banner ul li+li{
+    margin-left: 15px;
+}
+/*section*/
+.section-w{
+    padding:50px 0;
+    border-bottom: 1px solid #ccc;
+    position: relative;
+}
+.section-w ul{
+    width: 101px;
+    position: absolute;
+    left: 50%;
+    margin-left: -50px;
+    bottom: -7px;
+}
+.section-w ul li{
+    width: 14px;
+    height: 14px;
+    border-radius: 7px;
+    background: #cccccc;
+    float: left;
+}
+.section-w ul li.active{
+    background: green;
+}
+.section-w ul li+li{
+    margin-left: 15px;
+}
+.section .w div{
+    width: 218px;
+    text-align: center;
+    float: left;
+}
+.section .w div+div{
+    margin-left: 40px;
+}
+.section .w div a{
+    display: block;
+    padding-bottom: 10px;
+}
+.section .w div a:hover{
+    color: #fff;
+    background: green;
+}
+.section .w div a:hover p{
+    color: #ffffff;
+}
+.section .w div a:hover p ins{
+    background: url("../image/arrow_hover.png") no-repeat;
+}
+.section .w div img{
+    width: 100%;
+}
+.section .w div h3{
+    padding:15px 0 13px 0;
+    font-size: 14px;
+}
+.section .w div p{
+    color: green;
+}
+.section .w div p ins{
+    display: inline-block;
+    width: 4px;
+    height: 8px;
+    background: url("../image/arrow.png") no-repeat;
+    margin-left:4px;
+}
+/*news*/
+.news{
+    padding:53px 57px;
+    height: 318px;
+    background: url("../image/indexmainbg.jpg") no-repeat center bottom;
+}
+.news .news-l{
+    width: 500px;
+    float: left;
+    height:310px;
+    background: url("../image/bynewsbg.jpg") no-repeat left top;
+    position: relative;
+}
+.news .news-l .news-l-t{
+    height: 120px;
+
+}
+.news .news-l .news-l-b ul{
+    padding:0 18px;
+}
+.news .news-l .news-l-b ul li{
+    height: 40px;
+    line-height: 40px;
+    border-bottom: 1px solid #cccccc;
+    font-size: 16px;
+}
+.news .news-l .news-l-b ul li a{
+    float: left;
+    width: 360px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+.news .news-l .news-l-b ul li span{
+    float: right;
+    color: #cccccc;
+}
+.news .news-r{
+    float: right;
+    width: 500px;
+    height: 310px;
+    background: url("../image/byhrbg3.jpg") no-repeat left top;
+    position: relative;
+}
+.news .news-r .news-r-t{
+    height: 114px;
+}
+.news .news-r .news-r-t .news-title{
+    position: absolute;
+    left:81px;
+    top:47px;
+    color: #fff;
+}
+.news .news-r .news-r-t .news-title h3{
+    font-size: 28px;
+    font-weight: 600;
+    height: 28px;
+}
+.news .news-r .news-r-t .more {
+    color: #ffffff;
+    border-color: #ffffff;
+
+}
+.news .news-r .news-r-t .more:hover{
+    background: #fff;
+    color: green;
+}
+.news .news-r .news-r-b p{
+    height: 17px;
+    margin-left: 22px;
+    color: #ffffff;
+    font-size: 18px;
+}
+.news .news-r .news-r-b  ul{
+    padding:0 178px 0 22px;
+}
+.news .news-r .news-r-b  ul li{
+    height: 36px;
+    line-height: 36px;
+    border:#6fdea3;
+    font-size: 14px;
+    border-bottom: 1px solid #6fdea3;
+}
+.news .news-r .news-r-b  ul li a{
+    color: #ffffff;
+}
+
+
+
+
+
+
+
+
+

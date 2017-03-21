@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<script>
+    var strCode='abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
+    //思路1：while循环；
+    //先找一个空盒子，然后开始抽取号码，如果盒子里没有的这个号码的话，把号码放入盒子中； 如果盒子里已经有这个号码，我们不管；
+    //抓去条件：只要盒子中，不够四个不重复的号码的话，我们都需要一值抓取；
+    /*var ary=[];
+    while(ary.length<4){
+        //随机抽一个号码的位置／下标；
+        var rnd=Math.round(Math.random()*61);
+        var str=strCode[rnd];
+        //如果盒子中，没有这个字符，才把字符放入盒子；
+        if(ary.indexOf(str)===-1){//说明盒子中没有这个字符
+            ary.push(str);
+        }
+    }
+    document.write(ary)*/
+    //思路2：for循环
+    var ary=[];
+    for(var i=0; i<4; i++){
+        var rnd=Math.round(Math.random()*61);
+        var str=strCode[rnd];
+        if(ary.indexOf(str)===-1){
+            ary.push(str);
+        }else{//说明重复了;如果重复了，就让这次不算，免的浪费机会；因为我们要保证盒子中达到4个不重复的随机码，所以一次机会也不能浪费；
+            i--;
+        }
+    }
+    console.log(ary)
+</script>
+</body>
+</html>
+
+
+
+
+
+

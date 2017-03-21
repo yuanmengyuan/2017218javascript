@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>圆梦源：勿忘初心，方得始终</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            list-style:none;
+        }
+        ul{
+            margin: 50px;
+        }
+        ul li{
+            height: 40px;
+            line-height: 40px;
+            font-size: 30px;
+        }
+        ul li:nth-of-type(3n){
+            background: pink;
+        }
+        ul li:nth-of-type(3n+1){
+            background: lightblue;
+        }
+        ul li:nth-of-type(3n+2){
+            background: lightgreen;
+        }
+        ul li:hover{
+            background: purple;
+            color: #ffffff;
+        }
+        ul li span{
+            float: left;
+            width: 120px;
+            height: 40px;
+        }
+    </style>
+</head>
+<body>
+<ul></ul>
+<script>
+    var oUl=document.getElementsByTagName('ul')[0];
+    var aLi=oUl.getElementsByTagName('li');
+    var str="";
+    for(var i=1; i<=9; i++){
+        str+='<li>';
+        for(var j=1; j<=i; j++){
+            str+='<span>'+(j+'*'+i+'='+j*i)+'</span>'
+        }
+        str+='</li>';
+    }
+    oUl.innerHTML=str;
+</script>
+</body>
+</html>

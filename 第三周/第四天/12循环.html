@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        li{
+            height: 50px;
+            margin-top: 5px;
+            background: #ff0000;
+            font-size: 30px;
+            color: #ffffff;
+        }
+    </style>
+</head>
+<body>
+<ul>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+</ul>
+<script>
+    var aLi=document.getElementsByTagName('li');
+    //1:for循环 ：当循环次数确定情况下，用for循环
+    /*
+    for(var i=0; i<aLi.length; i++){
+        aLi[i].innerHTML='列表测试'
+    }*/
+    //2:for in 普通对象的循环
+    /*var obj={
+        name:'javascript',
+        age:6,
+        sex:'随便'
+    }
+    for(var attr in obj){
+        console.log(attr+':'+obj[attr])
+    }*/
+    //3.while循环
+    /*var i=0;//定义
+    while(i<aLi.length){//条件
+        aLi[i].innerHTML='111111111111111111';//语句；
+        i++;
+    }*/
+    /*var i=0; //定义
+    do{
+        aLi[i].innerHTML='22222222';
+        i++; //自增
+    }while(i<aLi.length); //条件*/
+    //4. do....while(){}
+    /*do{
+        alert('123')
+    }while(2<1)*/
+    var str='新中国万岁';
+    for(var i=0; i<str.length; i++){
+        alert(str[i])
+    }
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+

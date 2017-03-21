@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>圆梦源：勿忘初心，方得始终</title>
+    <style>
+        .div1,.div2{
+            width: 200px;
+            height: 200px;
+            background: #ff00ff;
+            font-size: 30px;
+            color: #ffffff;
+        }
+        .div2{
+            background: #00f;
+        }
+    </style>
+</head>
+<body>
+<div class="div2">我是最早的div</div>
+<script>
+    var oDiv2=document.getElementsByTagName('div')[0];
+    var oDiv=document.createElement('div');//create:创造，创建；Element：元素
+    var oSpan=null;
+    /*oDiv.style.width='200px';
+    oDiv.style.height='200px';
+    oDiv.style.background='red';*/
+    oDiv.className='div1';
+    document.body.appendChild(oDiv);
+    //当点击div的时候，再创建一个span标签，放入div容器；
+    oDiv.onclick=function(){
+        oSpan=document.createElement('span');//创建标签
+        oSpan.innerHTML='我是span标签';
+        this.appendChild(oSpan);//把标签插入到某个容器，在页面中才能看见；
+    };
+    oDiv2.onclick=function(){
+        document.body.removeChild(oDiv);
+    }
+    //this:当元素身上的时间被触发的时候，会执行一个函数，函数中的this指向当前这个元素；
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+

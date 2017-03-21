@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<script>
+    //当形参个数不确定的情况下，通过arguments来拿到传进来的实参；
+    function sum(){
+        var total=0;
+        //遍历arguments中的每一个，进行过滤后，再进行累加；
+        for(var i=0; i<arguments.length; i++){
+            //过滤
+            arguments[i]=Number(arguments[i]);
+            if(!isNaN(arguments[i])){
+                total=total+arguments[i];
+            }
+        }
+        //把求和后的结果，返回出来；
+        return total;
+    }
+    var res=sum(1,2,3,'4px','5');
+    console.log(res);
+
+</script>
+</body>
+</html>

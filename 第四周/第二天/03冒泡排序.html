@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>圆梦源：勿忘初心，方得始终</title>
+</head>
+<body>
+<script>
+    var ary=[19,38,2,18,4,16];
+    /*function bubbleSort(arr){
+        for(var i=0; i<arr.length; i++){
+            for(var j=i+1; j<arr.length; j++){
+                if(arr[i]>arr[j]){
+                    var tmp=arr[i];
+                    arr[i]=arr[j];
+                    arr[j]=tmp;
+                }
+            }
+        }
+        return arr;
+    }*/
+    /*function bubbleSort(arr){
+        for(var i=0; i<arr.length; i++){
+            for(var j=i+1; j<arr.length; j++){
+                if(arr[i]<arr[j]){
+                    var tmp=arr[i];
+                    arr[i]=arr[j];
+                    arr[j]=tmp;
+                }
+            }
+        }
+        return arr;
+    }*/
+    //bubble里面可以传两个参数；第二个参数可传可不传，不传undefined-》false； 如果传个false也是假；=》正序；
+   // 如果为true=》倒叙
+    function bubbleSort(arr,bOk) {
+        // var bOK=bOk||true;//默认值； 你传了按你传的来，没传，按我默认的true来；
+        //var bOk=bOk && true;
+        for (var i = 0; i < arr.length; i++) {
+            for (var j = i + 1; j < arr.length; j++) {
+                if (bOk) {//真：倒叙
+                    if (arr[i] < arr[j]) {
+                        change();
+                    }
+                } else {//false／undefined:正序
+                    if (arr[i] > arr[j]) {
+                        change();
+                    }
+                }
+            }
+        }
+        function change() {
+            var tmp = arr[i];
+            arr[i] = arr[j];
+            arr[j] = tmp;
+        }
+
+        return arr;
+    }
+    //console.log(bubbleSort(ary))
+    //1.基础的冒泡排序：1） 两重循环 2）外循环决定了轮数，里循环决定了次数
+    //2.通过函数的第二个参数，可以决定正序还是倒叙
+    //3.代码优化：把相同部分拎出来，封装成一个函数，需要的时候，直接调用；
+    /*
+    * 第一轮：比较5次；虽然没有实现排序，但是把数组中最大值放到的最后面
+    * [19,38,2,18,4,16]
+    * [19,2,38,18,4,16]
+    * [19,2,18,38,4,16]
+    * [19,2,18,4,38,16]
+    * [19,2,18,4,16,38]
+    * 第二轮：比较4次； 虽然没有实现排序，但是把数组中次大值放到的最后面
+    * [2,19,18,4,16,38]
+    * [2,18,19,4,16,38]
+    * [2,18,4,19,16,38]
+    * [2,18,4,16,19,38]
+    * 第三轮:比较3次：
+    * [2,18,4,16,19,38]
+    * [2,4,18,16,19,38]
+    * [2,4,16,18,19,38]
+    * 第四轮：比较2次
+    * [2,4,16,18,19,38]
+    * 第五轮：比较1次；
+    * 第六轮：比较0次；
+    *
+    *
+    *
+    * */
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

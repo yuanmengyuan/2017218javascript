@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<script>
+    //获取的时候，需要返回值； 设置的时候，不需要返回值；
+    function sum(){
+        //console.log(arguments)
+        var total=0;//6
+        for(var i=0; i<arguments.length; i++){
+            //只有是数字，才会进行累加求和；
+            arguments[i]=Number(arguments[i]);
+            //if条件中，只有为真，才能走if条件；
+            //!用来取反的；
+            if(!isNaN(arguments[i])){//当为有效数字的时候，才进行累加；
+                //console.log(arguments[i])
+                total+=arguments[i];
+            }
+
+        }
+        return total;//6;
+    }
+    var res=sum(1,2,3,'3','3px');
+    console.log(res)
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

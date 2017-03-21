@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>圆梦源：勿忘初心，方得始终</title>
+    <style>
+        div{
+            font-size: 30px;
+        }
+    </style>
+</head>
+<body>
+<div class="div-1">内容1</div>
+<div class="div-2">内容2</div>skdjflksdjfklsjf
+<div class="div-3">内容3</div>
+<div class="div-4">内容4</div>
+</body>
+<script>
+    var aDiv=document.getElementsByTagName('div');
+    //需求：获取 当前元素 的 上一个哥哥元素；
+    /*
+    * 参数：当前元素 curEle: currentElement
+    * 返回值：上一个哥哥元素
+    * */
+    console.log(prev(aDiv[2]).innerHTML);
+    function prev(curEle){
+        //1.判断，如果对象支持高级属性，直接使用系统提供的高级属性
+        if(curEle.previousElementSibling){
+            return curEle.previousElementSibling;//1）返回值 2）阻断程序执行
+        }
+        var pre=curEle.previousSibling; //上一个哥哥节点； null || 元素节点了
+        //循环的条件，上一个哥哥节点，必须是个节点，并且不是元素节点；
+        while(pre && pre.nodeType !== 1){
+            pre = pre.previousSibling;
+        }
+        return pre;
+    }
+    /*//想判断一个元素身上，是否有某个属性：1）"属性名" in 对象 2)对象.属性名
+    //alert('previousElementSibling' in aDiv[2]);
+    //alert(aDiv[2].previousElementSibling)*/
+</script>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+

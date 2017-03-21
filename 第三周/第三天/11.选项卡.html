@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+            list-style: none;
+        }
+        .wrap{
+            width: 453px;
+            height: 300px;
+            margin:100px auto;
+        }
+        li{
+            border: none;
+        }
+        .wrap ul{
+            width: 100%;
+            overflow: hidden;
+        }
+        .wrap ul li{
+            width: 150px;
+            height: 50px;
+            text-align: center;
+            line-height: 50px;
+            float: left;
+            background: #aaa;
+        }
+        .wrap ul li.active{
+            background: lightblue;
+        }
+        .wrap ul>li+li{
+            border-left:1px solid #ccc;
+        }
+        .wrap div{
+            width: 100%;
+            height: 250px;
+            line-height: 250px;
+            text-align: center;
+            font-size: 20px;
+            background: lightblue;
+            display: none;
+        }
+        .wrap div.show{
+            display:block; /*block；inline； inline-block;flex:弹性布局*/
+        }
+    </style>
+</head>
+<body>
+<div class="wrap" id="wrap">
+    <ul>
+        <li class="active">javascript</li>
+        <li>angularJS</li>
+        <li>VUEJS</li>
+    </ul>
+    <div class="show">javascript内容介绍</div>
+    <div>angularJS内容介绍</div>
+    <div>VUEJS内容介绍</div>
+</div>
+<script>
+//获取元素
+    var oWrap=document.getElementById('wrap');
+    var aBtn=oWrap.getElementsByTagName('li');
+    var aDiv=oWrap.getElementsByTagName('div');
+    //点击按钮的时候，让所有按钮都变灭，就让当前按钮变亮
+//思路1：自定义属性：把正确的i值保存在元素的私有属性上；
+//思路2：闭包：把正确的i值保存在自己的私有作用域中；
+    for(var i=0; i<aBtn.length; i++){
+        (function(index){
+            aBtn[index].onclick=function(){
+                //在里面只能用index;
+                for(var i=0; i<aBtn.length; i++){
+                    aBtn[i].className='';
+                    aDiv[i].className='';
+                }
+                //循环，是为了操作一大堆的；如果想单独操作某个元素，必须在循环外面
+                /*this.className='active';
+                aDiv[index].className='show';*/
+                aBtn[index].className='active';
+                aDiv[index].className='show';
+            }
+        })(i);
+    }
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+

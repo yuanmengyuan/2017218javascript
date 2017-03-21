@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        html,body{
+            width: 100%;
+            height: 100%;
+        }
+        /*这里的遮罩层是"相对定位"*/
+        .shadow{
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,.8);
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+        .shadow .login{
+            width: 200px;
+            height: 100px;
+            position: absolute;
+            background: #fff;
+            left: 50%;
+            top: 50%;
+            margin-left: -100px;
+            margin-top: -50px;
+        }
+    </style>
+</head>
+<body>
+<div class="shadow">
+    <div class="login">我是一个登录弹框</div>
+</div>
+</body>
+</html>

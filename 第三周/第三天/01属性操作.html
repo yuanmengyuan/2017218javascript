@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<div id="div1" class="class1" index="0" style="height: 200px;background: red"></div>
+<script>
+    //获取到这个元素，才能操作这个元素的各个属性；
+    var oDiv1=document.getElementById('div1');
+    var oDiv2=document.getElementsByTagName('div')[0];
+    //操作属性，两种方式：1）通过"." 2）中括号[""]，注意中括号里面一定要加双引号""
+//    alert(oDiv1["id"])
+    //如果一个变量没有被定义过，使用的时候，就会报错：xxx is not defined;
+    //如果元素身上的属性没有的话，拿到就是undefined;属性不存在不会报错；
+    //Cannot read property 'index' of null:出现这种错误的原因，因为元素获取失败；
+    //当页面加载的时候，系统会默认把body中元素身上它不认识的属性屏蔽掉；页面在加载过程中，系统只会检查一次；所以，我们可以等到页面加载完成后，通过JS来给元素添加自定义属性；
+     oDiv1.index=123;
+    alert(oDiv1.id);
+    oDiv1.id='leilei';
+    alert(oDiv1.id);
+
+</script>
+</body>
+</html>

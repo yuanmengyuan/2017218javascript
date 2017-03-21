@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>圆梦源：勿忘初心，方得始终</title>
+</head>
+<body>
+<script>
+    //当我们参数不确定的时候，不建议用形参，建议用arguments；
+    //函数自带的参数机制：arguments；
+    function sum(){
+        //arguments：1）可以拿到所有的实参 2）arguments.callee 函数本身 3)arugments.length长度
+        var total=0;
+        for(var i=0; i<arguments.length; i++){
+            //必须是有效数字才进行累加
+            if(!isNaN(arguments[i])){
+                total+=Number(arguments[i]); //'333'
+            }
+        }
+        return total;
+    }
+    sum(1,2,3,4,5,'333',4,5,5,6,6,7);
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+

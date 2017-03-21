@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        input{
+            width: 100px;
+            height: 40px;
+            font-size: 30px;
+        }
+    </style>
+</head>
+<body>
+<input type="button" value="按钮1"/>
+<input type="button" value="按钮2"/>
+<input type="button" value="按钮3"/>
+<input type="button" value="按钮4"/>
+</body>
+<script>
+    //闭包思想：
+    var aBtn=document.getElementsByTagName('input');
+    //点击每个按钮，就要循环操作每个按钮
+    for(var i=0; i<aBtn.length; i++){
+        //alert(i)
+        (function(index){
+            aBtn[index].onclick=function(){
+                alert(index)
+            }
+        })(i);
+    }
+</script>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

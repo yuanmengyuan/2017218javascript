@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<script>
+    //基本数据类型，是对值的引用；
+    /*var a=123;
+    var b=a;
+    b+=10; //b=b+10;
+    alert(b); //133
+    alert(a);//123*/
+    //引用数据类型，是对地址的引用；因为地址指向的是同一个空间，所以操作会受影响；
+    var a={
+        name:'圆梦',
+        age:'20'
+    }
+    var b=a;
+    //对象中添加属性，用的是"."
+    b.sex='gril';
+    console.log(b);//{name:yuanmeng,age:20,sex:gril}
+    console.log(a);//{name:yuanmeng,age:20,sex:gril}
+
+
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+

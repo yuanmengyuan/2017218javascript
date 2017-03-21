@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>圆梦源：勿忘初心，方得始终</title>
+</head>
+<body>
+<script>
+    var ary=[1,2,3,4,1,2,2,3,3,1,1,3,2,3,4];
+    //1.sort排序:先排序，再拿当前项跟后一项进行比较
+    /*ary.sort(function(a,b){return a-b});
+    for(var i=0; i<ary.length; i++){
+        if(ary[i]===ary[i+1]){
+            ary.splice(i,1);
+            i--; //为了放置数组塌陷；
+        }
+    }*/
+    //2.建立新数组：arr2数组中没有的话，就给数组中放；
+    /*var arr2=[];
+    for(var i=0; i<ary.length; i++){
+        if(arr2.indexOf(ary[i])==-1){
+            arr2.push(ary[i]);
+        }
+    }*/
+    //3.拿当前项跟后面每一项进行比较
+    /*for(var i=0; i<ary.length; i++){
+        for(var j=i+1; j<ary.length; j++){
+            if(ary[i]===ary[j]){
+                ary.splice(j,1);
+                j--;
+            }
+        }
+    }*/
+    //4.利用对象不重名的特性
+    /*var obj={};//{1:1,2:2,}
+    for(var i=0; i<ary.length; i++){
+        var cur=ary[i];
+        if(obj[cur]){//重复了
+            ary.splice(i,1);
+            i--;
+        }else{//给对象赋值；
+            obj[cur]=cur; //obj[1]=1; obj.xxx=undefined;
+        }
+    }*/
+    //5.利用对象不重名的特性
+    var obj={};
+    for(var i=0; i<ary.length; i++){
+        var cur=ary[i];
+        if(obj[cur]){//{obj[2]=2}
+            obj[cur]++;//{1:3,2:3}
+        }else{
+            obj[cur]=1; //{1:1,2:1,3:1}
+        }
+    }
+    var ary2=[];
+    for(var attr in obj){
+        ary2.push(Number(attr));
+    }
+
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

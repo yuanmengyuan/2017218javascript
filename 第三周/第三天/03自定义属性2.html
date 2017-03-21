@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<input type="button" value="按钮1"/>
+<input type="button" value="按钮2"/>
+<input type="button" value="按钮3"/>
+<input type="button" value="按钮4"/>
+<script>
+    /*//需求1：点击不同的按钮弹出对应的索引；
+    var aBtn=document.getElementsByTagName('input');
+    for(var i=0; i<aBtn.length; i++){
+        //自定义属性不是变量，所以不需要var
+        aBtn[i].index=i;
+        aBtn[i].onclick=function(){
+            alert(this.index)
+        }
+    }*/
+    //需求2：点击任何一个按钮，所有的按钮都变红；
+    var aBtn=document.getElementsByTagName('input');
+    for(var i=0; i<aBtn.length; i++){
+        aBtn[i].onclick=function(){
+           for(var i=0; i<aBtn.length; i++){
+               aBtn[i].style.background='red';
+           }
+        }
+    }
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+

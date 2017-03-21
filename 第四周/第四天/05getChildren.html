@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>圆梦源：勿忘初心，方得始终</title>
+</head>
+<body>
+<ul>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+</ul>
+<script>
+    //children所有的浏览器都支持；只是有的浏览器获取到的元素不包含注释，有的包含注释(IE7-8包含注释，拿到的值不准)
+    //alert(typeof window.navigator.userAgent)
+    var oUl=document.getElementsByTagName('ul')[0];
+    //需求：获取 当前容器下， 所有子元素
+    console.log(getChildren(oUl).length);
+    function getChildren(parent){
+        if(window.navigator.userAgent.indexOf('MSIE 7.0')==-1 && window.navigator.userAgent.indexOf('MSIE 8.0')==-1 ){
+            return parent.children;
+        }
+        //现获取当前容器下，所有的子节点
+        var aChilds=parent.childNodes;
+        //逐个判断每个子节点是否为元素节点，如果是，就放入数组中
+        var ary=[];
+        for(var i=0; i<aChilds.length; i++){
+            aChilds[i].nodeType==1?ary.push(aChilds[i]):null;
+        }
+        return ary;
+    }
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+

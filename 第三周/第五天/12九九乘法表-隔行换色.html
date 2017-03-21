@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+            list-style: none;
+        }
+        body{
+            font-size: 30px;
+            padding:30px;
+        }
+        body ul li{
+            height:50px;
+            line-height: 50px;
+        }
+        body ul li:nth-of-type(3n){
+            background: lightcyan;
+        }
+        body ul li:nth-of-type(3n+1){
+            background: pink;
+        }
+        body ul li:nth-of-type(3n+2){
+            background: lightgreen;
+        }
+        body ul li:hover{
+            background: purple;
+            color: #ffffff;
+        }
+        body ul li span{
+            display: inline-block;
+            width: 120px;
+            height: 100%;
+        }
+    </style>
+</head>
+<body>
+<ul></ul>
+<script>
+    var oUl=document.getElementsByTagName('ul')[0];
+    var aLi=oUl.getElementsByTagName('li');
+    var str='';
+    //外循环决定了有多少行；
+    for(var i= 1; i<=9; i++){
+        //内循环决定了有多少列；
+        str+='<li>'
+        for(var j=1;j<=i; j++){
+            str+='<span>'+j+'*'+i+'='+j*i+'</span>';
+        }
+        str+='</li>';
+    }
+    oUl.innerHTML=str;
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        /*这里的遮罩层是个固定定位；*/
+        .shadow{
+            position: fixed;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.8);
+            display: flex;
+        }
+        /*display:flex必须配合margin:auto 才能实现左右上下都居中*/
+        .login{
+            width: 200px;
+            height: 100px;
+            background: #ffffff;
+            margin:auto;
+        }
+    </style>
+</head>
+<body>
+<div class="shadow">
+    <div class="login"></div>
+</div>
+</body>
+</html>

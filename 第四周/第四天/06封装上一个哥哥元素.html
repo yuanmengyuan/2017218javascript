@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>圆梦源：勿忘初心，方得始终</title>
+</head>
+<body>
+<div class="div-1">我是div1</div>
+<div class="div-2">我是div2</div>
+<div class="div-3">我是div3</div>
+<div class="div-4">我是div4</div>
+<script>
+    var aDiv=document.getElementsByTagName('div');
+    //需求：获取 当前元素 的 上一个哥哥元素 ；
+    //需求：获取 当前元素 的 下一个弟弟元素 ；
+   // console.log(prev(aDiv[0]))
+    function prev(curEle){
+        //IE6-8下不支持这个属性，undefined-》false
+        if(curEle.previousElementSibling){
+            return curEle.previousElementSibling;
+        }
+        //求上一个哥哥节点
+        var pre=curEle.previousSibling; //null 或 元素节点
+        while(pre && pre.nodeType!=1){
+            pre=pre.previousSibling;
+        }
+        return pre;
+    }
+    function preAll(curEle){
+        //先判断有没有第一个哥哥；
+        var pre=prev(curEle);
+        var ary=[];
+        while(pre){
+            ary.unshift(pre);
+            pre=prev(pre);// 如果有第一个哥哥，就继续找他的哥哥；
+        }
+        return ary;
+    }
+    //console.log(next(aDiv[0]))
+    console.log(preAll(aDiv[3]))
+    function next(curEle){
+        if(curEle.nextElementSibling){
+            return curEle.nextElementSibling;
+        }
+        var nex=curEle.nextSibling;
+        while(nex && nex.nodeType!=1){
+            nex=nex.nextSibling;
+        }
+        return nex;
+    }
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

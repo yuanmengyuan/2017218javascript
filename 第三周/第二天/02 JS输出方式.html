@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        div{
+            width: 200px;
+            height: 200px;
+            background: #ff0000;
+            font-size: 40px;
+
+        }
+    </style>
+</head>
+<body>
+<div id="div1"></div>
+<script>
+   // alert(123)
+   /*var res=confirm('确定要删除？');
+    alert(res);*/
+    //打印到控制台；
+    //console.log('今天风好大')
+    var oDiv=document.getElementById('div1');
+    //console.log(oDiv);//可以打印出我们获取成功的元素；
+    //console.dir(oDiv);//console.dir()可以打印出元素身上的属性和方法；
+    oDiv.innerHTML='可以打印出我们获取成功的元素';
+    oDiv.innerHTML=12345678;
+    //数组，用中括号;数组中的各项用逗号分开；
+    var ary=['张三','李四','王五'];
+   //对象，用大括号；对象中的各项，都是键值对，各个键值对之间，用逗号分开；
+    var object={
+        name:'杜拉拉',
+        age:18,
+        sex:'gril'
+    }
+    var ary2=[
+        {
+            name:'杜拉拉',
+            age:18,
+            sex:'gril'
+        },
+        {
+            name:'王伟',
+            age:38,
+            sex:'boy'
+        }
+    ];
+    console.table(ary2);
+
+
+
+
+
+
+
+
+
+
+
+
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

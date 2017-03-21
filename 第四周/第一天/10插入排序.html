@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>圆梦源：勿忘初心，方得始终</title>
+</head>
+<body>
+<script>
+    var ary=[19,28,8,4,24,3,12,2];
+    function insertSort(arr){
+        //1.创建一个左边的数组；
+        var left=arr.splice(0,1);
+        //2.遍历ary数组，分别跟left数组从后往前比较
+        for(var i=0; i<arr.length; i++){
+            var rightItem=arr[i];
+            for(var j=left.length-1; j>=0;){
+                if(rightItem<left[j]){
+                    j--;
+                    if(j==-1){//比到头了
+                        left.unshift(rightItem);
+                    }
+                }else{//插入到左手这张牌的下一项的前面
+                    left.splice(j+1,0,rightItem);
+                    break;
+                }
+            }
+        }
+        return left;
+    }
+    var res=insertSort(ary);
+    console.log(res)
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,134 @@
+@charset "UTF-8";
+/*css 初始化 */
+html, body, ul, li, ol, dl, dd, dt, p, h1, h2, h3, h4, h5, h6, form, fieldset, legend, img { margin:0; padding:0; }
+fieldset, img,input,button { border:none; padding:0;margin:0;outline-style:none; }
+ul, ol { list-style:none; }
+input { padding-top:0; padding-bottom:0; font-family: "SimSun","宋体";}
+select, input { vertical-align:middle;}
+select, input, textarea { font-size:12px; margin:0; }
+textarea { resize:none; } /*防止拖动*/
+img {border:0;	vertical-align:middle; }  /*  去掉图片底侧默认的3像素空白缝隙 display:block也可以去掉*/
+table { border-collapse:collapse; }
+body {
+    font:12px/150% Arial,Verdana,"\5b8b\4f53";
+    color:#666;
+    background:#fff
+}
+.clearfix:before,.clearfix:after {
+    height:0;
+    content:"";
+    display:table;
+}
+.clearfix:after{clear:both;}
+.clearfix{
+    *zoom:1;/*IE/7/6*/
+}
+a {color:#666; text-decoration:none; }
+a:hover{color:#C81623;}
+h1,h2,h3,h4,h5,h6 {text-decoration:none;font-weight:normal;font-size:100%;}
+s,i,em{font-style:normal;text-decoration:none;}
+/*s删除线 i,em倾斜*/
+.col-red{color: #C81623!important;}
+
+/*公共类*/
+.w {  /*版心 提取 */
+    width: 1224px;
+    margin:0 auto;
+}
+.fl {
+    float:left
+}
+.fr {
+    float:right
+}
+/*文本左对齐*/
+.al {
+    text-align:left
+}
+.ac {
+    text-align:center
+}
+.ar {
+    text-align:right
+}
+/*隐藏*/
+.hidden {
+    display:none
+}
+/*a链接导航菜单*/
+.nav-list-all>a{
+    padding:0 6px;
+    color: #b0b0b0;
+}
+.nav-list-all>a:hover{
+    color: #ffffff;
+}
+.nav-list-all>a:first-child{
+    padding-left:0;
+}
+.nav-list-all>a+a{
+    border-left:1px solid #b0b0b0;
+}
+/*li产品列表*/
+.product-list li{
+    text-align: center;
+    width: 193px;
+    padding:40px 20px;
+    background: #fafafa;
+    border-top:1px solid;
+    float: left;
+}
+.product-list li+li{
+    margin-left: 14px;
+}
+.product-list li img{
+    width: 160px;
+    margin:0 0 20px 0;
+}
+.product-list .p1{
+    font-size: 14px;
+    color: #333;
+    height:24px;
+}
+.product-list .p2{
+    font-size: 12px;
+    color: #b8b8b8;
+    height: 32px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+.product-list .p3{
+    font-size: 14px;
+    color: #ff6709;
+}
+/*边框颜色*/
+.product-list li.orange{
+    border-color: #ffac13;
+}
+.product-list li.green{
+    border-color: green;
+}
+.product-list li.blue{
+    border-color: blue;
+}
+.product-list li.red{
+    border-color: red;
+}
+.product-list li.sky{
+    border-color: #00c0a5;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+

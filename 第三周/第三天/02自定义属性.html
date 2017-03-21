@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        input{
+            width: 100px;
+            height: 50px;
+            text-align: center;
+            line-height: 50px;
+            font-size: 30px;
+        }
+    </style>
+</head>
+<body>
+<!--input[type=button,value=按钮$]*4-->
+<input type="button" value="按钮1"/>
+<input type="button" value="按钮2"/>
+<input type="button" value="按钮3"/>
+<input type="button" value="按钮4"/>
+<script>
+    /*Btn[0].index=0;
+    aBtn[1].index=1;
+    aBtn[2].index=2;
+    aBtn[3].index=3;*/
+    //点击每个按钮，弹出对应的索引；
+    var aBtn=document.getElementsByTagName('input');
+    //循环由四部分构成:1)定义 2）条件 3）语句 4）自增
+    for(var i=0; i<aBtn.length; i++){
+        //遍历每个按钮，并给每个按钮添加点击事件
+        //这里的i值都是正确的
+        aBtn[i].index=i;
+        aBtn[i].onclick=function(){
+            //事件发生时，函数中的i值，永远都是错的；都是循环中的最大值；
+            alert(this.index)
+        }
+    }
+    alert('循环结束了')
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+

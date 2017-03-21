@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>圆梦源：勿忘初心，方得始终</title>
+</head>
+<body>
+<script>
+    var strCode='abcdefghijk';
+    /*//for循环
+    var ary=[];
+    for(var i=0; i<4; i++){
+        var rnd=Math.round(Math.random()*10);
+        var str=strCode[rnd];
+        //如果数组中没有的话，就添加进数组，如果有的话，i--
+        if(ary.indexOf(str)==-1){//数组没有，插入
+            ary.push(str)
+        }else{
+            i--;
+        }
+    }*/
+    //while循环
+    var ary=[];
+    while(ary.length<4){
+        var rnd=Math.round(Math.random()*10);
+        var str=strCode[rnd];
+        if(ary.indexOf(str)==-1){
+            ary.push(str);
+        }
+    }
+    console.log(ary)
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+

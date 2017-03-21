@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        li{
+            height: 50px;
+            font-size: 30px;
+        }
+    </style>
+</head>
+<body>
+<ul>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+</ul>
+<script>
+    //1.for循环
+    //1)元素集合的循环 2） 数组的循环／遍历 3）字符串....只要当前这个对象，有length属性，都可以循环-》说明，for循环主用于次数／长度固定的情况下；
+    var aLi=document.getElementsByTagName('li');//htmlCollection元素集合
+    var ary=['javascript','nodeJS','html5+css3','微信小程序'];
+    var str='代码快乐';
+    for(var i=0; i<aLi.length; i++){
+        //通过style操作的都是行内样式；
+        aLi[i].style.backgroundColor='red';
+        aLi[i].style.marginBottom='10px'; //一定要加单位，否则，无法设置成功；
+        //修改内容通过innerHTML;
+        //aLi[i].innerHTML='12244556'
+        //aLi[i].innerHTML=ary[i];
+        aLi[i].innerHTML=str[i];
+    }
+    //需求：把数组里面的每一项，分别添加到元素集合中；
+    //2.for in 循环:用于对象的遍历；
+    var a={name:'ymy',age:1,sex:'gril'}
+    var b={};
+    //需求：如何让b的内容跟a一样，但是彼此互不干扰；
+    for(var attr in a){
+        //console.log(attr+':'+a[attr])
+        b[attr]=a[attr];
+    }
+    b.insterest='12345';
+    console.log(a)
+    console.log(b)
+    //3.while 循环
+    //4.do while 循环
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

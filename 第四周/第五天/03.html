@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>圆梦源：勿忘初心，方得始终</title>
+    <style>
+        li{
+            height: 40px;
+        }
+    </style>
+</head>
+<body>
+<ul id="ul1">
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+</ul>
+<script>
+    var oUl=document.getElementById('ul1');
+    var aLi=oUl.getElementsByTagName('li');
+    var oldbg=null;
+    for(var i=0; i<aLi.length; i++){
+        if(i%2==0){
+            aLi[i].style.background='red';
+        }else{
+            aLi[i].style.background='green';
+        }
+        aLi[i].onmouseover=function(){
+            oldbg=this.style.background;
+            this.style.background='pink';
+        };
+        aLi[i].onmouseout=function(){
+            this.style.background=oldbg;
+        };
+        (function(index){
+            aLi[i].onclick=function(){
+                alert('我是第'+(index+1)+'个li')
+            }
+        })(i);
+    }
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+

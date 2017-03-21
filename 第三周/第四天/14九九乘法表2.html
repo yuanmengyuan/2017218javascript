@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        body{
+            font-size: 30px;
+            padding:30px;
+        }
+        ul li{
+            height:40px;
+            line-height: 40px;
+        }
+        ul li.bg0{
+            background: lightgreen;
+        }
+        ul li.bg1{
+            background: lightgoldenrodyellow;
+        }
+        ul li.bg2{
+            background: lightblue;
+        }
+        ul li.change{
+            background: purple;
+            color: #ffffff;
+        }
+        ul li span{
+            float: left;
+            width: 120px;
+            height: 100%;
+        }
+    </style>
+</head>
+<body>
+<ul>
+    <!--<li>
+        <span></span>
+    </li>-->
+</ul>
+<script>
+    var oUl=document.getElementsByTagName('ul')[0];
+    var aLi=oUl.getElementsByTagName('li');
+    var str='';
+    for(var i=1; i<=9; i++){ //i的循环决定了行数
+        str+='<li>'
+        for(var j=1; j<=i; j++){
+            str+='<span>'+j+'*'+i+'='+j*i+'</span>'
+        }
+        str+='</li>';
+    }
+    oUl.innerHTML=str;
+    // 隔行换色用%的思想；
+    for(var i=0; i<aLi.length; i++){
+        aLi[i].className='bg'+i%3;
+        //我们可以把以后需要的值，保存在自定义属性上，以后在再用，直接通过属性调用即可；
+        aLi[i].oldbg='bg'+i%3;
+        //添加鼠标移入移出的效果
+        aLi[i].onmouseover=function(){
+            //所有事件中的i，都是错的，因为等事件发生的时候，外面循环早已结束；
+            this.className='change';
+        };
+        aLi[i].onmouseout=function(){
+            //所有事件中的i，都是错的，因为等事件发生的时候，外面循环早已结束；
+            this.className=this.oldbg;
+        }
+    }
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+

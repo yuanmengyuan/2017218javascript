@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+            list-style: none;
+        }
+        .wrap{
+            width: 453px;
+            height:300px;
+            margin:100px auto;
+        }
+        .wrap ul:after{
+            display: block;
+            height: 0;
+            content: '';
+            clear: both;
+        }
+        .wrap ul li{
+            width: 150px;
+            height: 40px;
+            line-height: 40px;
+            float: left;
+            background: #ccc;
+            text-align: center;
+        }
+        .wrap ul li.current{
+            background: lightblue;
+        }
+        .wrap ul li +  li{
+            border-left:1px solid #aaa;
+        }
+        .wrap div{
+            width: 100%;
+            height: 100%;
+            display: none;
+            background: lightblue;
+            text-align: center;
+            line-height: 260px;
+        }
+        .wrap div.show{
+            display: block;
+        }
+    </style>
+</head>
+<body>
+<div class="wrap" id="wrap">
+    <ul>
+        <li class="current">按钮1</li>
+        <li>按钮2</li>
+        <li>按钮3</li>
+    </ul>
+    <div class="show">内容1</div>
+    <div>内容2</div>
+    <div>内容3</div>
+</div>
+<script>
+    var oWrap=document.getElementById('wrap');
+    var aBtn=oWrap.getElementsByTagName('li');
+    var aDiv=oWrap.getElementsByTagName('div');
+    //点击每个按钮的时候，让所有按钮都灭，让当前按钮亮；也让所有内容框都灭，就让当前按钮对应的内容框亮；
+    for(var i=0; i<aBtn.length; i++){
+        //当i值刚有的时候，我们就把正确的i值保存到私有作用域中；
+        (function(index){
+            aBtn[index].onclick=function(){
+                for(var i=0; i<aBtn.length; i++){
+                    aBtn[i].className='';
+                    aDiv[i].className='';
+                }
+                aBtn[index].className='current';
+                aDiv[index].className='show';
+            }
+        })(i);
+    }
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<script>
+    var strCode='abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
+    //需求：求四个不重复的随机验证码；
+    var ary=[];
+    //只有数组的长度小于4的时候，才会有抓去的行为，否则，停止抓取；
+    while(ary.length<4){
+        var rnd=Math.round(Math.random()*61);//2
+        //如果数组中，没有这个字符的话，再把它放入数组；
+        if(ary.indexOf(strCode[rnd])==-1){
+            ary.push(strCode[rnd]);
+        }
+    }
+    document.write(ary);
+
+
+
+
+
+
+
+</script>
+</body>
+</html>

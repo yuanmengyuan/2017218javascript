@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        div{
+            width: 200px;
+            height: 200px;
+            background: #ff0000;
+            font-size: 30px;
+            color: #ffffff;
+        }
+    </style>
+</head>
+<body>
+<div>12345</div>
+<script>
+    var oDiv=document.getElementsByTagName('div')[0];
+    //1.取值：我想拿到div的内容；请书写一个函数，把这个值给我；
+    function get(ele){
+        return ele.innerHTML;
+    }
+    var res=get(oDiv);
+    console.log(res)
+    //2.设置：请书写一个函数，把div的内容，改为:'圆梦源前端开发'；
+    function set(ele){
+        ele.innerHTML='圆梦源前端开发';
+        return;
+    }
+    var res=set(oDiv);//因为set()方法中没有写返回值；所以，函数调用后，拿到的返回值为undefined;
+    console.log(res)
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+

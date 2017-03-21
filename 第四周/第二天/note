@@ -1,0 +1,73 @@
+- Math常用的方法
+    + Math.round() 四舍五入
+    + Math.floor() 向下取整
+    + Math.ceil() 向上取整
+    + Math.abs() 绝对值
+    + Math.sqrt() 开平发
+    + Math.pow() 幂次方
+    + Math.max() 最大值
+    + Math.min() 最小值
+    + Math.random() 0-1之间的随机小数，含0不含1；
+- 字符串常用的方法：
+    + 通过下标找对应的字符；
+        + charAt() 通过下标找对应的字符
+        + charCodeAt() 通过下标找对应的字符编码；
+    + 通过字符找下标
+        + 从前往后找：indexOf()
+        + 从后往前找：lastIndexOf()
+    + 字符串截取
+        + slice(n,m) 从索引n截取到索引m；不包含m;包前不包后；但是，slice可以取负值；
+        + substr(n,m) 从索引n开始，截取m个；
+        + substring(n,m) 功能一样：从索引n截取到索引m；不包含m
+    + 字符串转数组；
+        + split(切割形式)
+    + 转大小写
+        + toUpperCase() 转大写
+        + toLowerCase() 转小写
+    + 跟正则配合的字符串方法；
+        + split()
+        + match() 找到的情况下，把你要找的内容拎出来；找不到返回null;
+        + replace('','') 替换；
+        + search();找到的情况下，返回对应内容的索引；找不到的返回-1；
+- 其他数据类型转为number数据类型：
+    + 一个严格转换Number()，两个非严格转换parseInt() parseFloat()
+    + 转换失败是NaN
+    + []-》默认通过toString()转成空字符串-》Number("")-》0
+    + null默认转为0；null+10=10; undefined+10=NaN;
+    + false->0; true->1;
+- 隐式数据类型比较：
+    + 字符串==数字   都转成数字 ""==0
+    + 布尔值==数字   都转成数字  0==![]  0==false 1==true
+    + null==数字    null转成0
+    + 字符串==布尔   都转成数字     ""==false
+    + 字符串==对象   默认都转成字符串
+    + 数字==对象     转成数字      0==[]
+    + false=[]      布尔和对象都转成数字 false==[];
+    + null==undefined true
+    + NaN 跟谁都不相等；包括他自己；
+- 定时器：
+    + var timer=setInterval(callback,毫秒数) 隔一段事件爆发一次；
+        + 关闭定时器：clearInterval(关闭定时器的名字);
+    +
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>圆梦源：勿忘初心，方得始终</title>
+    <style>
+        body{
+            font-size: 50px;
+        }
+    </style>
+</head>
+<body>
+<script>
+    /*var ary=[1,2,3];
+    var ary2=new Array(1,2,3);
+    var str='蕾蕾';
+    var str2=new String('蕾蕾')*/
+    var oDate=new Date();
+    console.dir(oDate)
+    /*console.log(oDate.getFullYear()) //年
+    console.log(oDate.getMonth()+1) //月
+    console.log(oDate.getDate())//日
+    console.log(oDate.getDay()) //星期四*/
+    console.log(oDate.getHours())
+    console.log(oDate.getMinutes())
+    console.log(oDate.getSeconds())
+    var str=oDate.getHours()+'：'+oDate.getMinutes()+'：'+oDate.getSeconds();
+    document.body.innerHTML=str;
+</script>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>圆梦源：勿忘初心，方得始终</title>
+</head>
+<body>
+<script>
+    //'name=圆梦&age=8&interest=code' 把他变成一个对象{name:圆梦,interest:code}，请封装一个方法
+    //需求：把字符串转成对象地址
+    /*
+    * 1. 参数：字符串
+    * 2. 返回值：对象
+    * */
+    var str='name=圆梦&age=8&interest=code';
+    function str2url(str){
+        //先把字符串切成数组；
+        var ary=str.split('&');
+        var obj={};
+        //遍历数组中的每一项，继续切；
+        for(var i=0; i<ary.length; i++){
+            var ary2=ary[i].split('=');
+            obj[ary2[0]]=ary2[1];
+        }
+        return obj;
+    }
+    var res=str2url(str);
+    console.log(res);
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+

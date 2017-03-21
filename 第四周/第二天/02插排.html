@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>圆梦源：勿忘初心，方得始终</title>
+</head>
+<body>
+<script>
+    var ary=[12,4,2,34,56,8,17];
+    function insertSort(arr){
+        //1.建立left数组
+        var left=arr.splice(0,1);
+        //2.拿arr中的每一项跟left数组从后往前的比较；
+        for(var i=0; i<arr.length; i++){
+            for(var j=left.length-1; j>=0;){
+                if(arr[i]<left[j]){//右手牌比左手牌小的话；继续往前比较
+                    j--;
+                    if(j==-1){//说明比到头了
+                        left.unshift(arr[i])
+                    }
+                }else{//右手牌比左手牌大；
+                    left.splice(j+1,0,arr[i]);
+                    break;
+                }
+            }
+        }
+        return left;
+    }
+    var res=insertSort(ary);
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+

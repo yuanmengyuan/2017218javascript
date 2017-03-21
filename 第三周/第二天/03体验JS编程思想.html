@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        .wrap{
+            width: 300px;
+            height: 140px;
+            overflow: hidden;
+            margin:100px auto;
+        }
+        #div1{
+            width: 200px;
+            height: 40px;
+            background: darkblue;
+            position: relative;
+            overflow: hidden;
+        }
+        #div2{
+            width: 300px;
+            height: 100px;
+            background: gray;
+            text-align: center;
+            line-height: 100px;
+            color: #fff;
+            position: absolute;
+            left:0px;
+            top:40px;
+        }
+    </style>
+</head>
+<body>
+<div class="wrap">
+    <div id="div1">
+        购物车
+        <div id="div2">暂时没有购物内容</div>
+    </div>
+</div>
+
+<script>
+    //js就会用来操作css的；
+    //找到谁？给谁加什么事件？要做什么事情？
+     var oDiv1=document.getElementById('div1');
+     var oDiv2=document.getElementById('div2');
+    var arr=['1','2','3','4'];//array 数组
+    var bOk=false; //boolean;
+
+    //需求：鼠标移入div1的时候，div2显示；鼠标移出div1的时候，div2隐藏；
+    //1. 高度：div2的高度为0； 移入后高度为100;移出时高度0；
+    /*oDiv1.onmouseover=function(){
+        oDiv2.style.height='100px';
+    };
+    oDiv1.onmouseout=function(){
+        oDiv2.style.height=0;
+    };*/
+    //2. display:block显示，none，隐藏；
+    /*oDiv1.onmouseover=function(){
+        oDiv2.style.display='block';
+    };
+    oDiv1.onmouseout=function(){
+        oDiv2.style.display='none';
+    };*/
+    //3. 透明度：rgba(); opacity()
+    /*oDiv1.onmouseover=function(){
+        oDiv2.style.opacity=1;
+        oDiv2.style.filter='alpha(opacity=100)';
+    };
+    oDiv1.onmouseout=function(){
+        oDiv2.style.opacity=0;
+        oDiv2.style.filter='alpha(opacity=0)';
+    };*/
+    //4. left和top;
+    /*oDiv1.onmouseover=function(){
+        oDiv2.style.left=0;
+    };
+    oDiv1.onmouseout=function(){
+        oDiv2.style.left='-400px';
+    };*/
+
+    //5. margin-left和 margin-top;
+    //6. overflow:hidden和visible;
+    /*oDiv1.onmouseover=function(){
+        oDiv1.style.overflow='visible';
+    };
+    oDiv1.onmouseout=function(){
+        oDiv1.style.overflow='hidden';
+    }*/
+    oDiv1.onmouseover=function(){
+        oDiv1.style.backgroundColor='red';
+//  css:background-color; JS:backgroundColor;
+    }
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<div id="div1">1234</div>
+<script>
+    //属性和方法的区别：属性没括号，方法有括号；
+    //1.通过alert()这个方法；
+    //alert('我是alert')
+    //2.confirm 3. console.log();
+    /*//定义变量通过：var 变量名 =
+    var res=confirm('是否要删除？');//通过变量res来接受函数confirm()执行完成的返回值；
+    console.log(res);
+    //confirm()有两个返回值：确定：true; 取消：false；*/
+    //4. document.write:注意，如果window.onload页面加载完成后执行document.write会清空页面；
+    /*window.onload=function(){
+        document.write('我是页面输出')
+    }*/
+    //5. console.dir();可以打印出对象身上的属性和方法；
+    var oDiv=document.getElementById('div1');
+//    定义变量oDiv 文档   获取 元素 通过 ID 'div1'
+    console.dir(oDiv);//console.dir() 可以打印出对象身上的属性和方法；
+    //6. 可以通过innerHTML这个属性给元素添加内容；等号的作用用来赋值；
+    oDiv.innerHTML="哦，要下课了，今天考试没过的，不要睡觉啦"
+    //思考：console.table();
+
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+

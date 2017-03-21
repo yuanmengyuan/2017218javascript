@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>圆梦源：勿忘初心，方得始终</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .div1{
+            width: 200px;
+            height: 200px;
+            background: #ff0000;
+            margin:10px;
+        }
+    </style>
+</head>
+<body>
+<div id="div1" class="div_class">
+    <p>我是p标签</p>
+</div>
+<script>
+    //1.找到被克隆的元素
+    var oDiv=document.getElementById('div1');
+   /* oDiv.index=123;
+    alert(oDiv.index)*/
+    //alert(oDiv.getAttribute('index'));
+    oDiv.setAttribute('index',889);
+    //alert(oDiv.index)
+    alert(oDiv.getAttribute('index'))
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<script>
+    //5种，字符串string 数字number 布尔值boolean undefined null;
+    //undefined:1)未定义 2）没有设置返回值的时候，返回的是undefined 3）对象身上的属性不存在的时候，是undefined;
+    //对象身上都有两个特征：属性和方法；
+    var obj={
+        name:'mydream',
+        age:18
+    };
+    obj.age=28;//修改：如果添加一个属性，而添加的这个属性，在对象身上已经存在的话，属于修改；
+    obj.sex='你猜';//添加：如果添加的这个属性在对象身上不存在的话，就属于添加属性；
+    obj.name=undefined;//假删除
+    //delete obj.name //真删除
+    alert(obj.age)
+
+
+</script>
+</body>
+</html>

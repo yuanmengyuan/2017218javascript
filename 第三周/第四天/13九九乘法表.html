@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        body{
+            font-size: 20px;
+            padding:30px;
+        }
+        ul li{
+            height: 40px;
+            line-height: 40px;
+        }
+        ul li.bg0{
+            background: lightblue;
+        }
+        ul li.bg1{
+            background: pink;
+        }
+        ul li.bg2{
+            background: lightgreen;
+        }
+        ul li.changeBg{
+            background:purple;
+            color: #ffffff;
+        }
+        ul li span{
+            width: 100px;
+            height: 100%;
+            float: left;
+        }
+    </style>
+</head>
+<body>
+<ul id="ul">
+</ul>
+<script>
+    var oUl=document.getElementById('ul');
+    var aLi=oUl.getElementsByTagName('li');//DOM映射
+    var str='';
+    //双重循环嵌套，通过自己打印出数字，找规律+ 字符串拼接
+    for(var i=1; i<=9; i++){//横向i的循环，决定了有多少个li;
+        str+='<li>';
+        for(var j=1; j<=i; j++){//纵向j的循环，决定了有多少个span;
+            str+='<span>'+j+'*'+i+'='+i*j+'</span>'
+        }
+        str+='</li>';
+    }
+    oUl.innerHTML=str;
+    //存自己的值，一般存在自定义属性上；
+    //对所有li进行隔行换色； //鼠标移入移出的效果
+    for(var i=0; i<aLi.length; i++){
+        aLi[i].className='bg'+i%3;
+        //把属于自己的颜色，存在自定义属性上；
+        aLi[i].oldbg='bg'+i%3;
+        //onmouseover鼠标移入的事件； onmouseout鼠标移出的事件；
+        aLi[i].onmouseover=function(){
+            this.className='changeBg';
+        };
+        //移出的时候，恢复之前的颜色；
+        aLi[i].onmouseout=function(){
+            this.className=this.oldbg;
+        }
+    }
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+

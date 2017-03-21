@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>圆梦源：勿忘初心，方得始终</title>
+    <style>
+        div{
+            font-size: 30px;
+        }
+        div span{
+            font-size: 50px;
+            color: #ff0000;
+        }
+    </style>
+</head>
+<body>
+<div>距离下课还有 <span>00：00：00</span></div>
+<script>
+    var oSpan=document.getElementsByTagName('span')[0];
+    function toDou(n){
+        return n>=0 && n<10?'0'+n:''+n;
+    }
+    function countDown(){
+        //1.求未来到现在的毫秒差，并转成秒
+        var s=Math.floor((new Date('2017/3/18 18:00:00')-new Date())/1000);
+        if(s<=0){
+            clearInterval(timer);
+            oSpan.style.color='grey';
+            oSpan.innerHTML='获取已结束';
+            //oSpan.innerHTML='00：00：00';
+            return;
+        }
+        //2.利用%进行秒转换 24*3600=86400
+        var d=Math.floor(s/86400);
+        s%=86400;
+        var h=Math.floor(s/3600);
+        s%=3600;
+        var m=Math.floor(s/60);
+        s%=60;
+        oSpan.innerHTML=toDou(d)+'天'+toDou(h)+':'+toDou(m)+':'+toDou(s);
+    }
+    countDown();
+    var timer=setInterval(countDown,1000);
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

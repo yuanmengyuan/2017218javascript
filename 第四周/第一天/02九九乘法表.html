@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>圆梦源：勿忘初心，方得始终</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            list-style:none;
+        }
+        ul{
+            margin: 50px;
+        }
+        ul li{
+            height: 40px;
+            line-height: 40px;
+            font-size: 30px;
+        }
+        ul li.bg0{
+            background: pink;
+        }
+        ul li.bg1{
+            background: lightblue;
+        }
+        ul li.bg2{
+            background: lightgreen;
+        }
+        ul li.change{
+            background: purple;
+            color: #ffffff;
+        }
+        ul li span{
+            float: left;
+            width: 120px;
+            height: 40px;
+        }
+    </style>
+</head>
+<body>
+<ul></ul>
+<script>
+    var oUl=document.getElementsByTagName('ul')[0];
+    var aLi=oUl.getElementsByTagName('li');
+    var str="";
+    for(var i=1; i<=9; i++){
+        str+='<li>';
+        for(var j=1; j<=i; j++){
+            str+='<span>'+(j+'*'+i+'='+j*i)+'</span>'
+        }
+        str+='</li>';
+    }
+    oUl.innerHTML=str;
+    //遍历li，进行隔行换色
+    for(var i=0; i<aLi.length; i++){
+        aLi[i].className='bg'+i%3;
+        //在刚有自己颜色的时候，就把属于自己的颜色，存在自定义属性上；以后需要的时候，调用自己的属性即可；
+        aLi[i].bg='bg'+i%3;
+        aLi[i].onmouseover=function(){
+            this.className='change';
+        }
+        aLi[i].onmouseout=function(){
+            this.className=this.bg;
+        }
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+</script>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>圆梦源：勿忘初心，方得始终</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .div1{
+            width: 200px;
+            height: 200px;
+            background: #ff0000;
+            margin:10px;
+        }
+    </style>
+</head>
+<body>
+<div id="div1" class="div_class" leilei="12343">
+    <p>我是p标签</p>
+</div>
+<script>
+    //1.找到被克隆的元素
+    var oDiv=document.getElementById('div1');
+    alert(oDiv.leilei)//undefined;
+    alert(oDiv.getAttribute('leilei'))
+    //2.克隆
+    var oDiv2=oDiv.cloneNode(true);
+   /* oDiv2.id='';*/
+    oDiv2.removeAttribute('id');
+    oDiv2.setAttribute('index',0)
+    oDiv2.setAttribute('id','div2')
+    oDiv2.setAttribute('aaa','bbb')
+   //alert(oDiv2.getAttribute('class'))
+    document.body.appendChild(oDiv2);
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+

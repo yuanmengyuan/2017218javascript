@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<script>
+    //定义一个函数，用function 后面跟的是函数名
+    function fn(){
+        var a=1234;
+    }
+    //检测数据类型：typeof
+    var v=1928304820938403298402938490238409238943;//number
+    v='123'; //string
+    v=false;//boolean
+    v=undefined;//未定义
+    v=null;//现在没有，以后会有。null是一个空对象
+    var ary=[
+            '1234',
+            123455,
+            true,
+            fn,
+            {}
+    ];
+    var re=/\d+/g;
+    var obj={
+        name:'liusan',
+        age:18,
+        sex:'boy',
+        score:60,
+        ary:[1,2,5,6]
+    };
+    var title=document.getElementsByTagName('title')[0];
+    //typeof：虽然可以检测数据类型，但是有局限：所有的对象检测出来都是object;
+
+    alert(typeof title)
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+

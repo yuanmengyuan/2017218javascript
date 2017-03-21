@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>圆梦源：勿忘初心，方得始终</title>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+            list-style: none;
+        }
+        .wrap{
+            width: 453px;
+            height: 300px;
+        }
+        .wrap ul{
+            height: 40px;
+        }
+        .wrap ul li{
+            width: 150px;
+            height: 40px;
+            line-height: 40px;
+            text-align: center;
+            float: left;
+            background: #ccc;
+        }
+        .wrap ul li.current{
+            background: lightblue;
+        }
+        .wrap ul li+li{
+            border-left: 1px solid #999999;
+        }
+        .wrap div{
+            width: 100%;
+            height: 260px;
+            text-align: center;
+            line-height: 260px;
+            display: none;
+            background: lightblue;
+        }
+        .wrap div.show{
+            display: block;
+        }
+    </style>
+</head>
+<body>
+<div class="wrap">
+    <ul>
+        <li class="current">按钮1</li>
+        <li>按钮2</li>
+        <li>按钮3</li>
+    </ul>
+    <div class="show">内容1</div>
+    <div>内容2</div>
+    <div>内容3</div>
+</div>
+
+<script>
+    //点击每个按钮，获取对应的内容框
+    //限定范围的去获取元素；
+    var oWrap=document.getElementsByTagName('div')[0];
+    var aBtn=oWrap.getElementsByTagName('li');
+    var aDiv=oWrap.getElementsByTagName('div');
+    for(var i=0; i<aBtn.length; i++){
+        /*//在i值正确的时候，尽快的放到自定义属性或者闭包中；
+        aBtn[i].index=i;
+        aBtn[i].onclick=function(){
+            //让所有的按钮都变灭；所有的内容框都隐藏；只让当前发生点击事件的这个按钮变亮，并让他对应的div显示
+            for(var i=0; i<aBtn.length; i++){
+                aBtn[i].className='';
+                aDiv[i].className='';
+            }
+            this.className='current';
+            aDiv[this.index].className='show';
+
+        }*/
+        //也可以存在闭包中
+        (function(index){
+            aBtn[index].onclick=function(){
+                for(var i=0; i<aBtn.length; i++){
+                    aBtn[i].className='';
+                    aDiv[i].className='';
+                }
+                aBtn[index].className='current';
+                aDiv[index].className='show';
+
+            }
+        })(i);
+
+    }
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

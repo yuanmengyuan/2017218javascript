@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<script>
+    var ary=[10,20,30,40];
+    var str='123';
+    var obj={};
+    //forEach()用来遍历数组
+    //forEach()有两个参数：1）callback回调函数 2）context:用来改变this指向的
+    //回调函数中有三个参数：1）数组的对应的内容 2）索引 3）原数组
+    //context是用来改变this指向的，可传可不传，如果不传的话，默认this是window；如果传了按照传的来；
+    var res=ary.forEach(function(item,index,input){
+        console.log(this)
+    },obj)
+    console.log(res)
+</script>
+</body>
+</html>

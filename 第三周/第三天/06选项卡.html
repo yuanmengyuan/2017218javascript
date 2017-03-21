@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+            list-style: none;
+        }
+        .wrap{
+            width: 453px;
+            height: 300px;
+            margin:100px auto;
+        }
+        li{
+            border: none;
+        }
+        .wrap ul{
+            width: 100%;
+            overflow: hidden;
+        }
+        .wrap ul li{
+            width: 150px;
+            height: 50px;
+            text-align: center;
+            line-height: 50px;
+            float: left;
+            background: #aaa;
+        }
+        .wrap ul li.active{
+            background: lightblue;
+        }
+        .wrap ul>li+li{
+            border-left:1px solid #ccc;
+        }
+        .wrap div{
+            width: 100%;
+            height: 250px;
+            line-height: 250px;
+            text-align: center;
+            font-size: 20px;
+            background: lightblue;
+            display: none;
+        }
+        .wrap div.show{
+            display:block; /*block；inline； inline-block;flex:弹性布局*/
+        }
+    </style>
+</head>
+<body>
+<div class="wrap" id="wrap">
+    <ul>
+        <li>javascript</li>
+        <li class="active">angularJS</li>
+        <li>VUEJS</li>
+    </ul>
+    <div>javascript内容介绍</div>
+    <div class="show">angularJS内容介绍</div>
+    <div>VUEJS内容介绍</div>
+</div>
+<script>
+    //需求：点击不同的"按钮"，切换到对应的"内容框"
+    //1.获取元素--限定范围的获取元素
+    var oWrap=document.getElementById('wrap');
+    var aBtn=oWrap.getElementsByTagName('li');
+    var aDiv=oWrap.getElementsByTagName('div');
+    //2.点击哪个按钮的时候，让所有的按钮都变灭，就让当前点击的这个按钮变亮；
+    //同时，也让所有的div都隐藏，就让当前按钮对应的div显示；
+    //要操作每个按钮，给其添加点击事件，就要循环到每个按钮
+    for(var i=0; i<aBtn.length; i++){
+        aBtn[i].index=i;
+        aBtn[i].onclick=function(){
+            //因为我们要重新操作每个元素，所以，必须重新遍历每个元素
+            for(var i=0; i<aBtn.length; i++){
+                //让所有的按钮都变灭，就让当前点击的这个按钮变亮；
+                aBtn[i].className='';
+                aDiv[i].className='';
+            }
+            //循环中所做的是操作每个元素，如果想单独操作某个元素，必须放在循环外面
+            this.className='active';
+            //要单独操作，当前这个按钮对应的div;
+            aDiv[this.index].className='show';
+        }
+    }
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+

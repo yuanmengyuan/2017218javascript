@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<script>
+    //函数定义时，用的形参；
+    function sum(n,m) {
+        //JS天生自带的参数机制，叫做arguments;
+        /*console.log(n)
+        arguments[0]=100;
+        console.log(n)*/
+        console.log(arguments)
+        //当没有传实参的时候，拿到的n=undefined; m=undefined;
+        //undefined+undefined=NaN
+        //console.log(arguments.callee)
+    }
+    sum(2,3,10,8,'3px','javascript');//函数调用时，传的是实参；
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+

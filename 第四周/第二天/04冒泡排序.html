@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>圆梦源：勿忘初心，方得始终</title>
+</head>
+<body>
+<script>
+    var ary=[19,38,2,18,4,16];
+    function bubbleSort(arr,bOK){
+        for(var i=0; i<arr.length; i++){
+            for(var j=0; j<arr.length-1-i; j++){//5次 4次 3次
+                var boolean=bOK?(arr[j]<arr[j+1]):(arr[j]>arr[j+1]);
+                change(boolean);
+            }
+        }
+        function change(boolean){
+            if(boolean){
+                var tmp=arr[j];
+                arr[j]=arr[j+1];
+                arr[j+1]=tmp;
+            }
+        }
+        return arr;
+    }
+    /*function bubbleSort(arr){
+        for(var i=0; i<arr.length; i++){
+            for(var j=0; j<arr.length-1-i; j++){//5次 4次 3次
+                if(arr[j]>arr[j+1]){
+                    var tmp=arr[j];
+                    arr[j]=arr[j+1];
+                    arr[j+1]=tmp;
+                }
+            }
+        }
+        return arr;
+    }*/
+    /*function bubbleSort(arr){
+        //外循环决定了轮数，内循环决定了次数
+        for(var i=0; i<arr.length; i++){
+            for(var j=i+1; j<arr.length; j++){
+                if(arr[i]>arr[j]){
+                    var tmp=arr[i];
+                    arr[i]=arr[j];
+                    arr[j]=tmp;
+                }
+            }
+        }
+        return arr;
+    }*/
+</script>
+</body>
+</html>

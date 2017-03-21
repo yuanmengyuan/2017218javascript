@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        li{
+            list-style: none;
+        }
+        ul{
+            width: 216px;
+            height: 150px;
+            margin:80px auto;
+            background: #5f5750;
+            padding:10px;
+        }
+        ul li{
+            width: 72px;
+            height: 74px;
+            position: relative;
+            float: left;
+        }
+        /*因为我们要控制两个方向的边线；所以，可以先抽离出他们共同的部分*/
+        ul li:before,ul li:after{
+            position: absolute;
+            content:"";
+            background:red;
+        }
+        /*默认让after作为左边框*/
+        ul li.left:after{
+            width: 1px;
+            height: 60px;
+            left:0;
+            top:7px;
+        }
+        /*默认让before作为上边框*/
+        ul li.top:before{
+            width: 60px;
+            height: 1px;
+            left:6px;
+            top:0;
+        }
+        /*然后，分别设置不同的位置：left左边框的位置，top上边框的位置*/
+    </style>
+</head>
+<body>
+<ul>
+    <li class=""></li>
+    <li class="left"></li>
+    <li class="left"></li>
+    <li class="top"></li>
+    <li class="left top"></li>
+    <li class="left top"></li>
+</ul>
+</body>
+</html>

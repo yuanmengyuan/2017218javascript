@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>圆梦源：勿忘初心，方得始终</title>
+    <style>
+        div{
+            font-size: 40px;
+        }
+        div span{
+            font-size: 60px;
+            color: red;
+        }
+    </style>
+</head>
+<body>
+<div>距离下课还有<span>00天 00：00：00</span></div>
+<script>
+    var oSpan=document.getElementsByTagName('span')[0];
+    function toDou(n){
+        return n>=0 && n<10? '0'+n:''+n;
+    }
+    //countDown：倒计时
+    function countDown(){
+        //通过未来日期对象-现在日期对象，也能得到他们之间的毫秒差；
+        var s=Math.floor((new Date('2017/3/16 13:00:00')-new Date())/1000);
+        //24*60*60=86400; 一天有86400秒；
+        var d=Math.floor(s/86400);
+        //s=s%86400; //求出余下的秒数
+        s%=86400;
+        var h=Math.floor(s/3600); //整数部分是时间
+        s%=3600; //余下的秒数
+        var m=Math.floor(s/60);
+        s%=60;
+        var str=toDou(d)+'天'+toDou(h)+':'+toDou(m)+':'+toDou(s);
+        oSpan.innerHTML=str;
+    }
+    countDown();
+    setInterval(countDown,1000)
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+

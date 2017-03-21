@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        ul li{
+            height: 40px;
+            list-style: none;
+        }
+        ul li.bg0{
+            background: red;
+        }
+        ul li.bg1{
+            background: lightblue;
+        }
+        ul li.bg2{
+            background: lightgoldenrodyellow;
+        }
+    </style>
+</head>
+<body>
+<ul>
+    <li class="bg0"></li>
+    <li class="bg1"></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+</ul>
+<script>
+    /**
+     * 0 3 0
+     * 1 3 1
+     * 2 3 2
+     * 3 3 0
+     * 4 3 1
+     * 5 3 2
+     * 6 3 0
+     *
+     *
+     */
+    var aLi=document.getElementsByTagName('li');
+    for(var i=0; i<aLi.length; i++){
+        //1. 最简洁的思路
+       // aLi[i].className='bg'+i%3;
+        //2. if(){}...elseif()...else{}.
+        /*if(i%3==0){
+            aLi[i].className='bg0';
+        }else if(i%3==1){
+            aLi[i].className='bg1';
+        }else{
+            aLi[i].className='bg2';
+        }*/
+        //3.switch判断
+        switch (i%3){
+            case 0://条件
+                aLi[i].className='bg0';//语句
+                break;
+            case 1:
+                aLi[i].className='bg1';
+                break;
+            default:
+                aLi[i].className='bg2';
+                break;
+        }
+    }
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

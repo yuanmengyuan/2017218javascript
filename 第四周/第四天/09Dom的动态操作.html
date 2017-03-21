@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>圆梦源：勿忘初心，方得始终</title>
+    <style>
+        div{
+            width: 200px;
+            height: 200px;
+            background: #ff0000;
+            margin:20px;
+        }
+    </style>
+</head>
+<body>
+<div class="div1"></div>
+<div class="div2"></div>
+<div class="div3"></div>
+<script>
+    var aDiv=document.getElementsByTagName('div');
+    //1.创建一个新的div
+    var oDiv2=document.createElement('div');
+    oDiv2.style.background='green';
+    //2.插到指定元素的前面；父级.insertBefore(newEle,oldEle);
+    document.body.insertBefore(oDiv2,aDiv[2])
+
+
+</script>
+</body>
+</html>·
+
+
+
+
+
+
+
+
+
+
+
+
+

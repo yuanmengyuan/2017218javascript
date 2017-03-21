@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+            list-style: none;
+        }
+        .wrap{
+            width: 453px;
+            height:300px;
+            float: left;
+            margin:40px;
+        }
+        .wrap ul:after{
+            display: block;
+            height: 0;
+            content: '';
+            clear: both;
+        }
+        .wrap ul li{
+            width: 150px;
+            height: 40px;
+            line-height: 40px;
+            float: left;
+            background: #ccc;
+            text-align: center;
+        }
+        .wrap ul li.current{
+            background: lightblue;
+        }
+        .wrap ul li +  li{
+            border-left:1px solid #aaa;
+        }
+        .wrap div{
+            width: 100%;
+            height: 100%;
+            display: none;
+            background: lightblue;
+            text-align: center;
+            line-height: 260px;
+        }
+        .wrap div.show{
+            display: block;
+        }
+    </style>
+</head>
+<body>
+<div class="wrap" id="wrap">
+    <ul>
+        <li class="current">按钮1</li>
+        <li>按钮2</li>
+        <li>按钮3</li>
+    </ul>
+    <div class="show">内容1</div>
+    <div>内容2</div>
+    <div>内容3</div>
+</div>
+<div class="wrap" style="width: 755px">
+    <ul>
+        <li class="current">按钮1</li>
+        <li>按钮2</li>
+        <li>按钮3</li>
+        <li>按钮4</li>
+        <li>按钮5</li>
+    </ul>
+    <div class="show">内容1</div>
+    <div>内容2</div>
+    <div>内容3</div>
+    <div>内容4</div>
+    <div>内容5</div>
+</div>
+<div class="wrap" style="width: 604px;">
+    <ul>
+        <li class="current">按钮1</li>
+        <li>按钮2</li>
+        <li>按钮3</li>
+        <li>按钮4</li>
+    </ul>
+    <div class="show">内容1</div>
+    <div>内容2</div>
+    <div>内容3</div>
+    <div>内容4</div>
+</div>
+<script>
+    /*
+    * 1。把除了父容器以外的函数，都剪切，放到一个新的函数中，并起个名字
+    * 2。 把函数中可变的部分，作为形参；
+    * 3。在外面调用函数，并传入实参；
+    * 4。把html部分，复制多份，对待宽度不同的个别部分，分别设置；
+    * 5。 获取所有的父容器；逐个遍历后，调用函数；
+    * */
+   // var oWrap=document.getElementById('wrap');
+   var aWrap=document.getElementsByClassName('wrap');
+   for(var i=0; i<aWrap.length; i++){
+       tab(aWrap[i]);
+   }
+
+    function tab(oWrap){
+        console.log(oWrap)
+        var aBtn=oWrap.getElementsByTagName('li');
+        var aDiv=oWrap.getElementsByTagName('div');
+        //点击每个按钮的时候，让所有按钮都灭，让当前按钮亮；也让所有内容框都灭，就让当前按钮对应的内容框亮；
+        for(var i=0; i<aBtn.length; i++){
+            //当i值刚有的时候，我们就把正确的i值保存到私有作用域中；
+            (function(index){
+                aBtn[index].onclick=function(){
+                    for(var i=0; i<aBtn.length; i++){
+                        aBtn[i].className='';
+                        aDiv[i].className='';
+                    }
+                    aBtn[index].className='current';
+                    aDiv[index].className='show';
+                }
+            })(i);
+        }
+    }
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+

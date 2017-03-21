@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>圆梦源：勿忘初心，方得始终</title>
+</head>
+<body>
+<ul>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+</ul>
+<script>
+    var oUl=document.getElementsByTagName('ul')[0];
+    //var aLi=oUl.getElementsByTagName('li');
+    //需求：获取 当前容器下 的 所有子元素
+    /*
+    * 目的：getChildren()
+    * 参数：parent
+    * 返回值：[]
+    * */
+    function getChildren(parent){
+        var ary=[];
+        //1.获取当前容器下所有的子节点；
+        var aChild=parent.childNodes;
+        //2.再从子节点中挑出元素节点，放入数组； 通过nodeType==1
+        for(var i=0; i<aChild.length; i++){
+            var cur=aChild[i];
+            if(cur.nodeType==1){
+                ary.push(cur);
+            }
+        }
+        return ary;
+    }
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+

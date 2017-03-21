@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>圆梦源：勿忘初心，方得始终</title>
+    <style>
+        li{
+            margin-bottom: 20px;
+        }
+
+    </style>
+</head>
+<body>
+<ul>
+    <li>
+        <li></li>
+    </li>
+    <li></li>
+    <li></li>
+</ul>
+<script>
+    var oUl=document.getElementsByTagName('ul')[0];
+    //var aChild=oUl.children;//可以拿到当前容器下，所有的子元素
+    //console.log(aChild[2].nodeType)
+    /*console.log(aChild.length)*/
+    //功能：获取 当前容器下 的 所有子元素 ；
+    /*
+    * 参数：父容器
+    * 返回值：一堆子元素，不就是【li,li,li】
+    * */
+    var aLi=getChildren(oUl);
+    console.log('aLi:'+ aLi.length)
+    for(var i=0; i<aLi.length; i++){
+        aLi[i].style.background='red';
+    }
+    function getChildren(parent){
+        //1. 拿到当前容器下的所有子节点
+        var aChild=parent.childNodes;
+        //2.遍历每个子节点，看谁的节点类型==1;就把谁放到数组中；
+        var ary=[];
+        for(var i=0; i<aChild.length; i++){
+            if(aChild[i].nodeType==1){
+                ary.push(aChild[i]);
+            }
+        }
+        return ary;
+    }
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

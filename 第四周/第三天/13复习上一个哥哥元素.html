@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>圆梦源：勿忘初心，方得始终</title>
+</head>
+<body>
+<div class="div-1">内容1</div>
+<div class="div-2">内容2</div>
+<div class="div-3">内容3</div>
+<div class="div-4">内容4</div>
+<script>
+    var aDiv=document.getElementsByTagName('div');
+    //需求：获取 当前元素 的 上一个哥哥元素；
+    /*
+    * 函数名：prev
+    * 参数：curEle
+    * 返回值：1个 上一个哥哥元素
+    * */
+    console.log(prev(aDiv[1]).innerHTML)
+    function prev(curEle){
+        //1.如果浏览器支持的话，直接使用系统提高的高级属性
+        if('previousElementSibling' in curEle){
+            return curEle.previousElementSibling;
+        }
+        //2.如果不支持，自己做兼容处理
+        var pre=curEle.previousSibling; // null || 哥哥元素
+        //while条件：上一个哥哥必须是个节点，并且不是元素节点，才有循环的资格；
+        while(pre && pre.nodeType !== 1){
+            pre=pre.previousSibling; //必须是pre而不能是curEle
+        }
+        return pre;
+    }
+</script>
+</body>
+</html>

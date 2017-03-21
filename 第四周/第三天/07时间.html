@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>圆梦源：勿忘初心，方得始终</title>
+    <style>
+        div{
+            font-size: 50px;
+        }
+    </style>
+</head>
+<body>
+<div id="div1"></div>
+<script>
+    var oDiv=document.getElementById('div1');
+    //功能：把0-9之间的数字变成双字符串
+    function toDou(n){
+        return n>=0 && n<10?'0'+n:''+n;
+        /*if(n>=0 && n<10){
+            return '0'+n; //字符串；
+        }else{
+            return ''+n; //数字转字符串 ''+数字
+        }*/
+    }
+    function clock(){
+        //1.要想写时间，必须先拿到日期对象；
+        var oDate=new Date();
+        //2.通过对象身上的属性和方法，拿到我们要的具体值；
+        var h=oDate.getHours();
+        var m=oDate.getMinutes();
+        var s=oDate.getSeconds();
+        //3.字符串拼接；放到指定的容器中；
+        var str=toDou(h)+':'+toDou(m)+':'+toDou(s);
+        oDiv.innerHTML=str;
+    }
+    clock(); //用立即调用；来解决1秒钟延时导致的空白问题；
+    window.setInterval(clock,1000);
+</script>
+</body>
+</html>
