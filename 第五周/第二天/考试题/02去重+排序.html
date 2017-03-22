@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>圆梦源：勿忘初心，方得始终</title>
+</head>
+<body>
+<script>
+    var arr=[1,2,3,2,1,2,3,4,2,1,2,3,4,3,2,1];
+    arr.sort(function(a,b){
+        return b-a;
+    });
+    for(var i=0; i<arr.length; i++){
+        if(arr[i]==arr[i+1]){
+            arr.splice(i,1);
+            i--;
+        }
+    }
+</script>
+</body>
+</html>

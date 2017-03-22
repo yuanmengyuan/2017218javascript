@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>圆梦源：勿忘初心，方得始终</title>
+</head>
+<body>
+<script>
+    //return后面的语句不会进行预解释，return下面的语句虽然不执行，但会进行预解释；
+    function fn(){
+        //预解释：var bb="alert('bbbb')"
+        bb();
+        aa();
+        return function aa(){
+            alert('aaa')
+        };
+        function bb(){
+            alert('bbbb');
+        }
+    }
+    fn()
+</script>
+</body>
+</html>

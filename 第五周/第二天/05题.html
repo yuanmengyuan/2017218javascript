@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>圆梦源：勿忘初心，方得始终</title>
+</head>
+<body>
+<script>
+    //涉及的考点：1）带var和不带var区别 2）闭包预解释 3）运算符的优先级 4）等号的作用是用来赋值的 5）条件判断语句的预解释
+    f=function(){return true};
+    g=function(){return false};
+    (function(){
+        if(g()&&[]==![]){
+            f=function(){return false;}
+            function g(){return true;}
+        }
+    })();
+    alert(f());
+    alert(g());
+</script>
+</body>
+</html>

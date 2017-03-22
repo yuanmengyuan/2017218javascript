@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>圆梦源：勿忘初心，方得始终</title>
+</head>
+<body>
+<script>
+    function fn() {
+        var i = 8;
+        return function (n) {
+            console.log(n + (i++));
+        }
+    }
+    var f = fn(); //f是不释放
+    f(15);//23
+    f(20);//29
+    fn()(15); //23 //不立即释放，所以当返回的函数执行完成之后，就都释放了；下次再调用的时候，就是新的开始
+    fn()(20);//28
+    fn()(30);//38
+    f(30);//40
+</script>
+</body>
+</html>

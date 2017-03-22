@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>圆梦源：勿忘初心，方得始终</title>
+</head>
+<body>
+<script>
+    var n=0;
+    function choujiang(){
+        var str='';
+        for(var i=0; i<4; i++){
+            str+=Math.round(Math.random()*9)
+        }
+        document.body.innerHTML=str;
+    }
+    choujiang();
+    console.log(n)
+    var timer=setInterval(function(){
+        n++;
+        choujiang();
+        console.log(n)
+        if(n==9){
+            clearInterval(timer);
+        }
+    },1000)
+    /*var timer=setInterval(function(){
+        n++;
+        choujiang();
+        console.log(n)
+        if(n==10){
+            clearInterval(timer);
+        }
+    },1000)*/
+</script>
+</body>
+</html>
+
+
+
+
+

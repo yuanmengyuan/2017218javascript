@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>圆梦源：勿忘初心，方得始终</title>
+</head>
+<body>
+<script>
+    function sum(){
+        var total=0;
+        for(var i=0; i<arguments.length; i++){
+            var cur=arguments[i];
+            if(cur%3==0 && cur%5==0){
+                total+=Number(cur);
+            }
+        }
+        return total;
+    }
+    var res=sum(1,2,3,5,9,'15','15px');
+
+    //15
+</script>
+</body>
+</html>

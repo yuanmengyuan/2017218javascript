@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>圆梦源：勿忘初心，方得始终</title>
+</head>
+<body>
+<script>
+    //当定义个变量的时候，如果没有加var，默认给window加全局属性
+    function f1(){
+        alert(a)
+        window.a=12;
+    }
+    function f2(){
+        alert(a);
+    }
+    f1()
+    f2()
+</script>
+</body>
+</html>
