@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>圆梦源：勿忘初心，方得始终</title>
+</head>
+<body>
+<script>
+    var i=3;
+    function fn(){
+        i*=2;
+        return function(n){
+            console.log(n*(++i))
+        }
+    }
+    var f=fn();
+    f(3)//21
+    fn()(3);//45
+    f(4);//64
+    fn()(3);//99
+</script>
+</body>
+</html>

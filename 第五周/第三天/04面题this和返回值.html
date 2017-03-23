@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>圆梦源：勿忘初心，方得始终</title>
+</head>
+<body>
+<script>
+    var name='圆梦源';
+    var age=500;
+    name=(function(name,age){
+        arguments[0]='圆梦源培训';
+        age=age||this.age;
+        console.log(name,age);//圆梦源培训 500
+    })(name);
+    console.log(name,age) //undefined 500
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+

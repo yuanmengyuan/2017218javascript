@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>圆梦源：勿忘初心，方得始终</title>
+</head>
+<body>
+<script>
+    //构造函数中的this，指向当前这个实例；
+    function Fn(){//1)构造函数中存放的都是私有的属性和方法；2)他是函数定义阶段，被作为代码字符串存在内存空间中；
+        this.x=100;
+        this.y=200;
+    }
+    Fn.prototype.showX=function(){ //2)原型是个对象，里面存的都是共有的属性和方法；
+        alert('我是x'+this.x);
+    }
+    var f1=new Fn();//1）实例一定是对象 2）实例是对函数的调用；
+</script>
+</body>
+</html>

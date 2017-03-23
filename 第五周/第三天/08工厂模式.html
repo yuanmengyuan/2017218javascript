@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>圆梦源：勿忘初心，方得始终</title>
+</head>
+<body>
+<script>
+    function person(name,age){
+        //1.引进原材料
+        var obj=new Object();
+        //2.加工原材料
+        obj.name=name;
+        obj.age=age;
+        obj.showName=function(){
+            console.log('我的名字是'+this.name)
+        };
+        //3.输出原材料
+        return obj;
+    }
+    var person1=person('11111',18);
+    var person2=person('22222',19);
+    console.log(person1.showName==person2.showName)
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
