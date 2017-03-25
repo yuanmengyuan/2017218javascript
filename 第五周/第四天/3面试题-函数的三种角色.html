@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>圆梦源：勿忘初心，方得始终</title>
+</head>
+<body>
+<script>
+    function Foo(){
+        getName=function(){alert(1)};
+        return this;
+    }
+    Foo.getName=function (){alert(2)};
+    Foo.prototype.getName=function(){alert(3)};
+    var getName=function(){alert(4)};
+    function getName(){alert(5)}
+    Foo.getName();  //把Foo作为对象
+    getName();//预解释：1函数声明早于变量声明 2 已经声明过的不会进行重复声明，但会重新赋值
+    Foo().getName();//this指向
+    getName();//预解释
+    new Foo.getName();//把Foo.getName作为一个类；
+    new Foo().getName();//把Foo当做类； 每个实例都能调用原型上的方法；
+
+</script>
+</body>
+</html>

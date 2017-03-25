@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>圆梦源：勿忘初心，方得始终</title>
+</head>
+<body>
+<script>
+    var obj={};
+    var ary=[1,2,3,4];
+    var str='12344';
+    str.charAt();
+    //console.log(obj.toString()=='[object Object]')
+    //toString() 能打印出this所属类的详细信息；
+    //距离数组最近的toString()的功能，把数组转成字符串；
+    //只有Object.prototype上的toString()才能打印出this所属类的详细信息；
+    //console.log(ary.toString()==='1,2,3,4');
+    Object.prototype.toString.call(ary);//当我们把this改成ary,就可以打印出ary所属类的详细信息；
+    console.log(Object.prototype.toString.apply(str))
+    console.log({}.toString.call(str))
+</script>
+</body>
+</html>

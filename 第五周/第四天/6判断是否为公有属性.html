@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>圆梦源：勿忘初心，方得始终</title>
+</head>
+<body>
+<script>
+    function Fn(){
+        this.x=100; //私有
+    }
+    Fn.prototype.showX=function(){} //公有的属性
+    var f1=new Fn();
+/*
+* 需求：判断 某个属性 是否为 对象身上 的公有属性
+* 参数：attr obj
+* 返回值：布尔值
+* */
+    function hasPubProperty(attr,obj){
+        //是属性并且不是私有属性
+        return attr in obj && !obj.hasOwnProperty(attr);
+    }
+    console.log(hasPubProperty('showX',f1))
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+

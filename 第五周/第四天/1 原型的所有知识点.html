@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>圆梦源：勿忘初心，方得始终</title>
+</head>
+<body>
+<script>
+    function Fn(){
+        this.x=100;
+    }
+    Fn.prototype.showX=function(){
+        alert(this.x);
+    };
+    var f1=new Fn();
+    /*console.log(Fn instanceof Function)
+    console.log(Object instanceof  Function)
+    console.log(Function instanceof Object)
+    console.log(Function.prototype instanceof Object)*/
+    //obj1.isPrototypeOf(obj2); 判断obj1是否在obj2的原型链上；
+    console.log(Fn.prototype.isPrototypeOf(f1))
+    console.log(Object.prototype.isPrototypeOf(f1))
+    console.log(Object.prototype.isPrototypeOf(Function.prototype))
+</script>
+</body>
+</html>

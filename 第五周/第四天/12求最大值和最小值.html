@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>圆梦源：勿忘初心，方得始终</title>
+</head>
+<body>
+<script>
+    //需求：求最大值和最小值
+    var ary=[12,3,8,98,25];
+    //思路1：sort
+    /*ary.sort(function(a,b){
+        return a-b
+    })
+    alert(ary[0])
+    alert(ary[ary.length-1]);*/
+    //思路2：假设法；
+    /*var min=ary[0];
+    var max=ary[0];
+    for(var i=0; i<ary.length; i++){
+        if(ary[i]<min){
+            min=ary[i];
+        }
+        if(ary[i]>max){
+            max=ary[i];
+        }
+    }
+    console.log(min,max)*/
+    //思路3：利用对象不重名,当对象的属性名为数字的时候，默认进行从小到大的排序
+    /*var obj={};
+    for(var i=0; i<ary.length; i++){
+        obj[ary[i]]=ary[i];
+    }
+    console.log(obj)*/
+    //思路4：利用Math.max
+    //console.log(Math.max([12,3,8,98,25].toString()))
+    /*var str1='Math.max('+ary.toString()+')';
+    var str2='Math.min('+ary.toString()+')';
+    var max=eval(str1);
+    var min=eval(str2);*/
+    //思路5：利用Math.max和apply
+    var max=Math.max.apply(null,ary);
+    var min=Math.min.apply(null,ary);
+</script>
+</body>
+</html>
+
+
+
+
+
+
+

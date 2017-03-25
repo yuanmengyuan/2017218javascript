@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>圆梦源：勿忘初心，方得始终</title>
+</head>
+<body>
+<script>
+    //自定义的对象
+    function Fn(){//构造函数
+        this.x=100;
+    }
+    Fn.prototype.name='leilei';
+    Fn.prototype.age=18;
+    Object.prototype.aa=function(){};
+    var f1=new Fn;//实例
+    //for..in..可以拿到对象身上自定义的属性和方法（包含：私有+公有，但是不包含系统自带的属性和方法）
+    for(var attr in f1){
+        //console.log(attr+':'+f1[attr]);
+       /* if(f1.propertyIsEnumerable(attr)){
+            console.log(attr+'='+f1[attr]);
+        }*/
+        if(f1.hasOwnProperty(attr)){
+            console.log(attr+'='+f1[attr]);
+        }
+    }
+</script>
+</body>
+</html>

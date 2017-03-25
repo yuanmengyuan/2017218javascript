@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>圆梦源：勿忘初心，方得始终</title>
+</head>
+<body>
+<script>
+    function Fn(){
+        this.x=100; //私有
+    }
+    Fn.prototype.showX=function(){} //公有的属性
+    var f1=new Fn();
+    /*console.log('x' in f1);
+    console.log('showX' in f1);*/
+    console.log(f1.hasOwnProperty('showX'))
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
