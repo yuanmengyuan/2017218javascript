@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>圆梦源：勿忘初心，方得始终</title>
+</head>
+<body>
+<script>
+    var  obj={name:'leilei',age:18};
+    var obj2={};//xxff00
+    /* for(var attr in obj){
+        obj2[attr]=obj[attr];
+    }
+    obj2.school='yuanmengyuan';*/
+    //需求：克隆一份跟obj一模一样的对象，返回出来；
+    function extend(obj,obj2){
+        for(var attr in obj){
+            obj2[attr]=obj[attr];
+        }
+        return obj2;
+    }
+    extend(obj,obj2);//xxff00
+    obj2.school='yuanmengyuan';
+    console.log(obj)
+    console.log(obj2)
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+

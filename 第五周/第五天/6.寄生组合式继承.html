@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>圆梦源：勿忘初心，方得始终</title>
+</head>
+<body>
+<script>
+    function F(){//父类构造函数，里面存私有属性和方法
+        this.x=100;
+        this.y=200;
+    }
+    F.prototype.showX=function(){};//父类原型，里面存公有属性和方法
+    F.prototype.showY=function(){};
+    var f1=new F;//父类实例；
+    console.log(f1);
+    /*
+    * x:100
+    * y:200
+    * __proto__:
+    * constructor:F
+    * showX:
+    * showY:
+    * */
+    function S(){
+        F.call(this);
+    }
+    //S.prototype=new F;//把父类私有属性+公有属性，都放在了子类公有上；
+    //问题：子类原型，只想要父类公有的，不想要父类私有的；
+    //1.创建一个新类，我没有私有属性
+    function Temp(){}
+    Temp.prototype= F.prototype;
+    S.prototype=new Temp();
+    S.prototype.constructor=S;
+    var s1=new S;
+    /*
+    * X:100
+    * Y:200
+    * __proto__:
+    * constructor:S;
+    * __proto__:
+    * constructor:F
+    * showX:
+    * showY
+    * */
+    console.log(s1)
+
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+

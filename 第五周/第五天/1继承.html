@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>圆梦源：勿忘初心，方得始终</title>
+</head>
+<body>
+<script>
+    function F(){
+        this.x=100;
+        this.y=200;
+        this.showX=function(){
+            console.log(this.x);
+        }
+    }
+    var f1=new F();//实例；
+    console.dir(f1);
+/*
+* x:100
+* y:200
+* showX:()=>{....}
+* __proto__:Object
+* constructor:F
+* __proto__:Object
+* */
+    function S(){
+        //F()
+        F.apply(this);
+    }
+    var s1=new S();
+    console.dir(s1);
+    /*
+     * x:100
+     * y:200
+     * showX:()=>{....}
+     * __proto__:Object
+     * constructor:S
+     * __proto__:Object
+     * */
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>圆梦源：勿忘初心，方得始终</title>
+</head>
+<body>
+<div class="div1">我是div1</div>
+<div class="div2">我是div2</div>
+<div class="div3">我是div3</div>
+<div class="div4">我是div4</div>
+<script>
+    var aDiv=document.getElementsByTagName('div');
+    //封装：获取 当前元素 的 上一个哥哥元素
+    /*
+    * 参数：1个 当前元素 ele
+    * 返回值：上一个哥哥元素
+    * */
+    function prev(curEle){
+        //当浏览器提供的方法支持的时候，直接使用即可
+        if(curEle.previousElementSibling){
+            return curEle.previousElementSibling;//1)返回值 2）阻断程序执行的作用
+        }
+        var pre=curEle.previousSibling;//元素节点 或 null
+        //必须是个节点，并且不是元素节点
+        while(pre && pre.nodeType != 1){
+            pre=pre.previousSibling;
+        }
+        return pre;
+    }
+    console.log(prev(aDiv[1]))
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+

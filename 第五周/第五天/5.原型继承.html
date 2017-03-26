@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>圆梦源：勿忘初心，方得始终</title>
+</head>
+<body>
+<script>
+    function F(){
+        this.x=100;
+        this.y=200;
+    }
+    F.prototype.showX=function(){
+        console.log('我是父亲')
+    };
+    F.prototype.showY=function(){};
+    var f1=new F();
+
+    function S(){
+        F.call(this);
+    }
+    S.prototype=new F;
+    var s1=new S;
+    s1.__proto__.__proto__.showX=function(){
+        console.log('我就修改你了，怎么着')
+    };
+    s1.showX();
+    f1.showX()
+</script>
+</body>
+</html>
+
+
+
+
+
+
+

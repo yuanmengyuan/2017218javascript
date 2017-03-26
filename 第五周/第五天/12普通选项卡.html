@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>圆梦源：勿忘初心，方得始终</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        .wrap{
+            margin:10px;
+        }
+        .wrap ul:after{
+            display: block;
+            height: 0;
+            content: '';
+            clear: both;
+        }
+        .wrap ul li{
+            width: 150px;
+            height: 40px;
+            float: left;
+            background: #ccc;
+            text-align: center;
+            line-height: 40px;
+        }
+        .wrap ul li+li{
+            border-left:1px solid #333;
+        }
+        .wrap ul li.current{
+            background: lightblue;
+        }
+        .wrap div{
+            width: 452px;
+            height:200px;
+            background: lightblue;
+            display: none;
+        }
+        .wrap div.show{
+            display: block;
+        }
+    </style>
+</head>
+<body>
+<div class="wrap">
+    <ul>
+        <li class="current">按钮1</li>
+        <li>按钮2</li>
+        <li>按钮3</li>
+    </ul>
+    <div class="show">内容1</div>
+    <div>内容2</div>
+    <div>内容3</div>
+</div>
+<div class="wrap">
+    <ul>
+        <li class="current">按钮1</li>
+        <li>按钮2</li>
+        <li>按钮3</li>
+    </ul>
+    <div class="show">内容1</div>
+    <div>内容2</div>
+    <div>内容3</div>
+</div>
+<div class="wrap">
+    <ul>
+        <li class="current">按钮1</li>
+        <li>按钮2</li>
+        <li>按钮3</li>
+    </ul>
+    <div class="show">内容1</div>
+    <div>内容2</div>
+    <div>内容3</div>
+</div>
+<script src="Tab.js"></script>
+<script>
+    //var tab=new Tab();
+    var aWrap=document.getElementsByClassName('wrap');
+    for(var i=0; i<aWrap.length; i++){
+        new Tab(aWrap[i])
+    }
+    //全局变量，都做为私有属性；
+    //全局函数都作为公有方法；
+    //尽量不要函数嵌套函数
+    /*var oWrap=document.getElementsByTagName('div')[0];
+    var aBtn=oWrap.getElementsByTagName('li');
+    var aDiv=oWrap.getElementsByTagName('div');
+    for(var i=0; i<aBtn.length; i++){
+        aBtn[i].index=i;
+        aBtn[i].onclick=function(){
+            for(var i=0; i<aBtn.length; i++){
+                aBtn[i].className='';
+                aDiv[i].className='';
+            }
+            aBtn[this.index].className='current';
+            aDiv[this.index].className='show';
+        }
+    }*/
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>圆梦源：勿忘初心，方得始终</title>
+</head>
+<body>
+<script>
+    function extend(newObj,oldObj){
+        for(var attr in oldObj){
+            newObj[attr]=oldObj[attr];
+        }
+        return newObj;
+    }
+    function F(){
+        this.x=100;
+        this.y=200;
+    }
+    F.prototype.showX=function(){};
+    F.prototype.showY=function(){};
+    var f1=new F;
+    console.log(f1);
+    /*
+    * x:100,
+    * y:200
+    * __proto__:Object
+    * constructor:F()
+    * showX:()=>{...}
+    * showY:()=>{...}
+    * 基类
+    * */
+    function S(){
+        F.call(this);//子类继承父类私有的属性和方法；
+    }
+    //子类继承父类公有的属性和方法
+    extend(S.prototype,F.prototype);
+    var s1=new S;
+    console.log(s1);
+    /*
+    * x:100,
+    * y:200
+    * __proto__:Object
+    * constructor:S
+    * showX
+    * showY
+    * 基类
+    * */
+</script>
+</body>
+</html>

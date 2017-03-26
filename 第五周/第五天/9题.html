@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>圆梦源：勿忘初心，方得始终</title>
+</head>
+<body>
+<script>
+    var ary = [1, 2, 3, 4];//xxff00 [0,2,3,4]
+    function fn(ary) {
+        //1.形参赋值 ary=[100]
+        //2.
+        ary[0] = 0;
+        ary = [0];
+        ary[0] = 100;
+        return ary;
+    }
+    var res = fn(ary);//[100]
+    console.log(ary);//[0,2,3,4]
+    console.log(res);//[100]
+</script>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>圆梦源：勿忘初心，方得始终</title>
+</head>
+<body>
+<script>
+    var n=0;
+    function a(){
+        var n=10;//11 12
+        function b(){
+            n++;
+            alert(n);
+        }
+        b();//11
+        return b;//xxff00
+    }
+    var c=a();//xxff00
+    c();//12
+    alert(n);//0
+
+</script>
+</body>
+</html>
