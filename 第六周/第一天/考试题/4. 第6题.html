@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>圆梦源：勿忘初心，方得始终</title>
+</head>
+<body>
+<script>
+    function Fn(num){
+        this.x=this.y=num;
+    }
+    Fn.prototype={
+        x:20,
+        sum:function(){
+            console.log(this.x+this.y);
+        }
+    };
+    var f=new Fn(10);
+    console.log(f.sum===Fn.prototype.sum);//true
+    f.sum();//20 先找自己的私有空间，再去公有空间
+    Fn.prototype.sum();//没有走私有空间，直接去公有空间 NaN
+    console.log(f.constructor);//Object
+</script>
+</body>
+</html>

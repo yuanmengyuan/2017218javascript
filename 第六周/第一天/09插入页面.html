@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>圆梦源：勿忘初心，方得始终</title>
+    <style>
+        div{
+            width:200px;
+            height:30px;
+            margin-bottom:10px;
+            background: #ff0000;
+            background: lightgray;
+        }
+        span{
+            width:50%;
+            line-height: 30px;
+            height: 100%;
+            display: inline-block;
+        }
+    </style>
+</head>
+<body>
+<div><span>姓名</span><span>年龄</span></div>
+<script src="data.js"></script>
+<script>
+    var aDiv=document.getElementsByTagName('div');
+    //1.字符串拼接； 最简单；最常用  字符串插入页面用，innerHTML
+    //问题：如果页面中以前的元素身上有事件，当我们字符串拼接后，重新在插入页面，那么他们以前身上的事件就都没了；
+
+    for(var i=0; i<aDiv.length; i++){
+        aDiv[i].onmouseover=function(){
+            this.style.background='pink';
+        };
+        aDiv[i].onmouseout=function(){
+            this.style.background='';
+        };
+    }
+    /*var str='';
+    for(var i=0; i<ary.length; i++){
+        var cur=ary[i];
+        str+='<div><span>'+cur.name+'</span><span>'+cur.age+'</span></div>'
+    }
+    document.body.innerHTML+=str;*/
+    //2.DOM动态插入；
+    /*for(var i=0; i<ary.length; i++){
+        var cur=ary[i];
+        var oDiv=document.createElement('div');
+        for(var attr in cur){
+            var oSpan=document.createElement('span');
+            oSpan.innerHTML=cur[attr];
+            oDiv.appendChild(oSpan);
+        }
+        document.body.appendChild(oDiv);
+    }*/
+    //3.文档碎片（购物袋）
+    var frg=document.createDocumentFragment();//购物袋
+    for(var i=0; i<ary.length; i++){
+        var oDiv=document.createElement('div');
+        for(var attr in ary[i]){
+            var oSpan=document.createElement('span');
+            oSpan.innerHTML=ary[i][attr];
+            oDiv.appendChild(oSpan);
+        }
+        frg.appendChild(oDiv);//把每个创建好并且有内容的div放入文档碎片中；
+    }
+    document.body.appendChild(frg);
+    frg=null;//性能优化
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

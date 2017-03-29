@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>圆梦源：勿忘初心，方得始终</title>
+</head>
+<body>
+<script>
+    //需求：类数组转数组； 参数：类数组(arguments,htmlCollection) 返回值：数组
+    function makeArray(arg){
+        try{//try:浏览器支持的情况下
+            return Array.prototype.slice.call(arg);
+        }catch(e){//浏览器不支持，自己写兼容方法；
+            var ary=[];
+            for(var i=0; i<arg.length; i++){
+                ary.push(arg[i]);
+            }
+            return ary;
+        }
+    }
+</script>
+</body>
+</html>

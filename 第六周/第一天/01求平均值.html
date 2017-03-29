@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>圆梦源：勿忘初心，方得始终</title>
+</head>
+<body>
+<script>
+    //求平均值：先去掉最高分和最低分； 把中间的值累加求和/length
+    //var ary=[29,37,77,57,17,97];
+    function average(){
+        //1.把类数组转成数组
+        /*var ary=[];
+        for(var i=0; i<arguments.length; i++){
+            ary.push(arguments[i]);
+        }*/
+        var ary=Array.prototype.slice.call(arguments,1);
+        console.log(ary instanceof  Array)
+        //var ary=[].slice.call(arguments)
+        //2.排序
+        ary.sort(function(a,b){
+            return a-b;
+        })
+        //3.干掉第一个和最后一个；
+        ary.shift();
+        ary.pop();
+        //4.求和/length
+        return (eval(ary.join('+'))/ary.length).toFixed(2);
+    }
+    var res=average(27,37,77,57,17.7777,7,17,97.777777);
+
+</script>
+</body>
+</html>

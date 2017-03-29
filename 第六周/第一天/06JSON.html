@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>圆梦源：勿忘初心，方得始终</title>
+</head>
+<body>
+<script>
+    //var obj={name:'ymy',age:8}; //普通对象；
+    //var objJson={"name":"ymy","age":8};//JSON
+    var strJson='[{"name":"ymy","age":8},{"name":"ymy1","age":8},{"name":"ymy2","age":8}]';
+    //strJson=JSON.parse(strJson);//高级浏览器
+    strJson=eval('('+strJson+')');
+    console.log(strJson)
+   /*var obj=[{"name":"ymy","age":8},{"name":"ymy1","age":8},{"name":"ymy2","age":8}];
+console.log(JSON.stringify(obj))*/
+    //遇到xxx.parse() 都是转成了对象
+    //遇到xxx.stringify() 转成字符串；
+
+</script>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>圆梦源：勿忘初心，方得始终</title>
+</head>
+<body>
+<script>
+        var num=1;
+        var obj={num:2};
+        obj.fn=(function(num){
+            this.num=num*2;
+            num++;
+            return function(n){
+                this.num+=n;
+                num++;
+                console.log(num);
+            }
+        })(obj.num);
+        var fn=obj.fn;
+        fn(10);
+        obj.fn(20);
+        console.log(num,obj.num); //4 5 14 22
+</script>
+</body>
+</html>

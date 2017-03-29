@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>圆梦源：勿忘初心，方得始终</title>
+</head>
+<body>
+<ul>
+    <li>李连杰</li>
+    <li>成龙</li>
+    <li>甄子丹</li>
+    <li>杨紫琼</li>
+</ul>
+<script src="utils.js"></script>
+<script>
+    var oUl=document.getElementsByTagName('ul')[0];
+    var aLi=document.getElementsByTagName('li');
+    //1.把类数组，转成数组
+    var ary=utils.makeArray(aLi);
+    //2.sort排序
+    ary.sort(function(a,b){
+        a= a.innerHTML;
+        b= b.innerHTML;
+        return a.localeCompare(b)*-1;//按照汉字拼音的首字母进行排序
+    });
+    //3.能影响页面的方法只有两个：appendChild()  insertBefore();
+    for(var i=0; i<ary.length; i++){
+        oUl.appendChild(ary[i]);
+    }
+</script>
+</body>
+</html>
