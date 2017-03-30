@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>圆梦源：勿忘初心，方得始终</title>
+</head>
+<body>
+<script src="utils.js"></script>
+<script>
+    //1.创建一个xhr对象
+    var xml=new XMLHttpRequest();
+    //2.打开地址:请求方式method：GET; 请求地址，是否异步
+    xml.open('GET','data.txt',false);
+    //3.响应请求
+    xml.onreadystatechange=function(){
+        //readyState：4；  status：状态码 2xx
+        if(xml.readyState==4 && /^2\d{2}/.test(xml.status)){
+            //解析后台返回的数据
+            var data=utils.jsonParse(xml.responseText);
+            console.log(data);
+        }
+    };
+    //4.发送请求；
+    xml.send(null);
+</script>
+</body>
+</html>

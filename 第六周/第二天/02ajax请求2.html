@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>圆梦源：勿忘初心，方得始终</title>
+</head>
+<body>
+<script src="utils.js"></script>
+<script>
+    var data=null;
+    //1. 创建一个xml对象
+    var xml=new XMLHttpRequest;
+    //2. 打开地址
+    xml.open('GET','data2.txt',true);
+    //3. 发送请求
+    xml.send(null);
+    //4. 响应请求
+    xml.onreadystatechange=function(){
+        if(xml.readyState==4 && /^2\d{2}$/.test(xml.status)){
+            data=utils.jsonParse(xml.responseText);
+            //console.log(data);
+        }
+    }
+    console.log(data)
+</script>
+</body>
+</html>

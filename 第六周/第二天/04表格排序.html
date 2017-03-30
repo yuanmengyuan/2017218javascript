@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>圆梦源：勿忘初心，方得始终</title>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+        }
+        table{
+            width: 600px;
+            text-align: center;
+            margin:100px auto;
+            border-radius: 10px;
+            padding:10px;
+            box-shadow: 0 0 10px darkgreen;
+            font-size: 20px;
+        }
+        table caption{
+            line-height: 50px;
+            font-size: 30px;
+            font-weight: 700;
+        }
+        table thead{
+            height: 40px;
+            line-height: 40px;
+            background: darkgreen;
+            color: #ffffff;
+        }
+        table thead tr{
+            -webkit-user-select: none;
+        }
+        table thead tr th.cursor{
+            cursor: pointer;
+        }
+        table tbody tr{
+            height: 40px;
+            line-height: 40px;
+        }
+        table tbody tr.bg0{
+            background: lightcyan;
+        }
+        table tbody tr.bg1{
+            background: lightpink;
+        }
+    </style>
+</head>
+<body>
+<table cellpadding="0" cellspacing="0" id="tab">
+    <caption>武林排行榜</caption>
+    <thead>
+        <tr>
+            <th class="cursor">name</th>
+            <th class="cursor">age</th>
+            <th class="cursor">level</th>
+            <th>sex</th>
+        </tr>
+    </thead>
+    <tbody>
+        <!--<tr class="bg0">
+            <td>郭靖</td>
+            <td>18</td>
+            <td>98</td>
+            <td>0</td>
+        </tr>
+        <tr class="bg1">
+            <td>郭靖1</td>
+            <td>189</td>
+            <td>98</td>
+            <td>0</td>
+        </tr>-->
+    </tbody>
+</table>
+<script src="utils.js"></script>
+<script>
+    var oTab=document.getElementById('tab');
+    var tHead=oTab.tHead;// 获取表格中的表头thead; 表头是唯一的
+    var tBody=oTab.tBodies[0];//一个表格中，有n个body;但是我们只要一个[0];
+    var aCells=tHead.rows[0].cells;//表头中第一行中的所有的列
+    var aRows=tBody.rows;//表体中所有的行
+    var data=null;
+    //1.通过ajax取数据
+    getData();
+    function getData(){
+        var xml=new XMLHttpRequest();//创建了一个xml对象
+        xml.open('GET','data2.txt');//打开地址
+        xml.send(null);//发送请求
+        xml.onreadystatechange=function(){//响应请求：xml.readyState 准备状态； xml.status 响应状态码
+            if(xml.readyState==4 && /^2\d{2}/.test(xml.status)){
+                data=utils.jsonParse(xml.responseText);
+                bind();
+            }
+        }
+    }
+    //2.绑定数据
+    /*function bind(){
+        var str="";
+        for(var i=0; i<data.length; i++){
+            var cur=data[i];
+            cur.sex=cur.sex==0?'男':'女';
+            str+='<tr>\
+                    <td>'+cur.name+'</td>\
+                    <td>'+cur.age+'</td>\
+                    <td>'+cur.level+'</td>\
+                    <td>'+cur.sex+'</td>\
+                    </tr>';
+        }
+        tBody.innerHTML=str;
+    }*/
+    function bind(){
+        var frg=document.createDocumentFragment();//创建文档碎片
+        for(var i=0; i<data.length; i++){
+            var cur=data[i];
+            var tr=document.createElement('tr');
+            for(var attr in cur){
+                var td=document.createElement('td');
+                if(attr=='sex'){
+                    cur[attr]=cur[attr]==0?'男':'女';
+                }
+                td.innerHTML=cur[attr];
+                tr.appendChild(td);
+            }
+            frg.appendChild(tr);
+        }
+        tBody.appendChild(frg);
+        frg=null;
+        changeColor();
+    }
+
+    //3.隔行换色
+    function changeColor(){
+        for(var i=0; i<aRows.length; i++){
+            aRows[i].className='bg'+i%2;
+        }
+    }
+    //4.表格排序
+    function sort(n){
+        //点谁的时候，谁*=-1;其他的值都恢复成初始值-1;
+        for(var i=0; i<aCells.length; i++){
+            aCells[i].flg=i==n?aCells[i].flg*-1:-1;
+            /*if(n==i){//说明这是当前点击的按钮
+                aCells[i].flg*=-1;//点谁的时候，谁*=-1
+            }else{
+                aCells[i].flg=-1;//其他的值都恢复成初始值-1;
+            }*/
+        }
+
+        //类数组转数组
+        var ary=utils.makeArray(aRows);
+        //sort排序
+        ary.sort(function(a,b){
+            a = a.cells[n].innerHTML;//'18'
+            b = b.cells[n].innerHTML; //'16'
+            if(isNaN(a) || isNaN(b)){//汉字的比较
+                return a.localeCompare(b)*aCells[n].flg;
+            }
+            return (a-b)*aCells[n].flg;//1 -1 1 -1.....
+        });
+        //重新插入页面  var ary=[tr,tr,tr,tr]
+        var frg=document.createDocumentFragment();
+        for(var i=0; i<ary.length; i++){
+            frg.appendChild(ary[i]);
+        }
+        tBody.appendChild(frg);
+        frg=null;
+        changeColor();
+    }
+    for(var i=0; i<aCells.length; i++){
+        if(aCells[i].className=='cursor'){
+            aCells[i].flg=-1;
+            aCells[i].index=i;
+            aCells[i].onclick=function(){
+                sort(this.index)
+            }
+        }
+    }
+    /*aCells[1].flg=-1;//1
+    aCells[1].onclick=function(){
+        sort(1);//1:现在是每个元素上的索引
+    }*/
+
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
