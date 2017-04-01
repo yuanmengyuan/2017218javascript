@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>圆梦源：勿忘初心，方得始终</title>
+</head>
+<body>
+<script>
+    var str='yuanmeng2017zhanwang2018huiguyuanmeng2016';
+    var reg=/\d+/g;
+    /*console.log(reg.exec(str));
+    console.log(reg.exec(str));
+    console.log(reg.exec(str));
+    console.log(reg.exec(str));*/
+    var ary=[];
+    var res=reg.exec(str);
+    while(res){
+        ary.push(res[0]);//因为res是exec的返回值，而返回值是个数组
+        res=reg.exec(str);
+    }
+    //alert(ary)
+    var reg2=/yuanmeng(\d+)/g;
+    console.log(reg2.exec(str));
+    console.log(str.match(reg2));
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+

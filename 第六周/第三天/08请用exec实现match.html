@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>圆梦源：勿忘初心，方得始终</title>
+</head>
+<body>
+<script>
+    //请用exec来实现一个match;
+    //第一反应：match是谁的方法，他放在哪里？
+    //第二反应：String.prototype.match中的this是谁？
+    //第三步：exec来实现match；
+    var str='yuanmeng2017zhanwang2018huiguyuanmeng2016';
+    var reg=/\d+/g;
+    String.prototype.match=function(reg){
+        //1.先拿到第一次的exec返回值
+        var res=reg.exec(this);
+        var ary=[];
+        //2.通过while循环依次往数组中放我们找到的值；
+        while(res){
+            ary.push(res[0]);
+            res=reg.exec(this);
+        }
+        //3.返回数组
+        return ary;
+    };
+    str.match(reg);
+
+</script>
+</body>
+</html>

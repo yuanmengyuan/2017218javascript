@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>圆梦源：勿忘初心，方得始终</title>
+</head>
+<body>
+<script>
+    var str='032482lksdlkfjslkfjd9832ksdjfkdlsf89990ksdjlfdksfj8890';
+    /*var tmp="";
+    var ary=[];
+    for(var i=0; i<str.length; i++){
+        if(!isNaN(str[i])){//数字
+            tmp+=str[i];
+        }else{//非数字
+            if(tmp.length){
+                ary.push(tmp);
+            }
+            tmp="";
+        }
+    }
+    if(tmp.length){
+        ary.push(tmp);
+    }*/
+    var ary=str.match(/\d+/g);
+    console.log(ary)
+</script>
+</body>
+</html>

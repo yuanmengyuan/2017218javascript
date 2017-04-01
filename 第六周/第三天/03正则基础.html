@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>圆梦源：勿忘初心，方得始终</title>
+</head>
+<body>
+<script>
+    //var reg=/^圆梦源$/;
+    //test:只要里面有我要的内容，都是true；
+    var str='圆梦源';
+    /*var reg=/"+str+"/;//字面量方式创建的正则，无法进行变量的拼接；
+    var reg2=new RegExp('^'+str+'$');//实例创建可以进行变量的拼接*/
+    var reg1=/^2\d{2}$/;//字面量方式创建，不需要转义；
+    var reg2=new RegExp('^2\\d{2}$');//实例创建需要转义
+    console.log(reg2.test('200'))
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
