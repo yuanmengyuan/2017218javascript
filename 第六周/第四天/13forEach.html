@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>圆梦源：勿忘初心，方得始终</title>
+</head>
+<body>
+<script>
+    /*
+    * 1.forEach可以有两个参数：callback，thisArg;(第二个参数是可选的,它是用来改变this指向的)
+    * 2.forEach中的回调函数，被调用的次数跟数组的长度一样；
+    * 3.回调函数接收3个参数：item(数组中的每一项) index(索引) input(原始数组)
+    * 4.forEach()本身没有返回值
+    * */
+    //如果forEach()只有一个undefined;说明forEach()没有返回值；如果forEach()接收到[undefined,undefined,undefined,undefined],说明forEach()返回了一个数组，但是数组中没有接收到回调函数的返回值；
+    Array.prototype.myForEach=function(callback,thisArg){
+        thisArg=thisArg||window;
+        //如果浏览器兼容，直接用浏览器支持的属性
+        if('forEach' in Array.prototype){
+            this.forEach(callback,thisArg);
+            return;//阻断程序执行的作用；
+        }
+        for(var i=0; i<this.length; i++){
+            callback.call(thisArg,this[i],i,this);
+        }
+    };
+    var ary=[10,20,30,40];
+    var obj={};
+    var res=ary.forEach(function(item,index,input){
+        console.log(item,index,input)
+    },obj)
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>圆梦源：勿忘初心，方得始终</title>
+</head>
+<body>
+<script>
+    var str='2017/04/02 11:59:30';
+    var str2='2017/04/02 12:32:59'
+    /*//1：这里的目的，是为了拿到数组；
+    /!*
+    //思路1：严格匹配；
+    var reg=/^(\d{4})[/-](\d{2})[/-](\d{2}) (\d{2}):(\d{2}):(\d{2})$/;
+    var ary=null;
+    str.replace(reg,function(){
+        ary=Array.prototype.slice.call(arguments,1,arguments.length-2)
+    });*!/
+    //思路2：match
+    //var ary=str.match(/\d+/g);
+    //思路3：split
+    var ary=str.split(/[^\d]+/g);
+    //2：替换成模版的样式
+    var strTemplate='{0}年{1}月{2}日 {3}时{4}分{5}秒';
+    strTemplate=strTemplate.replace(/{(\d)}/g,function($0,$1){
+        return ary[$1];
+    })*/
+    String.prototype.formatDate=function(template){
+        //传了按照传的来；没传，按照默认的模版来；
+        template=template||'{0}年{1}月{2}日 {3}时{4}分{5}秒';
+        //拿到数组；
+        var ary=this.match(/\d+/g);
+        template=template.replace(/{(\d)}/g,function($0,$1){
+            return ary[$1]
+        })
+        return template;
+    };
+    var res=str.formatDate('{3}时{4}分{5}秒');
+    var res2=str2.formatDate('{3}时{4}分{5}秒');
+
+</script>
+</body>
+</html>

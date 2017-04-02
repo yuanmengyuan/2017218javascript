@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>圆梦源：勿忘初心，方得始终</title>
+    <style>
+        textarea{
+            resize: none;
+        }
+    </style>
+</head>
+<body>
+<textarea id="t1" cols="30" rows="10">
+    习近平和夫人彭丽媛受到印度古吉拉特邦邦长克利、首席部长帕特尔、印度驻华大使康特等热情迎接,祖国人民热爱习近平和夫人彭丽媛。
+</textarea>
+<input type="button" value="过滤敏感词" id="btn"/>
+<textarea id="t2" cols="30" rows="10"></textarea>
+<script>
+    var oT1=document.getElementById('t1');
+    var oT2=document.getElementById('t2');
+    var oBtn=document.getElementById('btn');
+    oBtn.onclick=function(){
+        var str1=oT1.value;
+        var reg=/(习近平|夫人彭丽媛|印度)/g;
+        oT2.value=str1.replace(reg,function($0){
+            var str='';
+            for(var i=0; i<$0.length; i++){
+                str+='*';
+            }
+            return str;
+        });
+    }
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+

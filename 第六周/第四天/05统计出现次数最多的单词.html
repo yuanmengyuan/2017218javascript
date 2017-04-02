@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>圆梦源：勿忘初心，方得始终</title>
+</head>
+<body>
+<script>
+    //需求：求出现次数最多的单词，以及出现了多少次
+    var str='aabbaAaCbbCCCbbbAABBBBAAAAcccc';
+    /*var obj={};//利用对象不重名的特性
+    for(var i=0; i<str.length; i++){
+        var cur=str[i].toLowerCase();
+        if(obj[cur]){//以后再来的时候，就在你自己的基础上进行累加；
+            obj[cur]++;
+        }else{//第一次来，都赋值为1；
+            obj[cur]=1;
+        }
+    }
+    //找最多的次数；假设法
+    var max=obj.a;
+    for(var attr in obj){
+        if(obj[attr]>max){
+            max=obj[attr];
+        }
+    }
+    //找出出现次数最多的单词；
+    var str="";
+    for(var attr in obj){
+        if(obj[attr]==max){
+            str+=attr;
+        }
+    }*/
+    str=str.split('').sort(function(a,b){return a.localeCompare(b)}).join('');
+    var max=0,strMax="";
+    str.replace(/(\w)\1+/gi,function($0,$1){//重复子项
+        if($0.length>max){//假设法；
+            max=$0.length;
+            strMax=$1;
+        }else if($0.length==max){
+            strMax+=$1;
+        }
+    });
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+

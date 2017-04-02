@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>圆梦源：勿忘初心，方得始终</title>
+</head>
+<body>
+<script>
+    var str='my name is {0},i come form {1},my age is {2}';
+    var ary=['圆梦源',"北京",18];
+    //想替换的是{*}; 但是想用的是数字0,1,2;
+    str=str.replace(/{(\d)}/g,function($0,$1){
+        //把$1当作索引使用
+        return ary[$1]
+    })
+</script>
+</body>
+</html>
+
+
+
+
+
+
+

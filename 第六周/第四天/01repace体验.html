@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>圆梦源：勿忘初心，方得始终</title>
+</head>
+<body>
+<script>
+    var str='yuanmengyuanmeng';
+    /*str=str.replace('yuanmeng','yuanmengpeixun');
+    str=str.replace('yuanmeng','yuanmengpeixun');*/
+    var reg=/yuanmeng/g;
+    //回调函数被调用的次数，取决于正则匹配成功的次数
+    //replace中的回调函数，拿到的参数跟exec拿到的返回值是一样的；
+    str=str.replace(reg,function(item,index,input){
+        console.log(arguments)//arguments是用来接收实参的；
+        return 'yuanmengpeixun'
+    });
+   // str=str.replace(reg,'yuanmengpeixun')
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+

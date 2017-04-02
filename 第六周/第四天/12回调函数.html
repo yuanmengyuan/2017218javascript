@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>圆梦源：勿忘初心，方得始终</title>
+</head>
+<body>
+<script>
+    /*callback回调函数：就是把函数的定义阶段，作为参数，传给另一个函数
+    * 1 回调函数的中的this，一般都是window；可以通过call改变this指向；
+    * 2 callback什么时候被调用，以及被调用多少次，取决于father这个函数；
+    * 3 回调函数可以传参
+    * 4 如果回调函数被多次调用，且每个回调函数中都有返回值的话，那么我们应该把接收的多个返回值，放在一个数组中；最后把数组返回；
+    *
+    *
+    * */
+    var obj={};
+    function f1(n,m){
+        console.log(this+(n+m));
+    }
+    function father(n){
+        //n && n();//"n就是f1;"
+        var ary=[];
+        for(var i=0; i<4; i++){
+            ary.push(n.call(obj,2,3));
+        }
+        return ary;
+    }
+    var res=father(f1);
+</script>
+</body>
+</html>

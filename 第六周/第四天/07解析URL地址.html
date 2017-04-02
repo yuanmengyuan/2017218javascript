@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>圆梦源：勿忘初心，方得始终</title>
+</head>
+<body>
+<script>
+    var str='http://image.baidu.com/search/detail?ct=503316480&z=0&ipn=false';
+    var str2='https://www.baidu.com/?name=yuanmeng&age=18';
+    //{ct:5033164,z:0,ipn:false}
+    /*var reg=/([^?=&]+)=([^?=&]+)/g;
+    var obj={};
+    str.replace(reg,function($0,$1,$2){
+        obj[$1]=$2;
+    })*/
+    //把链接中传给后台的参数，以一个新对象的形式返回；
+    String.prototype.urlParse=function(){
+        var reg=/([^?&=]+)=([^?&=]+)/g;
+        var obj={};
+        this.replace(reg,function($0,$1,$2){
+            obj[$1]=$2;
+        })
+        return obj;
+    }
+    var obj=str.urlParse();
+    var obj2=str2.urlParse();
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+

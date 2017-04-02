@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>圆梦源：勿忘初心，方得始终</title>
+    <style>
+        div{
+            width: 200px;
+            height: 200px;
+            background: #ff0000;
+            opacity: 0.1;
+            filter:alpha(opacity=10);
+        }
+    </style>
+</head>
+<body>
+<div></div>
+<script>
+    var str='alpha(opacity=10)';
+    var reg=/alpha\(opacity=(\d+)\)/g;
+    //1）验证他写的是否规范 2）拿出透明度的值；
+    //没加全局g，正则天生具有懒惰性，导致每次都是从0开始查找；
+    /*if(reg.test(str)){
+        console.log(reg.lastIndex)
+        console.log(reg.exec(str)[1]);
+    }else{
+        console.log('亲，你透明度写错了')
+    }*/
+    console.log(reg.lastIndex)
+    if(reg.test(str)){
+        console.log(reg.lastIndex)//他是正则"实例"身上的属性；
+        console.log(RegExp.$1);//他是正则"类"的私有属性，也叫做静态属性；
+    }else{
+        console.log('不合格')
+    }
+</script>
+</body>
+</html>
+
+
+
+
+
+
+

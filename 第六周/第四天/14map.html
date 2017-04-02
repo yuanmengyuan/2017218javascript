@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>圆梦源：勿忘初心，方得始终</title>
+</head>
+<body>
+<script>
+    Array.prototype.myMap=function(callback,thisArg){
+        thisArg=thisArg||window;
+        //浏览器支持的话，直接使用浏览器提供的属性和方法
+        if('map' in Array.prototype){
+            return this.map(callback,thisArg);//1)阻断程序执行 2）返回值
+        }
+        var ary=[];
+        for(var i=0; i<this.length; i++){
+            var res=callback.call(thisArg,this[i],i,this);
+            ary.push(res);
+        }
+        return ary;
+    };
+    var ary=[10,20,30,40];
+    var obj={};
+    var res=ary.myMap(function(item,index,input){
+        console.log(item)
+        return this==window
+    });
+    console.log(res);
+</script>
+</body>
+</html>
+
+
+
+
+
