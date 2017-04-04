@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>圆梦源：勿忘初心，方得始终</title>
+    <style>
+        #div1{
+            width: 200px;
+            height: 200px;
+            background: #ff0000;
+        }
+    </style>
+</head>
+<body>
+<div id="div1"></div>
+<script>
+    var oDiv=document.getElementById('div1');
+    //getComputedStyle 支持的是标准浏览器，在IE下报错；
+   // console.log(getComputedStyle(oDiv,null).width);
+   // console.log(oDiv.currentStyle.width) //支持IE6-8
+    //1:但凡有报错，可以用try...catch..来解决兼容问题
+    //2:属性判断 "." ->有值 或 undefined
+    // 1)`if(obj.属性名)` 默认转成boolean  2) typeof(obj.属性名) === function
+    //3:属性判断用in  ->true false
+    //4:通过正则来判断
+    //1)var reg=/MSIE (6|7|8)\.0/g;  reg.test()   2)navigator.userAgent.search(/MSIE (6|7|8)\.0/gi)==-1
+//alert("getComputedStyle" in window)
+    //var reg=/MSIE (6|7|8)\.0/g;
+    //console.log(reg.test(window.navigator.userAgent))
+    if(window.navigator.userAgent.search(/MSIE (6|7|8)\.0/gi)==-1){
+        console.log('不是IE678浏览器')
+    }else{
+        console.log('是IE6-8浏览器')
+    }
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+

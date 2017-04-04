@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>圆梦源：勿忘初心，方得始终</title>
+    <style>
+        #div1{
+            width: 200px;
+            height: 200px;
+            background: #ff0000;
+            border:10px solid #000000;
+            opacity:0.1;
+            filter:alpha(opacity=10);
+        }
+    </style>
+</head>
+<body>
+<div id="div1"></div>
+<script>
+    var oDiv=document.getElementById('div1');
+    //求非行间样式；（这个方法，一样可以获取行间样式）
+    //求 某个元素 的 某个样式 ;  返回值：样式值
+    function getCss(ele,attr){
+        var value=null;
+        //if(window.getComputedStyle){
+        if('getComputedStyle' in window){//标准浏览器
+            value=getComputedStyle(ele,false)[attr];
+        }else{//IE浏览器
+            //第二次升级：透明度的处理
+            //当用户输入opacity的时候，实际上在IE中求filter:alpha(opacity=10)
+            if(attr=='opacity'){
+                value=ele.currentStyle.filter;
+                reg=/^alpha\(opacity=(\d+)\)$/;
+                //检验拿到的filter的值是否合格，如果合格，用第一个小分组；如果不合格，返回1；
+                return reg.exec(value)?reg.exec(value)[1]/100:1;
+            }else{
+                value=ele.currentStyle[attr];
+            }
+        }
+        //第一次升级：去除单位    px em rem pt   -200px
+        var reg=/^([+-]?((\d|([1-9]\d+))(\.\d+)?))(px|em|rem|pt)$/;
+
+        return reg.test(value)?parseFloat(value):value;
+    }
+    alert(getCss(oDiv,'opacity'))
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
