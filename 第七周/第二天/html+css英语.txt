@@ -1,0 +1,88 @@
+一、页面布局（layout）
+header 头部/页眉；
+index 首页/索引；
+logo 标志；
+nav/sub_nav 导航/子导航；
+banner 横幅广告；
+main/content 主体/内容；
+container/con 容器；
+wrapper/wrap 包裹（类似于container）；
+menu 菜单；
+sub_menu/second_menu 子菜单/二级菜单；
+list 列表；
+section 分区/分块（类似于div）;
+article 文章；
+aside 侧边栏/广告；
+footer 页脚/底部；
+title/sub_title 标题/副标题；
+news 新闻；
+hot 热点；
+pro 产品（product）；
+company 公司；
+msg/info 信息（message）/消息；
+ads 广告（advertisements）;
+icon 小图标；
+img 图片（image）；
+copyright 版权；
+contact_us 联系我们；
+friend_link 友情链接；
+tel 联系电话（telephone）；
+address 地址；
+
+二、CSS样式（style）
+
+CSS 层叠样式表 (Cascading Style Sheets) ；
+background 背景；
+position 位置/定位；
+relative/absolute/fixed 相对定位/绝对定位/固定定位；
+float 浮动；
+clear 清除；
+vertical-align: middle/top/bottom; 垂直居中/上/下；
+line-height 行高；
+margin 外边距；
+padding 内边距；
+border 边框；
+solid/dashed/dotted 实线/线虚线/点虚线；
+border-radius 圆角；
+shadow 阴影；
+display 展示；
+hidden 隐藏；
+block/inline-block 块元素/行内块；
+overflow 溢出；
+cursor 光标；
+animation 动画；
+css sprites 雪碧图/图片精灵；
+column 分列；
+flex 弹性（布局）；
+
+三、表单（form）与表格（table）
+
+form 表单；
+action 行为；
+method 方式/方法；
+input 输入框；
+label 标签；
+password 密码；
+radio 单选框；
+checkbox 复选框；
+btn 按钮（button）；
+submit/reset 提交/重置；
+textarea 文本域；
+select/option 选择框/选择项；
+placeholder 占位符（起提示作用）；
+search 搜索；
+icon 小图标；
+autofocus 自动聚焦；
+disabled 禁用；
+checked 选中（单选框/复选框）；
+selected 默认选择项（下拉选择框）；
+required 必填项；
+readonly 只读；
+table 表格；
+thead/tbody/tfoot 表格标题/主体/底部；
+colspan 跨列；
+rowspan 跨行；
+cellspacing 单元格间距（类似于margin）；
+cellpadding 单元格边距（类似于padding）；
+border-collapse: collapse; 边框合并（用于table上）；
+

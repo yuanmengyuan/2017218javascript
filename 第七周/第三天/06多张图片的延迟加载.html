@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>圆梦源：勿忘初心，方得始终</title>
+    <style>
+        div{
+            margin-bottom: 10px;
+            width:300px;
+            height:400px;
+            background: url("img/default.gif") center #ccc no-repeat;
+        }
+        div img{
+            width: 100%;
+            height:100%;
+        }
+    </style>
+</head>
+<body>
+<p style="height: 1000px;"></p>
+<div><img src="" realImg="img/01.jpg" alt=""/></div>
+<div><img src="" realImg="img/02.jpg" alt=""/></div>
+<div><img src="" realImg="img/033333.jpg" alt=""/></div>
+<div><img src="" realImg="img/04.jpg" alt=""/></div>
+<script src="utils.js"></script>
+<script>
+    var aImg=document.getElementsByTagName('img');
+    window.onscroll=function(){
+        for(var i=0; i<aImg.length; i++){
+            var scrollBottom=utils.win('scrollTop')+utils.win('clientHeight');
+            var imgPos=utils.offset(aImg[i]).top+utils.getCss(aImg[i],'height');
+            if(imgPos<scrollBottom){
+                lazyImg(aImg[i]);//作用：一个个的加载图片
+            }
+        }
+    };
+
+    function lazyImg(img){
+        if(img.loaded) return;
+        //1 创建一个临时的图片对象
+        var tmpImg=document.createElement('img');
+        //2 给临时图片对象，添加一个图片地址
+        tmpImg.src=img.getAttribute('realImg');
+        //3 校验地址：
+        tmpImg.onload=function(){
+            img.src=this.src;
+            tmpImg=null;
+            img.loaded=true;
+        };
+        tmpImg.onerror=function(){
+            img.parentNode.style.backgroundImage='url("img/error.gif")';
+            tmpImg=null;
+            img.loaded=true;
+        };
+    }
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+

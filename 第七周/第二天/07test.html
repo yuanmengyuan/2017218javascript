@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>圆梦源：勿忘初心，方得始终</title>
+    <style>
+        #div1{
+            width: 100%;
+            height: 200px;
+            background: #ff0000;
+            opacity: 0.2;
+            filter:alpha(opacity:20);
+        }
+    </style>
+</head>
+<body>
+<div id="div1">
+
+</div>
+<ul>
+    <li>我是列表1</li>
+    <li>我是列表2</li>
+    <li>我是列表3</li>
+    <li>我是列表4</li>
+</ul>
+<script src="utils2.js"></script>
+<script>
+    var oDiv=document.getElementById('div1');
+    var aLi=document.getElementsByTagName('li');
+    //nodeList htmlCollection
+    /*var ary=utils.makeArray(aLi);
+    console.log(ary instanceof Array);
+    console.log(ary.length);*/
+    alert(utils.getCss(oDiv,'opacity'))
+</script>
+</body>
+</html>

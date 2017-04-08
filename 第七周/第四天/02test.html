@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>圆梦源：勿忘初心，方得始终</title>
+</head>
+<body>
+<div class="div1 div2 div3"></div>
+<script src="js/utils.js"></script>
+<script>
+    var oDiv=document.getElementsByTagName('div')[0];
+    utils.addClass(oDiv,'div4 div5')
+    /*//需求：判断某个元素身上，是否有某个class名； 参数：元素，class名； 返回值：boolean
+    function hasClass(ele,cName){
+        var reg=new RegExp('\\b'+cName+'\\b');
+        return reg.test(ele.className);
+    }
+    alert(hasClass(oDiv,'div6'));*/
+</script>
+</body>
+</html>

@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>圆梦源：勿忘初心，方得始终</title>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+            list-style: none;
+        }
+        .wrap{
+            width: 1250px;
+            margin:0 auto;
+        }
+        .wrap ul{
+            width: 230px;
+            float: left;
+            margin: 10px;
+        }
+        /*当图片只设置宽度，不设置高度的时候，高度按照图片的比例自适应*/
+        .wrap ul li{
+            background: url("img2/default.gif") no-repeat center #ccc;
+            margin-bottom:10px;
+        }
+        .wrap ul img{
+            width:100%;
+        }
+        a{
+            position: fixed;
+            right:20px;
+            bottom:30px;
+            width: 80px;
+            height: 80px;
+            -webkit-border-radius: 50%;
+            -moz-border-radius: 50%;
+            border-radius: 50%;
+            background: darkgreen;
+            color: white;
+            text-align: center;
+            line-height: 80px;
+            font-size: 20px;
+            text-decoration: none;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+<div class="wrap">
+    <ul>
+       <!-- <li><img src="" alt=""/></li>-->
+    </ul>
+    <ul></ul>
+    <ul></ul>
+    <ul></ul>
+    <ul></ul>
+</div>
+<a href="javascript:;" id="btn">toTop</a>
+<script src="js/utils.js"></script>
+<script>
+    //1.请求数据 2.动态创建元素（先创建一个，再创建一堆)+绑定数据 3.图片延迟加载+瀑布流
+    (function(){
+        var data=null;
+        var aUl=document.getElementsByTagName('ul');
+        var aImg=document.getElementsByTagName('img');
+        var oBtn=document.getElementById('btn');
+        var timer=null;
+        var bOk=false;
+        var scrollBottom=null;
+        //1.请求数据
+        getData();
+        function getData(){
+            var xml=new XMLHttpRequest();
+            xml.open('get','json/data.txt');
+            xml.send();
+            xml.onreadystatechange=function(){
+                if(xml.readyState==4 && /^2\d{2}$/.test(xml.status)){
+                    data=utils.jsonParse(xml.responseText);
+                    li50();//只有拿到数据的时候，才能调用li50；
+                }
+            }
+        }
+        //2.动态创建元素
+        function createLi(){
+            var oLi=document.createElement('li');
+            oLi.innerHTML='<img src="" realImg="'+data[utils.rnd(0,9)].imgSrc+'" alt=""/>';
+            oLi.style.height=utils.rnd(80,200)+'px';
+            return oLi;
+        }
+        //3.创建50个li;
+        function li50(){
+            for(var i=0; i<50; i++){
+                var oLi=createLi();
+                var ary=utils.makeArray(aUl);
+                ary.sort(function(a,b){
+                    return utils.getCss(a,'height')-utils.getCss(b,'height');
+                })
+                ary[0].appendChild(oLi);
+            }
+            showImg();
+        }
+        //4.图片懒加载；
+        function showImg(){
+            scrollBottom=utils.win('clientHeight')+utils.win('scrollTop');
+            for(var i=0; i<aImg.length; i++){
+                var imgPos=utils.offset(aImg[i]).top+aImg[i].parentNode.offsetHeight;
+                if(imgPos<scrollBottom){
+                    lazyImg(aImg[i]);
+                }
+            }
+        }
+        function lazyImg(img){
+            if(img.loaded) return;
+            //1.创建临时图片对象
+            var tmpImg=new Image;
+            //2.给图片对象添加图片地址
+            tmpImg.src=img.getAttribute('realImg');
+            //3.测试图片地址
+            tmpImg.onload=function(){
+                img.src=this.src;
+                //把每个图片父容器的高度，改成图片自身的高度
+                img.parentNode.style.height=img.offsetHeight+'px';
+                img.loaded=true;
+                tmpImg=null;
+            }
+        }
+        //5.添加滚轮事件
+        window.onscroll=function(){
+            //瀑布流持续加载
+            if(scrollBottom+100>=document.body.scrollHeight){
+                li50();
+            }
+            //延迟加载
+            showImg();
+            //判断首屏是否显示toTop按钮
+
+            if(bOk) clearInterval(timer);
+            bOk=true;
+            if(utils.win('scrollTop')>utils.win('clientHeight')){
+                oBtn.style.display='block';
+            }else{
+                oBtn.style.display='none';
+            }
+        };
+        //6.回到顶部
+        oBtn.onclick=function(){
+            var target=utils.win('scrollTop');
+            var duration=1000;
+            var interval=30;
+            var step=target/duration*interval;
+            timer=setInterval(function(){
+                //每次获取最新的位置
+                var curTop=utils.win('scrollTop');
+                //在最新的位置进行累减
+                curTop-=step;
+                //停止条件判断
+                if(curTop<=0){
+                    utils.win('scrollTop',0);
+                    clearInterval(timer);
+                    return;
+                }
+                //重新赋值新位置
+                utils.win('scrollTop',curTop);
+                bOk=false;
+            },interval)
+        }
+    })()
+
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+

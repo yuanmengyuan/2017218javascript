@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en" class="html">
+<head>
+    <meta charset="UTF-8">
+    <title>圆梦源：勿忘初心，方得始终</title>
+    <style>
+        div{
+            padding:150px;
+            border:20px solid #000;
+            font-size: 40px;
+            color: #ffffff;
+        }
+        .divOuer{
+            background: red;
+            position: relative;
+        }
+        .divCenter{
+            background: green;
+        }
+        .divInner{
+            position: absolute;
+            left:300px;
+            top:300px;
+            background: blue;
+        }
+    </style>
+</head>
+<body class="body">
+<div class="divOuer" id="divOuer">divOuter
+    <div class="divCenter" id="divCenter">divCenter
+        <div class="divInner" id="divInner">divInner</div>
+    </div>
+</div>
+<script>
+    var oInner=document.getElementById('divInner');
+    //需求：想找到所有的结构父级；思路：必须先找到第一个结构父级，一层层往上找；
+    /*var par=oInner.parentNode;
+    while(par){
+        alert(par.className)
+        par=par.parentNode;
+    }*/
+    //需求：找到inner所有的定位父级
+    var par=oInner.offsetParent;
+    while(par){
+        alert(par.className);
+        par=par.offsetParent;
+    }
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+

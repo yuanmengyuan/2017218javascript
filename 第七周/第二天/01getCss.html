@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>圆梦源：勿忘初心，方得始终</title>
+    <style>
+        #div1{
+            width: 200px;
+            height: 200px;
+            background: #ff0000;
+            opacity:0.1;
+            filter:alpha(opacity:10)
+        }
+    </style>
+</head>
+<body>
+<div id="div1"></div>
+<script>
+    var oDiv=document.getElementById('div1');
+    function getCss(ele,attr){
+        var value=null;
+        var reg=null;
+        if(/MSIE (6|7|8)\.0/g.test(window.navigator.userAgent)){//是IE6-8 currentStyle
+            if(attr=='opacity'){//IE浏览器下对透明度的处理；
+                value=ele.currentStyle.filter;//filter:alpha(opacity:10)
+                reg=/alpha\(opacity:(\d+)\)/g;
+                return reg.test(value)?RegExp.$1/100:1;
+                // 无g:reg.test(value)?reg.exec(value)[1]/100:1;
+            }else{
+                value=ele.currentStyle[attr];
+            }
+        }else{//标准浏览器 getComputedStyle
+            value=getComputedStyle(ele,null)[attr];
+        }
+        //通过正则来处理单位；
+        reg=/^((\+|-)?((\d|([1-9]\d+))(\.\d+)?))(px|pt|rem|em)$/;
+        return reg.test(value)?parseFloat(value):value;
+    }
+    var res=getCss(oDiv,'opacity');
+    alert(res)
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

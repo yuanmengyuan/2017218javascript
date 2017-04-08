@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>圆梦源：勿忘初心，方得始终</title>
+</head>
+<body>
+<script>
+    function Fn(){
+        this.x=100;
+    }
+    //原型上的属性和方法：把Fn作为构造函数==》供实例使用new Fn;
+    Fn.prototype.showX=function(){
+        alert(this.x)
+    };
+    //把Fn作为一个对象的角色，给类添加"私有的"属性和方法；(静态属性和方法)
+    Fn.aa='ymy';
+    var f1=new Fn;
+    //f1.showX();
+    alert(f1.aa);//undefined
+    alert(Fn.aa);//ymy
+</script>
+</body>
+</html>

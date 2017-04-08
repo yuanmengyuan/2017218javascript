@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>圆梦源：勿忘初心，方得始终</title>
+    <style>
+        body{
+            padding:50px;
+        }
+        span{
+            width: 80px;
+            height: 80px;
+            border-radius: 40px;
+            margin:10px;
+            display: inline-block;
+            background: red;
+            color: white;
+            font-size: 30px;
+            text-align: center;
+            line-height: 80px;
+            opacity:0;
+        }
+    </style>
+</head>
+<body>
+<span>恭</span><span>喜</span><span>大</span><span>家</span><span>发</span><span>财</span>
+<script>
+    var aSpan=document.getElementsByTagName('span');
+    var n=0;
+    var timer=setInterval(function(){
+        if(n>=aSpan.length){
+            clearInterval(timer);
+            return;
+        }
+        aSpan[n].style.opacity=1;
+        n++;
+    },200)
+</script>
+</body>
+</html>

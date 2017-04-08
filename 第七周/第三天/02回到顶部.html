@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>圆梦源：勿忘初心，方得始终</title>
+    <style>
+        body,html{
+            width:100%;
+            height:300%;
+            background: -webkit-linear-gradient(top,lightpink,lightgreen,lightblue,darkolivegreen);
+        }
+        a{
+            width: 80px;
+            height: 80px;
+            border-radius: 40px;
+            background: darkgreen;
+            color: white;
+            font-size: 20px;
+            text-align: center;
+            line-height: 80px;
+            position: fixed;
+            right:20px;
+            bottom:30px;
+            text-decoration:none;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+<a href="javascript:;" id="btn">toTop</a>
+<script src="utils.js"></script>
+<script>
+    //需求：点击按钮，按钮立即隐藏，同时回调顶部
+    /*
+    * 已知条件：总距离target 总时间duration（毫秒） 频率interval:30毫秒
+    * 求出：固定步长； t/d*interval  每隔30ms能走的距离
+    * */
+    var oBtn=document.getElementById('btn');
+    window.onscroll=computedDisplay;
+    function computedDisplay(){
+        //当 滚动的距离 大于 一屏高度 的时候，才显示按钮，否则，隐藏按钮
+        if(utils.win('scrollTop')>utils.win('clientHeight')){
+            oBtn.style.display='block';
+        }else{
+            oBtn.style.display='none';
+        }
+    };
+    oBtn.onclick=function(){
+        //当点击按钮，让按钮立即隐藏，必须先禁止滚动条事件；
+        oBtn.style.display='none';
+        window.onscroll=null;
+        var target=utils.win('scrollTop');//总距离
+        var duration=3000;//总时间
+        var interval=10;//坑
+        var step=target/duration*interval;
+        var timer=setInterval(function(){
+            //每次在最新的距离上，减去固定步长
+            var curTop=utils.win('scrollTop');
+            curTop-=step;//减去固定步长，可以求出新的距离
+            if(curTop<=0){
+                utils.win('scrollTop',0);
+                clearInterval(timer);
+                window.onscroll=computedDisplay;
+                return;//阻止程序的执行；
+            }
+            //设置最新的距离；
+            utils.win('scrollTop',curTop);
+        })
+    }
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+

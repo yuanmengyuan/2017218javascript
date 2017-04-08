@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en" class="html">
+<head>
+    <meta charset="UTF-8">
+    <title>圆梦源：勿忘初心，方得始终</title>
+    <style>
+        div{
+            padding:150px;
+            border:20px solid #000;
+            font-size: 40px;
+            color: #ffffff;
+        }
+        .divOuer{
+            background: red;
+            position: relative;
+        }
+        .divCenter{
+            background: green;
+        }
+        .divInner{
+            position: absolute;
+            left:300px;
+            top:300px;
+            background: blue;
+        }
+    </style>
+</head>
+<body class="body">
+<div class="divOuer" id="divOuer">divOuter
+    <div class="divCenter" id="divCenter">divCenter
+        <div class="divInner" id="divInner">divInner</div>
+    </div>
+</div>
+<script>
+    var oInner=document.getElementById('divInner');
+    //需求:求 当前元素 到body的距离；
+    function offset(ele){
+        var par=ele.offsetParent;
+        var l=ele.offsetLeft;
+        var t=ele.offsetTop;
+        while(par){
+            //非IE8的时候，得累加边框
+            if(window.navigator.userAgent.toUpperCase().indexOf('MSIE 8.0')==-1){
+                l+=par.clientLeft;
+                t+=par.clientTop;
+            }
+            l+=par.offsetLeft;
+            t+=par.offsetTop;
+            par=par.offsetParent;//避免死循环，方便一层层往上找；
+        }
+        return {left:l,top:t}
+    }
+    var res=offset(oInner);
+    console.log(res.left);
+    console.log(res.top);
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+

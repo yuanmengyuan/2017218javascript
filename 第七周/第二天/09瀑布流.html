@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>圆梦源：勿忘初心，方得始终</title>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+            list-style: none;
+        }
+        div{
+            width: 1250px;
+            margin:0 auto;
+        }
+        ul{
+            width:230px;
+            float: left;
+            margin:10px;
+            font-size: 30px;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+<div>
+    <ul></ul>
+    <ul></ul>
+    <ul></ul>
+    <ul></ul>
+    <ul></ul>
+</div>
+<script src="utils2.js"></script>
+<script>
+    var aUl=document.getElementsByTagName('ul');
+    var n=0;
+    //需求：创建一大堆的li，然后一个个的往最短的ul中插入；
+    function createLi(){
+        var oLi=document.createElement('li');
+        oLi.style.height=utils.rnd(100,300)+'px';
+        oLi.style.background='rgb('+utils.rnd(0,255)+','+utils.rnd(0,255)+','+utils.rnd(0,255)+')';
+        return oLi;
+    };
+    aUl[0].appendChild(createLi());
+    function li50(){
+        for(var i=0; i<50; i++){
+            var oLi=createLi();
+            oLi.innerHTML=++n;
+            //插入到最短的ul中，所以就涉及了排序
+            //类数组转数组
+            var ary=utils.makeArray(aUl);
+            //排序
+            ary.sort(function(a,b){
+                return utils.getCss(a,'height')-utils.getCss(b,'height');
+            });
+            ary[0].appendChild(oLi);
+        }
+    }
+    li50();
+    window.onscroll=function(){
+        if(utils.win('scrollTop')+utils.win('clientHeight')+100>=document.body.scrollHeight){
+            li50();//补货即填充内容
+        }
+    }
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+

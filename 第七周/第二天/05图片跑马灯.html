@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>圆梦源：勿忘初心，方得始终</title>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+            list-style: none;
+        }
+        div{
+            width: 800px;
+            height:200px;
+            border:10px dashed #2fbb72;
+            margin:100px auto;
+            position: relative;
+            overflow: hidden;
+        }
+        ul{
+            height: 200px;
+            position: absolute;
+            left:0;
+            top:0;
+        }
+        ul li{
+            width: 200px;
+            height: 200px;
+            float: left;
+        }
+        ul li img{
+            width: 100%;
+            height: 100%;
+            display: block;
+        }
+    </style>
+</head>
+<body>
+<div>
+    <ul>
+        <li><img src="img/1.jpg" alt=""/></li>
+        <li><img src="img/2.jpg" alt=""/></li>
+        <li><img src="img/3.jpg" alt=""/></li>
+        <li><img src="img/4.jpg" alt=""/></li>
+    </ul>
+</div>
+<script src="utils.js"></script>
+<script>
+    var oUl=document.getElementsByTagName('ul')[0];
+    var aLi=oUl.getElementsByTagName('li');
+    //把ul里面的内容多复制出一份；
+    oUl.innerHTML+=oUl.innerHTML;
+    //必须重新设置ul的宽度
+    oUl.style.width=aLi[0].offsetWidth*aLi.length+'px';
+    var timer=setInterval(function(){
+        //每次拿到最新的位置；
+        var curLeft=utils.getCss(oUl,'left');
+        //在最新的位置上减去固定的值；
+        curLeft-=5;
+        if(curLeft<=-oUl.offsetWidth/2){
+            curLeft=0;
+        }
+        oUl.style.left=curLeft+'px';
+    },30)
+</script>
+</body>
+</html>

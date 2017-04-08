@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>圆梦源：勿忘初心，方得始终</title>
+</head>
+<body>
+<div id="wrap">
+    <div class="div1 div2 div3 div4"></div>
+    <div class="div1 div2 div3"></div>
+    <div class="div1 div2"></div>
+    <div class="div1"></div>
+    <p class="div1 div2 div3"></p>
+    <span></span>
+</div>
+<script>
+    var oWrap=document.getElementById('wrap');
+    //需求：限定范围-parent 的通过class名-strClass 来获取 一组元素[];
+    //参数：strClass parent     返回值：[]
+    function getByClass(strClass,parent){ //'box1       box3'
+        parent=parent||document;
+        //如果系统支持的话，直接使用系统提供的属性和方法
+        if('getComputedStyle' in window){
+            return Array.prototype.slice.call(parent.getElementsByClassName(strClass));//把类数组转成数组，保证函数数据格式的一致性
+        }
+        var ary=[];
+        //1.把字符串转成数组；
+        var aryClass=strClass.split(/ +/g);//   /\s+/g === / +/g
+        //2.获取当前容器下所有的元素 *
+        var nodeList=parent.getElementsByTagName('*');
+        //3.逐个检验每个元素的class名是否包含数组中的每一项
+        for(var i=0; i<nodeList.length; i++){
+            var curEle=nodeList[i];
+            var bOk=true;
+            //验证这个元素的class是否包含数组中的每一项
+            for(var j=0; j<aryClass.length; j++){//['div1','div2'];
+                var reg=new RegExp('\\b'+aryClass[j]+'\\b');
+                //如果有一项不符合，这个元素就不合格
+                if(!reg.test(curEle.className)){
+                    bOk=false;
+                    break;//break是跳出循环
+                }
+            }
+            if(bOk){
+                ary.push(curEle);
+            }
+        }
+        return ary;
+    }
+    console.log(getByClass('div1     div2'))
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+

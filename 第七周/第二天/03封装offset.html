@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en" class="html">
+<head>
+    <meta charset="UTF-8">
+    <title>圆梦源：勿忘初心，方得始终</title>
+    <style>
+        div{
+            padding:150px;
+            border:20px solid #000;
+            font-size: 40px;
+            color: #ffffff;
+        }
+        .divOuer{
+            background: red;
+            position: relative;
+        }
+        .divCenter{
+            background: green;
+        }
+        .divInner{
+            position: absolute;
+            left:300px;
+            top:300px;
+            background: blue;
+        }
+    </style>
+</head>
+<body class="body">
+<div class="divOuer" id="divOuer">divOuter
+    <div class="divCenter" id="divCenter">divCenter
+        <div class="divInner" id="divInner">divInner</div>
+    </div>
+</div>
+<script>
+    var oInner=document.getElementById('divInner');
+    //需求：求 当前元素 到 body的距离; 参数是当前元素； 返回值{};
+    function offset(ele){
+        var l=ele.offsetLeft;
+        var t=ele.offsetTop;
+        var par=ele.offsetParent;
+        while(par){
+            //当定位父级存在的情况下，我们要累加所有跟定位父级有关的值；
+            //只对非IE8的进行累加边框
+            if(window.navigator.userAgent.toUpperCase().indexOf('MSIE 8.0') ===-1){
+                l+=par.clientLeft;
+                t+=par.clientTop;
+            }
+            l+=par.offsetLeft;
+            t+=par.offsetTop;
+            par=par.offsetParent;//为了继续往上找，避免死循环
+        }
+        return {left:l,top:t};
+    }
+    var res=offset(oInner);
+    console.log(res.left);
+    console.log(res.top);
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+

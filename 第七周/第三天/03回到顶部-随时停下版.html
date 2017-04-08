@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>圆梦源：勿忘初心，方得始终</title>
+    <style>
+        body,html{
+            width:100%;
+            height:300%;
+            background: -webkit-linear-gradient(top,lightpink,lightgreen,lightblue,darkolivegreen);
+        }
+        a{
+            width: 80px;
+            height: 80px;
+            border-radius: 40px;
+            background: darkgreen;
+            color: white;
+            font-size: 20px;
+            text-align: center;
+            line-height: 80px;
+            position: fixed;
+            right:20px;
+            bottom:30px;
+            text-decoration:none;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+<a href="javascript:;" id="btn">toTop</a>
+<script src="utils.js"></script>
+<script>
+    var oBtn=document.getElementById('btn');
+    var bOk=false;
+    var timer=null;
+    //3：当滚轮事件发生的时候，决定是否显示按钮
+    window.onscroll=function(){//onscroll事件触发发生有两种：1）手动 2）定时器
+        if(bOk) clearInterval(timer);
+        bOk=true;
+        if(utils.win('scrollTop')>utils.win('clientHeight')){
+            oBtn.style.display='block';
+        }else{
+            oBtn.style.display='none';
+        }
+    };
+    //1：点击事件发生的时候，求步长
+    oBtn.onclick=function(){
+        var target=utils.win('scrollTop');
+        var duration=1000;
+        var interval=20;
+        var step=target/duration*interval;
+        //2：开启定时器，每次在最新的位置上减去固定的步长，再设置新位置
+        timer=setInterval(function(){//这里只有定时器在触发；
+            //2.1每次求出最新的位置
+            var curTop=utils.win('scrollTop');
+            curTop-=step;
+            //2.3 当到达顶部的时候，关闭定时器
+            if(curTop<=0){
+                utils.win('scrollTop',0);
+                clearInterval(timer);
+                return;
+            }
+            //2.2设置最新位置
+            utils.win('scrollTop',curTop);
+            bOk=false;
+        },interval)
+    }
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+

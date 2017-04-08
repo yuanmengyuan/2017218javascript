@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>圆梦源：勿忘初心，方得始终</title>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+            list-style: none;
+        }
+        #wrap{
+            width: 800px;
+            height: 200px;
+            border:10px dashed #2fbb72;
+            position: relative;
+            margin: 30px auto;
+            overflow: hidden;
+        }
+        #wrap ul{
+            position: absolute;
+            left:0;
+            top:0;
+            height:200px;
+        }
+        #wrap ul li{
+            width: 200px;
+            height: 200px;
+            float: left;
+        }
+        #wrap ul li img{
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+</head>
+<body>
+<div id="wrap">
+    <ul>
+        <li><img src="img/1.jpg" alt=""/></li>
+        <li><img src="img/2.jpg" alt=""/></li>
+        <li><img src="img/3.jpg" alt=""/></li>
+        <li><img src="img/4.jpg" alt=""/></li>
+    </ul>
+</div>
+<script src="utils2.js"></script>
+<script>
+    var oWrap=document.getElementById('wrap');
+    var oUl=oWrap.getElementsByTagName('ul')[0];
+    var aLi=oUl.getElementsByTagName('li');
+    //1.把ul的内容，扩充一份；更改ul的宽度
+    oUl.innerHTML+=oUl.innerHTML;
+    oUl.style.width=utils.getCss(aLi[0],'width')*aLi.length+'px';
+    //2.开定时器
+    var timer=setInterval(function(){
+        //先拿到最新的位置
+        var curLeft=utils.getCss(oUl,'left');
+        //在最新的位置上累-
+        if(curLeft<=-utils.getCss(oUl,'width')/2){
+            curLeft=0;
+        }
+        curLeft-=10;
+        oUl.style.left=curLeft+'px';
+    },30)
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>圆梦源：勿忘初心，方得始终</title>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+            list-style: none;
+        }
+        div{
+            width: 1250px;
+            margin:0 auto;
+        }
+        ul{
+            width: 230px;
+            float: left;
+            margin:10px;
+        }
+        ul li{
+            font-size: 30px;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+<div>
+    <ul></ul>
+    <ul></ul>
+    <ul></ul>
+    <ul></ul>
+    <ul></ul>
+</div>
+<script src="utils.js"></script>
+<script>
+    //要创建一大堆的li；每个li的高度随机，背景颜色随机；每次插入最短的ul中；
+    var aUl=document.getElementsByTagName('ul');
+    var n=0;
+    function rnd(n,m){
+        n=Number(n);
+        m=Number(m);
+        //如果传入的是无效的数字，那么我返回-1或0-1之间的随机小数
+        if(isNaN(n) || isNaN(m)){
+            return Math.random();//返回0-1之间随机小数，代表传参错误；
+        }
+        //如果参数n>m;那么应该他两互换位置；
+        if(n>m){
+            var tmp=m;
+            m=n;
+            n=tmp;
+        }
+        return Math.round(Math.random()*(m-n)+n);
+    }
+    function createLi(){
+        var oLi=document.createElement('li');
+        oLi.style.height=rnd(100,300)+'px';//随机高度
+        oLi.style.background='rgb('+rnd(0,255)+','+rnd(0,255)+','+rnd(0,255)+')';//随机背景色
+        return oLi;
+    }
+    function li50(){
+        for(var i=0; i<50; i++){
+            var oLi=createLi();
+            oLi.innerHTML=++n;
+            //1.类数组转数组
+            var ary=utils.makeArray(aUl);
+            //2.sort排序
+            ary.sort(function(a,b){
+                return utils.getCss(a,'height')-utils.getCss(b,'height')
+            });
+            //3.把oLi插入到最短的ul中；
+            ary[0].appendChild(oLi);
+        }
+    }
+    li50();
+    window.onscroll=function(){
+        if(utils.win('scrollTop')+utils.win('clientHeight')+100>=document.body.scrollHeight){
+            li50();
+        }
+    }
+</script>
+</body>
+</html>
