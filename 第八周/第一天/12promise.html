@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>圆梦源：勿忘初心，方得始终</title>
+    <style>
+        div{
+            width: 60px;
+            height: 60px;
+            -webkit-border-radius: 50%;
+            -moz-border-radius: 50%;
+            border-radius: 50%;
+        }
+        .div1{
+            background: red;
+        }
+        .div2{
+            background: yellow;
+        }
+        .div3{
+            background: green;
+        }
+    </style>
+</head>
+<body>
+<div class="div1" style="margin-left:0"></div>
+<div class="div2" style="margin-left:0"></div>
+<div class="div3" style="margin-left:0"></div>
+<script>
+var div1=document.getElementsByTagName('div')[0];
+var div2=document.getElementsByTagName('div')[1];
+var div3=document.getElementsByTagName('div')[2];
+//ele:让谁动 target:目的地 callback:到达目的地之后，想干什么事
+    function animate(ele,target,callback){
+        setTimeout(function(){
+            var n=parseInt(ele.style.marginLeft);//取整
+            //到达目的地之后，要做什么事--callback
+            if(n===target){
+                callback();
+            }else{//没到
+                if(n<target){
+                    n++;
+                }else{
+                    n--;
+                }
+                ele.style.marginLeft=n+'px';
+                animate(ele,target,callback)
+            }
+        },13)
+    }
+    /*animate(div1,100,function(){
+        animate(div2,200,function(){
+            animate(div3,300,function(){
+                animate(div3,150,function(){
+                    animate(div2,150,function(){
+                        animate(div1,150,function(){
+                            alert('运动结束啦')
+                        })
+                    })
+                })
+            })
+        })
+    })*/
+    function promiseAnimate(ele,target){//这个函数"返回"的是个实例对象；
+        //resolve:成功之后想做什么事 reject:失败
+        return new Promise(function(resolve,reject){
+            function animate(){//1)去掉参数
+                setTimeout(function(){
+                    var n=parseInt(ele.style.marginLeft);//取整
+                    //到达目的地之后，要做什么事--callback
+                    if(n===target){
+                        resolve();//做回调函数要做的事情
+                    }else{//没到
+                        if(n<target){
+                            n++;
+                        }else{
+                            n--;
+                        }
+                        ele.style.marginLeft=n+'px';
+                        animate()
+                    }
+                },13)
+            }
+            animate();
+        })
+    }
+promiseAnimate(div1,100)
+        .then(function(){
+            return promiseAnimate(div2,200)
+        })
+        .then(function(){
+            return promiseAnimate(div3,300)
+        })
+        .then(function(){
+            return promiseAnimate(div3,150)
+        })
+        .then(function(){
+            return promiseAnimate(div2,150)
+        })
+        .then(function(){
+            return promiseAnimate(div1,150)
+        })
+        .then(function(){
+            alert('运动结束')
+        })
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+

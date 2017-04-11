@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>圆梦源：勿忘初心，方得始终</title>
+    <style>
+        div{
+            width: 60px;
+            height: 60px;
+            -webkit-border-radius: 50%;
+            -moz-border-radius: 50%;
+            border-radius: 50%;
+        }
+        .div1{
+            background: red;
+        }
+        .div2{
+            background: green;
+        }
+        .div3{
+            background: blue;
+        }
+    </style>
+</head>
+<body>
+<div class="div1" style="margin-left: 0"></div>
+<div class="div2" style="margin-left: 0"></div>
+<div class="div3" style="margin-left: 0"></div>
+<script>
+    var div1=document.getElementsByTagName('div')[0];
+    var div2=document.getElementsByTagName('div')[1];
+    var div3=document.getElementsByTagName('div')[2];
+    function animate(ele,target,callback){
+        setTimeout(function(){
+            var n=parseInt(ele.style.marginLeft);
+            if(n==target){
+                callback();
+                return;
+            }else{
+                if(n>target){
+                    n--
+                }else{
+                    n++;
+                }
+                ele.style.marginLeft=n+'px';
+                animate(ele,target,callback);
+            }
+        },10)
+    }
+    /*animate(div1,100,function(){
+        animate(div2,200,function(){
+            animate(div3,300,function(){
+                animate(div3,150,function(){
+                    animate(div2,150,function(){
+                        animate(div1,150,function(){
+
+                        })
+                    })
+                })
+            })
+        })
+    })*/
+    function promiseAnimate(ele,target){
+        return new Promise(function(resolve,reject){
+            function animate(){
+                setTimeout(function(){
+                    var n=parseInt(ele.style.marginLeft);
+                    if(n==target){
+                        resolve();
+                        return;
+                    }else{
+                        if(n>target){
+                            n--
+                        }else{
+                            n++;
+                        }
+                        ele.style.marginLeft=n+'px';
+                        animate();
+                    }
+                },10)
+            }
+            animate()
+        })
+    }
+    promiseAnimate(div1,100)
+            .then(function(){
+                return promiseAnimate(div2,200)
+            })
+            .then(function(){
+                return promiseAnimate(div3,300)
+            })
+            .then(function(){
+                return promiseAnimate(div3,150)
+            })
+            .then(function(){
+                return promiseAnimate(div2,150)
+            })
+            .then(function(){
+                return promiseAnimate(div1,150)
+            })
+</script>
+</body>
+</html>
