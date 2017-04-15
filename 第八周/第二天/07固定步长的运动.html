@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>圆梦源：勿忘初心，方得始终</title>
+    <style>
+        #div{
+            position: absolute;
+            left:0;
+            top:0;
+            width: 100px;
+            height: 100px;
+            background: #ff0000;
+        }
+        .target{
+            position: absolute;
+            left: 800px;
+            top:0;
+            width: 1px;
+            height:300px;
+            background: #000000;
+        }
+    </style>
+</head>
+<body>
+<div id="div"></div>
+<div class="target"></div>
+<script>
+    var oDiv=document.getElementById('div');
+    var target=800;
+    var step=17.777777777;
+    var timer=setInterval(function(){
+        //每次需要获取最新的位置
+        var curLeft=oDiv.offsetLeft;
+        curLeft+=step;
+        oDiv.style.left=curLeft+'px';
+        //边界值的判断
+        if(curLeft+step>=target){
+            oDiv.style.left=target+'px';
+            clearInterval(timer);
+            return;
+        }
+    },30)
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>圆梦源：勿忘初心，方得始终</title>
+    <style>
+        div{
+            width: 200px;
+            height: 200px;
+            background: #ff0000;
+        }
+    </style>
+</head>
+<body>
+<div></div>
+<script src="js/jquery.js"></script>
+<script>
+    var oDiv=document.getElementsByTagName('div')[0];
+    //属于DOM0级事件，同一个元素身上，只能绑定一个事件；
+    /*oDiv.onclick=function(){
+        alert(1);
+    };
+    oDiv.onclick=function(){
+        alert(2);
+    }*/
+    /*$('div').click(function(){
+        alert(1)
+    })
+    $('div').click(function(){
+        alert(2)
+    })*/
+    function fn1(){
+        alert(1)
+    }
+    function fn2(){
+        alert(2)
+    }
+    function fn3(){
+        alert(3)
+    }
+    $('div').one('click',fn1);
+    $('div').one('click',fn2);
+    $('div').one('click',fn3);
+    $('div').off('click',fn1);
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+

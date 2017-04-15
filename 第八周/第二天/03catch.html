@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>圆梦源：勿忘初心，方得始终</title>
+</head>
+<body>
+<script>
+    function runAsync(){
+        return new Promise(function(resolve,reject){
+            setTimeout(function(){
+                var rnd=Math.random()*10;
+                if(rnd<5){
+                    resolve(rnd);
+                }else{
+                    reject('数字太大了');
+                }
+            },2000)
+        })
+    }
+    runAsync()
+            .then(function(data){
+                console.log(data)
+                console.log(aaaaa)
+            })
+            .catch(function(reason){//浏览器异常捕获
+                console.log(reason)
+            })
+            .then(function(){
+                alert(122345)
+            })
+</script>
+</body>
+</html>

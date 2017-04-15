@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>圆梦源：勿忘初心，方得始终</title>
+</head>
+<body>
+<script>
+    function requestImg(){//请求图片的异步
+        return new Promise(function(resolve,reject){
+            var img=new Image;
+            img.src='img2/1.jpg';
+            img.onload=function(){
+                resolve(this.src);//成功回调
+            }
+        })
+    }
+    function timeout(){
+        return new Promise(function(resolve,reject){
+            setTimeout(function(){
+                reject('图片请求超时')//失败回调
+            },500)
+        })
+    }
+    Promise
+            .race([requestImg(),timeout()])
+            .then(function(data){
+                console.log(data);
+            })
+            .catch(function(reason){
+                console.log(reason)
+            })
+
+</script>
+</body>
+</html>

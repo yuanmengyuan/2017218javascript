@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>圆梦源：勿忘初心，方得始终</title>
+</head>
+<body>
+<div class="div1">内容是:div1</div>
+<div class="div2">内容是:div2</div>
+<div class="div3">内容是:div3</div>
+<div class="div4">内容是:div4</div>
+
+<script src="js/jquery.js"></script>
+<script>
+    //1:console.log($('.div1'))
+    //2:
+    //console.log($('div:first'))
+    //3:
+    //console.log($('div').first())
+    //4:
+    //console.log($('div:eq(1)'));//可以拿到开头和结尾的元素，也可以拿到中间的元素
+//    console.log($('div:not(:first)'))
+//    console.log($('.div2,.div3,.div4'))
+    //隔行换色
+   /* $('div:even').css({background:"red"});
+    $('div:odd').css({background:"green"});*/
+    $('div:lt(3)').css({background:"red"})
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+

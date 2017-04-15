@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>圆梦源：勿忘初心，方得始终</title>
+    <style>
+        #div{
+            width: 100px;
+            height: 100px;
+            background: #ff0000;
+            position: absolute;
+            left:400px;
+            top:40px;
+        }
+        button{
+            width:150px;
+            display: inline-block;
+            height:30px;
+        }
+    </style>
+</head>
+<body>
+<button type="button" value="向左走">向左走</button>
+<button type="button" value="向右走">向右走</button>
+<div id="div"></div>
+<script>
+    var oLeft=document.getElementsByTagName('button')[0];
+    var oRight=document.getElementsByTagName('button')[1];
+    var oDiv=document.getElementById('div');
+    oRight.onclick=function(){
+        move(1000);
+    };
+    oLeft.onclick=function(){
+        move(0);
+    };
+
+    function move(target){
+        function _move(){
+            //通过自身的位置和目标值target来决定运动的方向；
+            var step=5;
+            var curLeft=oDiv.offsetLeft;
+            if(curLeft<target){
+                curLeft+=step;
+                //停止累加的条件判断
+                if(curLeft+step>=target){
+                    oDiv.style.left=target+'px';
+                    return;
+                }
+            }else{
+                curLeft-=step;
+                if(curLeft-step<=target){
+                    oDiv.style.left=target+'px';
+                    return;
+                }
+            }
+            oDiv.style.left=curLeft+'px';//设置最新的位置
+            //setTimeout(函数的定义阶段，毫秒数)
+            clearInterval(oDiv.timer);
+            //性能：会形成无数个不销毁的匿名函数
+            oDiv.timer=setTimeout(_move,10)
+        }
+        _move();
+    }
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+

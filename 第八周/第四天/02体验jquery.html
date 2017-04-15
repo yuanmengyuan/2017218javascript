@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>圆梦源：勿忘初心，方得始终</title>
+    <script src="js/jquery.js"></script>
+    <script>
+        window.onload=function(){
+            var oDiv=document.getElementById('div');
+            alert('我是原生JS')
+        };
+        /*$(function(){
+            console.log($('.div1'))
+        })*/
+        $(document).ready(function(){
+            console.log($('.div1'))
+            alert('我是jquery')
+        })
+    </script>
+</head>
+<body>
+<div id="div" class="div1">1223455666</div>
+<div class="div2">div111111</div>
+<!--<script>
+    /*var oDiv=document.getElementById('div');
+    alert(oDiv.innerHTML)*/
+    var $aDiv=$('.div1,.div2');//aa();
+    $aDiv.css('background','red');
+</script>-->
+</body>
+</html>
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>圆梦源：勿忘初心，方得始终</title>
+    <style>
+        #div{
+            width: 100px;
+            height: 100px;
+            background: #ff0000;
+            position: absolute;
+            left:500px;
+            top:30px;
+        }
+        .target{
+            position: absolute;
+            left:1000px;
+            top:0;
+            width: 1px;
+            height: 300px;
+            background: #000000;
+        }
+    </style>
+</head>
+<body>
+<div id="div"></div>
+<div class="target"></div>
+<script>
+    var oDiv=document.getElementById('div');
+    /*
+    * t:time 代表走了多久
+    * b:begin 起始位置
+    * c:change 还要走多远
+    * d:duration 总时间
+    * */
+    //Linear公式，可以求出现在的最新位置；
+    function Linear(t,b,c,d){
+        return c/d*t+b;
+    }
+    //为公式准备参数
+    var begin=oDiv.offsetLeft;
+    var target=1000;
+    var change=target-begin;
+    var duration=1000;
+    var time=0;//time代表时间
+    var timer=setInterval(function(){//timer代表定时器的名称
+        time+=10;
+        var curLeft=Linear(time,begin,change,duration);
+        if(time>=duration){
+            oDiv.style.left=target+'px';
+            clearInterval(timer);
+            return;
+        }
+        oDiv.style.left=curLeft+'px';
+    },10)
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+

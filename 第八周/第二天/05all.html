@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>圆梦源：勿忘初心，方得始终</title>
+</head>
+<body>
+<script>
+    function runAsync(){//我们给promise外面再套一层函数的目的：避免立即执行
+        var p=new Promise(function(resolve,reject){
+            setTimeout(function(){
+                console.log('执行完成');
+                resolve('随便什么数据');
+            },1000)
+        });
+        return p;
+    }
+    function runAsync2(){//我们给promise外面再套一层函数的目的：避免立即执行
+        var p=new Promise(function(resolve,reject){
+            setTimeout(function(){
+                console.log('执行完成2');
+                resolve('随便什么数据2');
+            },2000)
+        });
+        return p;
+    }
+    function runAsync3(){//我们给promise外面再套一层函数的目的：避免立即执行
+        var p=new Promise(function(resolve,reject){
+            setTimeout(function(){
+                console.log('执行完成3');
+                resolve('随便什么数据3');
+            },3000)
+        });
+        return p;
+    }
+    /*Promise
+            .all([runAsync(),runAsync2(),runAsync3()])//谁跑的慢，数据以谁为准
+            .then(function(data){
+                console.log(data)
+            })*/
+
+    Promise
+            .race([runAsync(),runAsync2(),runAsync3()])//谁跑的快，数据以谁为准
+            .then(function(data){
+                console.log(data)
+            })
+</script>
+</body>
+</html>
+
+
+
+
+
+
+

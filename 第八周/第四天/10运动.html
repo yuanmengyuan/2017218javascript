@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>圆梦源：勿忘初心，方得始终</title>
+    <style>
+        .wrap{
+            width: 200px;
+            height: 200px;
+            margin:0 auto;
+        }
+        .wrap button{
+            width: 100%;
+            height: 40px;
+        }
+        .wrap div{
+            width: 100%;
+            height: 160px;
+            background: #ff0000;
+        }
+    </style>
+</head>
+<body>
+<div class="wrap">
+    <button>点击运动</button>
+    <div></div>
+</div>
+<script src="js/jquery.js"></script>
+<script>
+    var bOk=true;
+    /*$('button').click(function(){
+        //stop() 开启定时器前，先关闭定时器；
+        //$('.wrap div').toggle();
+        //$('.wrap div').stop().slideToggle();
+        //$('.wrap div').stop().fadeToggle();
+        if(bOk){
+            /!*$('.wrap div').stop().fadeOut(2000,function(){
+                alert('我淡出了')
+            });*!/
+            $('.wrap div').stop().fadeOut();
+        }else{
+            $('.wrap div').stop().fadeIn();
+        }
+        bOk=!bOk;
+    })*/
+    $('button').click(function(){
+        $('.wrap div').animate({
+            height:0
+        },2000,'swing',function(){
+            alert('运动结束')
+        })
+    });
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+

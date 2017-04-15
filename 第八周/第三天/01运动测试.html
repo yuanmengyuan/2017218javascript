@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>圆梦源：勿忘初心，方得始终</title>
+    <style>
+        #div{
+            width: 100px;
+            height: 100px;
+            background: #ff0000;
+            position: absolute;
+            left:300px;
+            top:30px;
+            opacity: 1;
+            filter:alpha(opacity:10)
+        }
+    </style>
+</head>
+<body>
+<div id="div"></div>
+<script src="js/utils.js"></script>
+<script src="js/animateSuper.js"></script>
+<script>
+    var oDiv=document.getElementById('div');
+    animate({
+        ele:oDiv,
+        effect:["Bounce","easeInOut"],
+        target:{
+            left:1000,
+            top:400
+        },
+        callback:function(){
+            this.style.background='yellow'
+        }
+    })
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

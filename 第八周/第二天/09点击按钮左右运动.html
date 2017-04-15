@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>圆梦源：勿忘初心，方得始终</title>
+    <style>
+        #div{
+            width: 100px;
+            height: 100px;
+            background: #ff0000;
+            position: absolute;
+            left:400px;
+            top:40px;
+        }
+        button{
+            width:150px;
+            display: inline-block;
+            height:30px;
+        }
+    </style>
+</head>
+<body>
+<button type="button" value="向左走">向左走</button>
+<button type="button" value="向右走">向右走</button>
+<div id="div"></div>
+<script>
+    var oLeft=document.getElementsByTagName('button')[0];
+    var oRight=document.getElementsByTagName('button')[1];
+    var oDiv=document.getElementById('div');
+    oLeft.onclick=function(){
+        move(0)
+    };
+    oRight.onclick=function(){
+        move(1000);
+    };
+    function move(target){
+        //先获取自己的位置
+        _move();
+        function _move(){
+            var curLeft=oDiv.offsetLeft;
+            if(curLeft<target){
+                curLeft+=5;
+                if(curLeft+5>=target){//边界值的判断
+                    oDiv.style.left=target+'px';
+                    return;
+                }
+            }else{
+                curLeft-=5;
+                if(curLeft-5<=target){//边界值的判断
+                    oDiv.style.left=target+'px';
+                    return;
+                }
+            }
+            oDiv.style.left=curLeft+'px';
+            clearInterval(oDiv.timer);//开启定时器前，先关闭定时器
+            oDiv.timer=setTimeout(_move,10);
+        }
+    }
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+

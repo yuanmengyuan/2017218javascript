@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>圆梦源：勿忘初心，方得始终</title>
+    <style>
+        div{
+            width: 200px;
+            height: 200px;
+            background: #ff0000;
+        }
+        input{
+            width: 200px;
+            height: 50px;
+        }
+    </style>
+</head>
+<body>
+<div>毛爷爷是好朋友</div>
+<input type="text" value="我是表单元素"/>
+<script src="js/jquery.js"></script>
+<script>
+    $('div').click(function(){
+        //事件发生的时候，拿到的this指的是原生的；
+        //this.style.background='yellow';
+        //$(this).css('background','yellow');
+        //console.log(this)
+    });
+    //alert($('div').css('width',500))
+    //获取
+    //$('div').css('width')
+    /*$('div').css({
+        width:500,
+        backgroundColor:'green',
+        opacity:0.5
+    })*/
+    //alert($('div').html())
+    //alert($(':input').val())
+   // $(':input').val('11111111')
+    //alert($('input').attr('type','button'))
+</script>
+</body>
+</html>
