@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>圆梦源：勿忘初心，方得始终</title>
+</head>
+<body>
+<ul>
+    <li>列表1</li>
+    <li>列表2</li>
+    <li>列表3</li>
+    <li>列表4</li>
+</ul>
+<script src="js/jquery.js"></script>
+<script>
+    var ary=[100,200,300,400];
+    var obj={name:'ymy',age:'123'};
+    //$().each(); 只能遍历jquery元素，不能遍历原生
+    //$.each() 即可以遍历jquery元素，也可以遍历原生数组和原生对象；
+    /*$('li').each(function(index,item){
+        //回调函数中，接收两个参数：1）索引 2）元素对象
+        //item:是原生的；
+        //$(item).css('background','red')
+        if(index%2==0){//奇数
+            $(item).css('background','pink')
+        }else{//偶数
+            $(item).css('background','lightBlue')
+        }
+        return 123;
+    })*/
+    var res=$.each(ary,function(index,item){
+        return item+100;
+    });
+    alert(res===ary)
+     /*var res=$.map(ary,function(item,index){
+        return item+100
+    })*/
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
