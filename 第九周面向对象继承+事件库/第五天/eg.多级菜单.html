@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+            list-style: none;
+        }
+        .box{
+            width: 500px;
+            background: -webkit-linear-gradient(top,lightcyan,lightgoldenrodyellow,lightcoral);
+            margin:10px;
+            padding:10px;
+        }
+        .box li{
+            line-height: 30px;
+            position: relative;
+        }
+        .box li em{
+            position: absolute;
+            width: 16px;
+            height:16px;
+            top:7px;
+            background: url("img/icon.png") no-repeat -59px -28px;
+            /*background: url("img/icon.png") no-repeat -42px -29px;*/
+        }
+        .box li span{
+            padding-left: 20px;
+        }
+        .box li em:hover{
+            cursor: pointer;
+        }
+        .box ul{
+            display: none;
+        }
+        .box .two{
+            text-indent: 40px;
+        }
+        .box .three{
+            text-indent: 80px;
+        }
+        .box .four{
+            text-indent: 120px;
+        }
+
+    </style>
+</head>
+<body>
+<ul class="box" id="box">
+    <li><em></em><span>第一级第一个</span>
+        <ul class="two">
+            <li><em></em><span>第二级第一个</span>
+                <ul class="three">
+                    <li><span>第三级第一个</span></li>
+                    <li><em></em><span>第三级第二个</span>
+                        <ul class="four">
+                            <li><span>第四级第一个</span></li>
+                            <li><span>第四级第二个</span></li>
+                        </ul>
+                    </li>
+                    <li><span>第三级第三个</span></li>
+                </ul>
+            </li>
+            <li><span>第二级第二个</span></li>
+            <li><em></em><span>第二级第三个</span>
+                <ul class="three">
+                    <li><span>第三级第一个</span></li>
+                    <li><span>第三级第二个</span></li>
+                </ul>
+            </li>
+            <li><em></em><span>第二级第四个</span>
+                <ul class="three">
+                    <li><em></em><span>第三级第一个</span>
+                        <ul class="four">
+                            <li><span>第四级第一个</span></li>
+                            <li><span>第四级第二个</span></li>
+                            <li><span>第四级第三个</span></li>
+                        </ul>
+                    </li>
+                    <li><span>第三级第二个</span></li>
+                    <li><span>第三级第三个</span></li>
+                    <li><span>第三级第四个</span></li>
+                </ul>
+            </li>
+        </ul>
+    </li>
+    <li><em></em><span>第一级第二个</span>
+        <ul class="two">
+            <li><em></em><span>第二级第一个</span>
+                <ul class="three">
+                    <li><span>第三级第一个</span></li>
+                    <li><em></em><span>第三级第二个</span>
+                        <ul class="four">
+                            <li><span>第四级第一个</span></li>
+                            <li><span>第四级第二个</span></li>
+                        </ul>
+                    </li>
+                    <li><span>第三级第三个</span></li>
+                </ul>
+            </li>
+            <li><span>第二级第二个</span></li>
+            <li><em></em><span>第二级第三个</span>
+                <ul class="three">
+                    <li><span>第三级第一个</span></li>
+                    <li><span>第三级第二个</span></li>
+                </ul>
+            </li>
+            <li><em></em><span>第二级第四个</span>
+                <ul class="three">
+                    <li><em></em><span>第三级第一个</span>
+                        <ul class="four">
+                            <li><span>第四级第一个</span></li>
+                            <li><span>第四级第二个</span></li>
+                            <li><span>第四级第三个</span></li>
+                        </ul>
+                    </li>
+                    <li><span>第三级第二个</span></li>
+                    <li><span>第三级第三个</span></li>
+                    <li><span>第三级第四个</span></li>
+                </ul>
+            </li>
+        </ul>
+    </li>
+</ul>
+<script src="js/jquery.js"></script>
+<script>
+    var $box=$('.box');
+    var $aSpan=$box.find('span');
+    $.each($aSpan,function(index,item){
+        var pre=$(item).prev();
+        if(pre.length){
+            $(item).css('cursor','pointer')
+        }
+    });
+    $box.click(function(e){
+        //如果事件源是(span),看span前是否有em;如果有em，再看容器中是否有ul，显示-隐藏，隐藏-显示； 注意改变em的背景图；
+        var target= e.target;//原生
+        if(target.tagName.toLowerCase()=='span' || target.tagName.toLowerCase()=='em'){
+            var $parent=$(target.parentNode);
+            var $ul=$parent.children('ul');
+            var $em=$parent.children('em');
+            if($ul.length){
+                if($ul.css('display')=='block'){//收
+                    //当收起来的时候，让该容器下所有的ul都收起来；同时，让该容器下，所有的em都变成+号；
+                    var $aUl=$parent.find('ul');
+                    var $aEm=$parent.find('em');
+                    $aUl.css('display','none');
+                    $aEm.css('background','url("img/icon.png") no-repeat -59px -28px')
+                }else{//展开
+                    $ul.css('display','block');
+                    $em.css('background','url("img/icon.png") no-repeat -42px -29px')
+                }
+            }
+        }
+    })
+</script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>圆梦源：勿忘初心，方得始终</title>
+    <style>
+        div{
+            width: 200px;
+            height: 200px;
+            background: #ff0000;
+        }
+    </style>
+</head>
+<body>
+<div id="div"></div>
+<script>
+    var oDiv=document.getElementById('div');
+    var obj={};
+    function fn(n,m){
+        console.log(this,(n+m))
+    }
+    //bind属于预处理机制；把fn中的this和参数都改好之后，返回一个改好后的匿名函数；
+   // var res=fn.bind(obj,2,3);
+    oDiv.onclick=fn.bind(obj,2,3);
+</script>
+</body>
+</html>

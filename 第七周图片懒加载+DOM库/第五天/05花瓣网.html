@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>圆梦源：勿忘初心，方得始终</title>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+            list-style: none;
+        }
+        .wrap{
+            width: 1250px;
+            margin:0 auto;
+        }
+        .wrap ul{
+            width: 230px;
+            margin: 10px;
+            float: left;
+            height:auto;
+        }
+        .wrap ul li{
+            background:url("img2/default.gif") no-repeat center #ccc;
+            margin-bottom: 10px;
+        }
+        .wrap ul img{
+            width: 100%;
+        }
+        .btn{
+            position: fixed;
+            right:20px;
+            bottom:30px;
+            width: 80px;
+            height: 80px;
+            -webkit-border-radius: 50%;
+            -moz-border-radius: 50%;
+            border-radius: 50%;
+            background: darkgreen;
+            color: #fff;
+            text-align: center;
+            line-height: 80px;
+            font-size: 20px;
+            text-decoration: none;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+<div class="wrap">
+    <ul>
+        <!--<li><img src="" alt=""/></li>-->
+    </ul>
+    <ul></ul>
+    <ul></ul>
+    <ul></ul>
+    <ul></ul>
+</div>
+<a href="javascript:;" class="btn">toTop</a>
+<script src="js/utils.js"></script>
+<script>
+    var oWrap=utils.getByClass('wrap')[0];
+    var aUl=utils.getChildren(oWrap);
+    var aImg=oWrap.getElementsByTagName('img');
+    var oBtn=utils.getByClass('btn')[0];
+    var scrollBottom=null;
+    var data=null;
+    //获取数据，总共四部
+    getData();
+    function getData(){
+        var xml=new XMLHttpRequest();
+        xml.open('get','json/data.txt?t='+new Date().getTime());
+        xml.send(null);
+        xml.onreadystatechange=function(){
+            //判断准备状态和响应状态码
+            if(xml.readyState==4 && /^2\d{2}/.test(xml.status)){
+                data=utils.jsonParse(xml.responseText);
+                li50();
+            }
+        }
+
+    }
+    //创建一个li元素
+    function createLi(){
+        var oLi=document.createElement('li');
+        oLi.innerHTML='<img src="" realImg="'+data[utils.rnd(0,9)].imgSrc+'" alt=""/>';
+        oLi.style.height=utils.rnd(80,200)+'px';
+        return oLi;
+    }
+    //创建50个li元素
+    function li50(){
+        for(var i=0; i<50; i++){
+            var oLi=createLi();
+            var ary=utils.makeArray(aUl);
+            ary.sort(function(a,b){
+                return utils.getCss(a,'height')-utils.getCss(b,'height');
+            })
+            ary[0].appendChild(oLi);
+        }
+        showImg();
+    }
+    //图片懒加载
+    function showImg(){
+        //获取浏览器可视区的高度+滚动条全去的高度
+        scrollBottom=utils.win('clientHeight')+utils.win('scrollTop');
+        for(var i=0; i<aImg.length; i++){
+            //每个图片自身的高度+图片到body顶部的距离；
+            var imgPos=utils.getCss(aImg[i],'height')+utils.offset(aImg[i]).top;
+            if(imgPos<scrollBottom){
+                lazyImg(aImg[i]);
+            }
+        }
+    }
+    function lazyImg(img){
+        if(img.loaded) return;
+        //1.找图片临时对象
+        var tmpImg=new Image;
+        //2.给临时对象添加地址
+        tmpImg.src=img.getAttribute('realImg');
+        //3.验证地址
+        tmpImg.onload=function(){
+            img.src=this.src;
+            img.parentNode.style.height=img.offsetHeight+'px';
+            img.loaded=true;
+            tmpImg=null;
+        }
+    }
+    window.onscroll=function(){
+        //1:瀑布流
+        if(scrollBottom+100 > document.body.scrollHeight){
+            li50();
+        }
+        //2：图片延迟加载
+        showImg();
+        //3:超过一屏显示按钮
+        aa();
+    };
+    function aa(){
+        if(utils.win('scrollTop')>utils.win('clientHeight')){
+            oBtn.style.display='block';
+        }else{
+            oBtn.style.display='none';
+        }
+    }
+
+    oBtn.onclick=function(){
+        this.style.display='none';
+        window.onscroll=function(){
+            //1:瀑布流
+            if(scrollBottom+100 > document.body.scrollHeight){
+                li50();
+            }
+            //2：图片延迟加载
+            showImg();
+        };
+        //想到公式；
+        var target=utils.win('scrollTop');
+        var duration=1000;
+        var interval=30;
+        var step=target/duration*interval;
+        var timer=setInterval(function(){
+            // 求出最新的位置，进行累减，然后再重新赋值
+            var curTop=utils.win('scrollTop');
+            curTop-=step;
+            if(curTop<=0){
+                clearInterval(timer);
+                utils.win('scrollTop',0);
+                window.onscroll=function(){
+                    //1:瀑布流
+                    if(scrollBottom+100 > document.body.scrollHeight){
+                        li50();
+                    }
+                    //2：图片延迟加载
+                    showImg();
+                    aa();
+                };
+                return;
+            }
+            utils.win('scrollTop',curTop);
+        })
+    }
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+

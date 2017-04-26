@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>圆梦源：勿忘初心，方得始终</title>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+            border:0;
+            outline: none;
+            list-style: none;
+        }
+        body,html{
+            height: 100%;
+        }
+        a{
+            text-decoration: none;
+        }
+        img{
+            display: block;
+            width:400px;
+            margin:100px auto 20px;
+        }
+        .boxInner{
+            width: 700px;
+            height:40px;
+            margin:0 auto;
+            position: relative;
+        }
+        .boxInner input{
+            width:528px;
+            height:38px;
+            float: left;
+            border: 1px solid #cccccc;
+            font-size: 20px;
+            padding:0 10px;
+        }
+        .boxInner > button{
+            display: block;
+            float: left;
+            width:150px;
+            height:40px;
+            text-align: center;
+            line-height: 40px;
+            background: #3385ff;
+            color: white;
+            font-size: 20px;
+        }
+        .boxInner ul{
+            position: absolute;
+            left:1px;
+            top:40px;
+            box-shadow: 0 1px 3px #333;
+            width:698px;
+            display: none;
+        }
+        .boxInner ul li{
+            height: 35px;
+            line-height: 35px;
+            font-size: 20px;
+        }
+        .boxInner ul li a{
+            color: #333;
+            padding-left: 20px;
+            display: block;
+        }
+        .boxInner ul li.active{
+            background: #eeeeee;
+        }
+        .boxInner ul li a:hover{
+            background: #eeeeee;
+        }
+    </style>
+</head>
+<body>
+<div id="wrap">
+    <img src="img/bd_logo1.png" alt="logo"/>
+    <div class="boxInner">
+        <input type="text" id="txt"/><button href="javascript:;" id="btn">百度一下</button>
+        <ul id="ul">
+            <!--<li><a href="javascript:;">圆梦源-原生javascript</a></li>
+            <li><a href="javascript:;">圆梦源-node</a></li>
+            <li><a href="javascript:;">圆梦源-webpack</a></li>
+            <li><a href="javascript:;">圆梦源-react</a></li>
+            <li><a href="javascript:;">圆梦源-vue2</a></li>
+            <li><a href="javascript:;">圆梦源-angular4</a></li>-->
+        </ul>
+    </div>
+</div>
+<script src="js/jquery.js"></script>
+<script>
+    //请求地址：https://sp0.baidu.com/5a1Fazu8AA54nxGko9WTAnF6hhy/su?wd=sd&cb=
+    /*
+    * UL显示的情况
+    * 1）当聚焦的时候，如果文本框有内容，ul显示；否则，隐藏
+    * 2）在编辑内容的时候，如果有内容，ul显示，否则隐藏；同时，编辑内容的时候，列表跟着同步改变；
+    * 3）当鼠标点击列表的时候，对应的内容框变为我们点击的文字，同时开始搜索；
+    * 4）点击页面任何地方的时候，ul都隐藏；
+    * 5）点击百度一下，开始搜索；
+    * 6）当按上下键的时候，文本框的内容同步改变，按下enter键，开始搜索；
+    * */
+    var $wrap=$('#wrap');
+    var $txt=$('#txt');
+    var $ul=$('#ul');
+    var $btn=$('#btn');
+    var $aA=null;
+    var getData=null;
+    var n=-1;
+    var $aLi=null;
+    var oldValue=null;
+    $txt.on('focus keyup',showUl);
+    function showUl(){
+        //如果文本框有内容，ul显示；否则，隐藏
+        var val=$(this).val();
+        if(val.length){//有内容
+            $.ajax({
+                url:'https://sp0.baidu.com/5a1Fazu8AA54nxGko9WTAnF6hhy/su',
+                data:'wd='+val,
+                type:'get',
+                dataType:'jsonp',
+                jsonp:'cb',
+                success:function(data){
+                    //遍历数组，字符串绑定数据；
+                    var strLi='';
+                    getData=data.s;
+                    for(var i=0; i<getData.length; i++){
+                        strLi+='<li><a href="javascript:;">'+data.s[i]+'</a></li>';
+                    }
+                    $ul.html(strLi);
+                    $aLi=$('li');
+                }
+
+            })
+            $ul.show();
+        }else{//没有内容
+            $ul.hide();
+        }
+    }
+    $('body').on('click',function(e){
+        var target= e.target;
+        if(target.tagName.toLowerCase()==='a' && target.parentNode.tagName.toLowerCase()==='li'){
+            window.open('https://www.baidu.com/s?ie=utf-8&f=8&rsv_bp=0&rsv_idx=1&tn=baidu&wd='+$(target).html(),'_self');
+            return;
+        }
+        if(target.tagName.toLowerCase()==='button'){
+            window.open('https://www.baidu.com/s?ie=utf-8&f=8&rsv_bp=0&rsv_idx=1&tn=baidu&wd='+$txt.val(),'_self');
+            return;
+        }
+        if(target.tagName.toLowerCase()==='input'){
+            return false;//jquery中return false有三个功能1）阻止冒泡 2）阻止默认事件 3）阻断程序执行；
+        }
+        $ul.hide();
+
+    });
+    $txt.on('keydown',function(e){
+        //enter:13  上:38  下：40；
+
+        if(e.keyCode===40){
+            n++;
+            if(n>=getData.length){
+                n=-1;
+            }
+            showBg();
+        }else if(e.keyCode===38){
+            n--;
+            if(n<=-2){
+                n=getData.length-1;
+            }
+            showBg();
+
+        }else{
+            $txt.on('focus keyup',showUl);
+        }
+    });
+    function showBg(){
+        //坑：每次按下键的时候，oldValue都会更改，如果我们指向给oldValue赋值一次，必须条件判断
+        if(!oldValue){
+            oldValue=$txt.val();
+        }
+        $txt.off('keyup',showUl);//解绑
+        if(n==-1){
+            $txt.val(oldValue);
+            $aLi.removeClass('active');
+        }else{
+            $aLi.eq(n).addClass('active').siblings('li').removeClass('active');
+            $txt.val($aLi.eq(n).children('a').html())
+        }
+    }
+</script>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+

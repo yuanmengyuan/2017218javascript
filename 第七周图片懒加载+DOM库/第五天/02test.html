@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>圆梦源：勿忘初心，方得始终</title>
+    <style>
+        html,body{
+           height:100%;
+        }
+    </style>
+</head>
+<body>
+<div id="div"></div>
+<script src="js/utils.js"></script>
+<script>
+    var oDiv=document.getElementById('div');
+    /*utils.setCss(oDiv,'height','100');
+    utils.setCss(oDiv,'background','red');
+    utils.setCss(oDiv,'opacity',0.1)*/
+    utils.setGroupCss(oDiv,{
+        width:'100%',
+        height:400,
+        backgroundColor:'green',
+        opacity:0.4
+    })
+    console.log({}.toString()==='[object Object]')
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+

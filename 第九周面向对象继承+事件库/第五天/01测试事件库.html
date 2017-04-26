@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>圆梦源：勿忘初心，方得始终</title>
+    <style>
+        html,body{
+            height:100%;
+        }
+        div{
+            width: 200px;
+            height: 200px;
+            background: #ff0000;
+        }
+    </style>
+</head>
+<body>
+<div id="div"></div>
+<script>
+    var oDiv=document.getElementById('div');
+    function fn1(){console.log(this===window)}
+    function fn2(){console.log(2)}
+    function fn3(){console.log(3)}
+    function fn4(){console.log(4)}
+    function fn5(){console.log(5)}
+    function fn6(){console.log(6)}
+    function fn7(){console.log(7)}
+    function fn8(){console.log(8)}
+    function fn9(){console.log(9)}
+    function fn10(){console.log(10)}
+    /*document.body.addEventListener('click',fn9);
+    document.body.addEventListener('click',fn1);
+    document.body.addEventListener('click',fn2);
+    document.body.addEventListener('click',fn3);
+    document.body.addEventListener('click',fn4);
+    document.body.addEventListener('click',fn5);
+    document.body.addEventListener('click',fn6);
+    document.body.addEventListener('click',fn7);
+    document.body.addEventListener('click',fn8);
+    document.body.addEventListener('click',fn10);*/
+    oDiv.attachEvent('onclick',fn9);
+    oDiv.attachEvent('onclick',fn1);
+    oDiv.attachEvent('onclick',fn1);
+    oDiv.attachEvent('onclick',fn1);
+    oDiv.attachEvent('onclick',fn1);
+    oDiv.attachEvent('onclick',fn1);
+    oDiv.attachEvent('onclick',fn1);
+    oDiv.attachEvent('onclick',fn1);
+    oDiv.attachEvent('onclick',fn2);
+    oDiv.attachEvent('onclick',fn3);
+    oDiv.attachEvent('onclick',fn4);
+    oDiv.attachEvent('onclick',fn5);
+    oDiv.attachEvent('onclick',fn6);
+    oDiv.attachEvent('onclick',fn7);
+    oDiv.attachEvent('onclick',fn8);
+    oDiv.attachEvent('onclick',fn10);
+</script>
+</body>
+</html>

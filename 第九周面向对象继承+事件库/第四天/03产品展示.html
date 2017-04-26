@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>圆梦源：勿忘初心，方得始终</title>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+        }
+        div{
+            width:838px;
+            margin:50px auto;
+            position: relative;
+        }
+        div > img{
+            display:block;
+            width: 200px;
+            float: left;
+            border:1px solid #000;
+        }
+        div > img+img{
+            margin-left:10px;
+        }
+        div p{
+            position: absolute;
+            left:0;
+            top:0;
+            border: 1px solid #000;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+<div>
+    <img src="img/apple_1.jpg" bigSrc="img/apple_1_bigger.jpg" alt=""/>
+    <img src="img/apple_2.jpg" bigSrc="img/apple_2_bigger.jpg" alt=""/>
+    <img src="img/apple_3.jpg" bigSrc="img/apple_3_bigger.jpg" alt=""/>
+    <img src="img/apple_4.jpg" bigSrc="img/apple_4_bigger.jpg" alt=""/>
+    <p>
+        <img src="img/apple_1_bigger.jpg" alt=""/>
+    </p>
+</div>
+<script src="js/jquery.js"></script>
+<script>
+    //用了jquery的链式操作；jquery的事件对象：事件源，坐标e.clientX,属性attr
+    //当鼠标移入div的时候，让大图显示；
+    $('div').mouseover(function(){
+        $('p').show();
+    }).mouseout(function(){
+        //当鼠标移出div的时候，让大图隐藏
+        $('p').hide();
+    }).mousemove(function(e){
+        //希望大图跟随鼠标移动，同时换成对应的大图；
+       // console.log(e.clientX)
+        $('p').css({
+            left: e.clientX-$(this).offset().left+10,
+            top: e.clientY-$(this).offset().top+10
+        }).find('img').attr('src', $(e.target).attr('bigSrc'));
+        //找到图片，并且把图片的src换成事件源上存的大图的地址；
+    })
+</script>
+</body>
+</html>

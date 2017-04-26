@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>圆梦源：勿忘初心，方得始终</title>
+    <style>
+        div{
+            padding:100px;
+            font-size: 40px;
+        }
+        .div1{
+            background: red;
+        }
+        .div2{
+            background: blue;
+        }
+        .div3{
+            background: yellow;
+        }
+    </style>
+</head>
+<body>
+<div class="div1">div1
+    <div class="div2">div2
+        <div class="div3">div3</div>
+    </div>
+</div>
+<script>
+    var div1=document.getElementsByTagName('div')[0];
+    var aDiv=document.getElementsByTagName('div');
+    //事件委托
+    /*div1.onclick=function(e){
+        e=e||window.event;
+        alert(e.target.className)
+    }*/
+    //阻止冒泡
+    for(var i=0; i<aDiv.length; i++){
+        aDiv[i].onclick=function(e){
+            e=e||window.event;
+            e.stopPropagation? e.stopPropagation(): e.cancelBubble=true;
+            alert(this.className)
+        }
+    }
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+

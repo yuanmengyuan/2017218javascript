@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>圆梦源：勿忘初心，方得始终</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            -webkit-user-select: none;
+        }
+        body{
+            padding:10px;
+        }
+        #wrap{
+            width: 400px;
+            padding: 20px;
+            background:-webkit-linear-gradient(top,lightblue,lightgreen,lightgoldenrodyellow)
+        }
+        #wrap li{
+            line-height: 30px;
+            font-size: 20px;
+            position: relative;
+            padding-left:20px;
+        }
+        #wrap li em{
+            position: absolute;
+            left:0;
+            top:7px;
+            width: 16px;
+            height: 16px;
+            background: url("img/icon.png") -60px -29px  no-repeat;
+            /*background: url("img/icon.png") -40px -29px  no-repeat;*/
+        }
+        #wrap li p:hover{
+            cursor: pointer;
+        }
+        .two,.three,.four{
+            display: none;
+        }
+        .two{
+            margin-left: 20px;
+        }
+        .three{
+            margin-left: 40px;
+        }
+        .four{
+            margin-left: 60px;
+        }
+    </style>
+</head>
+<body>
+<ul id="wrap">
+    <li><p><em></em>第一级第1个</p>
+        <ul class="two">
+            <li><p><em></em>第二级第1个</p>
+                <ul class="three">
+                    <li>第三级第1个</li>
+                    <li>
+                        <p><em></em>第三级第2个</p>
+                        <ul class="four">
+                            <li>第四级第1个</li>
+                            <li>第四级第2个</li>
+                            <li>第四级第3个</li>
+                        </ul>
+                    </li>
+                    <li>第三级第3个</li>
+                    <li>
+                        <p><em></em>第三级第4个</p>
+                        <ul class="four">
+                            <li>第四级第1个</li>
+                            <li>第四级第2个</li>
+                            <li>第四级第3个</li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+            <li>第二级第2个</li>
+            <li><p><em></em>第二级第3个</p>
+                <ul class="three">
+                    <li>第三级第1个</li>
+                    <li>第三级第2个</li>
+                    <li>
+                        <p><em></em>第三级第3个</p>
+                        <ul class="four">
+                            <li>第四级第1个</li>
+                            <li>第四级第2个</li>
+                            <li>第四级第3个</li>
+                        </ul>
+                    </li>
+                    <li>第三级第4个</li>
+                </ul>
+            </li>
+            <li>
+                <p><em></em>第二级第4个</p>
+                <ul class="three">
+                    <li>第三级第1个</li>
+                    <li>第三级第2个</li>
+                </ul>
+            </li>
+        </ul>
+    </li>
+</ul>
+<script src="js/jquery.js"></script>
+<script>
+    /*$('#wrap').click(function(e){
+        if(e.target.tagName.toLowerCase()==='p'){
+            var $parent=$(e.target).parent();
+            var $em=$(e.target).children('em');
+            var $ul=$parent.children('ul');
+            if($ul.get(0).style.display=='block'){
+                //当要隐藏的时候，应该让下面所有的ul都都隐藏；同时让所有的em都变成+号；
+                var $aUl=$parent.find('ul');
+                var $aEm=$parent.find('em');
+                $aUl.css('display','none');
+                $aEm.css('backgroundPosition','-60px -29px');
+            }else{
+                $ul.get(0).style.display='block';
+                $em.css('backgroundPosition','-40px -29px');
+            }
+
+        }
+    })*/
+    $('p').click(function(){
+        var $parent=$(this).parent();
+        var $em=$(this).children('em');
+        var $ul=$parent.children('ul');
+        if($ul.get(0).style.display=='block'){
+            //当要隐藏的时候，应该让下面所有的ul都都隐藏；同时让所有的em都变成+号；
+            var $aUl=$parent.find('ul');
+            var $aEm=$parent.find('em');
+            $aUl.css('display','none');
+            $aEm.css('backgroundPosition','-60px -29px');
+        }else{
+            $ul.get(0).style.display='block';
+            $em.css('backgroundPosition','-40px -29px');
+        }
+    })
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+

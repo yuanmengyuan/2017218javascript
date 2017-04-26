@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>圆梦源：勿忘初心，方得始终</title>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+        }
+        html,body{
+            height: 100%;
+        }
+        a{
+            display: block;
+            width: 150px;
+            height: 40px;
+            background: #333333;
+            position: absolute;
+            left:50%;
+            margin-left: -200px;
+            top:100px;
+        }
+        div{
+            width: 400px;
+            height: 200px;
+            background: #cccccc;
+            position: absolute;
+            left:0;
+            top:40px;
+
+            display: none;
+        }
+    </style>
+
+</head>
+<body>
+<a href="javascript:;">
+    <div></div>
+</a>
+
+<script>
+    var oA=document.getElementsByTagName('a')[0];
+    var oDiv=document.getElementsByTagName('div')[0];
+    //如果一个容器中，有很多地方都要发生点击事件的时候，我们把点击事件委托给共同的父级；不同的操作，通过事件源来区分；
+    document.body.onclick=function(e){
+        e=e||window.event;
+        var target= e.target|| e.srcElement;
+        //当事件源为a标签的时候，我单独处理；
+        if(target.tagName.toLowerCase()==='a'){
+            console.log(oDiv.style.display)
+            if(oDiv.style.display=='block'){
+                oDiv.style.display='none';
+            }else{
+                oDiv.style.display='block';
+            }
+        }
+        //除了a标签和div标签之外，点击任何地方都隐藏；
+        if(target.tagName.toLowerCase()!=='div' && target.tagName.toLowerCase()!=='a'){
+            oDiv.style.display='none';
+        }
+    }
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+

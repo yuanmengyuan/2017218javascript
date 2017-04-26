@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>圆梦源：勿忘初心，方得始终</title>
+    <style>
+        div{
+            width: 100px;
+            height: 100px;
+            background: #ff0000;
+            position: absolute;
+            left:0;
+            top:0;
+        }
+    </style>
+</head>
+<body>
+路上看到加夫里什的减肥了快速的减肥了快三级代理反馈就是登录福建省龙卷风
+路上看到加夫里什的减肥了快速的减肥了快三级代理反馈就是登录福建省龙卷风
+路上看到加夫里什的减肥了快速的减肥了快三级代理反馈就是登录福建省龙卷风
+路上看到加夫里什的减肥了快速的减肥了快三级代理反馈就是登录福建省龙卷风
+路上看到加夫里什的减肥了快速的减肥了快三级代理反馈就是登录福建省龙卷风
+路上看到加夫里什的减肥了快速的减肥了快三级代理反馈就是登录福建省龙卷风
+路上看到加夫里什的减肥了快速的减肥了快三级代理反馈就是登录福建省龙卷风
+路上看到加夫里什的减肥了快速的减肥了快三级代理反馈就是登录福建省龙卷风
+路上看到加夫里什的减肥了快速的减肥了快三级代理反馈就是登录福建省龙卷风
+路上看到加夫里什的减肥了快速的减肥了快三级代理反馈就是登录福建省龙卷风
+路上看到加夫里什的减肥了快速的减肥了快三级代理反馈就是登录福建省龙卷风
+路上看到加夫里什的减肥了快速的减肥了快三级代理反馈就是登录福建省龙卷风
+路上看到加夫里什的减肥了快速的减肥了快三级代理反馈就是登录福建省龙卷风
+路上看到加夫里什的减肥了快速的减肥了快三级代理反馈就是登录福建省龙卷风
+<div id="div"></div>
+<script>
+    //把某个函数的this指向改成我们需要的this，同时，返回的函数中，还有事件对象
+    //把fn中的this，改成thisArg;
+    function processThis(fn,thisArg){
+        return function(e){
+            e=e||window.event;
+            fn.call(thisArg,e);
+        }
+    }
+    var oDiv=document.getElementById('div');
+    oDiv.onmousedown=down;
+    function down(e){
+        e=e||window.event;
+        //记录鼠标落脚点（距离可视区左上角的落脚点）
+        this.x= e.clientX;
+        this.y= e.clientY;
+        //记录div初始的位置
+        this.l=this.offsetLeft;
+        this.t=this.offsetTop;
+        if(this.setCapture){//IE
+            this.setCapture();
+            this.onmousemove=move;
+            this.onmouseup=up;
+        }else{//标准
+            //var _this=this;
+            document.onmousemove=processThis(move,this);
+            document.onmouseup=processThis(up,this);
+            e.preventDefault();
+        }
+    }
+    function move(e){
+        //在移动的过程中，不断的计算新位置，并给div设置新位置；
+        //move中的this永远都是div;
+        e=e||window.event;
+        this.style.left= e.clientX-this.x+this.l+'px';
+        this.style.top= e.clientY-this.y+this.t+'px';
+    }
+    function up(){
+        if(this.releaseCapture){
+            this.releaseCapture();//释放焦点
+            this.onmousemove=null;//this是document；
+            this.onmouseup=null;
+        }else{
+            document.onmousemove=null;//this是document；
+            document.onmouseup=null;
+        }
+
+    }
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+

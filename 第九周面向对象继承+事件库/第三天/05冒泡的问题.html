@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>圆梦源：勿忘初心，方得始终</title>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+        }
+        a{
+            display: block;
+            width: 150px;
+            height: 40px;
+            background: #333333;
+            position: absolute;
+            left:50%;
+            margin-left: -200px;
+            top:50%;
+            margin-top: -120px;
+        }
+        div{
+            width: 400px;
+            height: 200px;
+            background: #cccccc;
+            position: absolute;
+            left:0;
+            top:40px;
+
+            display: none;
+        }
+    </style>
+    
+</head>
+<body>
+<a href="javascript:;">
+<div></div>
+</a>
+
+<script>
+    var oA=document.getElementsByTagName('a')[0];
+    var oDiv=document.getElementsByTagName('div')[0];
+    oA.onmouseover=function(e){
+        e=e||window.event;
+        var oTo= e.fromElement|| e.relatedTarget;
+        if(this.contains(oTo)) return;
+        oDiv.style.display='block';
+        console.log('ok');
+    };
+    oA.onmouseout=function(e){
+        var e=e||window.event;
+        var oTo= e.toElement|| e.relatedTarget;
+        if(this.contains(oTo)) return;
+        oDiv.style.display='none';
+    };
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+

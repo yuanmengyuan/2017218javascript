@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>圆梦源：勿忘初心，方得始终</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        div{
+            position: absolute;
+            left:0;
+            top:0;
+            width: 100px;
+            height: 100px;
+            background: #ff0000;
+            cursor:move;
+        }
+    </style>
+</head>
+<body>
+laskjflkjas;kflasjf;l askdf;ksjdf;lkjsdfljlsajdglkjadlkjgkajd;kldjgklasjkdfjkasdjlfkjalskdjfkajsdfkjasldfkjklsdfjklajfkjakljfkajfljalfdkjaklfjdldajfkladsjfkajsfkajflkjfs
+laskjflkjas;kflasjf;l askdf;ksjdf;lkjsdfljlsajdglkjadlkjgkajd;kldjgklasjkdfjkasdjlfkjalskdjfkajsdfkjasldfkjklsdfjklajfkjakljfkajfljalfdkjaklfjdldajfkladsjfkajsfkajflkjfs
+laskjflkjas;kflasjf;l askdf;ksjdf;lkjsdfljlsajdglkjadlkjgkajd;kldjgklasjkdfjkasdjlfkjalskdjfkajsdfkjasldfkjklsdfjklajfkjakljfkajfljalfdkjaklfjdldajfkladsjfkajsfkajflkjfs
+laskjflkjas;kflasjf;l askdf;ksjdf;lkjsdfljlsajdglkjadlkjgkajd;kldjgklasjkdfjkasdjlfkjalskdjfkajsdfkjasldfkjklsdfjklajfkjakljfkajfljalfdkjaklfjdldajfkladsjfkajsfkajflkjfs
+laskjflkjas;kflasjf;l askdf;ksjdf;lkjsdfljlsajdglkjadlkjgkajd;kldjgklasjkdfjkasdjlfkjalskdjfkajsdfkjasldfkjklsdfjklajfkjakljfkajfljalfdkjaklfjdldajfkladsjfkajsfkajflkjfs
+laskjflkjas;kflasjf;l askdf;ksjdf;lkjsdfljlsajdglkjadlkjgkajd;kldjgklasjkdfjkasdjlfkjalskdjfkajsdfkjasldfkjklsdfjklajfkjakljfkajfljalfdkjaklfjdldajfkladsjfkajsfkajflkjfs
+laskjflkjas;kflasjf;l askdf;ksjdf;lkjsdfljlsajdglkjadlkjgkajd;kldjgklasjkdfjkasdjlfkjalskdjfkajsdfkjasldfkjklsdfjklajfkjakljfkajfljalfdkjaklfjdldajfkladsjfkajsfkajflkjfs
+laskjflkjas;kflasjf;l askdf;ksjdf;lkjsdfljlsajdglkjadlkjgkajd;kldjgklasjkdfjkasdjlfkjalskdjfkajsdfkjasldfkjklsdfjklajfkjakljfkajfljalfdkjaklfjdldajfkladsjfkajsfkajflkjfs
+laskjflkjas;kflasjf;l askdf;ksjdf;lkjsdfljlsajdglkjadlkjgkajd;kldjgklasjkdfjkasdjlfkjalskdjfkajsdfkjasldfkjklsdfjklajfkjakljfkajfljalfdkjaklfjdldajfkladsjfkajsfkajflkjfs
+laskjflkjas;kflasjf;l askdf;ksjdf;lkjsdfljlsajdglkjadlkjgkajd;kldjgklasjkdfjkasdjlfkjalskdjfkajsdfkjasldfkjklsdfjklajfkjakljfkajfljalfdkjaklfjdldajfkladsjfkajsfkajflkjfs
+laskjflkjas;kflasjf;l askdf;ksjdf;lkjsdfljlsajdglkjadlkjgkajd;kldjgklasjkdfjkasdjlfkjalskdjfkajsdfkjasldfkjklsdfjklajfkjakljfkajfljalfdkjaklfjdldajfkladsjfkajsfkajflkjfs
+laskjflkjas;kflasjf;l askdf;ksjdf;lkjsdfljlsajdglkjadlkjgkajd;kldjgklasjkdfjkasdjlfkjalskdjfkajsdfkjasldfkjklsdfjklajfkjakljfkajfljalfdkjaklfjdldajfkladsjfkajsfkajflkjfs
+laskjflkjas;kflasjf;l askdf;ksjdf;lkjsdfljlsajdglkjadlkjgkajd;kldjgklasjkdfjkasdjlfkjalskdjfkajsdfkjasldfkjklsdfjklajfkjakljfkajfljalfdkjaklfjdldajfkladsjfkajsfkajflkjfs
+laskjflkjas;kflasjf;l askdf;ksjdf;lkjsdfljlsajdglkjadlkjgkajd;kldjgklasjkdfjkasdjlfkjalskdjfkajsdfkjasldfkjklsdfjklajfkjakljfkajfljalfdkjaklfjdldajfkladsjfkajsfkajflkjfs
+laskjflkjas;kflasjf;l askdf;ksjdf;lkjsdfljlsajdglkjadlkjgkajd;kldjgklasjkdfjkasdjlfkjalskdjfkajsdfkjasldfkjklsdfjklajfkjakljfkajfljalfdkjaklfjdldajfkladsjfkajsfkajflkjfs
+<div id="div"></div>
+<script>
+    var oDiv=document.getElementById('div');
+    oDiv.onmousedown=down;
+    function down(e){
+        e=e||window.event;
+        //最初的div的位置;初始值；
+        this.l=this.offsetLeft;
+        this.t=this.offsetTop;
+        //最初的鼠标落脚点
+        this.x= e.clientX;
+        this.y= e.clientY;
+        if(this.setCapture){//IE浏览器
+            this.setCapture();//把焦点放在div上；
+            this.onmousemove=move;
+            this.onmouseup=up;
+        }else{//标准浏览器
+            var _this=this;
+            document.onmousemove=function(e){
+                move.call(_this,e)
+            };
+            document.onmouseup=up;
+            e.preventDefault();//通过阻止默认事件，来解决背景默认选中的问题
+        }
+    }
+    function move(e){
+        //把move中的this，都改为div
+        e=e||window.event;
+        this.style.left= e.clientX-this.x+this.l+'px';
+        this.style.top= e.clientY-this.y+this.t+'px';
+    }
+    function up(){
+        if(this.releaseCapture){//值支持IE浏览器
+            this.releaseCapture();//释放焦点
+            this.onmousemove=null;//this指div
+            this.onmouseup=null;
+        }else{//标准浏览器
+            this.onmousemove=null;//this指的是document;
+            this.onmouseup=null;
+        }
+    }
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+

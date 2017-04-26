@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>圆梦源：勿忘初心，方得始终</title>
+</head>
+<body>
+<script>
+    // fn.bind(obj,2,3)
+    Function.prototype.myBind=function(thisArg){
+        //截取除了this之外的其他参数，返回的是个数组；
+        var outArg=Array.prototype.slice.call(arguments,1);
+        //当浏览器支持的时候，直接使用浏览器提供的方法-->标准浏览器
+        if('bind' in Function.prototype){
+            return this.bind.apply(this,[thisArg].concat(outArg));
+        }
+        //IE浏览器
+        //保存正确的this
+        var _this=this;
+        return function(e){
+            //arguments：用来接收实参的
+            var innerArg= arguments.length==0?window.event:e;//innerArg用来拿的是事件对象；
+            _this.apply(thisArg,outArg.concat(innerArg));
+            //把一个已经改好this指向和参数的函数立即执行了：注意：只有匿名函数被调用，_this.apply这个函数才会立即执行；
+        }
+    };
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+

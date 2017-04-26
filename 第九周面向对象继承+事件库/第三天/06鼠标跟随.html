@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>圆梦源：勿忘初心，方得始终</title>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+        }
+        #wrap{
+            position: relative;
+            width:500px;
+            height:400px;
+            background: red;
+            margin:100px auto;
+        }
+        p{
+            width:100px;
+            height:100px;
+            background: #09802d;
+            position: absolute;
+        }
+    </style>
+</head>
+<body>
+<div id="wrap">
+
+</div>
+<script>
+    var oWrap=document.getElementById('wrap');
+    var oS=null;
+    /*oWrap.onmouseover=function(){
+        oS=document.createElement('p');
+        //当鼠标移入绿色div的时候，触发了绿色div的onmouseover事件，冒泡到父级oWrap.onmouseover
+        oS.onmouseover=function(e){
+            e=e||window.event;
+            //阻止冒泡
+            e.stopPropagation? e.stopPropagation(): e.cancelBubble=true;
+        };
+        this.appendChild(oS);
+    };
+    oWrap.onmousemove=function(e){
+        e=e||window.event;
+        oS.style.left= e.clientX-oWrap.offsetLeft+'px';
+        oS.style.top= e.clientY-oWrap.offsetTop+'px';
+    };
+    oWrap.onmouseout=function(){
+        oS.onmouseout=function(e){
+            e=e||window.event;
+            e.stopPropagation? e.stopPropagation(): e.cancelBubble=true;
+        };
+        this.removeChild(oS);
+    }*/
+    /*oWrap.onmouseenter=function(){
+        oS=document.createElement('p');
+        this.appendChild(oS);
+    };
+    oWrap.onmousemove=function(e){
+        e=e||window.event;
+        oS.style.left= e.clientX-this.offsetLeft+'px';
+        oS.style.top= e.clientY-this.offsetTop+'px';
+    };
+    oWrap.onmouseleave=function(){
+        this.removeChild(oS);
+    }*/
+    oWrap.onmouseover=function(e){
+        e=e||window.event;
+        //oTo拿到的是跟oWrap有关系的元素；
+        var oTo= e.fromElement|| e.relatedTarget;
+        //如果oWrap包含了有关系的元素的时候，我们什么也不做；
+        if(this.contains(oTo)) return;
+        oS=document.createElement('p');
+        this.appendChild(oS);
+    };
+    oWrap.onmousemove=function(e){
+        e=e||window.event;
+        oS.style.left= e.clientX-this.offsetLeft+'px';
+        oS.style.top= e.clientY-this.offsetTop+'px';
+    };
+    oWrap.onmouseout=function(e){
+        e=e||window.event;
+        var oTo= e.toElement|| e.relatedTarget;
+        if(this.contains(oTo)) return;
+        this.removeChild(oS);
+    }
+</script>
+</body>
+</html>

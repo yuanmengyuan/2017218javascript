@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>圆梦源：勿忘初心，方得始终</title>
+    <style>
+        div{
+            width: 200px;
+            height: 200px;
+            background: #ff0000;
+        }
+        #t1{
+            width: 200px;
+            height: 40px;
+        }
+    </style>
+</head>
+<body>
+<div id="div"></div>
+<input type="text" id="t1" placeholder="我是文本框"/>
+<script>
+    var oDiv=document.getElementById('div');
+    var oT=document.getElementById('t1');
+    /*oT.onfocus=function(){
+        console.log('聚焦了')
+    };
+    oT.onblur=function(){
+        console.log('失去焦点')
+    };*/
+    /*oT.autofocus=false;*/
+    //
+    /*oDiv.onclick=function(){
+        console.dir('dududu')
+    };
+    oDiv.onclick=function(){
+        console.dir('ahhahhaha')
+    }*/
+    /*oDiv.addEventListener('click',function(){
+        alert(1)
+    });
+    oDiv.addEventListener('click',function(){
+        alert(2)
+    });
+    oDiv.addEventListener('click',function(){
+        alert(3)
+    })*/
+    //oDiv.removeEventListener('click',名字)
+    function fn1(){
+        alert(1)
+    }
+    function fn2(){
+        alert(2)
+    }
+    //绑定
+    oDiv.attachEvent('onclick',fn1);
+    oDiv.attachEvent('onclick',fn2);
+    //解绑
+    oDiv.detachEvent('onclick',fn1);
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+

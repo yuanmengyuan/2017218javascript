@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>圆梦源：勿忘初心，方得始终</title>
+</head>
+<body>
+<script>
+    /*
+    * jsonp总共是三步：
+    * 1）定义了有名字的全局函数
+    * 2）通过script发送请求；这个请求，必须在全局函数之后；
+    * 3）当全局函数被调用的时候，会自动传入一个实参，这个实参就是数据，我们通过形参来接收这个数据；
+    *
+    * */
+    //定义了全局函数
+    window['ymy']=function(data){
+        //我通过形参就可以拿到请求过来的数据
+        console.log(data.s);
+    }
+</script>
+<script src="https://sp0.baidu.com/5a1Fazu8AA54nxGko9WTAnF6hhy/su?wd=renmingdemingyi&cb=ymy"></script>
+</body>
+</html>

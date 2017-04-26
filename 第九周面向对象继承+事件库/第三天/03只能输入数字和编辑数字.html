@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>圆梦源：勿忘初心，方得始终</title>
+    <style>
+        input{
+            width: 200px;
+            height: 40px;
+            border: 1px solid #000;
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body>
+<input type="text" placeholder="只能输入和编辑数字" id="txt"/>
+<script>
+    var oTxt=document.getElementById('txt');
+    oTxt.onkeydown=function(e){
+        e=e||window.event;
+        //console.log(e.keyCode)
+        if((e.keyCode<48 || e.keyCode>57) && e.keyCode!==8){
+            e.preventDefault ? e.preventDefault(): e.returnValue=false;
+        }
+    }
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+

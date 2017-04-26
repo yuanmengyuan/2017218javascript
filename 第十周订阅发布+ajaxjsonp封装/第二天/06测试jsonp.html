@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>圆梦源：勿忘初心，方得始终</title>
+</head>
+<body>
+<script src="js/ajax3.js"></script>
+<form enctype="application/x-www-form-urlencoded"></form>
+<script>
+    ajax({
+        url:'https://sp0.baidu.com/5a1Fazu8AA54nxGko9WTAnF6hhy/su',
+        data:{wd:'shuihuzhuan'},
+        type:'jsonp',
+        jsonp:'cb',
+        success:function(val){
+            console.log(val.s)
+        }
+
+    })
+</script>
+</body>
+</html>

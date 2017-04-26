@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>圆梦源：勿忘初心，方得始终</title>
+    <style>
+        body,html{
+            height:100%;
+        }
+        div{
+            width: 200px;
+            height: 200px;
+            background: #ff0000;
+        }
+        input{
+            width: 200px;
+            height: 40px;
+        }
+    </style>
+</head>
+<body>
+<div id="div">123345455</div>
+<input type="text" value="" placeholder="只能输入和修改数字"/>
+<script>
+    var oDiv=document.getElementById('div');
+    var oInput=document.getElementsByTagName('input')[0];
+    oDiv.onclick=function(e){
+        //e.target:事件源
+        //e.clientX 和 e.clientY:距离当前可视区左上角的坐标位置；
+        //e.pageX 和 e.pageY:当前鼠标落脚点，距离第一屏左上角的坐标位置；
+        e=e||window.event;
+        e.pageY=(document.documentElement.scrollTop||document.body.scrollTop)+ e.clientY;
+        e.pageX=(document.documentElement.scrollLeft||document.body.scrollLeft)+ e.clientX;
+        e.target= e.target|| e.srcElement;
+        console.log(e.type);
+        //console.log(e.pageX+','+ e.pageY);
+    }
+    /*oInput.onkeyup=function(e){
+        e=e||window.event;
+        // delete:8; 0:48; 9:57
+        console.log(e.keyCode)
+    }*/
+document.body.oncontextmenu=function(e){
+    e=e||window.event;
+    e.preventDefault ? e.preventDefault(): e.returnValue=false;
+    //alert(1)
+}
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+

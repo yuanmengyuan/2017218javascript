@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>圆梦源：勿忘初心，方得始终</title>
+    <style>
+        html,body{
+            height:100%;
+        }
+        div{
+            width: 200px;
+            height: 200px;
+            background: #ff0000;
+        }
+    </style>
+</head>
+<body>
+<div id="div"></div>
+<script src="js/event2.js"></script>
+<script>
+    var oDiv=document.getElementById('div');
+    function fn1(e){
+        console.log(this===oDiv);
+        console.log(e.pageX, e.pageY);
+    }
+    function fn2(){console.log(2)}
+    function fn3(){console.log(3)}
+    function fn4(){console.log(4)}
+    function fn5(){console.log(5)}
+    function fn6(){console.log(6)}
+    function fn7(){console.log(7)}
+    function fn8(){console.log(8)}
+    function fn9(){console.log(9)}
+    function fn10(){console.log(10)}
+    on(oDiv,'click',fn1);
+    on(oDiv,'click',fn1);
+    on(oDiv,'click',fn1);
+    on(oDiv,'click',fn1);
+    on(oDiv,'click',fn1);
+    on(oDiv,'click',fn1);
+    on(oDiv,'click',fn1);
+    on(oDiv,'click',fn2);
+    on(oDiv,'click',fn3);
+    on(oDiv,'click',fn4);
+    //[fn1,fn2,fn3,fn4]
+    /*off(oDiv,'click',fn1);
+    off(oDiv,'click',fn2);
+    off(oDiv,'click',fn4);*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</script>
+</body>
+</html>

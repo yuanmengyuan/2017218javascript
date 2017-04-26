@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>圆梦源：勿忘初心，方得始终</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        div{
+            position: absolute;
+            left:0;
+            top:0;
+            width: 100px;
+            height: 100px;
+            background: #ff0000;
+            cursor:move;
+        }
+    </style>
+</head>
+<body>
+laskjflkjas;kflasjf;l askdf;ksjdf;lkjsdfljlsajdglkjadlkjgkajd;kldjgklasjkdfjkasdjlfkjalskdjfkajsdfkjasldfkjklsdfjklajfkjakljfkajfljalfdkjaklfjdldajfkladsjfkajsfkajflkjfs
+laskjflkjas;kflasjf;l askdf;ksjdf;lkjsdfljlsajdglkjadlkjgkajd;kldjgklasjkdfjkasdjlfkjalskdjfkajsdfkjasldfkjklsdfjklajfkjakljfkajfljalfdkjaklfjdldajfkladsjfkajsfkajflkjfs
+laskjflkjas;kflasjf;l askdf;ksjdf;lkjsdfljlsajdglkjadlkjgkajd;kldjgklasjkdfjkasdjlfkjalskdjfkajsdfkjasldfkjklsdfjklajfkjakljfkajfljalfdkjaklfjdldajfkladsjfkajsfkajflkjfs
+laskjflkjas;kflasjf;l askdf;ksjdf;lkjsdfljlsajdglkjadlkjgkajd;kldjgklasjkdfjkasdjlfkjalskdjfkajsdfkjasldfkjklsdfjklajfkjakljfkajfljalfdkjaklfjdldajfkladsjfkajsfkajflkjfs
+laskjflkjas;kflasjf;l askdf;ksjdf;lkjsdfljlsajdglkjadlkjgkajd;kldjgklasjkdfjkasdjlfkjalskdjfkajsdfkjasldfkjklsdfjklajfkjakljfkajfljalfdkjaklfjdldajfkladsjfkajsfkajflkjfs
+laskjflkjas;kflasjf;l askdf;ksjdf;lkjsdfljlsajdglkjadlkjgkajd;kldjgklasjkdfjkasdjlfkjalskdjfkajsdfkjasldfkjklsdfjklajfkjakljfkajfljalfdkjaklfjdldajfkladsjfkajsfkajflkjfs
+laskjflkjas;kflasjf;l askdf;ksjdf;lkjsdfljlsajdglkjadlkjgkajd;kldjgklasjkdfjkasdjlfkjalskdjfkajsdfkjasldfkjklsdfjklajfkjakljfkajfljalfdkjaklfjdldajfkladsjfkajsfkajflkjfs
+laskjflkjas;kflasjf;l askdf;ksjdf;lkjsdfljlsajdglkjadlkjgkajd;kldjgklasjkdfjkasdjlfkjalskdjfkajsdfkjasldfkjklsdfjklajfkjakljfkajfljalfdkjaklfjdldajfkladsjfkajsfkajflkjfs
+laskjflkjas;kflasjf;l askdf;ksjdf;lkjsdfljlsajdglkjadlkjgkajd;kldjgklasjkdfjkasdjlfkjalskdjfkajsdfkjasldfkjklsdfjklajfkjakljfkajfljalfdkjaklfjdldajfkladsjfkajsfkajflkjfs
+laskjflkjas;kflasjf;l askdf;ksjdf;lkjsdfljlsajdglkjadlkjgkajd;kldjgklasjkdfjkasdjlfkjalskdjfkajsdfkjasldfkjklsdfjklajfkjakljfkajfljalfdkjaklfjdldajfkladsjfkajsfkajflkjfs
+laskjflkjas;kflasjf;l askdf;ksjdf;lkjsdfljlsajdglkjadlkjgkajd;kldjgklasjkdfjkasdjlfkjalskdjfkajsdfkjasldfkjklsdfjklajfkjakljfkajfljalfdkjaklfjdldajfkladsjfkajsfkajflkjfs
+laskjflkjas;kflasjf;l askdf;ksjdf;lkjsdfljlsajdglkjadlkjgkajd;kldjgklasjkdfjkasdjlfkjalskdjfkajsdfkjasldfkjklsdfjklajfkjakljfkajfljalfdkjaklfjdldajfkladsjfkajsfkajflkjfs
+laskjflkjas;kflasjf;l askdf;ksjdf;lkjsdfljlsajdglkjadlkjgkajd;kldjgklasjkdfjkasdjlfkjalskdjfkajsdfkjasldfkjklsdfjklajfkjakljfkajfljalfdkjaklfjdldajfkladsjfkajsfkajflkjfs
+laskjflkjas;kflasjf;l askdf;ksjdf;lkjsdfljlsajdglkjadlkjgkajd;kldjgklasjkdfjkasdjlfkjalskdjfkajsdfkjasldfkjklsdfjklajfkjakljfkajfljalfdkjaklfjdldajfkladsjfkajsfkajflkjfs
+laskjflkjas;kflasjf;l askdf;ksjdf;lkjsdfljlsajdglkjadlkjgkajd;kldjgklasjkdfjkasdjlfkjalskdjfkajsdfkjasldfkjklsdfjklajfkjakljfkajfljalfdkjaklfjdldajfkladsjfkajsfkajflkjfs
+<div id="div"></div>
+<script>
+    var oDiv=document.getElementById('div');
+    oDiv.onmousedown=function(e){
+        //记录鼠标按下的坐标，还需要根据div的位置，求出鼠标落脚点距离div的坐标
+        e=e||window.event;
+        var disX= e.clientX-this.offsetLeft;
+        var disY= e.clientY-this.offsetTop;
+        e=e||window.event;
+        if(this.setCapture){
+            this.onmousemove=function(e){
+                e=window.event;
+                //在move的时候，如果是IE浏览器，需要捕获焦点
+                //求出div移动时候的新位置；
+                this.setCapture();//捕获焦点，把焦点聚集在ie身上；
+                this.style.left= e.clientX-disX+'px';
+                this.style.top= e.clientY-disY+'px';
+            }
+        }else{//标准
+            document.onmousemove=function(e){
+                oDiv.style.left= e.clientX-disX+'px';
+                oDiv.style.top= e.clientY-disY+'px';
+            };
+            e.preventDefault();
+        }
+
+        if(this.releaseCapture){//IE
+            this.releaseCapture();
+            this.onmouseup=function(){
+                this.onmousemove=null;
+                this.onmouseup=null;
+            }
+        }else{
+            document.onmouseup=function(){
+                document.onmousemove=null;
+                document.onmouseup=null;
+            }
+
+        }
+
+
+    }
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+

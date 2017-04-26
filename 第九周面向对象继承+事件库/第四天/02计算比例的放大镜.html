@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>圆梦源：勿忘初心，方得始终</title>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+        }
+        .left,.right{
+            width: 400px;
+            height: 400px;
+            position: relative;
+            box-shadow: 0 0 10px #333;
+            margin:10px;
+            float: left;
+        }
+        .left{
+            background: url("img/1.jpg") no-repeat center;
+        }
+        .left .mark{
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            background: #ffff00;
+            opacity: 0.3;
+            filter:alpha(opacity=30);
+            display: none;
+        }
+        .right{
+            overflow: hidden;
+            display: none;
+        }
+        .right img{
+            position: absolute;
+            left:0;
+            top:0;
+        }
+    </style>
+</head>
+<body>
+<div class="left" id="left">
+    <div class="mark" id="mark"></div>
+</div>
+<div class="right" id="right"><img src="img/2.jpg" alt="" id="img"/></div>
+<script>
+    var oLeft=document.getElementById('left');
+    var oMark=document.getElementById('mark');
+    var oRight=document.getElementById('right');
+    var oImg=document.getElementById('img');
+    //mark不再是50%; 而是我们手动设置的250；所以，我们到时候需要计算mark和它父级的比例；来得出图片的比例；
+    oLeft.onmouseover=function(){
+        oMark.style.display=oRight.style.display='block';
+    };
+    oLeft.onmousemove=function(e){
+        //重新计算mark走的和图片走的；
+        e=e||window.event;
+        var l=e.clientX-this.offsetLeft-oMark.offsetWidth/2;
+        var t=e.clientY-this.offsetTop-oMark.offsetHeight/2;
+        var maxL=this.offsetWidth-oMark.offsetWidth;
+        var maxT=this.offsetHeight-oMark.offsetHeight;
+        if(l<=0){
+            l=0;
+        }else if(l>=maxL){
+            l=maxL;
+        }
+        if(t<=0){
+            t=0;
+        }else if(t>=maxT){
+            t=maxT;
+        }
+        //mark走的距离的比例m/maxL,应该"等于"图片走的比例?/img.offsetWidth-right.offsetWidth
+        //核心：l/maxL=?/right.offsetWidth-img.offsetWidth
+        oMark.style.left= l+'px';
+        oMark.style.top= t+'px';
+        oImg.style.left=l/maxL*(oRight.offsetWidth-oImg.offsetWidth)+'px';
+        oImg.style.top=t/maxT*(oRight.offsetHeight-oImg.offsetHeight)+'px';
+    };
+    oLeft.onmouseout=function(){
+        oMark.style.display=oRight.style.display='none';
+    };
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+

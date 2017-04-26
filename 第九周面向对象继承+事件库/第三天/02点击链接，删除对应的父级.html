@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>圆梦源：勿忘初心，方得始终</title>
+    <style>
+        div{
+            width: 100px;
+            height: 100px;
+            margin: 10px;
+            font-size: 20px;
+            float: left;
+            background: #ff0000;
+        }
+    </style>
+</head>
+<body>
+<script>
+    for(var i=0; i<20; i++){
+        var oDiv=document.createElement('div');
+        oDiv.innerHTML='<a href="javascript:;">'+i+'删除我吧</a>';
+        document.body.appendChild(oDiv);
+    }
+    //如果一个容器中，有很多个元素，都要触发某个行为，我们可以这个行为委托给他们共同的父级；然后通过事件源来做不同的区分；
+    document.body.onclick=function(e){
+        e=e||window.event;
+        //通过事件源来做不同的区分
+        e.target= e.target|| e.srcElement;
+        if(e.target.tagName.toLowerCase()=='a'){
+            this.removeChild(e.target.parentNode);
+        }
+    }
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+

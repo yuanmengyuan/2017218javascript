@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>圆梦源：勿忘初心，方得始终</title>
+    <style>
+        div{
+            width: 200px;
+            height: 200px;
+            background: #ff0000;
+        }
+    </style>
+</head>
+<body>
+<div id="div">
+    <a href="javascript:;">我是连接</a>
+</div>
+<script>
+    var oDiv=document.getElementsByTagName('div')[0];
+    oDiv.onclick=function(e){
+        //所有关于事件的详细信息，都放在事件对象中；
+        e=e||window.event;
+        // 当前所触发的事件类型
+        var type= e.type;
+        //事件源:事件源可以配合事件委托做事情；事件委托是冒泡的典型运用
+        var target= e.target|| e.srcElement;
+        //e.clientX,e.clientY:拿到的是鼠标落脚点，距离当前可视区左上角的坐标位置
+        //e.pageX,e.pageY;  scrollTop+clientX
+        //阻止默认事件：e.preventDefault?e.preventDefault():e.returnValue=false;
+    };
+    document.body.oncontextmenu=function(e){
+        e=e||window.event;
+        e.preventDefault ? e.preventDefault() : e.returnValue=false;
+    };
+
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>圆梦源：勿忘初心，方得始终</title>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+            border:0;
+            outline: none;
+            list-style: none;
+        }
+        body,html{
+            height: 100%;
+            overflow: hidden;
+        }
+        a{
+            text-decoration: none;
+        }
+        img{
+            display: block;
+            width:400px;
+            margin:100px auto 20px;
+        }
+        .boxInner{
+            width: 700px;
+            height:40px;
+            margin:0 auto;
+            position: relative;
+        }
+        .boxInner input{
+            width:528px;
+            height:38px;
+            float: left;
+            border: 1px solid #cccccc;
+            font-size: 20px;
+            padding:0 10px;
+        }
+        .boxInner > button{
+            display: block;
+            float: left;
+            width:150px;
+            height:40px;
+            text-align: center;
+            line-height: 40px;
+            background: #3385ff;
+            color: white;
+            font-size: 20px;
+        }
+        .boxInner ul{
+            position: absolute;
+            left:1px;
+            top:40px;
+            box-shadow: 0 1px 3px #333;
+            width:698px;
+            display: none;
+        }
+        .boxInner ul li{
+            height: 35px;
+            line-height: 35px;
+            font-size: 20px;
+        }
+        .boxInner ul li a{
+            color: #333;
+            padding-left: 20px;
+            display: block;
+        }
+        .boxInner ul li a.active{
+            background: #eeeeee;
+        }
+        .boxInner ul li a:hover{
+            background: #eeeeee;
+        }
+    </style>
+</head>
+<body>
+<div id="wrap">
+    <img src="img/bd_logo1.png" alt="logo"/>
+    <div class="boxInner">
+        <input type="text" id="txt"/><button href="javascript:;" id="btn">百度一下</button>
+        <ul id="ul">
+            <!--<li><a href="javascript:;">圆梦源-原生javascript</a></li>
+            <li><a href="javascript:;">圆梦源-node</a></li>
+            <li><a href="javascript:;">圆梦源-webpack</a></li>
+            <li><a href="javascript:;">圆梦源-react</a></li>
+            <li><a href="javascript:;">圆梦源-vue2</a></li>
+            <li><a href="javascript:;">圆梦源-angular4</a></li>-->
+        </ul>
+    </div>
+</div>
+<script src="js/ajax3.js"></script>
+<script>
+    /*
+    * 1)当聚焦的时候，如果有内容,显示，否则隐藏；
+    * 2)当编辑内容的时候，如果有内容,显示，否则隐藏；
+    * 3)当点击列表的时候，自动搜索
+    * 4)点击其他地方的时候UL隐藏；
+    * 5)点击百度以下的时候，开始搜索
+    * 6)按键盘上下键的时候，内容框的内容同步改变，当按enter的时候，开始搜索对应的内容
+    * */
+    var oWrap=document.getElementById('wrap');
+    var oTxt=document.getElementById('txt');
+    var oBtn=document.getElementById('btn');
+    var oUl=document.getElementById('ul');
+    var aA=oUl.getElementsByTagName('a');
+    var myData=null;
+    var n=-1;
+    var oldValue=null;
+    //1)当聚焦的时候，如果有内容,显示，否则隐藏；
+    oTxt.onfocus=oTxt.onkeyup=showData;
+    function showData(){
+        var val=this.value;
+        if(val.length){
+            ajax({
+                url:'https://sp0.baidu.com/5a1Fazu8AA54nxGko9WTAnF6hhy/su',
+                data:{wd:val},
+                type:'jsonp',
+                jsonp:'cb',
+                success:function(data){
+                    myData=data.s;
+                    //拿到数据后，进行字符串数据绑定
+                    var strLi='';
+                    for(var i=0; i<myData.length; i++){
+                        strLi+='<li><a href="javascript:;">'+myData[i]+'</a></li>'
+                    }
+                    oUl.innerHTML=strLi;
+                }
+            });
+            oUl.style.display='block';
+        }else{
+            oUl.style.display='none';
+        }
+    };
+    document.body.onclick=function(e){
+        e=e||window.event;
+        var target= e.target|| e.srcElement;
+        if(target.tagName.toLowerCase()=='a' && target.parentNode.tagName.toLowerCase()=='li'){
+            //target.innerHTML
+            search(target.innerHTML);
+        }
+        if(target.tagName.toLowerCase()==='button'){
+            search(oTxt.value);
+        }
+        //阻止input的冒泡
+        if(target.tagName.toLowerCase()==='input'){
+            e.stopPropagation ? e.stopPropagation() : e.cancelBubble=true;
+            return;
+        }
+        oUl.style.display='none';
+    };
+    //给input添加键盘事件
+    oTxt.onkeydown=function(e){
+        e=e||window.event;
+        //enter 13; 上:38  下：40；
+        if(e.keyCode==40){
+            n++;
+            if(n>=aA.length){
+                n=-1;
+            }
+            changeBg();
+        }else if(e.keyCode==38){
+            n--;
+            if(n<=-2){
+                n=aA.length-1;
+            }
+            changeBg();
+        }else if(e.keyCode==13){
+            search(oTxt.value);
+        }
+    };
+    function search(content){
+        window.open('https://www.baidu.com/s?wd='+content,'_self');
+        return;
+    }
+    function changeBg(){
+        //以下代码，都能共用；
+        if(!oldValue){//注意，只能保存一次oldValue;
+            oldValue=oTxt.value;
+        }
+        oTxt.onkeyup=null;
+        for(var i=0; i<aA.length; i++){
+            aA[i].className=null;
+        }
+        if(n==-1){
+            oTxt.value=oldValue;
+        }else{
+            aA[n].className='active';
+            oTxt.value=aA[n].innerHTML;
+        }
+    }
+
+</script>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+

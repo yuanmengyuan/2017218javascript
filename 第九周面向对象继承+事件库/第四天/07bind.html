@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>圆梦源：勿忘初心，方得始终</title>
+    <style>
+        div{
+            width: 200px;
+            height: 200px;
+            background: #ff0000;
+        }
+    </style>
+</head>
+<body>
+<div id="div"></div>
+<script>
+    var oDiv=document.getElementById('div');
+    //bind:预处理机制，就是先把函数中的this和参数都改了，然后返回一个改好的函数，这个函数不会立即执行，只有需要的时候，才会调用；
+    var obj={};
+    Function.prototype.myBind=function(thisArg){
+        //拿到除了this之外的其他参数；
+        var outArg=Array.prototype.slice.call(arguments,1);//[2,3]
+        //有浏览器支持，直接使用浏览器提供的bind方法；
+        if('bind' in Function.prototype){
+            return this.bind.apply(this,[thisArg].concat(outArg));
+        }
+        //处理IE 浏览器
+        var _this=this;
+        return function(e){
+            //注意：1)this指向
+            var innerArg=arguments.length==0?window.event:e;
+            _this.apply(thisArg,outArg.concat(innerArg));//后面传的参数：2，3，event事件对象
+        }
+    };
+    function fn(n,m){
+        var e=arguments[2];
+        console.log(e.clientX, e.clientY)
+        //console.log(this,(n+m))
+    }
+   // var res=fn.myBind(obj,2,3);//fn.bind(thisArg,2,3);
+    oDiv.onclick=fn.myBind(obj,2,3);
+    //1：考虑bind应该封装在哪里： Function.prototype.myBind
+    //2: bind中的this指向：实例；
+    //3: bind有多个参数；第一个参数必传；
+    //4: bind返回值：已经改好this和传好参数的匿名函数；
+
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+

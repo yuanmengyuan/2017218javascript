@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>圆梦源：勿忘初心，方得始终</title>
+</head>
+<body>
+<form action="" enctype="application/x-www-form-urlencoded"></form>
+<script src="js/ajax.js"></script>
+<script>
+    //前后台交互的核心：数据；
+    /*ajax({
+        url:'https://sp0.baidu.com/5a1Fazu8AA54nxGko9WTAnF6hhy/su',//请求地址;
+        data:{"wd":"人民的名义"},//前端传给后台的数据； 可有可无的
+        type:'jsonp',//请求方式；(post,get,jsonp)可有可无：如果写了jsonp,没写默认的都是"get"
+        jsonp:'cb',//可有可无：没有，默认是callback;
+        dataType:'json',//返回的数据类型；可有可无的，如果传了，拿到的数据就是"json对象"，如果没传，拿到的是"字符串"
+        fnLoading:function(){//等待加载
+            //
+            console.log('数据正在加载中，请耐心等待');
+        },
+        complete:function(){//加载完成
+            console.log('数据请求结束')
+        },
+        success:function(data){//数据请求成功
+            //数据绑定
+        },
+        error:function(data){//数据请求失败
+            //数据请求失败的处理
+        },
+        timeout:2000 //请求超时；可有可无：没传默认3000；
+
+    })*/
+    ajax({
+        url:'json/data1122222.txt',
+        data:{name:'ymy',age:'18'},
+        dataType:'json',
+        fnLoading:function(){
+            alert('请耐心等待')
+        },
+        complete:function(){
+            alert('请求完成，你猜猜有没有结果')
+        },
+        success:function(val){
+            console.log(val)
+        },
+        error:function(val){
+            console.log(val)
+        }
+    })
+</script>
+</body>
+</html>

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>圆梦源：勿忘初心，方得始终</title>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+        }
+        body{
+            padding:10px;
+        }
+        .left,.right{
+            width:400px;
+            height: 400px;
+            box-shadow: 0 0 10px #333;
+            float: left;
+            position: relative;
+            margin:10px;
+        }
+        .left{
+            background: url("img/1.jpg") no-repeat center;
+        }
+        .left .mark{
+            width: 200px;
+            height: 200px;
+            background: blue;
+            opacity:0.3;
+            filter:'alpha(opacity=30)';
+            display: none;
+            position: absolute;
+        }
+        .right{
+            overflow: hidden;
+            display: none;
+        }
+        .right img{
+            position: absolute;
+        }
+    </style>
+</head>
+<body>
+<div class="left" id="left">
+    <div class="mark" id="mark"></div>
+</div>
+<div class="right" id="right">
+    <img src="img/2.jpg" alt=""/>
+</div>
+<script>
+    var oLeft=document.getElementById('left');
+    var oRight=document.getElementById('right');
+    var oMark=document.getElementById('mark');
+    var oImg=document.getElementsByTagName('img')[0];
+    oLeft.onmouseover=function(){
+        //让right，mark显示
+        oRight.style.display='block';
+        oMark.style.display='block';
+    };
+    oLeft.onmousemove=function(e){
+        e=e||window.event;
+        var l=e.clientX-this.offsetLeft-oMark.offsetWidth/2;
+        var t=e.clientY-this.offsetTop-oMark.offsetHeight/2;
+        var maxL=this.offsetWidth-oMark.offsetWidth;
+        var maxT=this.offsetHeight-oMark.offsetHeight;
+        if(l<=0){
+            l=0;
+        }else if(l>=maxL){
+            l=maxL;
+        }
+        if(t<=0){
+            t=0;
+        }else if(t>=maxT){
+            t=maxT;
+        }
+        oMark.style.left= l+'px';
+        oMark.style.top= t+'px';
+        oImg.style.left=-2*l+'px';
+        oImg.style.top=-2*t+'px';
+    };
+    oLeft.onmouseout=function(){
+        oRight.style.display='none';
+        oMark.style.display='none';
+    }
+</script>
+</body>
+</html>
