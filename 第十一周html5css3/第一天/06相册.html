@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>圆梦源：勿忘初心，方得始终</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .wrap{
+            width: 630px;
+            height:630px;
+            margin:30px auto;
+            background: #cccccc;
+            padding:10px;
+        }
+        .wrap img{
+            width: 200px;
+            height: 200px;
+            float: left;
+            background: lightblue;
+            margin:5px;
+        }
+    </style>
+</head>
+<body>
+<div class="wrap">
+    <img src="img/1.png" alt="">
+    <img src="img/2.png" alt="">
+    <img src="img/3.png" alt="">
+    <img src="img/4.png" alt="">
+    <img src="img/5.png" alt="">
+    <img src="img/6.png" alt="">
+    <img src="img/7.png" alt="">
+    <img src="img/8.png" alt="">
+    <img src="img/9.png" alt="">
+</div>
+<script src="js/utils.js"></script>
+<script src="js/animate.js"></script>
+<script src="js/event.js"></script>
+<script src="js/Drag.js"></script>
+<script>
+    var aImg=document.getElementsByTagName('img');
+    var zIndex=0;
+    //浮动布局 转 定位布局;同时注意margin问题；
+    for(var i=aImg.length-1; i>=0; i--){
+        var cur=aImg[i];
+        cur.style.left=(cur.l=cur.offsetLeft)+'px';
+        cur.style.top=(cur.t=cur.offsetTop)+'px';
+        cur.style.position='absolute';
+        cur.style.margin=0;
+        new Drag({el:cur}).on('myDown',creaseIndex).on('myUp',goHome);
+    }
+    function creaseIndex() {
+        this.el.style.zIndex=++zIndex;
+        console.log(zIndex)
+    }
+    function goHome() {
+//        utils.css(this.el,{
+//            left:this.el.l,
+//            top:this.el.t
+//        })
+        animate({
+            el:this.el,
+            target:{
+                left:this.el.l,
+                top:this.el.t
+            },
+            effect:3,
+            duration:500
+        })
+    }
+</script>
+</body>
+</html>

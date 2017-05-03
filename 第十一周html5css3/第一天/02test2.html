@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>圆梦源：勿忘初心，方得始终</title>
+    <style>
+        div{
+            width: 100px;
+            height: 100px;
+            background: #ff0000;
+            position: absolute;
+            left:200px;
+            top:20px;
+        }
+    </style>
+</head>
+<body>
+<div id="div"></div>
+<script src="js/event.js"></script>
+<script src="js/utils.js"></script>
+<script src="js/animate.js"></script>
+<script>
+    var oDiv=document.getElementById('div');
+   // alert(utils.getCss(oDiv,'opacity'))
+//    utils.setCss(oDiv,'backgroundColor','yellow');
+//    utils.setCss(oDiv,'opacity','0.6');
+//    utils.setCss(oDiv,'width','100%');
+//    utils.setCss(oDiv,'width','100');
+    function fn1() {
+        this.style.background='orange';
+    }
+    function fn2() {
+        this.style.opacity=0.2;
+    }
+    function fn3() {
+        this.style.border='10px solid red';
+    }
+    on(oDiv,'myAnimate',fn1);
+    on(oDiv,'myAnimate',fn2);
+    on(oDiv,'myAnimate',fn3);
+    off(oDiv,'myAnimate',fn2);
+    animate({
+        el:oDiv,
+        target:{
+            left:1000,
+            top:300
+        },
+        effect:['Bounce','easeOut'],
+        duration:1000
+    })
+</script>
+</body>
+</html>

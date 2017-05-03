@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>圆梦源：勿忘初心，方得始终</title>
+    <style>
+        div{
+            width: 200px;
+            height: 200px;
+            background: #ff0000;
+        }
+    </style>
+</head>
+<body>
+<div id="div"></div>
+<script>
+    //提前预约和绑定：订阅
+    function on(ele,type,fn){
+        //本质，往数组里面放；
+        if(!ele['on'+type]){
+            ele['on'+type]=[];
+        }
+        var a=ele['on'+type];
+        for(var i=0; i< a.length; i++){
+            if(a[i]==fn) return;
+        }
+        a.push(fn);
+    }
+    //发射器；监听者 ：发布
+    function fire(type,e){
+        //拿到数组，循环调用
+        var a=this['on'+type];
+        if(a.length){
+            for(var i=0; i< a.length; i++){
+                if(typeof a[i]==='function'){
+                    a[i](this,e);
+                }
+            }
+        }
+    }
+    //获取元素
+    var oDiv=document.getElementById('div');
+    //提前预约好的
+    on(oDiv,'jiehun',liudehua);
+    on(oDiv,'jiehun',wanglihong);
+    on(oDiv,'jiehun',yingbaobao);
+    on(oDiv,'jiehun',maike);
+    //等按下按钮的时候，证明婚礼正式开始
+    oDiv.onclick=function(e){
+        e=e||window.event;
+        fire.call(this,'jiehun',e);//监听者，在等待着某个行为发生的时候，去做什么事情
+    };
+
+    function liudehua(){
+        console.log('我给你唱个忘情水')
+    }
+    function wanglihong(){
+        console.log('花田错')
+    }
+    function yingbaobao(){
+        console.log('我是赵丽颖，来卖萌的')
+    }
+    function maike(){
+        console.log('迈克杰克逊，我来跳太空舞')
+    }
+</script>
+</body>
+</html>

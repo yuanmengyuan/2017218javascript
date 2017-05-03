@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>圆梦源：勿忘初心，方得始终</title>
+    <style>
+        div{
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            background: #ff0000;
+        }
+    </style>
+</head>
+<body>
+<div id="div"></div>
+<script src="js/event.js"></script>
+<script src="js/Drag2.js"></script>
+<script>
+    var oDiv=document.getElementById('div');
+    var drag1=new Drag({
+        el:oDiv
+    });
+    //一定要区分清楚，继承：属于开发人员自己进行版本升级
+    //咱们这个订阅发布，针对的是用户，即：给用户留好升级的接口，如果用户想扩充功能，用户自己来做；
+    //myMove求横向速度
+    drag1.on('myDown',down).on('myMove',move).on('myUp',dropX).on('myUp',dropY);
+    function down(){
+        clearTimeout(this.xtimer);
+        clearTimeout(this.ytimer);
+    }
+    function move(e){
+        if(!this.prev){
+            this.prev= e.clientX;
+        }else{
+            this.speedX= e.clientX-this.prev;
+            this.prev= e.clientX;
+        }
+    }
+    function dropX(e){
+        clearTimeout(this.xtimer)
+        this.speedX*=0.93;//产生摩擦
+        var l=this.el.offsetLeft+this.speedX;
+        var maxl=(document.documentElement.clientWidth||document.body.clientWidth)-this.el.offsetWidth;
+        if(l<=0){
+            l=0;
+            this.speedX*=-1;
+        }else if(l>=maxl){
+            l=maxl;
+            this.speedX*=-1;
+        }
+        this.el.style.left=l+'px';
+        if(Math.abs(this.speedX)>=0.5){
+            this.xtimer=setTimeout(processThis(arguments.callee,this),30);
+        }
+    }
+    function dropY(e){
+        clearTimeout(this.ytimer);
+        if(!this.speedY){
+            this.speedY=9.8;
+        }else{
+            this.speedY+=9.8;
+        }
+        this.speedY*=.93;
+        var t=this.el.offsetTop+this.speedY;
+        var maxt=(document.documentElement.clientHeight||document.body.clientHeight)-this.el.offsetHeight;
+        if(t>=maxt){
+            t=maxt;
+            this.speedY*=-1;
+            this.tmp++;
+        }else{
+            this.tmp=0;
+        }
+        this.el.style.top=t+'px';
+        if(this.tmp<2){
+            this.ytimer=setTimeout(processThis(arguments.callee,this),30);
+        }
+    }
+</script>
+</body>
+</html>

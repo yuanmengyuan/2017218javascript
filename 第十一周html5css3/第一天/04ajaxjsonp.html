@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>圆梦源：勿忘初心，方得始终</title>
+</head>
+<body>
+<form method="get" enctype="application/x-www-form-urlencoded"></form>
+<script src="js/ajax.js"></script>
+<script>
+   /*ajax({
+       url:'json/data.txt',//必须有，没有他，后面都不考虑
+       data:{name:'ymy',age:18}, //{}
+       type:'get',//post jsonp
+       dataType:'json',
+       jsonp:'cb',//默认callback
+       fnLoading:function(){
+           alert('别着急，我正在努力的加载')
+       },
+       complete:function () {
+           alert('我加载完成，成功失败还不知道')
+       },
+       success:function (val) {
+           alert('数据加载成功')
+           console.log(val);
+       },
+       error:function (val) {
+           alert('数据请求失败，错误的原因是：'+val)
+       },
+       timeout:2000 //默认的是3000
+   })*/
+   ajax({
+       url:'https://sp0.baidu.com/5a1Fazu8AA54nxGko9WTAnF6hhy/su',
+       data:{wd:"屈原",age:18},
+       type:'jsonp',
+       jsonp:'cb',
+       dataType:'json',
+       fnLoading:function () {
+           alert('我正在努力加载，别着急么')
+       },
+       complete:function () {
+           alert('加载完成')
+       },
+       success:function (val) {
+           alert('加载成功')
+           console.log(val)
+       },
+       error:function (val) {
+           alert('加载失败：'+val)
+       }
+   })
+</script>
+</body>
+</html>

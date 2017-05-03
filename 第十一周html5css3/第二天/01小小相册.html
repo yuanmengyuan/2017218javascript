@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>圆梦源：勿忘初心，方得始终</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .wrap{
+            width: 480px;
+            height:640px;
+            background: #cccccc;
+            margin:50px auto;
+            padding:10px;
+            position: relative;
+        }
+        .wrap img{
+            float: left;
+            width: 150px;
+            height: 150px;
+            margin: 5px;
+            background: lightblue;
+        }
+    </style>
+</head>
+<body>
+<div class="wrap">
+    <img src="img/1.png" alt="">
+    <img src="img/2.png" alt="">
+    <img src="img/3.png" alt="">
+    <img src="img/4.png" alt="">
+    <img src="img/5.png" alt="">
+    <img src="img/6.png" alt="">
+    <img src="img/7.png" alt="">
+    <img src="img/8.png" alt="">
+    <img src="img/9.png" alt="">
+    <img src="img/10.png" alt="">
+    <img src="img/11.png" alt="">
+    <img src="img/12.png" alt="">
+</div>
+<script src="js/utils.js"></script>
+<script src="js/event.js"></script>
+<script src="js/Drag.js"></script>
+<script src="js/animate.js"></script>
+<script>
+    //1:浮动布局转定位布局
+    var aImg=document.getElementsByTagName('img');
+    var zIndex=0;
+    for(var i=aImg.length-1; i>=0; i--){
+        var cur=aImg[i];
+        cur.style.left=(cur.l=cur.offsetLeft)+'px';
+        cur.style.top=(cur.t=cur.offsetTop)+'px';
+        cur.style.position='absolute';
+        cur.style.margin=0;
+        //2：让每一个图片都可以拖拽；
+        new Drag({el:cur}).on('myDown',creaseIndex).on('myMove',kickWho).on('myUp',changePos)
+        
+    }
+    function creaseIndex() {
+        this.el.style.zIndex=++zIndex;
+    }
+    function iskick(l,r) {
+        if(l.offsetLeft+l.offsetWidth<r.offsetLeft || l.offsetTop+l.offsetHeight<r.offsetTop||l.offsetLeft>r.offsetLeft+r.offsetWidth||l.offsetTop>r.offsetTop+r.offsetHeight){
+            return false;//返回false代表没踢到；
+        }else{
+            return true;//true：踢到了
+        }
+    }
+    function kickWho() {
+        //拿当前项跟其他所有项进行比较，踢到谁，就把谁放到数组中去；
+        this.ary=[];
+        for(var i=0; i<aImg.length; i++){
+            if(this.el==aImg[i]) continue;//continue：跳过当次，以后继续； break:直接打断循环
+            if(iskick(this.el,aImg[i])){
+                this.ary.push(aImg[i]);
+                aImg[i].style.background='red';
+            }else{
+                aImg[i].style.background='lightblue';
+            }
+        }
+    }
+    function changePos() {//this.el
+        var ary=this.ary;
+        //有长度的化，跟重叠最多的交换位置；
+        if(ary.length){
+            for(var i=0; i<ary.length; i++){
+                ary[i].dis=Math.sqrt(Math.pow(this.el.offsetLeft-ary[i].offsetLeft,2)+Math.pow(this.el.offsetTop-ary[i].offsetTop,2));
+                ary[i].style.background='lightBlue';
+            }
+            //求数组中的最小值；
+            ary.sort(function (a,b) {
+                return a.dis-b.dis;
+            })
+            var shortest=ary[0];//求出距离最短的；
+            //当前元素到最短元素的位置；
+            shortest.style.background='purple';
+            this.el.style.background='purple';
+            animate({
+                el:this.el,
+                target:{
+                    left:shortest.l,
+                    top:shortest.t
+                },
+                effect:3,
+                duration:500,
+                callback:function () {
+                    this.l=this.offsetLeft;
+                    this.t=this.offsetTop;
+                }
+            });
+            //最短元素到当前元素的位置；
+            animate({
+                el:shortest,
+                target:{
+                    left:this.el.l,
+                    top:this.el.t
+                },
+                effect:3,
+                duration:500,
+                callback:function () {
+                    this.l=this.offsetLeft;
+                    this.t=this.offsetTop;
+                }
+            });
+        }else{
+            //没长度，各回各家
+            animate({
+                el:this.el,
+                target:{
+                    left:this.el.l,
+                    top:this.el.t
+                },
+                duration:500,
+                effect:3
+            })
+        }
+
+
+    }
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

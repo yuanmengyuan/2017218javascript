@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>圆梦源：勿忘初心，方得始终</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        ul{
+            width: 800px;
+            border:1px solid #333;
+            margin:40px auto
+        }
+        ul::after{
+            display: block;
+            height:0;
+            content:'';
+            clear:both;
+        }
+        ul>li{
+            width: 100px;
+            float: left;
+            text-align: center;
+            height:50px;
+            line-height: 50px;
+            position: relative;
+        }
+        ul>li ins{
+            width: 100%;
+            height: 100%;
+            display: block;
+            position: absolute;
+            left:0;
+            top:50px;
+        }
+        ul>li+li{
+            border-left:1px dashed #ccc;
+            box-sizing: border-box;
+        }
+    </style>
+</head>
+<body>
+<section>
+    <ul>
+        <li>郎朗弹琴1</li>
+        <li>郎朗弹琴2</li>
+        <li>郎朗弹琴3</li>
+        <li>郎朗弹琴4</li>
+        <li>郎朗弹琴5</li>
+        <li>郎朗弹琴6</li>
+        <li>郎朗弹琴7</li>
+        <li>郎朗弹琴8</li>
+    </ul>
+</section>
+<section class="audio">
+    <audio src="music/1.ogg"></audio>
+    <audio src="music/2.ogg"></audio>
+    <audio src="music/3.ogg"></audio>
+    <audio src="music/4.ogg"></audio>
+    <audio src="music/5.ogg"></audio>
+    <audio src="music/6.ogg"></audio>
+    <audio src="music/7.ogg"></audio>
+    <audio src="music/8.ogg"></audio>
+</section>
+<script src="js2/jquery.min.js"></script>
+<script>
+    var ary=['red','yellow','green','orange','blue','purple','pink','black'];
+    //li的遍历；
+    $('li').each(function (index,item) {
+        $(this).append('<ins>');
+        $(this).find('ins').css('background',ary[index])
+    });
+    //移入每个li，让他下面的ins上去，同时播放对应的音频；
+    $('li').mouseenter(function () {
+        $(this).find('ins').stop().animate({top:0});
+        $('audio')[$(this).index()].load();//加载音频
+        $('audio')[$(this).index()].play();//播放音频
+    }).mouseleave(function () {
+        $(this).find('ins').stop().animate({top:50});
+    });
+    $(document).keydown(function (e) {
+        if(e.keyCode>=49 && e.keyCode<=56){
+            //系统自动触发；
+            $('li').eq(e.keyCode-49).trigger('mouseenter');
+            setTimeout(function () {
+                $('li').eq(e.keyCode-49).trigger('mouseleave');
+            },400)
+        }
+    })
+</script>
+</body>
+</html>

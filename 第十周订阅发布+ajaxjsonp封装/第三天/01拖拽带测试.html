@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>圆梦源：勿忘初心，方得始终</title>
+    <style>
+        div{
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            background: #ff0000;
+        }
+    </style>
+</head>
+<body>
+<div id="div"></div>
+<script src="js/event.js"></script>
+<script src="js/Drag2.js"></script>
+<script>
+    var oDiv=document.getElementById('div');
+    var drag1=new Drag({
+        el:oDiv
+    });
+    drag1.on('myDown',fn1).on('myDown',fn2).on('myDown',fn3).on('myMove',fn4).on('myMove',fn5).on('myUp',fn6).on('myUp',fn7);
+    function fn1(){
+        console.log('down行为下的：'+1)
+    }
+    function fn2(){
+        console.log('down行为下的：'+2)
+    }
+    function fn3(){
+        console.log('down行为下的：'+3)
+    }
+    function fn4(){
+        console.log('move行为下的：'+4)
+    }
+    function fn5(){
+        console.log('move行为下的：'+5)
+    }
+    function fn6(){
+        console.log('up行为下的：'+6)
+    }
+    function fn7(){
+        console.log('up行为下的：'+7)
+    }
+</script>
+</body>
+</html>
