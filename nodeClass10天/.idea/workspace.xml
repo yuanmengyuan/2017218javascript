@@ -1,0 +1,609 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="02e7e273-719b-4a9e-b3f3-cb8ed7d61dcc" name="Default" comment="" />
+    <ignored path="$PROJECT_DIR$/.tmp/" />
+    <ignored path="$PROJECT_DIR$/temp/" />
+    <ignored path="$PROJECT_DIR$/tmp/" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="TRACKING_ENABLED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
+  <component name="FavoritesManager">
+    <favorites_list name="nodeClass" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="HTML File" />
+        <option value="ejs" />
+        <option value="CSS File" />
+        <option value="package_json" />
+        <option value="JavaScript File" />
+      </list>
+    </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>&gt;</find>
+      <find>main</find>
+      <find>text/html</find>
+      <find>js</find>
+      <find>png</find>
+      <find>img</find>
+      <find>css</find>
+      <find>target</find>
+      <find>preview-container</find>
+      <find>width</find>
+      <find>w</find>
+      <find>gif</find>
+      <find>console</find>
+      <find>title</find>
+      <find>头像</find>
+      <find>setavatar</find>
+      <find>inser</find>
+      <find>liuyan</find>
+      <find>datalist</find>
+      <find>login</find>
+      <find>getpageamount</find>
+      <find>我的说说</find>
+      <find>Jcrop</find>
+      <find>.gif</find>
+      <find>.gi</find>
+      <find>set</find>
+      <find>tijiaoliuyan</find>
+      <find>jumbotron</find>
+      <find>detail-btn</find>
+      <find>index</find>
+    </findStrings>
+    <replaceStrings>
+      <replace>active</replace>
+    </replaceStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/day2" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/day5/models/db.js" />
+        <option value="$PROJECT_DIR$/day5/03testMongodb.js" />
+        <option value="$PROJECT_DIR$/day7/models/models/db.js" />
+        <option value="$PROJECT_DIR$/day7/setting.js" />
+        <option value="$PROJECT_DIR$/day7/controller/package.json" />
+        <option value="$PROJECT_DIR$/day7/01md5.js" />
+        <option value="$PROJECT_DIR$/day7/models/md5.js" />
+        <option value="$PROJECT_DIR$/day7/app.js" />
+        <option value="$PROJECT_DIR$/day7/views/login.ejs" />
+        <option value="$PROJECT_DIR$/day7/router/router.js" />
+        <option value="$PROJECT_DIR$/day7/views/reg.ejs" />
+        <option value="$PROJECT_DIR$/day7/02liuyankuang.js" />
+        <option value="$PROJECT_DIR$/day7/models/db.js" />
+        <option value="$PROJECT_DIR$/day7/router/router2.js" />
+        <option value="$PROJECT_DIR$/day7/views/liuyanban.ejs" />
+        <option value="$PROJECT_DIR$/dy8/controller/package.json" />
+        <option value="$PROJECT_DIR$/dy8/modles/db.js" />
+        <option value="$PROJECT_DIR$/dy8/01testDb.js" />
+        <option value="$PROJECT_DIR$/dy8/controller/router.js" />
+        <option value="$PROJECT_DIR$/test/webpack-官网" />
+        <option value="$PROJECT_DIR$/dy8/liuyanban/controller/package.json" />
+        <option value="$PROJECT_DIR$/dy8/liuyanban/note" />
+        <option value="$PROJECT_DIR$/dy8/liuyanban/setting.js" />
+        <option value="$PROJECT_DIR$/dy8/liuyanban/models/db.js" />
+        <option value="$PROJECT_DIR$/dy8/liuyanban/app.js" />
+        <option value="$PROJECT_DIR$/dy8/liuyanban/controller/router.js" />
+        <option value="$PROJECT_DIR$/dy8/liuyanban/views/index.ejs" />
+        <option value="$PROJECT_DIR$/day9/01tupian/cut.js" />
+        <option value="$PROJECT_DIR$/day9/01tupian/cut2.js" />
+        <option value="$PROJECT_DIR$/day9/02bayemian/css/jquery.Jcrop.css" />
+        <option value="$PROJECT_DIR$/day9/02bayemian/css/index.css" />
+        <option value="$PROJECT_DIR$/day9/02bayemian/tutorial3.html" />
+        <option value="$PROJECT_DIR$/day9/cutProject/views/index.ejs" />
+        <option value="$PROJECT_DIR$/day9/cutProject/app.js" />
+        <option value="$PROJECT_DIR$/day9/04luntan/controller/package.json" />
+        <option value="$PROJECT_DIR$/day9/04luntan/views/pub/footer.ejs" />
+        <option value="$PROJECT_DIR$/day9/04luntan/setting.js" />
+        <option value="$PROJECT_DIR$/day9/04luntan/models/db.js" />
+        <option value="$PROJECT_DIR$/day9/04luntan/views/reg.ejs" />
+        <option value="$PROJECT_DIR$/day9/04luntan/views/login.ejs" />
+        <option value="$PROJECT_DIR$/day9/04luntan/views/upFile.ejs" />
+        <option value="$PROJECT_DIR$/day9/04luntan/views/cut.ejs" />
+        <option value="$PROJECT_DIR$/day9/note" />
+        <option value="$PROJECT_DIR$/day9/04luntan/views/index.ejs" />
+        <option value="$PROJECT_DIR$/day9/04luntan/views/detail.ejs" />
+        <option value="$PROJECT_DIR$/day9/04luntan/views/pub/top.ejs" />
+        <option value="$PROJECT_DIR$/day9/04luntan/app.js" />
+        <option value="$PROJECT_DIR$/day9/04luntan/views/myShuo.ejs" />
+        <option value="$PROJECT_DIR$/day9/04luntan/controller/router.js" />
+        <option value="$PROJECT_DIR$/day9/04luntan/views/userlist.ejs" />
+        <option value="$PROJECT_DIR$/day10/01mongoose.js" />
+      </list>
+    </option>
+  </component>
+  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsFlowSettings">
+    <service-enabled>true</service-enabled>
+    <exe-path />
+    <annotation-enable>false</annotation-enable>
+    <other-services-enabled>true</other-services-enabled>
+  </component>
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+    <sorting>DEFINITION_ORDER</sorting>
+  </component>
+  <component name="NodeModulesDirectoryManager">
+    <handled-path value="$PROJECT_DIR$/day10/04luntan/node_modules" />
+    <handled-path value="$PROJECT_DIR$/day10/node_modules" />
+    <handled-path value="$PROJECT_DIR$/day2/node_modules" />
+    <handled-path value="$PROJECT_DIR$/day3/node_modules" />
+    <handled-path value="$PROJECT_DIR$/day4/myAlbum/node_modules" />
+    <handled-path value="$PROJECT_DIR$/day4/node_modules" />
+    <handled-path value="$PROJECT_DIR$/day6/node_modules" />
+    <handled-path value="$PROJECT_DIR$/day7/node_modules" />
+    <handled-path value="$PROJECT_DIR$/day8/liuyanban/node_modules" />
+    <handled-path value="$PROJECT_DIR$/day8/node_modules" />
+    <handled-path value="$PROJECT_DIR$/day9/01tupian/node_modules" />
+    <handled-path value="$PROJECT_DIR$/day9/03cutProject/node_modules" />
+    <handled-path value="$PROJECT_DIR$/myAlbum/node_modules" />
+    <handled-path value="$PROJECT_DIR$/test/cutpic/node_modules" />
+    <handled-path value="$PROJECT_DIR$/test/shejiao/node_modules" />
+  </component>
+  <component name="ProjectFrameBounds">
+    <option name="y" value="23" />
+    <option name="width" value="1280" />
+    <option name="height" value="997" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
+  <component name="ProjectView">
+    <navigator currentView="ProjectPane" proportions="" version="1">
+      <flattenPackages />
+      <showMembers />
+      <showModules />
+      <showLibraryContents />
+      <hideEmptyPackages />
+      <abbreviatePackageNames />
+      <autoscrollToSource />
+      <autoscrollFromSource />
+      <sortByType />
+      <manualOrder />
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="Scope" />
+      <pane id="Scratches" />
+      <pane id="ProjectPane">
+        <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="nodeClass" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="nodeClass" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="nodejs_interpreter_path" value="/usr/local/bin/node" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
+    <property name="javascript.nodejs.core.library.configured.version" value="6.10.3" />
+    <property name="HbShouldOpenHtmlAsHb" value="" />
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="JavaScriptPreferStrict" value="false" />
+    <property name="JavaScriptWeakerCompletionTypeGuess" value="true" />
+    <property name="list.type.of.created.stylesheet" value="CSS" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/day9/04luntan/views" />
+      <recent name="$PROJECT_DIR$/day9/04luntan/public/js" />
+      <recent name="$PROJECT_DIR$/day9/04luntan/public/img" />
+      <recent name="$PROJECT_DIR$/day9/04luntan/public/css" />
+      <recent name="$PROJECT_DIR$/day9/04luntan/avatar" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/day9/02bayemian/img" />
+      <recent name="$PROJECT_DIR$/myAlbum" />
+      <recent name="$PROJECT_DIR$/day7/models" />
+      <recent name="$PROJECT_DIR$/day7" />
+      <recent name="$PROJECT_DIR$/day5/cutpic/picture" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager" selected="Node.js.01mongoose.js">
+    <configuration default="false" name="app.js (1)" type="NodeJSConfigurationType" factoryName="Node.js" temporary="true" path-to-node="project" path-to-js-file="app.js" working-dir="$PROJECT_DIR$/test/shejiao">
+      <method />
+    </configuration>
+    <configuration default="false" name="cut2.js" type="NodeJSConfigurationType" factoryName="Node.js" temporary="true" path-to-node="project" path-to-js-file="cut2.js" working-dir="$PROJECT_DIR$/day9/01tupian">
+      <method />
+    </configuration>
+    <configuration default="false" name="app.js" type="NodeJSConfigurationType" factoryName="Node.js" temporary="true" path-to-node="project" path-to-js-file="app.js" working-dir="$PROJECT_DIR$/day9/cutProject">
+      <method />
+    </configuration>
+    <configuration default="false" name="app.js (3)" type="NodeJSConfigurationType" factoryName="Node.js" temporary="true" path-to-node="project" path-to-js-file="app.js" working-dir="$PROJECT_DIR$/day9/04luntan">
+      <method />
+    </configuration>
+    <configuration default="false" name="01mongoose.js" type="NodeJSConfigurationType" factoryName="Node.js" temporary="true" path-to-node="project" path-to-js-file="01mongoose.js" working-dir="$PROJECT_DIR$/day10">
+      <method />
+    </configuration>
+    <configuration default="true" type="DartCommandLineRunConfigurationType" factoryName="Dart Command Line Application">
+      <method />
+    </configuration>
+    <configuration default="true" type="DartTestRunConfigurationType" factoryName="Dart Test">
+      <method />
+    </configuration>
+    <configuration default="true" type="JavaScriptTestRunnerJest" factoryName="Jest">
+      <node-interpreter value="project" />
+      <working-dir value="" />
+      <envs />
+      <scope-kind value="ALL" />
+      <method />
+    </configuration>
+    <configuration default="true" type="JavaScriptTestRunnerKarma" factoryName="Karma">
+      <config-file value="" />
+      <node-interpreter value="project" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="JavaScriptTestRunnerProtractor" factoryName="Protractor">
+      <config-file value="" />
+      <node-interpreter value="project" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug">
+      <method />
+    </configuration>
+    <configuration default="true" type="NodeJSConfigurationType" factoryName="Node.js" path-to-node="project" working-dir="">
+      <method />
+    </configuration>
+    <configuration default="true" type="cucumber.js" factoryName="Cucumber.js">
+      <option name="cucumberJsArguments" value="" />
+      <option name="executablePath" />
+      <option name="filePath" />
+      <method />
+    </configuration>
+    <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
+      <node-interpreter>project</node-interpreter>
+      <node-options />
+      <gulpfile />
+      <tasks />
+      <arguments />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="js.build_tools.npm" factoryName="npm">
+      <command value="run" />
+      <scripts />
+      <node-interpreter value="project" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="mocha-javascript-test-runner" factoryName="Mocha">
+      <node-interpreter>project</node-interpreter>
+      <node-options />
+      <working-directory />
+      <pass-parent-env>true</pass-parent-env>
+      <envs />
+      <ui />
+      <extra-mocha-options />
+      <test-kind>DIRECTORY</test-kind>
+      <test-directory />
+      <recursive>false</recursive>
+      <method />
+    </configuration>
+    <list size="5">
+      <item index="0" class="java.lang.String" itemvalue="Node.js.app.js (1)" />
+      <item index="1" class="java.lang.String" itemvalue="Node.js.cut2.js" />
+      <item index="2" class="java.lang.String" itemvalue="Node.js.app.js" />
+      <item index="3" class="java.lang.String" itemvalue="Node.js.app.js (3)" />
+      <item index="4" class="java.lang.String" itemvalue="Node.js.01mongoose.js" />
+    </list>
+    <recent_temporary>
+      <list size="5">
+        <item index="0" class="java.lang.String" itemvalue="Node.js.01mongoose.js" />
+        <item index="1" class="java.lang.String" itemvalue="Node.js.app.js (3)" />
+        <item index="2" class="java.lang.String" itemvalue="Node.js.app.js (1)" />
+        <item index="3" class="java.lang.String" itemvalue="Node.js.app.js" />
+        <item index="4" class="java.lang.String" itemvalue="Node.js.cut2.js" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="ShelveChangesManager" show_recycled="false">
+    <option name="remove_strategy" value="false" />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="02e7e273-719b-4a9e-b3f3-cb8ed7d61dcc" name="Default" comment="" />
+      <created>1495244072358</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1495244072358</updated>
+      <workItem from="1495244073570" duration="15873000" />
+      <workItem from="1495287834271" duration="2000" />
+      <workItem from="1495330445987" duration="205000" />
+      <workItem from="1495333686514" duration="8000" />
+      <workItem from="1495333709507" duration="30000" />
+      <workItem from="1495333833985" duration="180000" />
+      <workItem from="1495334111555" duration="5287000" />
+      <workItem from="1495340299078" duration="3220000" />
+      <workItem from="1495350050169" duration="5022000" />
+      <workItem from="1495356143475" duration="4448000" />
+      <workItem from="1495503426596" duration="19201000" />
+      <workItem from="1495542685711" duration="13000" />
+      <workItem from="1495590166853" duration="16933000" />
+      <workItem from="1495675960367" duration="47000" />
+      <workItem from="1495676107920" duration="39000" />
+      <workItem from="1495676212545" duration="4126000" />
+      <workItem from="1495681733067" duration="130000" />
+      <workItem from="1495681881706" duration="28000" />
+      <workItem from="1495681928172" duration="2163000" />
+      <workItem from="1495685089765" duration="6975000" />
+      <workItem from="1495700777264" duration="925000" />
+      <workItem from="1495703208772" duration="348000" />
+      <workItem from="1495714024370" duration="21460000" />
+      <workItem from="1495754345780" duration="31206000" />
+      <workItem from="1495837166142" duration="2263000" />
+      <workItem from="1495849047164" duration="12000" />
+      <workItem from="1495849156806" duration="19975000" />
+      <workItem from="1495935669992" duration="11624000" />
+      <workItem from="1496189622071" duration="9000" />
+      <workItem from="1496189637644" duration="297000" />
+      <workItem from="1496197381561" duration="10612000" />
+      <workItem from="1496219952103" duration="43000" />
+      <workItem from="1496220015027" duration="3000" />
+      <workItem from="1496220042117" duration="19000" />
+      <workItem from="1496220080994" duration="3782000" />
+      <workItem from="1496277362944" duration="1346000" />
+      <workItem from="1496281015263" duration="21029000" />
+      <workItem from="1496454295948" duration="19062000" />
+      <workItem from="1496497127339" duration="883000" />
+      <workItem from="1496540238151" duration="99000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="228927000" />
+  </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="0" y="23" width="1280" height="997" extended-state="6" />
+    <layout>
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.215311" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.5331089" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32921347" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+    </layout>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="processedProjectFiles" value="true" />
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <option name="time" value="5" />
+    </breakpoint-manager>
+    <watches-manager />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/test/balabala/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="117">
+          <caret line="54" column="26" lean-forward="true" selection-start-line="54" selection-start-column="26" selection-end-line="54" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/shejiao/views/index.ejs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="216">
+          <caret line="6" column="16" lean-forward="false" selection-start-line="6" selection-start-column="16" selection-end-line="6" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/shejiao/views/pub/nav.ejs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="36">
+          <caret line="24" column="38" lean-forward="false" selection-start-line="24" selection-start-column="34" selection-end-line="24" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/day9/01tupian/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/day9/01tupian/resize123.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/day9/01tupian/ala.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/day9/01tupian/cut.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="1" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/day9/01tupian/resize.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/day9/01tupian/.thumbs/ala.jpg">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/day9/01tupian/ala.jpg">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/day9/01tupian/ala123.jpg">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/day9/01tupian/cut2.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="324">
+          <caret line="9" column="0" lean-forward="true" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/day9/02bayemian/js/jquery.min.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-21852">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/day9/02bayemian/js/jquery.Jcrop.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="424">
+          <caret line="1596" column="12" lean-forward="true" selection-start-line="1596" selection-start-column="12" selection-end-line="1596" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/day9/02bayemian/css/jquery.Jcrop.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="302">
+          <caret line="19" column="21" lean-forward="true" selection-start-line="19" selection-start-column="21" selection-end-line="19" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/day9/02bayemian/css/index.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="555">
+          <caret line="28" column="1" lean-forward="false" selection-start-line="28" selection-start-column="1" selection-end-line="28" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/day9/02bayemian/tutorial3.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="442">
+          <caret line="84" column="5" lean-forward="true" selection-start-line="84" selection-start-column="5" selection-end-line="84" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/day9/cutProject/public/css/index.css" />
+    <entry file="file://$PROJECT_DIR$/day9/cutProject/public/img/ala.jpg" />
+    <entry file="file://$PROJECT_DIR$/day9/cutProject/avatar/ala1.jpg" />
+    <entry file="file://$PROJECT_DIR$/day9/cutProject/avatar/ala.jpg" />
+    <entry file="file://$PROJECT_DIR$/day9/cutProject/app.js" />
+    <entry file="file://$PROJECT_DIR$/day9/cutProject/views/index.ejs" />
+    <entry file="file://$PROJECT_DIR$/test/shejiao/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="288">
+          <caret line="8" column="17" lean-forward="true" selection-start-line="8" selection-start-column="17" selection-end-line="8" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/day9/04luntan/package.json" />
+    <entry file="file://$PROJECT_DIR$/day9/04luntan/controller/package.json" />
+    <entry file="file://$PROJECT_DIR$/day9/04luntan/public/css/bootstrap.css" />
+    <entry file="file://$PROJECT_DIR$/day9/04luntan/public/css/jumbotron.css" />
+    <entry file="file://$PROJECT_DIR$/day9/04luntan/views/pub/footer.ejs" />
+    <entry file="file://$PROJECT_DIR$/day9/04luntan/models/md5.js" />
+    <entry file="file://$PROJECT_DIR$/day9/04luntan/setting.js" />
+    <entry file="file://$PROJECT_DIR$/day9/04luntan/models/db.js" />
+    <entry file="file://$PROJECT_DIR$/day9/04luntan/views/reg.ejs" />
+    <entry file="file://$PROJECT_DIR$/test/shejiao/router/router.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="100">
+          <caret line="150" column="27" lean-forward="false" selection-start-line="150" selection-start-column="17" selection-end-line="150" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/shejiao/views/setavatar.ejs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="4" column="11" lean-forward="true" selection-start-line="4" selection-start-column="11" selection-end-line="4" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/day9/04luntan/views/upFile.ejs" />
+    <entry file="file://$PROJECT_DIR$/day9/04luntan/public/css/index.css" />
+    <entry file="file://$PROJECT_DIR$/day9/04luntan/public/js/jquery.Jcrop.js" />
+    <entry file="file://$PROJECT_DIR$/day9/04luntan/avatar/ymy111.jpg" />
+    <entry file="file://$PROJECT_DIR$/day9/04luntan/avatar/moren.jpg" />
+    <entry file="file://$PROJECT_DIR$/day9/04luntan/views/myShuo.ejs" />
+    <entry file="file://$PROJECT_DIR$/day9/04luntan/app.js" />
+    <entry file="file://$PROJECT_DIR$/day9/04luntan/controller/router.js" />
+    <entry file="file://$PROJECT_DIR$/day9/04luntan/views/userlist.ejs" />
+    <entry file="file://$PROJECT_DIR$/day9/04luntan/views/detail.ejs" />
+    <entry file="file://$PROJECT_DIR$/day9/04luntan/views/cut.ejs" />
+    <entry file="file://$PROJECT_DIR$/day9/04luntan/views/pub/top.ejs" />
+    <entry file="file://$PROJECT_DIR$/day9/04luntan/views/index.ejs" />
+    <entry file="file://$PROJECT_DIR$/day9/note">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="381">
+          <caret line="35" column="43" lean-forward="true" selection-start-line="35" selection-start-column="43" selection-end-line="35" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/day9/04luntan/views/login.ejs" />
+    <entry file="file://$PROJECT_DIR$/day10/01mongoose.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1343">
+          <caret line="78" column="0" lean-forward="true" selection-start-line="78" selection-start-column="0" selection-end-line="78" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>

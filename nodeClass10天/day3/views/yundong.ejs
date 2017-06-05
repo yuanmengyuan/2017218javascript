@@ -1,0 +1,17 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+<h1>你最近关注什么运动？为什么呢？</h1>
+<ul>
+    <% for(var i=0; i<yundongs.length; i++){%>
+        <li>
+            我关注<%= yundongs[i].title%>运动; <%= yundongs[i].desc%>
+        </li>
+    <%}%>
+</ul>
+</body>
+</html>

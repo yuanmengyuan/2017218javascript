@@ -1,0 +1,32 @@
+### 1.0 容器
+- container ： 居中且自适应的版心
+- container-fluid
+### 1.1 媒体查询
+- @media (min-width:768px){}
+- @media (min-width:768px) and (max-width:992px){}
+### 1.3 删格系统
+- 分界线：768   992  1200；
+- 删格系统一般的写法
+    1. container
+    2. row
+    3. col-xs-4   col-sm-4    col-md-4   col-lg-4
+### 1.4 表单
+- form 垂直展示
+- form-horizontal 水平展示 注意：分列的时候，要写在label和div上，不要在input中写；
+### 1.5 按钮
+- .btn.btn-default  默认是白色，移上灰色
+- 按钮的颜色 warning  default primary success danger info
+- 按钮的大小 btn-xs  btn-sm  btn-lg
+注意：我们可以用col-md-xxx来调节按钮的大小；
+### 1.6 文本和背景颜色
+- 文本 text-success   ......
+- 背景  bg-success  ......
+### 1.7 浮动
+- pull-left 和 pull-right
+- 清除浮动 clearfix
+### 1.8 板块居中
+- center-block
+### 1.9 显示和隐藏
+- .show 和 .hide
+- .visible-xs-*
+

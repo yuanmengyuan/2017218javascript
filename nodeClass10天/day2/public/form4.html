@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>圆梦源：勿忘初心，方得始终</title>
+</head>
+<body>
+<form>
+    <label for="user">
+        用户名: <input type="text" name="user" id="user">
+    </label>
+    <label for="pass">
+        密码: <input type="password" name="pass" id="pass">
+    </label>
+    <label for="user">
+        <input type="button" value="注册" id="reg">
+        <input type="button" value="登录" id="login">
+    </label>
+</form>
+<script src="ajax.js"></script>
+<script>
+    // "/user?act=login&username=xxxx&password=xxx"
+    // "/user?act=reg&username=xxxx&password=xxx"
+    var user=document.getElementById('user');
+    var pass=document.getElementById('pass');
+    var reg=document.getElementById('reg');
+    var login=document.getElementById('login');
+    reg.onclick=function () {
+        //前台通过ajax向后台发送数据
+        ajax({
+            url:'/user',
+            data:{act:'reg',username:user.value,password:pass.value},
+            dataType:'json',
+            type:'get',
+            success:function (val) {
+                //注册成功或失败
+                if(val.bok){
+                    alert(val.msg)
+                }else{
+                    alert(val.msg)
+                }
+            },
+            error:function () {
+                alert('通信错误')
+            }
+        })
+    };
+    login.onclick=function () {
+        //前台通过ajax向后台发送数据
+        ajax({
+            url:'/user',
+            data:{act:'login',username:user.value,password:pass.value},
+            type:'get',
+            dataType:'json',
+            success:function (val) {
+                //注册成功或者失败；
+                if(val.bok){
+                    alert(val.msg)
+                }else{
+                    alert(val.msg)
+                }
+            },
+            error:function () {
+                alert('通信错误')
+            }
+        })
+    };
+</script>
+</body>
+</html>

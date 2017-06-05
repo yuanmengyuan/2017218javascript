@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>圆梦源：勿忘初心，方得始终</title>
+    <link rel="stylesheet" href="css/jquery.full.css">
+    <link rel="stylesheet" href="css/index.css">
+</head>
+<body>
+<header>
+    <div class="logo">手机项目</div>
+    <ul id="menu">
+        <li data-menuanchor="firstPage" class="active" data_hash="#firstPage"><a href="#firstPage">首页</a></li>
+        <li data-menuanchor="secondPage" ><a href="#secondPage">外观</a></li>
+        <li data-menuanchor="thirdPage" ><a href="#thirdPage">配置</a></li>
+        <li data-menuanchor="fourthPage"><a href="#fourthPage">型号</a></li>
+        <li data-menuanchor="fifthPage"><a href="#fifthPage">说明</a></li>
+        <li data-menuanchor="sixPage" class="lastli"><a href="#sixPage">立即购买</a></li>
+
+        <div class="line"></div>
+    </ul>
+</header>
+<div class="fullPage" id="fullPage">
+    <div class="section">
+        <h2 class="title"><span>小米手机</span> 让你的生活更精彩</h2>
+        <div class="phone"></div>
+        <div class="shadow"></div>
+    </div>
+    <div class="section">
+        <div class="title">优美的设计，更令人着迷</div>
+        <div class="subtitle">采用受欢迎的设计，让它更加出色。<br/>
+            款式小巧、轻便手感更舒适。绚丽高清的显示屏，整个外观显得格外精致。</div>
+        <div class="phone">
+            <p class="point1">高清摄像</p>
+            <p class="point2">超薄机身</p>
+            <p class="point3">大屏显示</p>
+        </div>
+    </div>
+    <div class="section">
+        <div class="container">
+            <div class="title">优美的设计，更令人着迷</div>
+            <div class="subtitle">
+                采用受欢迎的设计，让它更加出色。<br/>
+                款式小巧、轻便手感更舒适。绚丽高清的显示屏，整个外观显得格外精致。
+
+            </div>
+            <div class="desc">
+                <div class="desc-inner">
+                    <h3>5.7</h3>
+                    <p>英寸大屏</p>
+                </div>
+                <div class="desc-inner">
+                    <h3>5.7</h3>
+                    <p>英寸大屏</p>
+                </div>
+                <div class="desc-inner">
+                    <h3>5.7</h3>
+                    <p>英寸大屏</p>
+                </div>
+                <div class="desc-inner">
+                    <h3>5.7</h3>
+                    <p>英寸大屏</p>
+                </div>
+            </div>
+            <div class="phone"></div>
+        </div>
+    </div>
+    <div class="section">
+        <div class="title">丰富的手机型号</div>
+        <div class="subtitle">找到适合你的手机</div>
+        <div class="phone-list">
+            <div>
+                <img src="img/phone-1.png" alt="手机图片">
+                <h3>小米手机</h3>
+                <p>16G/32G/64G</p>
+            </div>
+            <div>
+                <img src="img/phone-2.png" alt="手机图片">
+                <h3>小米手机</h3>
+                <p>16G/32G/64G</p>
+            </div>
+            <div>
+                <img src="img/phone-3.png" alt="手机图片">
+                <h3>小米手机</h3>
+                <p>16G/32G/64G</p>
+            </div>
+            <div>
+                <img src="img/phone-4.png" alt="手机图片">
+                <h3>小米手机</h3>
+                <p>16G/32G/64G</p>
+            </div>
+        </div>
+    </div>
+    <div class="section">
+        <div class="title">游戏、学习、拍照、有这一部就够了</div>
+        <div class="subtitle">看视频、拍摄高清视频与照片、视频聊天、一机多功能，让您生活更丰富精彩。</div>
+        <div class="phone"></div>
+    </div>
+    <div class="section fp-auto-height">
+        <footer>
+            <div class="btn">立即购买</div>
+        </footer>
+    </div>
+</div>
+<script src="js/jquery.min.js"></script>
+<script src="js/jquery.fullPage.min.js"></script>
+<script>
+    var $ali=$('#menu').children('li:not(.lastli)');
+    var $div=$('#menu').children('div');
+    //默认把锚点改成第一个页面的ID;
+    //window.location.hash='#firstPage';
+    $('#fullPage').fullpage({
+        verticalCentered:false,//解决默认垂直居中的问题
+        css3:true,
+        //滚动到某一屏后的回调函数
+        afterLoad:function (anchorLink,index) {
+            console.log(index)
+            //让下划线移动对应的菜单；
+            $div.stop().animate({
+                left:(36+36)*(index-1)
+            },400);
+            $ali.eq(index-1).addClass('active').siblings('li').removeClass('active');
+            if(index<5){
+                $('.section').removeClass('current');
+            }
+            setTimeout(function () {
+                if(index==6){
+                    $('.section').eq(4).addClass('current');
+                    return;
+                }
+                $('.section').eq(index-1).addClass('current');
+            },400)
+        },
+        navigation:true,
+        navigationPosition:'right',
+        navigationTooltips:['首页','外观','配置','型号','说明'],
+        menu:true,
+        anchors:['firstPage','secondPage','thirdPage','fourthPage','fifthPage','sixPage']
+    });
+    //通过JS操作顶部导航覆盖页面内容的问题；
+    for(var i=0; i<5; i++){
+        $('.section').eq(i).css({
+            marginTop:80
+        })
+    }
+    //滑动门效果:注意，此时拿到的li,是不包含最后一个li的；
+    $ali.on('mouseover',function () {
+        var index=$(this).index();
+        $div.stop().animate({
+            left:(36+36)*index
+        },400)
+    }).on('mouseout',function () {
+        //判断，哪个按钮有active，那就移动到哪个按钮下面
+        $ali.each(function (index,item) {
+            if(item.className=='active'){
+                $div.stop().animate({
+                    left:(36+36)*index
+                },400)
+            }
+        })
+    })
+</script>
+</body>
+</html>

@@ -1,0 +1,49 @@
+1. form表单提交数据
+- action="后台接口／服务器的地址"
+- method：请求方式
+    1）"前端"通过get请求，"服务器"接收的是浏览器地址栏的信息；
+        + url.parse(req.url,true);
+        + 指得是把字符串形式的query转成对象形式的query;
+    2）"前端"通过post请求，"服务器"接收的是请求体里面的数据；但是，因为请求体能放的数据量很大，所以，post请求时，后台是按照块来接收的；
+        + req.on('data',(data)=>{此数据需要进行拼接})
+        + req.on('end',()=>{
+            1：此时拿到的字符串是拼接好的字符串
+            2：需要把此字符串通过querystring转成字符串；
+        })
+2.后台接口的规划
+- 注册： /user?act=reg&username='ymy'&pass='123456';
+- 登录： /user?act=login&siusername='ymy'&pass='123456';
+3.模块化
+- 模块可以分三大类
+    1. nodejs自带的模块--直接查看nodejs官网；
+    http,fs,event,path...
+    2. 引入第三方模块:nodejs天生自带一个npm包管理器；
+        - 通过npm
+            + 安装到全局 npm install xxx -g
+            + npm install xx --save  (dependencies) 上线后的依赖  `npm i xx --save`
+            + npm install --save-dev  (devDependencies) 开发时的依赖
+            卸载：npm uninstall xxx
+    3. 自定义模块：引入的时候是相对路径('./a.js')
+    - 导出：
+        + exports.xxx=123; 一个个导出
+        + module.exports={} 批量导出
+    - 导入：
+        require('./xxx.js') //这个js是可以省略的；
+
+- 一般情况下，一个项目都需要用package.json文件，这个文件可以提供当前项目依赖的模块
+如果把你的项目给别人的时候，不需要传输node_modules;当他拿到你的文件后，在控制台输入"npm install"就会自动的按照项目中package.json
+- 快速把当前项目初始化`npm init --y`;
+
+
+
+
+
+
+
+
+
+
+
+
+
+

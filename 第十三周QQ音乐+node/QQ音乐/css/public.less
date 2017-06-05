@@ -1,0 +1,10 @@
+@color-white:#fff;
+@color-green:#31c27c;
+.spriteFn(@x:0,@y:0){
+  background:url("../img/sprite_play.png") @x @y no-repeat;
+  background-size: .8rem 7rem;
+}
+.transtionFn(@pro,@duration,@timing,@delay){
+  -webkit-transition: @arguments;
+  transition: @arguments;
+}

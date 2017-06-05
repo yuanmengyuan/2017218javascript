@@ -31,7 +31,7 @@ class Banner{
     getData(){
         var _this=this;
         var xml=new XMLHttpRequest();
-        xml.open('get','json/data.txt?'+Math.random(),false);
+        xml.open('get','json/data.txt.txt?'+Math.random(),false);
         xml.onreadystatechange=function(){
             if(xml.readyState==4 && /^2\d{2}$/.test(xml.status)){
                 _this.data=utils.jsonParse(xml.responseText)

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <title>Bootstrap 101 Template</title>
+    <link href="/css/bootstrap.css" rel="stylesheet">
+</head>
+<body>
+<% include pub/header.ejs%>
+<div class="container">
+    <ol class="breadcrumb">
+        <li><a href="/">全部相册</a></li>
+        <li class="active"><%= albumName%></li>
+    </ol>
+</div>
+<div class="container">
+    <div class="row">
+        <% for(var i=0; i<albums.length; i++){%>
+        <div class="col-xs-6 col-md-3">
+            <a href="#" class="thumbnail">
+                <img src="<%= albums[i]%>" alt="...">
+            </a>
+        </div>
+        <%}%>
+    </div>
+</div>
+
+<script src="/js/jquery.min.js"></script>
+<script src="/js/bootstrap.min.js"></script>
+</body>
+</html>

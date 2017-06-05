@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Jcrop Demo</title>
+  <meta http-equiv="Content-type" content="text/html;charset=UTF-8" />
+
+  <link rel="stylesheet" href="./css/jquery.Jcrop.css">
+  <link rel="stylesheet" href="./css/index.css">
+
+</head>
+
+<body>
+<img src="/avatar/ala.jpg" id="target" alt="[Jcrop Example]" />
+
+<div id="preview-pane">
+  <div class="preview-container">
+    <img src="/avatar/ala.jpg" class="jcrop-preview" alt="Preview" />
+  </div>
+</div>
+<button style="width:200px; height: 40px;" id="button">裁切完成</button>
+</body>
+
+<script src="./js/jquery.min.js"></script>
+<script src="./js/jquery.Jcrop.js"></script>
+<script type="text/javascript">
+    jQuery(function($){
+
+        // Create variables (in this scope) to hold the API and image size
+        var jcrop_api,
+            boundx,
+            boundy,
+
+            // Grab some information about the preview pane
+            $preview = $('#preview-pane'),
+            $pcnt = $('#preview-pane .preview-container'),
+            $pimg = $('#preview-pane .preview-container img'),
+
+            xsize = $pcnt.width(),
+            ysize = $pcnt.height();
+
+        console.log('init',[xsize,ysize]);
+        $('#target').Jcrop({
+            onChange: updatePreview,
+            onSelect: updatePreview,
+            aspectRatio: xsize / ysize
+        },function(){
+            // Use the API to get the real image size
+            var bounds = this.getBounds();
+            boundx = bounds[0];
+            boundy = bounds[1];
+            // Store the API in the jcrop_api variable
+            jcrop_api = this;
+
+            // Move the preview into the jcrop container for css positioning
+            $preview.appendTo(jcrop_api.ui.holder);
+        });
+
+        function updatePreview(c)
+        {
+            if (parseInt(c.w) > 0)
+            {
+                var rx = xsize / c.w;
+                var ry = ysize / c.h;
+
+                $pimg.css({
+                    width: Math.round(rx * boundx) + 'px',
+                    height: Math.round(ry * boundy) + 'px',
+                    marginLeft: '-' + Math.round(rx * c.x) + 'px',
+                    marginTop: '-' + Math.round(ry * c.y) + 'px'
+                });
+            }
+        };
+
+    });
+</script>
+<script>
+  //这里是我们自己写的代码；
+  $('#button').click(function () {
+      var $div=$('.jcrop-holder>div:eq(0)');
+      var w=$div.width(),
+          h=$div.height(),
+          l=$div.position().left,
+          t=$div.position().top;
+      $.ajax({
+          url:'/cut',
+          data:{w,h,l,t},
+          success:function (val) {
+              if(val.bok){
+                  alert(val.msg)
+              }else{
+                  alert(val.msg)
+              }
+          }
+      })
+  });
+</script>
+</html>
+

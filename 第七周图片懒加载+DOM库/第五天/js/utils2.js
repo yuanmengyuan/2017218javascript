@@ -90,7 +90,7 @@ var utils=(function(){
             return ary;
         },
         //hasClass
-        hasCass:function(ele,cName){
+        hasClass:function(ele,cName){
             var reg=new RegExp('(^| +)'+cName+'( +|$)');
             return reg.test(ele.className);
         },

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>圆梦源：勿忘初心，方得始终</title>
+    <style>
+        canvas{
+            border: 1px solid #000;
+        }
+    </style>
+</head>
+<body>
+<canvas id="canvas" width="800" height="500"></canvas>
+<script>
+    var canvas=document.getElementById('canvas');
+    var ctx=canvas.getContext('2d');
+    var ary=[];
+    //创建一个球的面向对象
+    class Ball{
+        constructor(x,y,r){
+            //求的变量，只有三个:xy,r
+            this.x=x;
+            this.y=y;
+            this.r=r||50;
+            this.color='rgba('+parseInt(Math.random()*255)+','+parseInt(Math.random()*255)+','+parseInt(Math.random()*255)+',.4)';
+
+            //随机散发：
+            this.dx=Math.random()*10-5;//-5~5
+            this.dy=Math.random()*10-5;//-5~5
+            this.dr=Math.random()+0.3;//r必须是正数，球才能不断变小；
+
+            ary.push(this);//把实例放入数组；
+        }
+        update(){//更新状态：运动
+            this.x+=this.dx;
+            this.y+=this.dy;
+            this.r-=this.dr;
+            //为了性能优化，干掉没用的小球；
+            if(this.r<=0){
+                //谁的半径小于0的时候，就从数组中干掉谁；
+                for(var i=0; i<ary.length; i++){
+                    if(this===ary[i]){
+                        ary.splice(i,1);
+                        i--;
+                    }
+                }
+            }
+            return this;
+        }
+        render(){//渲染：让球显示出来；
+            if(this.r>=0){
+                ctx.beginPath();//开始画画
+                ctx.arc(this.x,this.y,this.r,0,Math.PI*2,false);
+                ctx.fillStyle=this.color;
+                ctx.fill();//实心球
+            }
+        }
+    }
+    /*var ball1=new Ball(300,200);
+    var ball2=new Ball(500,100);
+    var ball3=new Ball(300,500);*/
+    setInterval(function () {
+        ctx.clearRect(0,0,canvas.width,canvas.height);
+        for(var i=0; i<ary.length; i++){
+            ary[i].update().render();
+        }
+        /*ball1.update().render();
+        ball2.update().render();
+        ball3.update().render();*/
+    },30);
+    canvas.addEventListener('mousemove',function (e) {
+        new Ball(e.clientX,e.clientY,30);
+    })
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

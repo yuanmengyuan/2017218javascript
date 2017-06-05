@@ -16,7 +16,7 @@ getData();
 function getData(){
     $.ajax({
         type:'get',
-        url:'json/data.txt',
+        url:'json/data.txt.txt',
         async:false,
         dataType:'json',
         success:function(val){

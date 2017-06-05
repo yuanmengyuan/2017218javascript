@@ -1,0 +1,12 @@
+### 该项目涉及的技术栈
+- rem的响应式单位；
+- js中的正则； 正则匹配了两次；
+- 数据获取； $.ajax();
+- zepto和zepto中的订阅发布；  1）点击时间tap; 2）订阅发布 var callback=$.Callback()   绑定事件callback.add()  callback.fire(); 3)filter 属性过滤，必须加[];
+- html5+css3: 标签，transition； 音频
+- less; 变量   公共函数  层级嵌套；  darken();
+- audio对象的属性和方法；方法： play() pause()  事件：canplay   timeupdate； 属性：paused-布尔
+### rem
+- em  针对自己的父级进行计算；
+- rem 针对 根节点html 进行计算；
+    为了方便的计算，我按照最常用的

@@ -1,0 +1,55 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <title>ymy论坛</title>
+    <link href="/css/bootstrap.css" rel="stylesheet">
+    <link href="/css/jumbotron.css" rel="stylesheet">
+</head>
+
+<body>
+<% include pub/top.ejs%>
+
+<div class="container">
+    <h1>欢迎登录</h1>
+    <hr>
+    <form style="width:40%;">
+        <div class="form-group">
+            <label for="username">用户名</label>
+            <input type="text" class="form-control" id="username" name="username" placeholder="请输入用户名">
+        </div>
+        <div class="form-group">
+            <label for="Password">密码</label>
+            <input type="password" class="form-control" id="Password"  name="password" placeholder="请输入密码">
+        </div>
+        <div class="checkbox">
+            <label>
+                <input type="checkbox" required> 我同意
+            </label>
+        </div>
+        <button type="button" id="regBtn" class="btn btn-primary col-md-6">欢迎登录</button>
+    </form>
+</div>
+<%include pub/footer.ejs%>
+<script src="/js/jquery.min.js"></script>
+<script src="/js/bootstrap.min.js"></script>
+<script>
+    $('#regBtn').click(function () {
+        $.ajax({
+            url:'/doLogin',
+            data:$('form').serialize(),
+            type:'post',
+            success:function (val) {
+                if(val.bok){
+                    alert(val.msg);
+                   window.location.href='/';
+                }else{
+                    alert(val.msg);
+                }
+            }
+        })
+    });
+</script>
+</body>
+</html>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>圆梦源：勿忘初心，方得始终</title>
+    <link rel="stylesheet" href="css/jquery.full.css">
+    <style>
+        /*覆盖fullpage.css以前的样式*/
+        #fp-nav ul li .fp-tooltip{
+            color: #000000;
+        }
+        /*覆盖fullpage.css以前的样式*/
+        div{
+            font-size: 100px;
+            text-align: center;
+        }
+       /* .section:nth-child(1){
+            background: #ff0000;
+        }
+        .section:nth-child(2){
+            background: #ffff00;
+        }
+        .section:nth-child(3){
+            background: #ff00ff;
+        }
+        .section:nth-child(4){
+            background: #0a35e9;
+        }
+        .section:nth-child(5){
+            background: #1db9ff;
+        }*/
+        header{
+            width: 100%;
+            height: 50px;
+            background: #ffffff;
+            position: fixed;
+            left:0;
+            top:0;
+            right:0;
+            z-index: 99;
+        }
+    </style>
+</head>
+<body>
+<header>
+    <ul id="myMenu">
+        <li data-menuanchor="firstPage" class="menuList"><a href="#firstPage">首页</a></li>
+        <li data-menuanchor="secondPage" class="menuList"><a href="#secondPage">作品</a></li>
+        <li data-menuanchor="thirdPage" class="menuList"><a href="#thirdPage">技能</a></li>
+        <li data-menuanchor="fourthPage"class="menuList"><a href="#fourthPage">联系方式</a></li>
+        <li data-menuanchor="fivePage"class="menuList"><a href="#fivePage">联系方式</a></li>
+    </ul>
+</header>
+<div class="fullpage" id="abc">
+    <div class="section">
+        <p>1111</p>
+    </div>
+    <div class="section">
+222222
+    </div>
+    <div class="section">第3屏</div>
+    <div class="section">第4屏</div>
+    <div class="section">第5屏</div>
+</div>
+<script src="js/jquery.min.js"></script>
+<script src="js/jquery.fullPage.min.js"></script>
+<script>
+    $('.fullpage').fullpage({
+        css3:true,
+        afterLoad:function (anchorLink,index) {
+            console.log(test)
+        },
+        navigation:true,
+        navigationPosition:'right',
+        navigationTooltips:['page1','page2','page3','page4','page5'],
+        navigationColor:'blue',
+        anchors:['firstPage','secondPage','thirdPage','fourthPage','fivePage'],
+        sectionsColor:['red','orange','blue','pink','purple']
+    })
+</script>
+</body>
+</html>

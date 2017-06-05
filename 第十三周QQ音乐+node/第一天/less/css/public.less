@@ -1,0 +1,20 @@
+//公共样式表；
+@color-white:#fff;
+@color-red:#f00;
+@color-black:#000;
+//参数可传，可不传
+.yuan(@w:50px,@h:50px,@color:@color-white){
+  width:@w;
+  height:@h;
+  border-radius:50%;
+  background: @color;
+}
+//必须传参数
+.rect(@t,@r,@b,@l){
+  padding:@arguments;
+  font-size: 30px;
+}
+//必须传参，且传的参数必须为红色；
+.changeColor(@a) when(@a=red){
+  border-color: @a;
+}

@@ -1,0 +1,79 @@
+/*cover*/
+#fp-nav ul li a span, .fp-slidesNav ul li a span{
+    background:purple;
+}
+#fp-nav ul li .fp-tooltip{
+    color: #333;
+}
+#fp-nav ul li:last-child, .fp-slidesNav ul li:last-child{
+    display: none;
+}
+/*reset*/
+*{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+}
+/*header*/
+.section{
+    position: relative;
+}
+header{
+    width: 100%;
+    height: 80px;
+    line-height: 80px;
+    background: #ffffff;
+    position: fixed;
+    left:0;
+    top:0;
+    z-index: 1;
+}
+header ul{
+    float: right;
+    position: relative;
+}
+header ul div{
+    width: 32px;
+    height: 3px;
+    background: #ff0000;
+    position: absolute;
+    bottom:0;
+}
+header ul li{
+    float: left;
+}
+header ul li.active a{
+    color: #ff0000;
+}
+header ul li+li{
+    padding-left: 36px;
+}
+header ul li:last-child{
+    width: 82px;
+    height: 32px;
+    border-radius: 4px;
+    background: #000000;
+    text-align: center;
+    line-height: 32px;
+    padding-left: 0;
+    margin-left: 32px;
+    margin-top: 24px;
+}
+header ul li:last-child a{
+    color: #ffffff;
+    display: block;
+}
+/*section1*/
+.section:nth-child(1){}
+.section:nth-child(2){}
+.section:nth-child(3){}
+.section:nth-child(4){}
+.section:nth-child(5){}
+.section:nth-child(6){
+    
+}
+.section:nth-child(6) footer{
+    height: 350px;
+    background: #ec10ff;
+}

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>圆梦源：勿忘初心，方得始终</title>
+    <style>
+        .wrap{
+            width: 300px;
+            height:200px;
+        }
+        .wrap a{
+            margin:4px;
+        }
+        .wrap div{
+            padding:10px;
+            width: 100%;
+            height: 100%;
+            display: none;
+            border:1px solid #000;
+        }
+        .wrap div:nth-of-type(1){
+            display: block;
+        }
+    </style>
+</head>
+<body>
+<div class="wrap">
+    <a href="javascript:;" data-target=".tiyu">体育频道</a>
+    <a href="javascript:;" data-target=".yule">娱乐频道</a>
+    <a href="javascript:;" data-target=".caijing">财经频道</a>
+    <a href="javascript:;" data-target=".fazhi">法制频道</a>
+    <div class="tiyu content">体育频道的内容，内容让你那天那天那天他</div>
+    <div class="yule content">娱乐频道1111111111</div>
+    <div class="caijing content">财经频道222222222222</div>
+    <div class="fazhi content">法制频道33333333333</div>
+</div>
+<script>
+    var aA=document.getElementsByTagName('a');
+    var aDiv=document.querySelectorAll('.content');
+    for(var i=0; i<aA.length; i++){
+        aA[i].onclick=function () {
+            //原生拿data上的自定义属性，dataset
+            var target=this.dataset.target;
+            for(var i=0; i<aDiv.length; i++){
+                aDiv[i].style.display='none';
+            }
+            document.querySelector(target).style.display='block';
+        }
+    }
+</script>
+</body>
+</html>

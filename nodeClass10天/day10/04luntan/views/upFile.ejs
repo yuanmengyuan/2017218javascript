@@ -1,0 +1,35 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <title>ymy论坛</title>
+    <link href="/css/bootstrap.css" rel="stylesheet">
+    <link href="/css/jumbotron.css" rel="stylesheet">
+</head>
+
+<body>
+<% include pub/top.ejs%>
+
+<div class="container">
+    <h1>请上传您的头像</h1>
+    <hr>
+    <form action="/doVatar" style="width:40%;" method="post" enctype="multipart/form-data">
+        <div class="form-group">
+            <label for="touxiang">请上传小尺寸的头像</label>
+            <input type="file" name="touxiang" id="touxiang">
+            <p class="help-block">Example block-level help text here.</p>
+        </div>
+        <div class="checkbox">
+            <label>
+                <input type="checkbox"> Check me out
+            </label>
+        </div>
+        <button type="submit" class="btn btn-primary col-md-6">上传头像</button>
+    </form>
+</div>
+<%include pub/footer.ejs%>
+<script src="/js/jquery.min.js"></script>
+<script src="/js/bootstrap.min.js"></script>
+</body>
+</html>

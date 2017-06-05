@@ -1,0 +1,33 @@
+1.需求：
+我们自己需要些一个服务器；来渲染我们自己的静态页面；
+2.node自己提供了一个repl的运行环境
+    - r:read   e:eval  p:print  l:loop
+3.path模块
+- path.extname() 用来拿后缀名的 'index.html'->'.html'
+- path.join('/foo/aaa','index.html') ->'/foo/aaa/index.html';
+- path.normalize() 把不正常的地址变成正常的地址；normalize里面不能有"逗号"
+- path.parse() 可以把路径地址解析成一个对象
+```
+{ root: '',
+  dir: '',
+  base: 'index.html',
+  ext: '.html',
+  name: 'index' }
+```
+- path.resolve() 相当于一大堆的cd；不停的cd;把路径解析成一个绝对路径；
+- 我下载的模块都在package.json文件中记录了；你们拿到我们的项目的时候，如果想正常运行，必须先`npm install`,他可以把我项目依赖的模块或包，都下载下来；
+- 删除文件: `fs.unlink(path, callback)`
+- ejs模版，它功过node和express配合，可以渲染页面
+    + 具体步骤如下：
+        1. 先设置默认引擎； app.set('view engine','ejs');
+        2. 当请求某个地址的时候，开始渲染页面
+        ```
+        app.get('/',function(req,res){
+            res.render('index',{n:8})
+        })
+
+        ```
+    + 注意：虽然express中可以不用引入ejs模块，但是我们必须给当前项目下载这个ejs模块；否则，会报错；
+    + for循环，条件判断语句等直接用<%%>;如果具体复制，必须要等号<%= xxx%>
+    + views是express中默认存储模版的地方；所以，可以省略路径
+

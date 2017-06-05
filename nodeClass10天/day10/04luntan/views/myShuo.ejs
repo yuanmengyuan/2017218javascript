@@ -1,0 +1,40 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <title>ymy论坛</title>
+    <link href="/css/bootstrap.css" rel="stylesheet">
+    <link href="/css/jumbotron.css" rel="stylesheet">
+    <style>
+        .content{
+            width:300px;
+            heihgt:30px;
+            line-height: 30px;
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            font-size: 16px;
+        }
+    </style>
+</head>
+
+<body>
+<% include pub/top.ejs%>
+<div class="container" style="margin-top: 50px;">
+    <%for(var i=0; i<shuoshuos.length; i++){%>
+    <div class="panel panel-primary">
+        <div class="panel-heading">
+            <%= shuoshuos[i].title %>
+        </div>
+        <div class="panel-body">
+            <%= shuoshuos[i].content %>
+        </div>
+    </div>
+    <%}%>
+</div>
+<% include pub/footer.ejs%>
+<script src="/js/jquery.min.js"></script>
+<script src="/js/bootstrap.min.js"></script>
+</body>
+</html>

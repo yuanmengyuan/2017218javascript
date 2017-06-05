@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>圆梦源：勿忘初心，方得始终</title>
+    <style>
+        canvas{
+            border: 1px solid #000;
+        }
+    </style>
+</head>
+<body>
+<canvas id="canvas" width="800" height="500"></canvas>
+<script>
+    var canvas=document.getElementById('canvas');
+    //创建2d环境
+    var ctx=canvas.getContext('2d');
+    var img=new Image;
+    img.src='img/tupian.jpeg';
+    img.onload=function () {
+        ctx.beginPath();
+        ctx.drawImage(img,445,56,213,287,100,100,213,287);
+    };
+</script>a
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+

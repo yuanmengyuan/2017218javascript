@@ -43,7 +43,7 @@ class Banner{
     getData(){
         $.ajax({
             type:'get',
-            url:'json/data.txt?'+Math.random(),
+            url:'json/data.txt.txt?'+Math.random(),
             async:false,
             dataType:'json',
             success:(val)=>{

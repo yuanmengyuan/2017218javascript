@@ -1,0 +1,22 @@
+### 1.0如何设置顶部导航
+- 写好导航结构
+- 写好html页面结构
+- 进行配置；
+### 1.1 window.location
+一个完整的url地址：http请求协议+域名+端口号+文件地址+'?'+前端传给后台的参数 #hash(哈希值)；
+- hash:哈希值；锚点
+- host：主机，由：域名+端口号构成
+- hostname：主机名
+- href：完整的地址；
+- origin：原始地址；
+- pathname：当前文件的路径
+- port：端口号
+- protocol：协议 (http; https)
+### 1.2 写动效三步骤：
+1. 先搭好html+css;（要运动的元素，尽量都设为定位）
+2. 通过位移（left,top; transform）把要动的元素，移到看不到的位置；
+3. 通过添加transition和current，利用过渡和延迟，最后动态的回来；
+afterLoad：function(){
+    //1:希望用户看到的是空白；
+    //2:利用定时器，产生时间差以后，添加current;
+}

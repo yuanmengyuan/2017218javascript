@@ -15,7 +15,7 @@ function getData(){
     //1.创建一个xml对象
     var xml=new XMLHttpRequest();
     //2.打开地址
-    xml.open('GET','json/data.txt')
+    xml.open('GET','json/data.txt.txt')
     //3.发送请求
     xml.send(null);
     //4.响应请求
@@ -29,13 +29,13 @@ function getData(){
 //2。绑定数据
 /*function bind(){
     var str='';
-    for(var i=0; i<data.length; i++){
-        data[i].sex=data[i].sex==0?'男':'女';
+    for(var i=0; i<data.txt.length; i++){
+        data.txt[i].sex=data.txt[i].sex==0?'男':'女';
         str+='<tr>\
-            <td>'+data[i].name+'</td>\
-            <td>'+data[i].age+'</td>\
-            <td>'+data[i].level+'</td>\
-            <td>'+data[i].sex+'</td>\
+            <td>'+data.txt[i].name+'</td>\
+            <td>'+data.txt[i].age+'</td>\
+            <td>'+data.txt[i].level+'</td>\
+            <td>'+data.txt[i].sex+'</td>\
             </tr>'
     }
     tBody.innerHTML=str;

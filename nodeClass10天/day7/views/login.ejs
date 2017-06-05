@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        div{
+            width: 500px;
+            margin:50px auto;
+        }
+    </style>
+</head>
+<body>
+<div>
+    <h1>登录页面</h1>
+    <form action="/dologin" method="post">
+        <p>
+            <label for="username">
+                用户名：
+                <input type="text" id="username" name="username">
+            </label>
+        </p>
+        <p>
+            <label for="password">
+                密 码：
+                <input type="password" id="password" name="password">
+            </label>
+        </p>
+        <p>
+            <input type="button" value="欢迎登录" id="btn">
+        </p>
+    </form>
+</div>
+<script src="/js/jquery.min.js"></script>
+<script>
+    $('#btn').click(function () {
+        $.ajax({
+            url:'/dologin',
+            data:$('form').serialize(),
+            type:'post',
+            success:function (val) {
+                if(val.bok){
+                    alert(val.msg)
+                }else{
+                    alert(val.msg)
+                }
+            }
+        })
+    })
+</script>
+</body>
+</html>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="JavaScriptLibraryMappings">
+    <file url="file://$PROJECT_DIR$/day1/pro2" libraries="{reactClass/day1/pro2/node_modules}" />
+    <file url="PROJECT" libraries="{reactClass/day1/pro1/node_modules, reactClass/day1/pro2/node_modules}" />
+    <includedPredefinedLibrary name="WebGL" />
+  </component>
+</project>

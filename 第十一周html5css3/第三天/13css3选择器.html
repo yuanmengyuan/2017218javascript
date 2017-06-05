@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>圆梦源：勿忘初心，方得始终</title>
+    <style>
+        /*div[class$=box1]{
+            background: #ffff00;
+            margin:10px;
+        }*/
+        /*div:nth-child(1){
+            background: #ff0000;
+        }*/
+        /*div:nth-last-child(1){
+            background: #ff00ff;
+        }*/
+       /* div:last-child{
+            background: #ff00ff;
+        }
+        input[type=button]{
+            background: #ff0000;
+        }
+        p:only-child{
+            background: #000;
+        }*/
+        p:only-of-type{
+            background: #ff0000;
+            width:200px;
+            heigh:50px;
+            line-height: 50px;
+
+            white-space: nowrap;/*文本不折行*/
+            text-overflow:ellipsis; /*先是省略号*/
+            overflow: hidden; /*溢出隐藏*/
+
+        }
+        input::placeholder{
+            color:red;
+        }
+    </style>
+</head>
+<body>
+<input type="text" placeholder="请输入汉字">
+<!--<input type="text" value="1223444">
+<input type="button" value="按钮">
+<input type="email" value="email11111">-->
+<div class="aox1">1</div>
+<div class="aox2box3  box1">2</div>
+<div class="box3">3</div>
+<p>老师的肌肤抗衰老觉得浪费快速的减肥了快速的减肥了快速的减肥离开</p>
+</body>
+</html>

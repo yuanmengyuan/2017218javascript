@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>圆梦源：勿忘初心，方得始终</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        .wrap{
+            width: 800px;
+            height: 600px;
+            margin:100px auto;
+            background: pink;
+            position: relative;
+        }
+        .wrap span{
+            width: 50px;
+            height: 50px;
+            text-align: center;
+            line-height: 50px;
+            font-size: 50px;
+            background: #cccccc;
+            color: #ffffff;
+            position: absolute;
+            top:50%;
+            margin-top: -25px;
+        }
+        .prev{
+            left:30px;
+        }
+        .next{
+            right:30px;
+        }
+        .wrap ul{
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+        .wrap ul li{
+            width: 160px;
+            height: 600px;
+            position: absolute;
+            top: 0;
+
+            transition: all 2s;
+            transform-style: preserve-3d;
+        }
+        .wrap ul li div{
+            width: 160px;
+            height: 600px;
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+        .wrap ul li div:nth-of-type(1){
+            background: url("images/banner1.jpg") no-repeat;
+            transform: rotateX(0deg) translateZ(300px);
+        }
+        .wrap ul li div:nth-of-type(2){
+            background: url("images/banner2.jpg") no-repeat;
+            transform: rotateX(-90deg) translateZ(300px);
+        }
+        .wrap ul li div:nth-of-type(3){
+            background: url("images/banner3.jpg") no-repeat;
+            transform: rotateX(-180deg) translateZ(300px);
+        }
+        .wrap ul li div:nth-of-type(4){
+            background: url("images/banner4.jpg") no-repeat;
+            transform: rotateX(-270deg) translateZ(300px);
+        }
+    </style>
+</head>
+<body>
+<div class="wrap">
+    <ul>
+        <li>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </li>
+        <li>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </li>
+        <li>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </li>
+        <li>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </li>
+        <li>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </li>
+    </ul>
+    <span class="prev"><</span>
+    <span class="next">></span>
+</div>
+<script src="js/jquery.js"></script>
+<script>
+    var n=0;
+    //1：铺平所有的li
+    $('li').each(function (index,item) {
+        $(this).css({
+            left:index*800/5,
+            transitionDelay:.2*index+'s'
+        });
+        $(this).children('div').css({
+            backgroundPosition:-index*800/5
+        });
+    });
+    $('.next').click(function () {
+        n++;
+        $('li').css({
+            transform:'rotateX('+(90*n)+'deg)'
+        })
+    })
+    $('.prev').click(function () {
+        n--;
+        $('li').css({
+            transform:'rotateX('+(90*n)+'deg)'
+        })
+    })
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+

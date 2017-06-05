@@ -14,7 +14,7 @@ var n=0;//n决定让第几张图片显示
 getData();
 function getData(){
     $.ajax({
-        url:'json/data.txt',
+        url:'json/data.txt.txt',
         type:'get',
         async:false,//同步
         dataType:'json',

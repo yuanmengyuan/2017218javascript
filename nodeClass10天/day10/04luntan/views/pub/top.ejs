@@ -1,0 +1,40 @@
+<nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">圆梦源论坛</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+                <li <%if(current=="首页"){%>class="active"<%}%>><a href="/">全部说说</a></li>
+                <%if(login){%>
+                <li <%if(current=="说说"){%>class="active"<%}%>><a href="/myshuo">我的说说</a></li>
+                <li <%if(current=="列表"){%>class="active"<%}%>><a href="/userList">用户列表</a></li>
+                <%}%>
+            </ul>
+            <% if(login){%>
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="#">欢迎您：<%=username%></a></li>
+                <li <%if(current=="设置"){%>class="active"<%}%> class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">用户设置 <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="/upAvatar">修改头像</a></li>
+                        <li role="separator" class="divider"></li>
+                        <li><a href="/logout">退出</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <%}else{%>
+            <ul class="nav navbar-nav navbar-right">
+                <li  <%if(current=="注册"){%>class="active"<%}%>><a href="/reg">注册</a></li>
+                <li  <%if(current=="登录"){%>class="active"<%}%>><a href="/login">登录</a></li>
+            </ul>
+            <%}%>
+        </div>
+    </div>
+</nav>

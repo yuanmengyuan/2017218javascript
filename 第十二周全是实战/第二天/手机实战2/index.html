@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>圆梦源：勿忘初心，方得始终</title>
+    <link rel="stylesheet" href="css/jquery.full.css">
+    <link rel="stylesheet" href="css/index.css">
+    <style>
+
+    </style>
+</head>
+<body>
+<header>
+    <ul id="menu">
+        <li data-menuanchor="firstPage" class="active"><a href="#firstPage">首页</a></li>
+        <li data-menuanchor="secondPage"><a href="#secondPage">外观</a></li>
+        <li data-menuanchor="thirdPage"><a href="#thirdPage">配置</a></li>
+        <li data-menuanchor="fourthPage"><a href="#fourthPage">型号</a></li>
+        <li data-menuanchor="fifthPage"><a href="#fifthPage">说明</a></li>
+        <li><a href="#">按钮</a></li>
+        <div></div>
+    </ul>
+</header>
+<div id="fullPage" class="fullPage">
+    <div class="section">122222</div>
+    <div class="section">23333</div>
+    <div class="section">34444</div>
+    <div class="section">45555</div>
+    <div class="section">566666</div>
+    <div class="section fp-auto-height">
+        <footer>12323456</footer>
+    </div>
+</div>
+<script src="js/jquery.min.js"></script>
+<script src="js/jquery.fullPage.min.js"></script>
+<script>
+    var $ali=$('#menu').find('li');
+    var $line=$('#menu').find('div');
+    window.location.hash='#firstPage';
+    $('#fullPage').fullpage({
+        verticalCentered:false,
+        css3:true,
+        afterLoad:function (anchorLink,index) {
+            console.log(index);
+            $ali.eq(index-1).addClass('active').siblings('li').removeClass('active');
+            $line.stop().animate({
+                left:(32+36)*(index-1)
+            })
+        },
+        sectionsColor:['pink','#01fff2','#123456','#223321','#987678'],
+        navigation:true,
+        navigationPosition:'right',
+        navigationTooltips:['首页','外观','配置','型号',
+            '说明'],
+        menu:true,//1）'#menu注意要跟导航的ID相同' 2)boolean;
+        anchors:['firstPage', 'secondPage', 'thirdPage','fourthPage','fifthPage']
+    });
+    for(var i=0; i<5; i++){
+        $('.section').eq(i).css({
+            marginTop:80
+        })
+    }
+    //滑动门的制作；
+    $ali.on('mouseover',function () {
+        var index=$(this).index();
+        $line.stop().animate({
+            left:(32+36)*index
+        })
+    }).on('mouseout',function () {
+        $ali.each(function (index,item) {
+            //判断，哪个元素有active，就把横线移动到哪个元素下；
+            if(item.className==='active'){
+                $line.stop().animate({
+                    left:(32+36)*index
+                })
+            }
+        })
+    })
+</script>
+</body>
+</html>

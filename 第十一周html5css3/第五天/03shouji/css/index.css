@@ -1,0 +1,133 @@
+/*Ã©â€¡ÂÃ§Â½Â®Ã¦Â Â·Ã¥Â¼Â start*/
+*{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+body{
+    font-size: 14px;
+    color: #333333;
+}
+a{
+    text-decoration: none;
+    color: #333333;
+}
+/*Ã©â€¡ÂÃ§Â½Â®Ã¦Â Â·Ã¥Â¼Â end*/
+/*header*/
+header{
+    position: fixed;
+    left:0;
+    top:0;
+    z-index: 99;
+    background: #f1f2f3;
+    width: 100%;
+    height: 80px;
+    line-height: 80px;
+    overflow: hidden;
+}
+header .logo{
+    margin-left: 10px;
+    background:url("../img/logo.png") no-repeat left center;
+    width: 104px;
+    height:70px;
+    float: left;
+    line-height: 70px;
+    background-size: 37px 37px;
+    padding-left: 48px;
+}
+header ul{
+    margin-right: 10px;
+    float: right;
+}
+header ul li{
+    float: left;
+    margin-left: 36px;
+}
+header ul li.active a{
+    color: #ff0000;
+}
+header ul li:last-child{
+    width: 82px;
+    height: 34px;
+    text-align: center;
+    line-height: 34px;
+    background: #000000;
+    margin-top: 23px;
+    border-radius: 4px;
+}
+header ul li:last-child a{
+    color: #ffffff;
+}
+/*header-end*/
+section{
+    position: relative;
+}
+/*Ã§Â¬Â¬Ã¤Â¸â‚¬Ã¥Â±Â*/
+.section:nth-child(1){
+    background: url('../img/bg-screen-1.png') no-repeat center;
+    background-size:cover;
+}
+.section:nth-child(1) h2{
+    font-size: 56px;
+    text-align: center;
+    position: absolute;
+    left:50%;
+    margin-left: -305px;
+    top:102px;
+
+    opacity:0;
+    transform: translate(0,100%);
+}
+.section:nth-child(1) h2 span{
+    color: #ff0000;
+}
+.section:nth-child(1) .phone{
+    width: 1375px;
+    height: 305px;
+    background: url("../img/screen-1-phone.png") no-repeat center;
+    position: absolute;
+    left:50%;
+    margin-left: -688px;
+    top: 350px;
+    z-index: 1;
+    opacity:0;
+    transform: translate(0,-100%);
+}
+.section:nth-child(1) .shadow{
+    width: 1233px;
+    height: 411px;
+    background: url('../img/screen-1-shadow.png') no-repeat center;
+    position: absolute;
+    left:50%;
+    margin-left: -616px;
+    bottom: 0;
+    opacity:0;
+    transform: translate(0,100%);
+}
+
+.current:nth-child(1) h2,.current:nth-child(1) .phone,.current:nth-child(1) .shadow{
+    transition: all 1s;
+    opacity:1;
+    transform: translate(0,0);
+}
+/*Ã§Â¬Â¬Ã¤ÂºÅ’Ã¥Â±Â*/
+.section:nth-child(2){
+    background: #fafafa;
+
+}
+.section:nth-child(3){
+    background: #a71316;
+}
+.section:nth-child(4){
+
+}
+.section:nth-child(5){
+    background: #d9dde1;
+}
+.section:nth-child(6){
+
+}
+.section:nth-child(6) footer{
+    background: pink;
+    height: 350px;
+}

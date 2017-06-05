@@ -1,0 +1,22 @@
+{
+  "name": "day2",
+  "version": "1.0.0",
+  "description": "这是我们上课的小项目",
+  "main": "01post.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "node_modules",
+    "nodejs",
+    "js"
+  ],
+  "author": "leilei",
+  "license": "ISC",
+  "dependencies": {
+    "jquery": "^3.2.1"
+  },
+  "devDependencies": {
+    "bootstrap": "^3.3.7"
+  }
+}

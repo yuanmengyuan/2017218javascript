@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>圆梦源：勿忘初心，方得始终</title>
+    <link rel="stylesheet" href="css/jquery.full.css">
+    <link rel="stylesheet" href="css/index.css">
+</head>
+<body>
+<header>
+    <div class="logo">手机项目</div>
+    <ul id="menu">
+        <li data-menuanchor="firstPage" class="active"><a href="#firstPage">首页</a></li>
+        <li data-menuanchor="secondPage" ><a href="#secondPage">外观</a></li>
+        <li data-menuanchor="thirdPage" ><a href="#thirdPage">配置</a></li>
+        <li data-menuanchor="fourthPage"><a href="#fourthPage">型号</a></li>
+        <li data-menuanchor="fifthPage"><a href="#fifthPage">说明</a></li>
+        <li data-menuanchor="sixPage"><a href="#sixPage">立即购买</a></li>
+    </ul>
+</header>
+<div class="fullPage" id="fullPage">
+    <div class="section">
+        <h2 class="title"><span>小米手机</span> 让你的生活更精彩</h2>
+        <div class="phone"></div>
+        <div class="shadow"></div>
+    </div>
+    <div class="section">2222</div>
+    <div class="section">3333</div>
+    <div class="section">4444</div>
+    <div class="section">5555</div>
+    <div class="section fp-auto-height">
+        <footer>
+            122334455
+        </footer>
+    </div>
+</div>
+<script src="js/jquery.min.js"></script>
+<script src="js/jquery.fullPage.min.js"></script>
+<script>
+    $('#fullPage').fullpage({
+        verticalCentered:false,//解决默认垂直居中的问题
+        css3:true,
+        //滚动到某一屏后的回调函数
+        afterLoad:function (anchorLink,index) {
+            $('.section').removeClass('current');
+            setTimeout(function () {
+                $('.section').eq(index-1).addClass('current');
+            },400)
+        },
+        navigation:true,
+        navigationPosition:'right',
+        navigationTooltips:['首页','外观','配置','型号','说明'],
+        menu:true,
+        anchors:['firstPage','secondPage','thirdPage','fourthPage','fifthPage','sixPage']
+    });
+    //通过JS操作顶部导航覆盖页面内容的问题；
+    for(var i=0; i<5; i++){
+        $('.section').eq(i).css({
+            marginTop:80
+        })
+    }
+</script>
+</body>
+</html>

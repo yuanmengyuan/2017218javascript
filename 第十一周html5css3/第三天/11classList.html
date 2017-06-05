@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>圆梦源：勿忘初心，方得始终</title>
+    <style>
+        div{
+            width: 200px;
+            height: 200px;
+            background: #ff0000;
+            display: none;
+        }
+        .showorhide{
+            display: block;
+        }
+    </style>
+</head>
+<body>
+<input type="button" value="显示隐藏" id="btn">
+<div id="div" class="showorhide1 box2 box3"></div>
+<div id="div2" class="showorhide2"></div>
+<script>
+    //添加class名，删除class名 ；添加删除class名。。。
+    var aDiv=document.getElementsByTagName('div');
+    var oBtn=document.getElementById('btn');
+    oBtn.onclick=function () {
+        //给oDiv上添加一个class名：app
+        //this.classList.add('app')
+        //this.classList.remove('box');
+        //oDiv.classList.toggle('showorhide');
+        //console.log(oDiv.classList.contains('showorhide'));
+        console.log(aDiv[0].classList.item(1))
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,33 @@
+@import 'reset';
+@import (reference)'public';//只正常导入，但是不在浏览器去输出
+//@import可以导入我们依赖的样式表；上面导入了两个样式表；
+.main{
+  width: 200px;
+  height: 200px;
+  background: @color-black;
+  font-size: 30px;
+  color: @color-white;
+}
+.main1{
+  .main;
+  background:@color-red;
+  >div{
+    //yuan这个方法，它的参数可传可不传；
+    .yuan(@w:100px,@h:100px,@color: darken(@color-white,30%));
+    position: relative;
+    &::after{
+      .yuan(@w:20px,@h:20px,@color: @color-red);
+      position: absolute;
+      content:'我是伪元素';
+      left:30px;
+      top:30px;
+
+    }
+  }
+}
+.main2{
+  width: 200px;
+  .rect(100px,100px,100px,100px);
+  border:3px solid #ccc;
+  .changeColor(green);
+}

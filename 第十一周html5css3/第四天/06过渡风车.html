@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>圆梦源：勿忘初心，方得始终</title>
+    <style>
+        /*div{
+            width: 200px;
+            height: 200px;
+            background: #ff4400;
+            transition: width .5s ease-in;
+        }
+        div:hover{
+            width:500px
+        }*/
+        div{
+            width: 200px;
+            height: 200px;
+            background: #ff4400;
+            animation:.5s ease-in-out 1s infinite;
+            /*animation-name:move;*/
+        }
+        @keyframes move {
+            0%{
+               width:200px;
+            }
+            100%{
+                width:500px;
+            }
+        }
+        img{
+            animation: zhuan 1s linear infinite;
+        }
+        @-webkit-keyframes zhuan{
+            from{
+                transform: rotateZ(0deg);
+            }
+            to{
+                transform: rotateZ(360deg);
+            }
+        }
+        @-moz-keyframes zhuan{
+            from{
+                transform: rotateZ(0deg);
+            }
+            to{
+                transform: rotateZ(360deg);
+            }
+        }
+        @-ms-keyframes zhuan{
+            from{
+                transform: rotateZ(0deg);
+            }
+            to{
+                transform: rotateZ(360deg);
+            }
+        }
+
+        @-o-keyframes zhuan{
+            from{
+                transform: rotateZ(0deg);
+            }
+            to{
+                transform: rotateZ(360deg);
+            }
+        }
+        @keyframes zhuan{
+            from{
+                transform: rotateZ(0deg);
+            }
+            to{
+                transform: rotateZ(360deg);
+            }
+        }
+    </style>
+</head>
+<body>
+<div></div>
+<img src="images/fengche.png" alt="">
+<script>
+    var img=document.querySelector('img');
+    var div=document.querySelector('div');
+    div.onclick=function () {
+        this.style.animationName='move';
+    }
+
+</script>
+</body>
+</html>

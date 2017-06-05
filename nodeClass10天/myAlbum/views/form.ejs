@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <title>Bootstrap 101 Template</title>
+    <link href="/css/bootstrap.css" rel="stylesheet">
+</head>
+<body>
+<% include pub/header.ejs%>
+<div class="container">
+    <form action="/upload" method="post" style="width: 40%" enctype="multipart/form-data">
+        <div class="form-group">
+            <h4>请选择文件夹</h4>
+            <select class="form-control" name="wenjianjia">
+                <% for(var i=0; i<albums.length; i++){%>
+                <option><%= albums[i]%></option>
+                <%}%>
+            </select>
+        </div>
+        <div class="form-group">
+            <h4>请上传图片 <mark>上传图片的大小不能大于1M</mark></h4>
+            <input type="file" name="tupian" id="">
+        </div>
+        <button type="submit" class="btn btn-default">上传图片</button>
+    </form>
+</div>
+
+<script src="/js/jquery.min.js"></script>
+<script src="/js/bootstrap.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>圆梦源：勿忘初心，方得始终</title>
+    <style>
+        canvas{
+            border:1px solid #000;
+        }
+    </style>
+</head>
+<body>
+<canvas id="canvas" width="800" height="500">你的浏览器不行嘛！赶紧升级浏览器吧！！！</canvas>
+<script>
+    //获取canvas
+    var canvas=document.getElementById('canvas');
+    //创建2D环境
+    var ctx=canvas.getContext('2d');
+    //1：体验矩形；
+    /*ctx.fillStyle='green';//通过fillStyle来改变填充颜色；
+    ctx.strokeRect(100,100,200,100);//前两个参数，是坐标；后两个是宽高；*/
+    //2:画线
+    /*ctx.beginPath();//开始画画
+    ctx.moveTo(100,100);//从哪里开始画
+    ctx.lineTo(200,200);//走线
+    ctx.lineTo(400,100);
+    ctx.closePath();//如果不闭合，画到哪里就是哪里；如果闭合，就会形成一个区域；
+
+    ctx.fillStyle='yellow';
+    ctx.fill();
+    ctx.strokeStyle='red';//线的颜色；
+    ctx.stroke();//画的是线*/
+    //3:画矩形:fillRect 是 rect和fill综合写法；
+    /*ctx.beginPath();
+    ctx.fillStyle='red';
+    /!*ctx.rect(50,100,200,200);
+    ctx.fill();*!/
+    ctx.fillRect(50,100,200,200);*/
+    //4:画弧形
+    ctx.beginPath();
+    ctx.arc(200,200,50,0,Math.PI,false);//boolean：是否逆时针
+    ctx.fillStyle='red';
+    ctx.fill();
+</script>
+</body>
+</html>

@@ -1,0 +1,92 @@
+### 如何找到占用你端口的进程和并且杀死进程
+- Mac
+    + 找到占用端口的进程： sudo lsof -i:8080
+    + 如何杀死这些进程： sudo kill -9 xxxx
+- window10
+    + 查找哪些进程占用了端口号8080: netstat -ano|findstr "8080"
+    + 如何杀死这些进程：taskkill /f /t /im xxxx
+### express三步走：
+    1. 创建一个服务器 var app=express()
+    2. 给服务器添加监听  app.listen(8080);
+    3. 添加请求  app.get('/') app.post('/:admin/:id') app.use('/')
+### express整体感知，从三方面下手
+    1. 强大的路由：
+        + 可以用比较卡死的路由"/admin"
+        + 可以自己手动给路由写正则 "／\/student\/(\d{6})／"; 取参数 req.params[0]
+        + 可以使用express自己提供的路由 "/student/:id"； 取参数 req.params.id
+    2. 静态资源服务 app.use(express.static('./pulic'));
+    3. 可以跟模版配合使用,配合模版使用，需要2步
+        1. 设置模版引擎 app.set('view engine','ejs');//模版引擎ejs,jade
+        2. 通过res来渲染模版到浏览器
+        ```
+        res.render('index')  //注意，express中默认把模版都放在views目录下；'./views/'可以省略；
+        ```
+## express中的请求：
+### get 请求
+- 在原生node中，如果接收get请求的参数？
+    - 用url模块
+    ```
+    url.parse(req.url,true).query;
+    ```
+- 在express中，如何接收get请求的参数？
+    - `req.query` => `{ username: 'ymy', password: '123123' }`
+### post 请求：
+- 在原生node中，如果接收post请求的参数？
+    - post请求的数据在请求体中；
+    ```
+    var str='';
+    req.on('data',function(data){ str+=data;})
+    req.on('end',function(){
+        //把拼接好的字符串转成对象
+        var postData=querystring.parse(str);
+    })
+    ```
+    - express中，如果请求的是普通数据的话；用body-parser这个模块；
+    如果请求的数据包含大文件(音频，视频，图片，word等)还得用formidable模块
+- 使用body-parser三部曲：
+    1. 引入模块 bodyParser=require('body-parser');
+    2. app.use(bodyParser.urlencoded({ extended: false }));
+    3. 通过req.body.xxx 拿到前端通过请求体提交过来的数据；
+### use请求
+### send
+- send跟原生node中end的区别：
+    - send里面既可以传"json对象"，也可以传"字符串和buffer";
+    send的用法跟node中的end一样，但是比他更强大；
+- send跟render的区别：
+    1. send一般用来测试； render一般用来渲染页面；
+    2. send可以用来配合状态码的输出： res.status('404').send('文件没找到');
+### 设置文件类型
+- 原生node中通过：res.writeHeader(200,{"Content-Type":"text/html; charset=UTF-8"})；
+- 在express中通过:res.set('Content-Type', 'text/html');
+
+### MVC
+### 做项目的时候
+- express三部曲：1）创建服务器 2）添加监听 3）发送请求
+- 发送请求：
+    + 当输入请求的时候：用于渲染某个页面的请求，都是get请求；
+    '／'=》是为了请求首页
+    '/:albumsName'=>为了显示当前文件夹下所有的图片；
+    '/upload'=>为了显示图片"上传页面" res.render('upload',{albums})
+    + 用来真正做一些功能的，都是post请求；
+    app.post('/doupload',router.doupload);
+    在doupload中写上传功能；--formidable；
+    + 图片上传功能：formidable
+        + form
+        + form.parse => fields, files（图片资源的相关信息）
+        + 改名 fs.rename();
+        + 改完名字之后，把uploads下没用的图片删除；fs.unlink;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

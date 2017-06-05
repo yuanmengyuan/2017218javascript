@@ -1,0 +1,10 @@
+### 遇到的问题：
+- 同一个颜色，一直在重复；
+- 层级嵌套不明显；我们想要用js的写法来写css
+    - header{}  banner  news   ljyy   footer
+- 公共的函数
+### less
+- 无论内嵌样式，还是外链，都必须写type="text/less";
+- 必须引入less.js
+- 定义变量用 @xxx:值；
+- 定义函数用 .yuan(){};

@@ -1,0 +1,33 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <title>ymy论坛</title>
+    <link href="/css/bootstrap.css" rel="stylesheet">
+    <link href="/css/jumbotron.css" rel="stylesheet">
+    <style>
+        .content{
+            width:300px;
+            heihgt:30px;
+            line-height: 30px;
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+<%include ./pub/top.ejs%>
+<div class="jumbotron">
+    <div class="container">
+        <h1><img style="width:200px;" src="/avatar/<%=avatar%>" alt=""><%= title%></h1>
+        <h2><%=time%></h2>
+        <p><%=content%></p>
+    </div>
+</div>
+<script src="/js/jquery.min.js"></script>
+<script src="/js/bootstrap.min.js"></script>
+</body>
+</html>

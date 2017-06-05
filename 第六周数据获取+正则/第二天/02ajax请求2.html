@@ -18,7 +18,7 @@
     xml.onreadystatechange=function(){
         if(xml.readyState==4 && /^2\d{2}$/.test(xml.status)){
             data=utils.jsonParse(xml.responseText);
-            //console.log(data);
+            //console.log(data.txt);
         }
     }
     console.log(data)

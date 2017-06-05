@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>圆梦源：勿忘初心，方得始终</title>
+</head>
+<body>
+<form action="">
+    <label for="file">
+        <!--file：默认只能选择一个文件；multiple属性可以选择多个文件-->
+        选择文件：<input type="file" id="file" multiple required> <br>
+    </label>
+    <lable for="username">
+        <!--autocomplete:自动填补内容； autofocus：自动聚焦； required：强制要求输入内容，并且，输入的内容必须满足格式；-->
+        邮箱：<input type="email" id="username"  autocomplete="on" autofocus required>
+    </lable>
+    <lable for="password">
+        密码：<input type="number" id="password"  autocomplete="off" required>
+    </lable>
+    <input type="submit">
+</form>
+</body>
+</html>

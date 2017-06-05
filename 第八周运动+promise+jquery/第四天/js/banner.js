@@ -15,7 +15,7 @@ var n=0;//n决定了第几张图片的显示
 getData();
 function getData(){
     var xml=new XMLHttpRequest();
-    xml.open('get','json/data.txt?'+Math.random(),false);
+    xml.open('get','json/data.txt.txt?'+Math.random(),false);
     xml.onreadystatechange=function(){
         if(xml.readyState==4 && /^2\d{2}$/.test(xml.status)){
             data=utils.jsonParse(xml.responseText);
