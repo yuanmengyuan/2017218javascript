@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>圆梦源：勿忘初心，方得始终</title>
+</head>
+<body>
+<div id="app">
+    <parent></parent>
+</div>
+<template id="parent">
+    <div>
+        <h1>父组件 <mark>{{name}}</mark></h1>
+        <!--3:自定义的事件被触发后，执行一个父组件的函数getData-->
+        <children @leilei="getData"></children>
+    </div>
+</template>
+<script src="js/vue.js"></script>
+<script>
+    var app=new Vue({
+        el:'#app',
+        components:{
+            parent:{
+                template:'#parent',
+                data(){
+                    return {name:'刘羽晴'}
+                },
+                methods:{
+                    //4:父组件通过getData的参数，来接收子组件传过来的数据；
+                    getData(data){//父组件中的方法；
+                        this.name=data;//儿子传过来的数据；
+                    }
+                },
+                components:{
+                    children:{
+                        //1:点击子组件的标签的时候，触发一个函数setData
+                        template:'<h2 @click="setData">子组件 {{name}}</h2>',
+                        data(){
+                            return{name:'vivian'}
+                        },
+                        methods:{
+                            //2:到setData中发生一个数据，对应的自定义的事件名：leilei
+                            setData(){
+                                //子组件向外发射数据
+                                this.$emit('leilei',this.name)
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    })
+</script>
+</body>
+
+</html>

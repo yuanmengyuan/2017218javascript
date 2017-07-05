@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>圆梦源：勿忘初心，方得始终</title>
+</head>
+<body>
+<script>
+    class Father{
+        constructor(){
+            this.name='ymy';
+            this.age=18;
+        }
+        getName(){
+            alert(`我的名字是${this.name}`)
+        }
+        //静态的属性和方法：类上私有的方法，是静态的方法；实例不能使用，实例只能用原型上的属性和方法；
+        static haha(){
+            alert(1223344)
+        }
+    }
+
+    class Sun extends Father{
+        constructor(){
+            super();//一定不能省略；
+        }
+    }
+    var s1=new Sun();
+    /*alert(s1.name)
+    s1.getName();*/
+    Sun.haha()
+</script>
+</body>
+</html>

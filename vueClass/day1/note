@@ -1,0 +1,16 @@
+1：后台MVC
+    + M 数据
+    + V 视图
+    + C 控制器
+2：vue.js 是MVVM框架
+    数据可以影响视图；视图也能影响数据；
+3: 体验vue.js
+    1、模版渲染 表达式{{}}
+    2、 动态操作DOM属性 v-bind:title  :title="动态的数据"   :class
+    3、 条件判断  v-if
+    4、 事件  v-on:click    @click
+    5、 循环 v-for="(item,index) in ary"
+4: v-if 和 v-show的区别：
+   v-if：把元素彻底的删除
+   v-show：把元素display:none;
+

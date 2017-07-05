@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>圆梦源：勿忘初心，方得始终</title>
+    <style>
+        .container{
+            display: flex;
+            flex-direction: row;
+        }
+        .container>div{
+            width: 100px;
+            height: 40px;
+            text-align: center;
+            line-height: 40px;
+            background: lightblue;
+            margin-left: 20px;
+        }
+    </style>
+</head>
+<body>
+<div id="app">
+    <div class="container">
+        <div @click="comp='zujian1'">显示组件1</div>
+        <div @click="comp='zujian2'">显示组件2</div>
+    </div>
+    <!--component标签是核心，必须得写，它通过is决定显示哪个组件-->
+    <component :is="comp"></component>
+</div>
+<script src="js/vue.js"></script>
+<script>
+    var app=new Vue({
+        el:'#app',
+        data:{
+            comp:'zujian1'
+        },
+        components:{
+            zujian1:{
+                template:'<h1>组件11111111</h1>'
+            },
+            zujian2:{
+                template:'<h1>组件2222222222</h1>'
+            }
+        }
+    })
+</script>
+</body>
+</html>

@@ -1,0 +1,36 @@
+### 数据之间的传递
+- props
+    + 父组件给子组件传递数据-》 this.props.xxx
+    + 子组件向父组件传递数据 -》 事件
+    ```
+    <Range update={this.update.bind(this)} //父组件只绑定自定义事件，把这个自定义事件绑在子组件的属性上；
+    <input type="range" onChange={this.props.update}/>
+    //事件源：e.target
+    ```
+    - 规定属性的数据类型
+        组件名.propTypes={
+            属性名：propTypes.string
+            属性名：propTypes.number.isRequired
+        }
+    - 设置默认的属性值
+        组件名.defaultProps={
+            属性名：属性值
+        }
+
+- refs 用来操作React的DOM元素
+    + refs可以拿到ref所在组件或元素节点
+    + 如果拿到的是组件，而我们想要的是构成组件的DOM节点，应该findDOMNode()来拿；
+### props是外部的数据；而state是组件自己内部的数据
+- 初始值
+    constructor(){
+        super();
+        this.state={
+            age:xxxx
+        }
+    }
+- 设置
+    this.setState({
+        age:xxxx
+    })
+- 获取
+    this.state.xxxx

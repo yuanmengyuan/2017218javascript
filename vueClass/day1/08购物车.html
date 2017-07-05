@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>圆梦源：勿忘初心，方得始终</title>
+    <link rel="stylesheet" href="css/bootstrap.css">
+</head>
+<body>
+<div id="app">
+    <div class="container">
+        <div class="row">
+            <table type="table" class=" col-md-12  table table-bordered" >
+                <caption class="text-danger">购物车</caption>
+                <tr>
+                    <th class="text-center">商品名称</th>
+                    <th class="text-center">商品价格</th>
+                    <th class="text-center">操作</th>
+                </tr>
+                <tr v-for="item in ary">
+                    <td class="text-center">{{item.name}}</td>
+                    <td class="text-center">{{item.price}}</td>
+                    <td class="text-center">
+                        <a href="javascript:;" class="btn btn-danger">删除</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="3">
+                        <button class="btn btn-danger pull-right">删除全部</button>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>
+<script src="js/vue.js"></script>
+<script>
+    var app=new Vue({
+        el:'#app',
+        data:{
+            ary:[
+                {name:'iPhone4',price:'3999'},
+                {name:'iPhone5',price:'4999'},
+                {name:'iPhone6',price:'5999'},
+                {name:'iPhone7',price:'6999'}
+            ]
+        }
+    })
+</script>
+</body>
+</html>

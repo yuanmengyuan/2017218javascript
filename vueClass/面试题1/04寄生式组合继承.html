@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>圆梦源：勿忘初心，方得始终</title>
+</head>
+<body>
+<script>
+    //obj1就是父类的原型
+    function myCreate(obj1) {
+        function Tmp(){}
+        Tmp.prototype=obj1;
+        //返回值应该是子类的原型；
+        return new Tmp;
+    }
+
+    function Person() {
+        this.name='ymy';
+        this.age=18;
+    }
+    Person.prototype.aa=function () {
+        alert(1);
+    };
+    var p1=new Person;
+    function Sub() {
+        Person.call(this); //只通过call继承了父类私有的
+    }
+   /* function Tmp(){//Tmp这个方法，过滤掉了父类私有的；
+
+    }
+    Tmp.prototype=Person.prototype;//Tmp只接受了父类公有的；
+    Sub.prototype=new Tmp;//导致子类原型上，只有父类公有的，没有父类私有的；*/
+   Sub.prototype=myCreate(Person.prototype)
+    var s1=new Sub;
+   console.log(s1)
+    //s1.aa();
+/*
+    * name:ymy
+    * age:18
+* __proto__:
+    * name:ymy;
+    * age:18
+* __proto__:Person.prototype
+    * constructor:Person
+* __proto__:Object
+    * Object基类身上的了
+    * constructor:Object
+    * toString        检测数据类型
+    * hasOwnProperty  判断是否为私有属性
+    * isPorotoTypeof   判断前一个对象是否在后一个对象的原型链上
+    *propertyIsEnumerabl  是否是可枚举的属性
+* */
+
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,38 @@
+.about{
+    text-align: center;
+}
+.about h1{
+    font-size: 30px;
+}
+.about .iconfont{
+    font-size: 50px;
+
+}
+.about-title,.about-msg{
+    font-size: 20px;
+    text-align: center;
+}
+.about-title{
+    margin-bottom: 5px;
+}
+.about-container{
+    padding:0 200px;
+}
+.about-item{
+    display: flex;
+    flex-direction: row;
+    float: left;
+    width: 250px;
+}
+.about-item i{
+    font-size: 50px;
+    margin-right: 10px;
+    color: #108ee9;
+}
+.about-item > div{
+    font-size: 20px;
+    text-align: center;
+}
+.about-item > div .name{
+    margin-bottom: 10px;
+}

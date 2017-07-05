@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>圆梦源：勿忘初心，方得始终</title>
+</head>
+<body>
+<div id="app">
+    <!--绑定事件用"v-on:事件名"，但是它会报红，所以，可以简写"@事件名"-->
+    <button type="button" @click="bok=!bok">点击显示和隐藏</button>
+    <h1 v-if="bok">你能看到我</h1>
+    <h1>你爱吃什么水果呢？</h1>
+    <ul>
+        <li v-for="(key,index) in friuts">{{key.name}} 我的索引是{{index}}</li>
+    </ul>
+</div>
+<script src="js/vue.js"></script>
+<script>
+    var app=new Vue({
+        el:'#app',
+        data:{//'西瓜','荔枝','榴莲','芒果'
+            bok:true,
+            friuts:[
+                {name:'西瓜1'},
+                {name:'荔枝2'},
+                {name:'榴莲3'},
+                {name:'芒果4'}
+            ]
+        }
+    })
+</script>
+</body>
+</html>

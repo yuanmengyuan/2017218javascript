@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>圆梦源：勿忘初心，方得始终</title>
+</head>
+<body>
+<div id="app">
+    <button @click="bok=!bok">点击显示隐藏</button>
+    <!--<h1 v-if="bok">你能看见我吗？</h1>-->
+    <h1 v-show="bok">你能看见我吗？</h1>
+
+</div>
+<script src="js/vue.js"></script>
+<script>
+    var app=new Vue({
+        el:'#app',
+        data:{
+            bok:true
+        }
+    })
+</script>
+</body>
+</html>

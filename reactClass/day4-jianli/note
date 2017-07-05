@@ -1,0 +1,128 @@
+### 实战案例介绍
+- 首页
+- 个人介绍
+- 专业技能
+- 项目经验
+- 联系我
+
+### 项目需求分析：
+制作一个属于自己的个人简历网站，采用SPA架构进行开发；
+- 首页开发
+    - 公共layout部分结合react-addons-css-transition-group实现css3过渡效果
+    - 公共左侧导航组件开发，需结合使用react-router实现前端路由的控制
+    - 底部页面切换和过渡组件开发
+- "关于我"页面，"专业技能"页面，"联系我"页面
+    - 主要设计通用布局组件封装
+    - 以及数据和组件的结合渲染
+- "项目经验"页面
+    - 功能描述：需要使用github open Api将github上的个人项目信息拉取过来，并集合axios这个库封装公共方法，将数据抓取过来后进行展示
+    - 需利用antd的Timeline组件进行项目展示组件封装，将数据导入展示；
+
+### 项目技术栈
+- shell，nodejs全局环境,es6
+- git基本操作，npm
+- webpack2 webapck-dev-server 及系列插件和loader的配置和使用
+- 最新版react,react-dom,react-addons-css-transition-group动画
+    react-addons-css-transition-group参考地址：http://www.cnblogs.com/QxQstar/p/6031559.html
+- 路由系统react-router
+- Axios实现HTTP请求和Promise数据处理
+- 目录划分，分层，优良的代码组织方式等项目架构知道
+
+### 项目组件化拆分
+- 容器型组件（Container）
+    + Home 组件
+    + About
+    + Contact
+    + Skills
+    + Project
+- 布局类组件(Layout)
+    + NavMenu组件
+    + Main组件
+- 展示型组件
+
+### 开始开发
+
+#### 搭建项目基础架构
+#### 项目架构的规划
+- 一个项目写的怎么样，前期的架构是很重要的
+- 目录和文件
+    - src 开发时候的源代码
+        - assets公共静态资源
+        - containers 容器型组件
+        - layouts 布局类组件
+        - routes 路由
+
+    组件：一个组件一个文件夹，文件夹內包含组件所有的js,css,json,redux相关的action和reducer(高内聚，单独管理)
+- 测试react模块的正常加载
+- 添加container下各个组件并跑通路由
+    - 目标：实现项目的前端路由
+    1. 首先要完善containers下各个路由
+    2. 当index路由更改的时候，修改layout下的APP组件
+    3. 配置路由文件
+- react动画组件，实现页面过渡动画，使用css美化应用
+    + 组件：react-addons-css-transition-group
+        + 在React组件进入或者离开DOM的时候，他是一种简单的执行CSS过渡和动画的方式
+        + 引用到APP组件
+        + 使用CSS3 transition 和 transform添加过渡效果
+
+### NavMenu导航组件开发
+- NavMenu组件UI和路由
+- ant-design ->Menu+Icon
+- react-router ->Link
+- 复合组件
+- 组件样式
+- 新增fonts图标字体库美化组件展示
+    - file-loader和url-loader安装
+    - 以及webpack的配置
+    - 组件中增加iconfont
+    - 优化css
+- 实现collapse折叠功能
+    - 控制组件的展示是否折叠，其实控制组件的对应状态即可；
+        + state->collapse;
+    - 对应的，通过collapse这个state来确定样式className;
+        + collapse->className->样式
+- antd->Menu组件
+    - mode 菜单类型，现在支持垂直vertical、水平horizontal、和内嵌inline模式三种
+    - selectedKeys 当前选中的菜单项 key 数组; string[]
+    - defaultSelectedKeys
+    解析url->拿到hash->hash值作为state传入组件-》selectKeys
+    什么时候改变state -> componentDidUpdate
+
+### 目录层级调整
+- react首页的开发
+### Project组件开发
+- 通过 https://api.github.com/users/bailicangdu/repos
+- axios-》一个基于promise的HTTP库
+- antd->Timeline时间轴组件 && Timeline.Item组件的应用；
+- 组件样式优化
+
+=====================
+### 字体图标
+- 阿里妈妈下；fonts
+- 把fonts放进我们的项目
+- 配置webpack.config.js
+- 在main.js中引入font.css(这是字体图标的共用样式)
+### 让模块有css3的运动效果
+需要这个插件：react-addons-css-transition-group
+    需要注意的事项：
+    1. 下载插件，并且引入插件
+    2. 让谁动，就把插件包裹在谁的外面；注意不要影响页面的大结构
+    3. 配置好react-addons-css-transition-group
+    ```
+    className="app" ->默认的外围标签是span
+    component="div" ->更改标签为div
+    参考文章：http://www.cnblogs.com/QxQstar/p/6031559.html
+    ```
+    4. 设置css:把example改成我们的名字，同时写入自己的动画；
+    5. js文件中，要运动的标签名上必须有key,key是唯一的，即使只有一个元素动，也要设置key;key必须设置
+
+
+
+
+
+
+
+
+
+
+

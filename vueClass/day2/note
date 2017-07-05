@@ -1,0 +1,67 @@
+### 事件
+- 基本事件：v-on:click(报红，但不影响功能的使用)   @click
+- 阻止冒泡和阻止默认事件
+    - 阻止冒泡：
+        + e.stopPropagation?e.stopPropagation():e.cancelBubble=true
+        + @click.stop  vue提供的
+    - 阻止默认事件
+        + e.preventDefault ?e.preventDefault():e.returnValue=true;
+- 键盘事件
+    - @keydown  @keyup  @keypress
+    - 使用指定的键
+        + @keydown.enter
+        + @keydown.13
+### 动态绑定样式
+- :class  非行间样式
+    - {样式名:boolean}  boolean从data数据中拿到的；
+    - :class="obj"
+    ```
+    //obj中可通过boolean控制让哪个样式显示，不让哪个样式显示
+    obj:{
+        bg1:true,
+        bg2:false
+    }
+    ```
+    - 以数组的形式，数组中的每一项，都相当于变量，变量中存真正的非行间样式；
+   ```
+   //html
+   <h1 :class="[bg1Class,bg2Class]">你好，圆梦源！！！！</h1>
+   //js
+   data:{
+       bg1Class:"bg1",
+       bg2Class:"bg2"
+   }
+   ```
+- :style  行间样式
+    - {color:col1,background:col2} 其中col1和col2都相当于变量，他们里面可以存样式
+    ```
+    data:{
+        col1:'red',
+        col2:'green'
+    }
+    ```
+    - 可以简写为对象 :style="obj"
+    ```
+    data:{
+        obj:{
+            color:"red",
+            background:"green"
+        }
+    }
+    ```
+### 前端发给后台的请求常用的有三种
+- get请求
+- post请求
+- jsonp请求
+
+
+
+
+
+
+
+
+
+
+
+

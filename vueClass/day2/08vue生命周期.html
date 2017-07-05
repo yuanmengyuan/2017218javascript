@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>圆梦源：勿忘初心，方得始终</title>
+</head>
+<body>
+<div id="app">
+    <h1>{{msg}}</h1>
+    <button @click="fn">点击更新内容</button>
+</div>
+<script src="js/vue.js"></script>
+<script>
+    var app=new Vue({
+        el:'#app',
+        data:{
+            msg:'圆梦源'
+        },
+        methods:{
+            fn(){
+                this.msg='蕾蕾的那些花儿'
+            }
+        },
+        beforeCreate(){
+            alert('beforeCreate')
+        },
+        created(){
+            alert('created')
+        },
+        beforeMount(){
+            alert('beforeMount')
+        },
+        mounted(){
+            alert('mounted')
+        },
+        beforeUpdate(){
+            alert('beforeUpdate')
+        },
+        updated(){
+            alert('updated')
+        },
+        beforeDestroy(){
+            alert('beforeDestroy')
+        },
+        destroyed(){
+            alert('destroyed')
+        }
+    })
+    //app.$destroy();//手动销毁:一般不销毁组件
+</script>
+
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>圆梦源：勿忘初心，方得始终</title>
+
+    <script src="js/jquery.js"></script>
+    <script>
+        window.onload=function () {
+            alert('js')
+        };
+       /*$(function () {
+        alert('jquery')
+        })*/
+        $(function () {
+            alert('jquery')
+        })
+        function $(fn) {
+            //标准浏览器下，只加载DOM的操作；
+            if("addEventListener" in window){
+                document.addEventListener('DOMContentLoaded',fn,false)
+            }else{
+                //IE 浏览器下，只加载DOM的操作
+                document.onreadystatechange=function () {
+                    if(document.readyState==='complete'){
+                        fn&&fn()
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>圆梦源：勿忘初心，方得始终</title>
+</head>
+<body>
+<div id="app">
+    <hello>
+        你好啊，啦啦啦啦
+        <!--先给slot起好名字-->
+        <div slot="div1">111111111111</div>
+        <div slot="div2">222222222222</div>
+    </hello>
+</div>
+<template id="temp1">
+    <!--无名插槽-->    <!--有名插槽：根据名字决定插槽的顺序-->
+    <h1>hello！<slot></slot> <slot name="div2"></slot> <slot name="div1"></slot></h1>
+</template>
+<script src="js/vue.js"></script>
+<script>
+    var app=new Vue({
+        el:'#app',
+        components:{
+            hello:{
+                template:'#temp1'
+            }
+        }
+    })
+</script>
+</body>
+</html>

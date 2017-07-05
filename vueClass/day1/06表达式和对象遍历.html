@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>圆梦源：勿忘初心，方得始终</title>
+</head>
+<body>
+<div id="app">
+    <!--{{}}是表达式：支持 msg  赋值  三目(三元表达式)-->
+    <h1>{{msg}} {{msg=320}} {{bok?"leilei":"ymy"}}</h1>
+    <div v-html="msg2"></div>
+    <p v-for="(item,index) in obj">{{item}} {{index}}</p>
+</div>
+<script src="js/vue.js"></script>
+<script>
+    var app=new Vue({
+        el:'#app',
+        data:{
+            msg:'哈哈哈',
+            bok:true,
+            msg2:'<h1>我是文章的标题</h1>',
+            obj:{
+                name:'ymy',
+                age:18
+            }
+        }
+    })
+</script>
+</body>
+</html>

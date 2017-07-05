@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>圆梦源：勿忘初心，方得始终</title>
+    <link rel="stylesheet" href="css/bootstrap.css">
+</head>
+<body>
+<div id="app">
+    <div class="container">
+        <table class="table table-bordered">
+            <caption class="text-danger">购物车</caption>
+            <tr>
+                <th class="text-center">商品名称</th>
+                <th class="text-center">商品价格</th>
+                <th class="text-center">操作</th>
+            </tr>
+            <tr v-for="(item,index) in ary">
+                <td class="text-center">{{item.name}}</td>
+                <td class="text-center">{{item.price}}</td>
+                <td class="text-center">
+                    <button @click="removeOne(index)" class="btn btn-danger">删除</button>
+                </td>
+            </tr>
+            <tr v-show="ary.length?true:false">
+                <td colspan="3">
+                    <button @click="removeAll" class="btn btn-danger pull-right">全部删除</button>
+                </td>
+            </tr>
+        </table>
+        <form type="form">
+            <div class="form-group">
+                <label for="name">商品名称</label>
+                <input type="text" id="name" class="form-control" placeholder="请输入商品名称" v-model="name">
+            </div>
+            <div class="form-group">
+                <label for="price">商品价格</label>
+                <input type="text" id="price" class="form-control" placeholder="请输入商品价格" v-model="price">
+            </div>
+            <div class="form-group">
+                <button @click="add" type="button" class="btn btn-info">添加</button>
+                <button @click="reset" type="button" class="btn btn-warning">重置</button>
+            </div>
+        </form>
+    </div>
+</div>
+<script src="js/vue.js"></script>
+<script>
+    var app=new Vue({
+        el:'#app',
+        data:{
+            name:'',
+            price:'',
+            ary:[
+                {name:'iphone5',price:'5000'},
+                {name:'iphone6',price:'6000'},
+                {name:'iphone7',price:'7000'}
+            ]
+        },
+        methods:{
+            removeOne(index){
+                this.ary.splice(index,1);
+            },
+            removeAll(){
+                this.ary=[];
+            },
+            add(){
+                this.ary.push({
+                    name:this.name,
+                    price:this.price
+                });
+                this.name='';
+                this.price='';
+            },
+            reset(){
+                this.name='';
+                this.price='';
+            }
+        }
+    })
+</script>
+</body>
+</html>

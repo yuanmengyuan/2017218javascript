@@ -27,7 +27,7 @@
     - .babelrc 编译；把不兼容的编译成兼容的；
     - webpack.config.js  webpack的配置
     - REACME.md 当前项目的一些介绍
-    - src -> index.js  index.html
+    - src -> main.js  index.html
     component文件夹，这里放你写好的一些组件
 3. 安装必要的插件
     - babel
@@ -48,7 +48,7 @@
     + webpack.config.js
         + 注意：在开发阶段，先不要压缩；上线在压缩；
         module.exports={
-            entry:path.resolve(__dirname,'./src/index.js'),
+            entry:path.resolve(__dirname,'./src/main.js'),
             output:{
                 path:path.resolve(__dirname,'./dist'),
                 filename:'bundle.js'

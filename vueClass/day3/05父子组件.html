@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>圆梦源：勿忘初心，方得始终</title>
+</head>
+<body>
+<div id="app">
+    <parent :aa="leilei">
+    </parent>
+</div>
+<template id="temp1">
+    <div>
+        <h1>{{msg}} 父组件 {{aa}}</h1>
+        <children :n="msg"></children>
+    </div>
+</template>
+<script src="js/vue.js"></script>
+<script>
+    var app=new Vue({
+        el:'#app',
+        data:{
+            leilei:'leilei123'
+        },
+        components:{//一个实例中，可以有多个组件
+            parent:{
+               props:{aa:String},
+               template:'#temp1',//模版
+                data(){//parent的数据
+                   return {msg:'hello!'}
+                },
+                components:{//一个父组件里面，可以包含多个子组件
+                    children:{
+                        props:['n'],
+                        template:'<h2>{{n}}子组件</h2>'
+                    }
+                }
+            }
+        }
+    })
+</script>
+</body>
+</html>

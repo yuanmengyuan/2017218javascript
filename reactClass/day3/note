@@ -1,0 +1,61 @@
+### 1:0 基本路由
+由两部分
+    ```
+    <Router history={hashHistory}>
+        <Route path="/" component={App}>
+        <Route path="/contact" component={Contact}>
+    </Router>
+    ```
+
+### 1:1 路由嵌套 路由写在index页面
+//index:路由
+    <Route path="/" component={App}>
+        <Route path="contact" component={Contact}/>
+        <Route path="about" component={About}/>
+    </Route>
+    //当点击contact时("/" "contact")，其实走了两个组件：App Contact
+    //必须到App组件下，通过{this.props.children}
+
+### 1:2路径导航菜单的跳转 <Link to="/"></Link>
+
+### 1:3路由激活效果状态
+    + activeStyle  行内样式:
+        activeStyle={{color:'red',fontSize:"22px"}}
+    + activeClassName 非行间
+
+### 1:4 IndexLink 默认路径
+    一般情况下，当我们访问/about的时候，会默认激活两个路由
+        + "／"对应的组件
+        + 'about'对应的组件
+    如果使用了IndexLink,就可以只激活我们要找的路由；
+
+### 1:5 路由参数
+    <Route path="/about/:a"></Route>
+    + 通过this.props.params.a 来拿到a传的值；
+    + this.props下面
+        + location 解析地址栏
+        + router ->goBack()
+
+### 1:6 重定向 Redirect  "/about/:b"->"/about"
+//from：指用户输入的地址  to:跳转到哪里；
+<Redirect from="about" to="about/react1223"></Redirect>
+### 1:7 默认路由： IndexRoute
+### 1:8 history:
+    + hashHistory
+        + 不需要配置服务器
+        + 开发环节使用，上线不能用
+    + browserHistory
+        + 需要配置后台服务 package.json中的scripts-》start："--history-api-fallback"
+        + 配置完成之后，必须重启服务；
+        + 用来上线的
+### 1:9 路由之间的转换
+- Link   <Link to="/">
+- browserHistory.push()
+    1:需要拼接地址
+        + 如果是表单的情况下，我们需要对表单中的form添加一个onSubmit事件；通过e.target.elements[i].value拿到我们传的参数
+    2: 需要检查路由，因为我们拼接的路由形式" /about/xxx/xxxx",所以，如果要拿到参数，必须把路由设置为"/about/:a/:b"
+    3: 就可以到路由对应的模块，通过this.props.params.a   this.props.params.b来拿；
+- this.context.router.push()
+### 2.0 setRouteLeaveHook
+- this.context.router.setRouteLeaveHook(route,LeaveHook)
+- 当要离开页面的时候，可以提示；也可以做其他事情，类似于一个钩子函数；

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>圆梦源：勿忘初心，方得始终</title>
+</head>
+<body>
+<script>
+    function myCreate(obj1){
+        function Tmp(){
+
+        }
+        Tmp.prototype=obj1;
+        return new Tmp;
+    }
+
+    function Baba() {
+        this.name='ymy';
+        this.age=18;
+    }
+    Baba.prototype.aa=function () {};
+
+    //儿子
+    function Sun() {
+        //私有通过call继承，只继承父类私有的；
+        Baba.call(this);
+    }
+    //儿子原型只想继承父类公有的，不想继承父类私有的；所以，我们要把父类私有的过滤掉；
+    /*function Tmp() { } //建立临时的空类；
+    Tmp.prototype=Baba.prototype;
+
+    Sun.prototype=new Tmp;*/
+    Sun.prototype=myCreate(Baba.prototype) //Object.create代表继承传过来的对象；
+    Sun.prototype.constructor=Sun;
+
+    var s1=new Sun;
+    console.dir(s1);
+
+</script>
+</body>
+</html>

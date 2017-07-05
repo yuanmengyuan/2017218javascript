@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>圆梦源：勿忘初心，方得始终</title>
+</head>
+<body>
+<script>
+    function Person() {
+        this.name='ymy';
+        this.age=18;
+    }
+    var p1=new Person;
+    function Sub() {
+        Person.call(this);
+    }
+    Sub.prototype=p1;
+    var s1=new Sub;
+    s1.__proto__.name='xixi';
+    console.dir(s1)
+/*
+    * name:ymy
+    * age:18
+* __proto__:
+    * name:ymy;
+    * age:18
+* __proto__:Person.prototype
+    * constructor:Person
+* __proto__:Object
+    * Object基类身上的了
+    * constructor:Object
+    * toString        检测数据类型
+    * hasOwnProperty  判断是否为私有属性
+    * isPorotoTypeof   判断前一个对象是否在后一个对象的原型链上
+    *propertyIsEnumerabl  是否是可枚举的属性
+* */
+
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+

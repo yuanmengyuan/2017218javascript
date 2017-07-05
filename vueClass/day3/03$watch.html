@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>圆梦源：勿忘初心，方得始终</title>
+</head>
+<body>
+<div id="app">
+    <p>商品价格 <input type="text" v-model="price"></p>
+    <p>商品数量 <input type="text" v-model="amount"></p>
+    <p>总金额 <input type="text" v-model="total"></p>
+</div>
+<script src="js/vue.js"></script>
+<script>
+    var app=new Vue({
+        el:'#app',
+        data:{
+            price:8,
+            amount:12
+        },
+        computed:{
+            total:{
+                get(){
+                    return this.price*this.amount;
+                },
+                set(){
+
+                }
+            }
+        }
+    });
+    app.$watch("total",function (newVal,oldVal) {
+        alert(oldVal)
+        alert(newVal)
+    });
+    app.total=300;
+</script>
+</body>
+</html>

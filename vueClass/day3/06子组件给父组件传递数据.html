@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>圆梦源：勿忘初心，方得始终</title>
+</head>
+<body>
+<div id="app">
+    <parent></parent>
+</div>
+<template id="parent">
+    <div>
+        <h1>parent父组件 {{name}}</h1>
+        <children @s="getData"></children>
+    </div>
+</template>
+<script src="js/vue.js"></script>
+<script>
+    var app=new Vue({
+        el:'#app',
+        components:{
+            parent:{
+                template:'#parent',
+                data(){
+                    return {name:'糖宝'}
+                },
+                methods:{
+                    getData(data){
+                        this.name=data;//接收子组件传过来的数据，同时更改父组件的数据
+                    }
+                },
+                components:{
+                    children:{
+                        template:'<h2 @click="changeName">children子组件</h2>',
+                        methods:{
+                            changeName(){
+                                //发射了子组件的数据
+                               this.$emit('s','vivian')
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    })
+</script>
+</body>
+</html>

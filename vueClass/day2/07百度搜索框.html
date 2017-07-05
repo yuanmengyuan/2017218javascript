@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>圆梦源：勿忘初心，方得始终</title>
+    <link rel="stylesheet" href="css/bootstrap.css">
+</head>
+<body>
+<div id="app">
+    <div class="container">
+        <form type="form">
+            <div class="form-group">
+                <label for="query"><h1>百度搜索</h1></label>
+                <input @keydown="query" @keydown.down="moveDown" @keydown.up.prevent="moveUp" @keydown.enter="search" type="text" class="form-control" id="query" v-model="msg">
+            </div>
+        </form>
+        <ul class="list-group">
+            <li v-for="(item,i) in ary" class="list-group-item" :class="{active:index==i}">{{item}}</li>
+        </ul>
+    </div>
+</div>
+<script src="js/vue.js"></script>
+<script src="js/vue-resource.js"></script>
+<script>
+    var app=new Vue({
+        el:'#app',
+        data:{
+            msg:'',
+            ary:[],
+            index:0
+        },
+        methods:{
+            query(e){
+                //jsonp的请求
+                if(e.keyCode===38 || e.keyCode===40) return;
+                this.$http.jsonp('https://sp0.baidu.com/5a1Fazu8AA54nxGko9WTAnF6hhy/su',{
+                    params:{
+                        wd:this.msg
+                    },
+                    jsonp:'cb'
+                }).then(res=>{
+                    this.ary=res.body.s;
+                })
+            },
+            moveDown(){
+                this.index++;
+                this.index%=this.ary.length;
+                this.msg=this.ary[this.index];
+            },
+            moveUp(){
+                this.index--;
+                if(this.index<=-1){
+                    this.index=this.ary.length-1;
+                }
+                this.msg=this.ary[this.index];
+            },
+            search(){
+                window.open(`https://www.baidu.com/s?wd=${this.msg}`)
+            }
+        }
+
+    })
+</script>
+</body>
+</html>

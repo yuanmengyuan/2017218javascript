@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>圆梦源：勿忘初心，方得始终</title>
+    <style>
+        [v-cloak]{
+            display: none;
+        }
+    </style>
+</head>
+<body>
+<div id="app">
+    <h1 v-cloak>{{msg}}</h1>
+    <h2>商品单价：<input type="text" v-model="n"></h2>
+    <h2>购买数量：<input type="text" v-model="m"></h2>
+    <h2>总金额：<input type="text" v-model="total"></h2>
+
+</div>
+<script src="js/vue.js"></script>
+<script>
+    var app=new Vue({
+        el:'#app',
+        data:{
+            msg:'hello！',
+            n:0,
+            m:0
+        },
+        computed:{
+            //虽然这里放的是函数，但是，可以把total当作变量来使用；
+            /*total(){//只是得到计算后的结果 getter
+                return this.n*this.m
+            }*/
+            total:{//如果想进行设置的话，需要写成
+                get(){//getter
+                    return this.n*this.m
+                },
+                set(newValue) {
+                    //newValue:total变量更新之后的值；
+                    this.n=Math.round(newValue/this.m);
+                    //this.m=Math.round(newValue/this.n);
+                }
+            }
+        }
+    });
+</script>
+</body>
+</html>

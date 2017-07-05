@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>圆梦源：勿忘初心，方得始终</title>
+</head>
+<body>
+<div id="app">
+    <h1>{{msg}}</h1>
+    <button @click="get"> get请求得到的数据</button>
+    <button @click="post"> post请求得到的数据</button>
+    <button @click="jsonp"> jsonp请求得到的数据</button>
+</div>
+<script src="js/vue.js"></script>
+<script src="js/vue-resource.js"></script>
+<script>
+    var app=new Vue({
+        el:'#app',
+        data:{
+            msg:"这是默认的数据"
+        },
+        methods:{
+            get(){
+                this.$http.get('/get?name=ymy&age=18')
+                    .then(res=>{
+                        this.msg=res.body;
+                    })
+            },
+            post(){
+                this.$http.post('/post',{
+                    name:'leilei',
+                    lovely:'吃'
+                }).then(res=>{
+                    var str=JSON.stringify(res.body);
+                    this.msg=`我是通过post请求得到的数据 ${str}`
+                })
+            },
+            jsonp(){
+                this.$http.jsonp('https://sp0.baidu.com/5a1Fazu8AA54nxGko9WTAnF6hhy/su',{
+                    params:{
+                        wd:'chuqiaozhuan'
+                    },
+                    jsonp:'cb'
+                }).then(res=>{
+                    this.msg=res.body.s;
+                })
+            }
+        }
+    })
+</script>
+</body>
+</html>

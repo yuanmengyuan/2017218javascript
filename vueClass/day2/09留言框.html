@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>圆梦源：勿忘初心，方得始终</title>
+    <link rel="stylesheet" href="css/bootstrap.css">
+</head>
+<body>
+<div id="app">
+    <div class="container">
+        <form type="form">
+            <div class="form-group">
+                <label for="title" class="h3">标题</label>
+                <input type="text" name="title" class="form-control" id="title" v-model="title">
+            </div>
+            <div class="form-group">
+                <label for="content" class="h3">内容</label>
+                <textarea name="content" class="form-control" id="content" cols="30" rows="6"  v-model="content"></textarea>
+            </div>
+            <div class="form-group">
+                <button @click="submit" type="button" class="btn btn-primary">提交留言</button>
+            </div>
+        </form>
+    </div>
+    <div class="container">
+        <ul class="pagination">
+            <li :class="{active:index==i}" @click="changePage(i)" v-for="(item,i) in pages"><a href="javascript:;">{{item}}</a></li>
+        </ul>
+        <ul class="list-group">
+            <li v-for="(item,i) in ary" class="list-group-item">
+                <p>【标题】{{item.title}}</p>
+                <p>【内容】{{item.content}}</p>
+                <p>【时间】{{item.time}}</p>
+                <p> <a href="#" @click="del(item._id)" class="btn btn-primary">删除</a></p>
+            </li>
+        </ul>
+    </div>
+</div>
+<script src="js/vue.js"></script>
+<script src="js/vue-resource.js"></script>
+<script>
+    var app=new Vue({
+        el:'#app',
+        data:{
+            title:'',
+            content:'',
+            pageamount:3,
+            pages:0,
+            index:0,
+            ary:[]
+        },
+        created(){
+            //请求数据
+            this.getData(0);
+            //请求数据的条数；
+            this.$http.get('/count')
+                .then(res=>{
+                    this.pages=Math.ceil(res.body/this.pageamount)
+                })
+        },
+        methods:{
+            submit(){
+                this.$http.post('/post',{
+                    title:this.title,
+                    content:this.content
+                }).then(res=>{
+                    console.log(res.body)
+                });
+                window.location.href='/';
+            },
+            getData(page){
+                this.$http.get('/get?page='+page+'&pageamount='+this.pageamount)
+                    .then(res=>{
+                        this.ary=res.body;
+                    })
+            },
+            changePage(index){
+                this.getData(index);
+                this.index=index;//窍门
+            },
+            del(id){
+                this.$http.get('/del?id='+id)
+                    .then(res=>{
+                        console.log(res.body)
+                        if(res.body.ok){
+                            alert('删除成功');
+                            window.location.href='/';
+                        }
+                    })
+            }
+        }
+    })
+</script>
+</body>
+</html>

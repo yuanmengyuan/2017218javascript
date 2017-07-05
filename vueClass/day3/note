@@ -1,0 +1,132 @@
+### 防止闪烁问题，需要两步
+1、在标签上，添加属性 v-cloak
+2、在style样式中，设置[v-cloak]{display:none}
+### 计算属性
+- getter
+compunted:{
+    total(){
+        return this.n*this.m
+    }
+}
+- 如果想设置
+compunted:{
+    total:{
+        get(){
+           return
+        },
+        set(newValue){
+            //新的total的值，就是newValue
+        }
+    }
+}
+- 实例上的一些常用方法
+    + 拿到元素： app.$el
+    + 拿到数据：
+        + app.$data.属性名
+        + app.属性名
+    + 拿到自定义属性
+        + app.$options.自定义的属性名
+- 公用组件
+    + 多个实例都能使用这个组件
+- 基本组件封装涉及的知识
+    + 注册组件：如果通过Vue.component注册是公用组件
+    + 组件自己内部的数据
+        data(){
+            return {msg:12323}
+        }
+    + 组件接收父组件传过来的数据，通过props属性
+        + 动态属性操作 :n="name"  这个的name是个变量，它取决于父组件data的中的值
+        ```
+        data:{
+            name:xxxx
+        }
+        ```
+        + 接收的时候，子组件
+            + props:['n']=>不限制传过来的数据类型
+            + props:{n:String} =>限制传过来的必须是字符串类型
+
+### 今天数据传递涉及到的知识点
+- 父组件通过props给子组件传递数据  props:['n']
+- 子组件通过事件发射给父组件传递数据 this.$emit
+- 兄弟组件之间的数据传递  Event.$emit进行发射； Event.$on进行绑定
+- 数据同步，核心：传递对象，利用的是引用数据类型对地址的引用
+- 数据不同步，核心：1）返回的必须是基本数据类型 2）找一个临时变量接收父组件传过来的数据；更改的其实是临时变量的值；
+
+### 总结一下vue-router
+### 基本路由配置，5步走
+1、创建一个实例，并进行配置
+```
+var Home={template:'#home'} //#home 即使template模版的id
+var router=new VueRouter({
+    routes:[
+        {path:'/home',component:Home}
+    ]
+})
+```
+2、把配置好的router放入app的实例中
+```
+var app=new Vue({
+    router,
+    el:'#app'
+})
+```
+3、添加路由跳转
+```
+//在link中写具体路由
+<router-link to='/home'>首页</router-link>
+```
+4、显示组件
+```
+<router-view></router-view>
+```
+5、设置默认路由
+```
+var router=new VueRouter({
+    routes:[
+        {path:'/home',component:Home},
+        {path:'*',component:Home},
+    ]
+})
+```
+### 子路由；
+1、需求：如果要在首页展示登录和注册按钮
+    1、在Home组件的模板中设置如下
+    ```
+    <router-link to='/home/login'>登录</router-link>
+    <router-link to='/home/reg'>注册</router-link>
+    <router-view></router-view>
+    ```
+    2、到routes进行设置路由和模版；
+    ```
+    var router=new VueRouter({
+        routes:[
+            {path:'/home',component:Home,
+                children:[
+                //注意：千万不要加"/"，否则程序无法执行
+                    {path:'login',component:Login},
+                    {path:'reg',component:Reg}
+                 ]
+            }
+        ]
+    })
+    ```
+### 路由参数
+1、 在router中设置模糊路由； '/list/news/:id'
+2、在router-link中设置具体路由：'/list/news/111111111'
+3、通过$route.params.id来获取路由参数；
+4、JS中通过
+```
+beforeEnter(to,from,next){
+    //接收参数 to.params.id
+    next();//往下流
+}
+```
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,46 @@
+.menu{
+    width: 150px;
+    overflow: hidden;
+    transition: all .3s;
+}
+.menu-collapse{
+    width: 64px;
+}
+.menu-item i{
+    font-size: 20px;
+    margin-right: 10px;
+}
+.menu-item span{
+    font-size: 20px;
+    color: #ffffff;
+}
+.menu-jianli{
+    font-size: 20px;
+    width: 90px;
+    margin:0 auto;
+    color: #ffffff;
+}
+.menu-jianli-collapse{
+    width: 60px;
+    margin-left:10px;
+}
+.menu-jianli i{
+    font-size: 40px;
+    margin-right: 10px;
+}
+.menu-aside{
+    width: 150px;
+    height: 40px;
+    background: #656565;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    text-align: center;
+    line-height: 40px;
+    color: #ffffff;
+    font-size: 20px;
+    transition: all .3s;
+}
+.menu-aside-collapse{
+    width: 64px;
+}

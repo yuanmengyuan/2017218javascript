@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>圆梦源：勿忘初心，方得始终</title>
+</head>
+<body>
+<div id="app">
+    {{msg}}
+    <!--动态绑定DOM属性用v-bind:title，但是它会报红，所以写成":title"-->
+    <p :title="tip"> 鼠标悬停几秒钟查看此处动态绑定的提示信息！</p>
+</div>
+<script src="js/vue.js"></script>
+<script>
+    var app=new Vue({
+        el:'#app',
+        data:{//data中专门用来存数据
+            msg:'hello！ymy',
+            tip:'测试提示'
+        }
+    })
+</script>
+</body>
+</html>

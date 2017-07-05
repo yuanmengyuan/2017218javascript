@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>圆梦源：勿忘初心，方得始终</title>
+    <style>
+        body{
+            font-size: 40px;
+        }
+    </style>
+</head>
+<body>
+<div id="app">
+    <div  @click="father" class="parent">
+            我是父亲
+        <div @click.stop="sun">我是儿子</div>
+    </div>
+    <a @click.prevent href="https://www.baidu.com/">点我跳转链接</a>
+</div>
+<script src="js/vue.js"></script>
+<script>
+    var app=new Vue({
+        el:'#app',
+        methods:{
+            father(){
+                alert('father')
+            },
+            sun(e){
+               // e.stopPropagation();
+                alert('sun')
+            }
+        }
+    })
+</script>
+</body>
+</html>

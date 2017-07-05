@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>圆梦源：勿忘初心，方得始终</title>
+</head>
+<body>
+<div id="app">
+    <ol>
+        <!--2：直接使用自定义的组件-->
+        <!--3:通过自定义属性，给自定义组件传数组-->
+        <ymy-leilei v-for="item in ary" :todo="item"></ymy-leilei>
+    </ol>
+</div>
+<script src="js/vue.js"></script>
+<script>
+    //1:注册一个组件；
+    Vue.component('ymy-leilei',{
+        props:['todo'],
+        template:'<li>{{todo.tile}}</li>'
+    });
+    var app=new Vue({
+        el:'#app',
+        data:{//"茴香饺子","凉皮","韭菜鸡蛋饺子","油泼面"
+            ary:[
+                {tile:"茴香饺子1111"},
+                {tile:"凉皮2222"},
+                {tile:"韭菜鸡蛋饺子333"},
+                {tile:"油泼面4444"}
+            ]
+        }
+    })
+</script>
+</body>
+</html>

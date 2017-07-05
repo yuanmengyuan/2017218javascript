@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>圆梦源：勿忘初心，方得始终</title>
+</head>
+<body>
+<div id="app">
+    <parent></parent>
+</div>
+<template id="parent">
+    <div>
+        <h1>我是parent组件 <mark>{{msg}}</mark></h1>
+        <children :n="msg"></children>
+    </div>
+</template>
+<script src="js/vue.js"></script>
+<script>
+    var app=new Vue({
+        el:'#app',
+        components:{
+            parent:{
+                template:'#parent',
+                data(){
+                    return {msg:'糖宝'}
+                },
+                components:{
+                    children:{
+                        props:['n'],
+                        template:'<h2 @click="sync">我是children <mark>{{b}}</mark></h2>',
+                        data(){//先找一个变量，来接收传过来的数据，因为数据是基本数据类型，就相当于多复制了一份；
+                            return {b:this.n}
+                        },
+                        methods:{
+                            sync(){
+                                //当事件触发的时候，修改b的值；
+                                this.b='vivian';
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    })
+</script>
+</body>
+</html>

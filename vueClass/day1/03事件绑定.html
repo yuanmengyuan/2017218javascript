@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>圆梦源：勿忘初心，方得始终</title>
+</head>
+<body>
+<div id="app">
+    <p>{{msg}}</p>
+    <button @click="reverseMessage">点击按钮翻转文字</button>
+</div>
+<script src="js/vue.js"></script>
+<script>
+    var app=new Vue({
+        el:'#app',
+        data:{//所有的数据都写在data里
+            msg:"hello！张蕾!"
+        },
+        methods:{//所有的函数都写在methods里
+            reverseMessage(){
+                this.msg=this.msg.split('').reverse().join('')
+            }
+        }
+    })
+</script>
+</body>
+</html>

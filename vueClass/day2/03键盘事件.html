@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>圆梦源：勿忘初心，方得始终</title>
+</head>
+<body>
+<div id="app">
+    <input type="text" @keydown.48="fn">
+</div>
+<script src="js/vue.js"></script>
+<script>
+    var app=new Vue({
+        el:'#app',
+        methods:{
+            fn(e){
+                /*if(e.keyCode===13){
+                    alert('按下enter键')
+                }*/
+                alert('按下enter键')
+            }
+        }
+    })
+</script>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>圆梦源：勿忘初心，方得始终</title>
+</head>
+<body>
+<div id="app">
+     <!--动态操作dom的属性-->
+    <hello n="name" :n="name" ></hello>
+</div>
+<div id="app2">
+    <hello></hello>
+</div>
+<script src="js/vue.js"></script>
+<script>
+    //注册组件-定义一个公用的组件
+    Vue.component('hello',{
+        props:{n:String},//通过属性接收父组件传过来的数据  ['n']
+        template:'<h1>{{msg}}!{{n}}</h1>',
+        data(){//data函数中放的就是"组件自己"的数据
+           return{msg:'hello'}
+        }
+    });
+    //一个实例
+    var app=new Vue({
+        el:'#app',
+        data:{
+            name:'leilei'
+        }
+    })
+    //一个实例；
+    var app2=new Vue({
+        el:'#app2'
+    })
+</script>
+</body>
+</html>

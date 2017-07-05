@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>圆梦源：勿忘初心，方得始终</title>
+</head>
+<body>
+<div id="app">
+    <parent></parent>
+</div>
+<template id="parent">
+    <div>
+        <h1>父组件 <mark>{{msg.name}}</mark></h1>
+        <children :n="msg"></children>
+    </div>
+</template>
+<template id="children">
+    <h2 @click="changeData">子组件 <mark>{{n.name}}</mark></h2>
+</template>
+<script src="js/vue.js"></script>
+<script>
+    //数据同步的核心：父组件给子组件传递"引用数据类型的数据"；
+    var app=new Vue({
+        el:'#app',
+        components:{
+            parent:{
+                template:'#parent',
+                data(){
+                    return {msg:{name:'哈哈哈'}}
+                },
+                components:{
+                    children:{
+                        props:{n:Object},
+                        template:'#children',
+                        methods:{
+                            changeData(){
+                                this.n.name='xixiixi'
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    })
+</script>
+</body>
+</html>

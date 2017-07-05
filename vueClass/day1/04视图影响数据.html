@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>圆梦源：勿忘初心，方得始终</title>
+</head>
+<body>
+<div id="app">
+    <input type="text" v-model="msg">
+    <h1>{{msg}}</h1>
+    <h2 v-once>{{msg}}</h2>
+</div>
+<script src="js/vue.js"></script>
+<script>
+    var app=new Vue({
+        el:'#app',
+        data:{
+            msg:'这是默认的数据'
+        }
+    })
+</script>
+</body>
+</html>
